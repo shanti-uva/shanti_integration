@@ -1,0 +1,4 @@
+/* --- SHANTI at UVa --- admin-css */
+/* ---------- @ Applied to all HTML Elements for Admin Page -----------*/
+body{color:#332b1b; background:#332b1b; border-top:4px solid #568ea7}
+body, select, textarea, input{font:100% Arial,Verdana,Helvetica,sans-serif}

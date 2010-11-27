@@ -1,0 +1,15 @@
+<ul>
+	<% first = true -%>
+	<% for nav_item in main_navigation_items -%>
+		<% 	
+			class_string = first ? "first " : ""
+			if @current_nav_item == nav_item[:id]
+				class_string << "current_page_item" 
+			else
+				class_string << "page_item"
+			end  
+			first = false
+		-%>
+		<li class="<%= class_string %>"><%= link_to nav_item[:text], nav_item[:link] %></li>
+	<% end -%>
+</ul>

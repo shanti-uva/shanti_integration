@@ -1,0 +1,107 @@
+/* --- SHANTI at UVa --- home-css */
+/* ---------- @ Page Structure -----------*/
+/*#home #featured-wrapper{background:#1c160d url(../images/bg_featured_wrapper.jpg) repeat-x left top; margin:0; padding:0; }
+#home #featured{background:url(../images/bg_featured.jpg) no-repeat 30% 0%; width:595px;border:3px double #f7f6f0; margin:0; padding:0px;}
+#home #main-content-wrapper{padding-top:10px; padding-bottom:100px}
+#home #main-content {width:600px; float:right; margin:0; padding:0;}
+#home #sidebar {float:left; width:255px; padding: 12px 15px 25px; margin-left:10px; margin-top:0px;}*/
+
+/* ---------- @ Headings -----------*/
+/*#home #sidebar h2 { font-size:1.56em; margin:10px  0 5px; padding:0; color:#505050}
+#home #sidebar h3 { font-family:verdana, Arial,sans-serif; color:#3a5d92; font-weight:bold; font-size:1.06em; margin:10px 0 0px; padding:0; }
+#home #sidebar h3 a, #home #sidebar h3 a:visited{ color:#3a5d92; }
+#home #sidebar h3 a:hover{ color:#a9531e;}
+
+#home #main-content #news h3 { letter-spacing:1px; font-weight:normal; font-size:2.06em; margin:0 0 10px 1px; padding:0; }
+#home #ie-root #main-content #news h3 { margin:0 0 0 1px; }
+#home #main-content #news h3 a, #home #main-content #news h3 a:visited { color:#505050  }
+#home #main-content #news h3 a:hover{ color:#a9531e; }
+
+#home #featured h2{font-size:1.12em; font-style:italic; text-transform:none; color:#e39040; padding-top:10px; padding-bottom:3px; border-bottom:1px solid #555;}
+#home #featured h3 {letter-spacing:0px; font-size:1.32em; line-height:1.12em; margin:0; padding:4px 0 0px}
+#home #featured h3 a{color:#6abadf; text-decoration:none; font-size:1.0em;}
+#home #featured h3 a:hover{text-decoration:underline}*/
+
+/* ---------- @ Content Styles -----------*/
+/*#home #sidebar .module{ border-bottom:3px solid #ccc; padding-bottom:20px;}
+#home #sidebar .module.last{ background:none;}
+#home #sidebar p { font-size:1em; margin-bottom:0; padding:0 3px; font-style:italic;}
+#home #sidebar p a, #home #sidebar p a:visited{ font-size:0.88em;font-weight:bold; text-decoration:underline;}
+#home #sidebar .module ul{ font-size:1.06em; margin-top:5px; list-style:none; }
+#home #sidebar .module ul li{ line-height:1.32em; padding:4px 0px; list-style:none; }*/
+/*#home #ie-root #sidebar .module ul{font-size:.92em; }*/
+
+/*#home #intro p {font-size:1.12em; border-top:3px solid #ccc; padding:10px 4px 0;}
+#home #intro.module {padding-bottom:12px; background-image:none; border-bottom:3px solid #ccc;}*/
+
+/* blue buttons */
+/*#home #main-content div.wp-btn {margin-top:-10px; margin-left:455px; position:relative; left:0px; z-index:99;}
+#home #main-content div.wp-btn p a { background:url(../images/btnBR.gif) right top no-repeat; font: 1.06em arial,verdana,sans-serif; text-decoration:none; border:0; cursor:pointer; padding:0 16px 0 0; text-align:center; float:left;  display:block; width: auto;}
+#home #main-content div.wp-btn p a span { height:30px; line-height:30px; background:url(../images/btnBL.gif) left top no-repeat;color:#fff; position:relative; display:block; white-space:nowrap; padding:0 0 0 16px;}
+#home #main-content div.wp-btn p a:hover {background:url(../images/btnBR.gif) right bottom no-repeat; text-decoration:none;}
+#home #main-content div.wp-btn p a:hover span {background:url(../images/btnBL.gif) left bottom no-repeat; }*/
+/* style exceptions for all IE browsers */
+/*#home #ie-root #main-content div.wp-btn { width:auto; overflow:visible; margin-top:4px;}
+#home #ie-root #main-content div.wp-btn span { margin-top:0px; }*/
+
+/* blue buttons */
+/*#home #sidebar div.wp-btn {margin-top:20px; margin-left:3px; position:relative; left:0px;}
+#home #sidebar div.wp-btn p a { background:url(../images/btnBR.gif) right top no-repeat; font: 1.06em arial,verdana,sans-serif; text-decoration:none; border:0; cursor:pointer; padding:0 15px 0 0; text-align:center; float:left;  display:block; width: auto;}
+#home #sidebar div.wp-btn p a span { height:30px; line-height:30px; background:url(../images/btnBL.gif) left top no-repeat;color:#fff; position:relative; display:block; white-space:nowrap; padding:0 0 0 15px;}
+#home #sidebar div.wp-btn p a:hover {background:url(../images/btnBR.gif) right bottom no-repeat; text-decoration:none;}
+#home #sidebar div.wp-btn p a:hover span {background:url(../images/btnBL.gif) left bottom no-repeat; }*/
+/* style exceptions for all IE browsers */
+/*#home #ie-root #sidebar div.wp-btn { width:auto; overflow:visible; }
+#home #ie-root #sidebar div.wp-btn span { margin-top:0px; }*/
+
+/*
+#home #news{ position:relative; top:-30px; }
+#ie-root #home #news{ position:relative; top:4px}
+#home #news ul#news-list{margin:5px 0 0 3px; padding:0; list-style:none}
+#home #news ul#news-list li{ margin-bottom:10px; list-style:none}
+#home #news ul#news-list li a{font-weight:bold; font-family:"times new roman", georgia, serif; font-size:1.25em; }
+#home #news ul#news-list li span{color:#555; font-size:.82em;padding-left:2px;font-family:verdana, arial, sans-serif; }
+#home #news ul#news-list li p{margin-top:5px;padding-left:2px;}
+#home #news ul#news-list li p a{font-family:helvetica, arial, sans-serif; font-size:.88em;}
+*/
+
+/*Carousel*/
+/*#home .jcarousel-container{position:relative}
+#home .jcarousel-clip {z-index: 2; padding: 0; margin: 0; overflow: hidden;position: relative; width:550px}
+#home #homepage_carousel{ width:1000px; list-style:none; padding:15px 0 0 50px;}
+#home #homepage_carousel li{float:left; list-style-type:none !important; margin-bottom:0px}
+#home .jcarousel-list{ z-index:1; overflow:hidden; position:relative; top:0; left:0; margin:0; padding:0}*/
+
+/* We set the width/height explicitly. No width/height causes infinite loops. */
+/* 
+#home .jcarousel-list li, 
+#home .jcarousel-item { overflow:hidden; width:550px; height:235px}
+
+#home .jcarousel-next, 
+#home .jcarousel-prev{z-index:3; width:28px; height:137px; cursor:pointer; position:absolute; top:57px; display:none}
+
+#home .jcarousel-next{background:url(../images/hp_carousel_right_on.gif) no-repeat left top; right:0px}
+#home .jcarousel-next-disabled{background:url(../images/hp_carousel_right_off.gif) no-repeat left top; cursor:auto}
+#home .jcarousel-prev{background:url(../images/hp_carousel_left_on.gif) no-repeat left top; left:0px}
+#home .jcarousel-prev-disabled{background:url(../images/hp_carousel_left_off.gif) no-repeat left top; cursor:auto}
+
+#home #homepage_carousel a.featured-img{float:left; display:block; border-right:1px solid #3f3728; border-bottom:1px solid #3f3728; margin-top:13px}
+#home #homepage_carousel a.featured-img img{border:7px solid #68624c}
+
+#home #homepage_carousel .featured-main{float:left; max-width:300px; padding:0 15px}
+
+#home #homepage_carousel .featured-overview{font-size:1em; color:#d8caae; margin:7px 20px 10px 0}
+
+#home #homepage_carousel p{font-size:1em; color:#d8caae; margin:7px 20px 10px 0}
+
+#home #homepage_carousel a.view-details{display:block; float:left; color:#c2ab7d; font-size:.6em; text-transform:uppercase; text-decoration:none; border:1px solid #1c160c; padding:5px 12px 4px 20px; border-top:1px solid #625d49; border-left:1px solid #625d49; background:#534d3a url(../images/view_details_arrow.gif) no-repeat 3px 4px}
+#home #homepage_carousel a.view-details:hover{color:#d8caae}
+*/
+/* IE6 hacks */
+/*#ie-root-lte7 #home #homepage_carousel p{ width:380px;  margin:0px}
+#ie-root-lte7 #home #homepage_carousel a{ margin:0px}
+#ie-root-lte7 #home #homepage_carousel h3{ width:380px}*/
+
+
+
+

@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="description" content="SHANTI at the University of Virginia - Sciences, Humanities and Arts Network of Technological Initiatives: SHANTI promotes innovation in the humanities, social sciences and arts at the University of Virginia through supporting the application of advanced technologies in research, teaching, publication and engagement across the entire community." />
+
+	<meta name="keywords" content="SHANTI at the University of Virginia - Sciences, Humanities and Arts Network of Technological Initiatives" />
+
+<%  if @current_style == :home -%>
+	  <title><%= site_title(:html=>false) %></title>
+<%  else -%>
+<%    if page_title = '' %>
+        <title><%= site_title(:html=>false) %></title>
+<%    else -%>
+	    <title><%= site_title(:html=>false) %> - <%= page_title %></title>
+<%    end -%>
+<%  end -%>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<%= stylesheets %>
+<%= javascripts %>
+<% @nav_enabled = true %>
+
+<link rel="stylesheet" href="/stylesheets/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="/stylesheets/category_selector.css" type="text/css" media="print" />
+
+<%#= include_tiny_mce_if_needed %>
+
+<%= render :partial => 'common/admin_grid_includes' if @uses_admin_grid %>
+<%  if defined?(SOLR_URL) %>
+<%=   render :partial => 'layouts/search_script' %>
+<%  end -%>
+
+<%  if @login_enabled -%>
+<%    unless flash[:notice] and logged_in? -%>
+      <script type="text/javascript">
+      	// hide login and extra content
+    	document.writeln('<style type="text/css"><!-- #login-wrapper, #overflow {display: none;} --></style>');	
+  	  </script>
+<%    end -%>
+<% 	end -%>
+
+<%  if @current_style == :home -%>
+    <script type="text/javascript">
+	jQuery(document).ready(function() {
+		// initialize carousel
+        jQuery('#homepage_carousel').jcarousel({ scroll: 1, auto: 25 });
+		// load news items
+		loadLatestNews('#news-list','/wordpress/?feed=rss2',5);
+	});
+    </script>
+<%  end -%>
+
+<%  if @current_style == :details -%>
+      <script type="text/javascript" src="/javascripts/profile-detail-view.js"></script>
+<%=   render :partial => 'common/profile_includes' %>
+
+<% 	  unless @tiny_mce_editor_disable or !@tiny_mce_editor_disable.nil? -%>
+<%=     render :partial => 'common/editor_includes' %>
+<%    end -%>
+<%  end -%>
+
+<%  if @relation_browser_enabled -%>  <%# if @current_style == :home -%>
+<%=   render :partial => '/layouts/rb_header' %>
+<% 	end -%>
+
+    <link href="/images/favicon.ico" rel="icon" />
+    <link href="/images/favicon.ico" rel="shortcut icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+</head>
+
+<% if @current_style == :gallery -%>
+  <body id="interior" class="gallery" >
+<% elsif @current_style == :details -%>
+  <body id="interior" class="details" >
+<% elsif @current_style == :showview -%>
+  <body id="interior" class="details" >	
+<% else -%>
+  <body id="home">
+<% end -%>
+
+  <!--[if ie]><div id="ie-root"><![endif]--><!--[if ie 8]><div id="ie-root-8"><![endif]--><!--[if ie 7]><div id="ie-root-7"><![endif]--><!--[if gte ie 7]><div id="ie-root-gte7"><![endif]--><!--[if lte ie 7]><div id="ie-root-lte7"><![endif]--><!--[if lte ie 6]><div id="ie-root-lte6"><![endif]--> 
+
+<% unless params[:inline] %> <!-- when it's a normal window and will not display for floating window -->
+
+<% if @login_enabled -%>  <%# unless params[:inline] %>
+  	 <div id="login-wrapper">
+	   <div id="login">
+		 <div class="entry">
+			
+		 </div>
+<% 		 if logged_in? -%>
+<%= 	   render :partial => '/common/login' %>
+<% 		 end -%>
+  	   </div>
+  	 </div>
+<% end -%>
+
+  <div id="masthead-wrapper">
+	<div id="masthead">
+		<div id="masthead-utility">
+		<% if defined?(FATHOM_AUTHENTICATION) %>
+		<%# not using   if @login_enabled   since that is used only sin simpler_main for relationbrowser , sessions & users %>
+		<% if logged_in? -%> 
+			<a href="#login" id="login-toggle" class="logged-in">Log in</a>
+		<% else -%>   
+            <% if defined?(SSL_ENABLED) %>
+				<%=   render :partial => 'layouts/ssl_login' %>
+			<% end %>
+			<%= link_to 'Log in', login_page_path, :id => 'login-toggle', :class => 'log-in', :title => 'login link for non-uva people'%>
+		<% end -%>
+		<% end -%> <!-- if defined?(FATHOM_AUTHENTICATION)-->
+		<% if defined?(SOLR_URL) %>
+		<%=  render :partial => 'layouts/search' %>
+			<p><%= link_to 'Advanced Search', search_path, :id => 'advanced-search', :title => 'Advanced Search'%></p>
+		<% end -%>
+		</div>
+		<h1 id="logo"><a href="/"><%= banner_title %></a></h1>
+		<div id="firstTimeTab"><a href="/signup_openid">first time visitor information</a></div>
+	</div><!--END MASTHEAD-->
+  </div><!--END MASTHEAD-WRAPPER-->
+
+<% if @nav_enabled -%>
+    <div id="nav-wrapper">
+	  <div id="nav">
+		<%= render :partial => 'layouts/main_nav' %>
+	  </div><!--END NAV-->
+    </div><!--END NAV-WRAPPER-->
+
+    <div id="sub-nav-wrapper">
+	  <div id="sub-nav">
+		<%= render :partial => 'layouts/secondary_nav' %>
+	  </div><!--END SECONDARY-NAV-->
+    </div><!--END SECONDARY-NAV-WRAPPER-->
+<% end -%>
+
+<% end -%><!--END UNLESS params[:inline]  So the rest of the header and navigation will not show for floating window -->
+
+<!-- MAIN-WRAPPER -->
+<% if @relation_browser_enabled -%>
+	<div id="flash-wrapper">	
+		<%= yield %>
+	</div><!--END FLASH-WRAPPER-->
+<% else -%>
+	<div id="main-content-wrapper">
+	  <% if !defined?(FATHOM_AUTHENTICATION) %>
+		<div id="main">
+		 <%= login_status_links -%>
+		  <div id="div_flash-notice"><p style="color: green"><%= flash[:notice] %></p></div>
+	  <% end -%>
+	  <%= yield %>
+	  <% if !defined?(FATHOM_AUTHENTICATION) %>  
+	    </div> <!-- end main -->
+	  <% end -%>
+	</div><!--END MAIN-WRAPPER-->
+<% end -%>
+
+<!-- FOOTER -->
+<%= render(:partial => '/layouts/footer') unless params[:inline] %>
+
+<!-- <%= `hostname` %> -->
+
+<!--[if ie]></div><![endif]-->
+
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-12330971-1");
+			pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+	
+  </body>
+</html>

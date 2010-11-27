@@ -1,0 +1,95 @@
+/* --- SHANTI at UVa --- maintenance-css */
+/* ---------- @ HTML Elements -----------*/
+html, body{background:#829955 url(/images/maintenance/bg_white.png) repeat-y center; color:#333; font:100% Verdana,Arial; min-height:101%; margin:0; padding:0}
+
+p{margin:15px 0px 15px 0px}
+
+ul{margin:10px 0; padding-left:50px}
+ 
+li{ padding-bottom:5px}
+
+a:link, a:visited{color:#829955; text-decoration:none}
+
+a:hover, a:active{text-decoration:underline; color:#333}
+
+input, textarea, select{border:1px solid #999}
+
+*:focus{outline:none }
+
+fieldset{margin:15px 0px 15px 0px}
+
+/* ---------- @ Page Structure -----------*/
+#wrapper{background:#fff url(/images/maintenance/masthead.png) no-repeat; width:799px; margin-left:auto; margin-right:auto; padding:125px 25px 60px 25px; text-align:left; font-size:0.8em}
+
+#wrapper.main_maintenance{padding-top:165px}
+
+.content{width:700px; margin-left:auto; margin-right:auto}
+
+.main_maintenance .content{border:1px solid #000; border-top:none; overflow:hidden}
+
+.left{float:left}
+
+.right{float:right}
+
+/* ---------- @ Navigation -----------*/
+ul.adminnav{padding:0; margin:0 0 10px -10px; font-size:.85em}
+
+ul.adminnav li{list-style:none; float:left; padding-bottom:0; margin:0; margin-bottom:5px; border-right:1px solid #000}
+
+ul.adminnav a{float:left; color:#c60; font-size:1em; margin:0 10px}
+
+ul.adminnav a:hover{text-decoration:none}
+
+ul.adminnav li.lastadminnavitem{border-right:none}
+
+/* ---------- @ Headings -----------*/
+h1{position:absolute; left:0px; top:-500px; width:1px; height:1px; overflow:hidden}
+
+.content h1{position:static; width:auto; height:auto; overflow:inherit; font-size:1em; padding:12px 0; margin:0}
+
+h2{font-size:1em; padding:12px 0; margin:0}
+
+/*Clear*/
+.clearfix:after{content:"."; display:block; height:0; clear:both; visibility:hidden}
+.clearfix{display:inline-table}
+
+/* Hides from IE-mac \*/
+* html .clearfix{height:1%}
+*+html .clearfix{height:1%}
+.clearfix{display:block}
+/* End hide from IE-mac */
+ /* Content */
+ 
+font li{margin-left:20px; font-size:.85em}
+
+.documentation font li{margin-left:0; font-size:100%}
+
+.news-index{padding-top:40px}
+
+.main_maintenance h2{border-top:1px solid #000; border-bottom:1px solid #000; width:700px; padding:5px; margin:0}
+
+.documentation ul{padding-left:0; margin-left:30px}
+ 
+ .headercell, .headerclass, .titleclass{ background:#b2b2a8; color:#FFF; height:20px; padding-left:4px; border:none}
+
+.headerclass b{color:#000}
+
+ .headercell a, .headercell a.visited{ color:#FFF}
+
+.rowcell, .label, .element, .innertable .entryelement, .entrylabel, .innertable .entrylabel, .pagingclass, .rowclass, .innertable .rowclass{background:#f3f3e9; padding-left:4px}
+
+.rowcell:hover, .altrowcell:hover{background:#fbfbf7}
+
+.altrowcell, .altrowclass, .innertable .altrowclass{background:#e8e8de; padding-left:4px}
+
+.update, .delete{margin-top:10px}
+
+.buttoncell{padding:10px 0px 12px 0px}
+
+.outertable{padding:0px}
+
+.outertable td{background:none}
+
+td.entrylabel{padding:5px; line-height:20px}
+
+.titleclass{color:#000}

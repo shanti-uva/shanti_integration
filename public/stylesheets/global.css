@@ -1,0 +1,38 @@
+/* --- SHANTI at UVa --- global-css */
+/* ---------- @ Applied to all HTML Elements -----------*/
+*{margin:0; padding:0}
+body, html{min-height:101%}
+body{color:#332b1b; background:#332b1b; border-top:4px solid #568ea7}
+body, select, textarea, input{color:#332b1b; font-size:110%; font-family:arial,helvetica,sans-serif}
+body #ie-root, #ie-root select, #ie-root textarea, #ie-root input{font-size:99%; font-family:arial,helvetica,sans-serif}
+textarea{color:#555;  width:485px;  height:130px;  padding:10px 9px;  border:none;  margin-top:-1px;  resize:none}
+input{padding:3px 4px; color:#555; font-size:1em}
+p{margin:0 0 15px; color:#333; line-height:1.44em}
+a, a:visited{color:#a9531e;text-decoration:none}
+a:hover, a:active{text-decoration:underline}
+a { outline:expression(hideFocus=true); outline:0; cursor:pointer; }
+*:focus{outline:none}
+/*table{border-collapse:collapse; margin:5px 0}
+td, th{border-bottom:1px solid #e5e1d6; padding:6px 8px; color:#3c3c3c}
+th{font-weight:normal; text-align:right; width:4.5em; }*/
+/*td{}*/ /* moved to fathom.css */
+ol{margin:15px}
+ol li{margin-left:15px; line-height:1.88em; font-size:1em}
+pre, code{    font-size:14px}
+fieldset{    border:0}
+a.descriptionplus_icon{background:transparent url(../images/btn-plus-lg.gif) no-repeat scroll 2px center; padding:0 0 0 11px; border-bottom:0px; text-decoration:none}
+a.descriptionminus_icon{background:transparent url(../images/btn-minus-lg.gif) no-repeat scroll 2px center; padding:0 0 0 11px; border-bottom:0px; text-decoration:none}
+/* styling for reviews &usage scenarios */
+b.title{font-size:1.3em}
+.by{font-size:1.3em}
+.content_by{font-size:1.3em; font-variant:small-caps}
+.last_updated{font-size:1.2em}
+#descriptions_div h1{font-size:1.15em; line-height:normal}
+#descriptions_div h2{font-size:1.1em; line-height:normal}
+#descriptions_div h3{font-size:1.05em; line-height:normal}
+#descriptions_div h4{font-size:1.0em; line-height:normal}
+#descriptions_div h5{font-size:0.95em; line-height:normal}
+#descriptions_div h6{font-size:0.9em; line-height:normal}
+#descriptions_div em{font-size:0.7em; line-height:normal}
+#descriptions_div p{line-height:normal}
+div.padded{  padding-left:2em}
