@@ -98,7 +98,12 @@
 <% end -%>
 
   <div id="masthead-wrapper">
+  <% if defined?(SHANTI_KMAPS_APP) %>
+	<div id="masthead" class="kmaps-app">
+  <% else %>
 	<div id="masthead">
+  <% end -%>
+	
 		<div id="masthead-utility">
 		<% if defined?(FATHOM_AUTHENTICATION) %>
 		<%# not using   if @login_enabled   since that is used only sin simpler_main for relationbrowser , sessions & users %>
