@@ -8,7 +8,7 @@
 <%  if @current_style == :home -%>
 	  <title><%= site_title(:html=>false) %></title>
 <%  else -%>
-<%    if page_title = '' %>
+<%    if page_title == '' %>
         <title><%= site_title(:html=>false) %></title>
 <%    else -%>
 	    <title><%= site_title(:html=>false) %> - <%= page_title %></title>
