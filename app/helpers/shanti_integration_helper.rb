@@ -5,7 +5,13 @@ module ShantiIntegrationHelper
     #if @current_style == :home
     #  ['global', 'style', 'home', 'thickbox']
     #else
+    
+    if defined?(SHANTI_KMAPS_APP)
+      ['base', 'language_support', 'authenticated_system','tmb','global', 'style', 'thickbox']
+    else  #just shanti
       ['global', 'style', 'thickbox']
+    end
+    
     #end
   end
 
