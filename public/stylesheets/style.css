@@ -16,6 +16,8 @@
 .uva-log-in{ background:url(../images/uva_login.gif) no-repeat right top}
 .logged-in{ background:url(../images/logged_in.png) no-repeat right top}
 
+/*#main-content-wrapper #main{ border-top:3px double #aaa; padding-top:3px;}*/
+
 /* Login */
 #login-wrapper .entry{ width:450px;  float:left}
 #login-wrapper p{color:#ccc; font-size:.92em}
@@ -262,10 +264,12 @@ a#cat4{ display:block; width:30px; height:24px; float:right; background-image:ur
 #nav ul li, #sub-nav ul li{ float:left; font-size:.75em; font-weight:bold}
 #nav ul li a, #nav ul li a:visited, #sub-nav ul li a, #sub-nav ul li a:visited{ float:left; color:#645c4c; display:block;  text-decoration:none;  padding:4px 9px 12px;  margin:1px 4px 0 1px;  border-bottom:none;  height:20px}
 #nav ul li.first a, #sub-nav ul li.first a{ color:#333}
-.news-blog #nav ul li.page-item-400 a, #nav ul li.current_page_item a, #nav ul li.current_page_ancestor a{ color:#efefef; font-size:1em; margin:0 3px 0 0; border:1px solid #e4dcce; border-bottom:none; background:url(../images/bg_nav_wrapper_tabs.png) no-repeat center top; }
+.news-blog #nav ul li.page-item-400 a, #nav ul li.current_page_item a, #nav ul li.current_page_ancestor a{ color:#efefef; font-size:12px; margin:0 3px 0 0;  padding:5px 9px 11px; border:1px solid #e4dcce; border-bottom:none; background:url(../images/bg_nav_wrapper_tabs.png) no-repeat center top; }
+
 /*#ie-root #nav ul li.current_page_item a, #ie-root #nav ul li.current_page_ancestor a{ font-size:.92em; }*/
 #nav ul li a:hover{ background:url(../images/bg_nav_wrapper_tabs.png) no-repeat center bottom; margin:0 3px 0 0; border:1px solid #e7e1d7; border-bottom:none; color:#3e392f; font-size:1em}
 #nav ul li a:active{color:#efefef; background:url(../images/bg_nav_wrapper_tabs.png) no-repeat center top}
+#nav ul li.current_page_item a:hover, #nav ul li.current_page_ancestor a:hover{ font-size:12px; margin:0 3px 0 0;  padding:5px 9px 11px;}
 
 #sub-nav-wrapper{ background:#f7f6f0 url(../images/bg_main_wrapper_tile.png) repeat-x left top; border-bottom:none}
 #sub-nav ul li.current_page_item a{ color:#efefef; font-size:1em; margin:0 3px 0 0; border:1px solid #e4dcce; border-bottom:none; }
@@ -282,3 +286,55 @@ a#cat4{ display:block; width:30px; height:24px; float:right; background-image:ur
 #sidebar ul li.current_page_item ul li a{border-bottom-width:0px}
 
 #sidebar ul li.page-item-872 {padding-bottom:7px; background:url(../images/hr-divider-sidebar.gif) no-repeat 0px 7px}
+
+
+#sub-nav-wrapper #sub-nav{ height:27px; margin:0px; margin-top:4px; text-align:center;  margin-right:auto; margin-left:auto; border-bottom:none; padding-bottom:1px; list-style:none;  font-family:"Trebuchet MS","Lucida Grande",Helvetica,Arial,sans-serif}
+#sub-nav-wrapper #sub-nav li{ float:left; font-size:12px; font-weight:normal; display:inline; }
+#sub-nav-wrapper #sub-nav li a, 
+#sub-nav-wrapper #sub-nav li a:visited{ float:left; font-size:12px; color:#645c4c; display:block;  text-decoration:none;  padding:4px 9px 3px;  margin:4px 2px 0 0px;  border-bottom:none; line-height:18px}
+#sub-nav-wrapper #sub-nav li.first a{ color:#333;}
+#sub-nav-wrapper #sub-nav li.page_item a, 
+#sub-nav-wrapper #sub-nav li.page_item a:visited{ font-size:12px; font-weight:normal; padding:2px 10px 1px; margin:8px 2px 0 0; color:#fff; border:1px solid #fff; background-color:#828378;
+-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;}
+#sub-nav-wrapper #sub-nav li.current_page_item a,
+#sub-nav-wrapper #sub-nav li.current_page_item a:visited{ font-size:12px; font-weight:bold; padding:2px 10px 1px; margin:8px 2px 0 0; color:#415c7e; border:1px solid #aaa; background-color:#fff;
+-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;}
+#sub-nav-wrapper #sub-nav li.page_item a:hover{ font-weight:normal; margin:8px 2px 0 0; padding:2px 10px 1px; color:#fff; border:1px solid #c0c0c0; background-color:#64655d;}
+#sub-nav-wrapper #sub-nav li.page_item a:active{ color:#404040;background-color:#dbdcca; }
+
+#sub-nav-wrapper{ background-color:transparent; margin-right:auto; margin-bottom:0pt; margin-left:auto; overflow-x:hidden; overflow-y:hidden;}
+#sub-nav-wrapper #sub-nav ul{ margin-left:24px; margin-top:-5px;}
+
+
+
+body #secondary-nav span.nav-sort-by{ font-weight:bold; font-size:12px; color:#707070; float:left; position:relative; top:5px; left:5px;}
+/* secondary nav(tab buttons) */
+body #secondary-nav{ padding-left:10px; background:url(../images/bg_secondary_nav_tile.gif) repeat-x left bottom; margin:0px 0 15px; }
+/* breaks TinyMCE#secondary-nav span{padding:6px 18px 0px 0px}*/
+body #secondary-nav ul{ overflow:hidden; list-style:none; padding-top:0px;margin-top:4px;margin-left:60px;}
+body #secondary-nav ul li{ float:left; font-weight:bold; margin-bottom:1px;}
+body #secondary-nav ul li a,
+body #secondary-nav ul li a:visited{ display:block; text-decoration:none; color:#fff; border:3px double #fff;border-bottom-width:0px;padding:3px 16px 2px; margin-right:2px; margin-top:1px;font-size:11px;
+font-weight:normal;letter-spacing:0.12em;font-family:"Lucida Grande","Trebuchet MS",arial,helvetica;background-color:#487287; background-image:none;}
+body #secondary-nav ul li a:hover{ background-color:#2a4f62; background-image:none;}
+body #secondary-nav ul li a:active{ background-color:#487287; background-image:none;}
+
+body #secondary-nav ul li.current_page_item a,
+body #secondary-nav ul li.current_page_item a:visited, 
+body #secondary-nav ul li.current_page_ancestor a,
+body #secondary-nav ul li.current_page_ancestor a:visited,
+body #secondary-nav ul li.selected a, 
+body #secondary-nav ul li.selected a:visited{ font-size:12px; font-weight:bold; border:1px solid #aaa; border-bottom-color:#fff; background-image:none; background-color:#fff;background:#fff url(../images/bg-secondary-tabs.gif) repeat-x 0px -66px; padding-bottom:3px; padding-top:3px; margin-top:0;color:#415c7e;letter-spacing:0.06em;
+-moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -moz-border-radius-topright: 5px; /* Firefox */ -webkit-border-top-right-radius: 5px; /* Safari */ border-top-right-radius: 5px; /* CSS3 (Opera?) */}
+
+
+body #ie-root #secondary-nav ul{ margin-top:3px;}
+#ie-root #sub-nav-wrapper #sub-nav li.page_item a, 
+#ie-root #sub-nav-wrapper #sub-nav li.page_item a:visited{ font-size:1.12em; padding:1px 10px 1px;}
+body #ie-root #secondary-nav ul li.current_page_item a,
+body #ie-root #secondary-nav ul li.current_page_item a:visited, 
+body #ie-root #secondary-nav ul li.current_page_ancestor a,
+body #ie-root #secondary-nav ul li.current_page_ancestor a:visited,
+body #ie-root #secondary-nav ul li.selected a, 
+body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-bottom:4px; padding-top:2px;}
+
