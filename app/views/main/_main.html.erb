@@ -133,11 +133,13 @@
 	  </div><!--END NAV-->
     </div><!--END NAV-WRAPPER-->
 
+  <% if APPLICATION_DOMAIN == 'shanti.virginia.edu' and @current_nav_item != :home -%>
     <div id="sub-nav-wrapper">
 	  <div id="sub-nav">
 		<%= render :partial => 'layouts/secondary_nav' %>
 	  </div><!--END SECONDARY-NAV-->
     </div><!--END SECONDARY-NAV-WRAPPER-->
+  <% end -%>
 <% end -%>
 
 <% end -%><!--END UNLESS params[:inline]  So the rest of the header and navigation will not show for floating window -->

@@ -185,7 +185,7 @@ div.wp-btn p a:hover span {background:url(../images/btnBL.gif) left bottom no-re
 #comment, #author, #email, #url{ background:#f2f2f2; border:none; padding:3px}
 #search #s{color:#645c4c; width:105px; height:23px; padding:2px 0px 0px 10px; border:none; border-bottom-width:0px; /*margin-right:-10px;*/ margin-top:0px; margin-bottom:0px; color:#505050; background-color:transparent; }
 /*#ie-root #search #s{padding-top:0px; margin:0}*/
-#search{width:135px; height:21px; float:right; font-size:.8em; margin-top:-2px; border:none; border-bottom-width:0px; border-bottom-width:none; padding-top:1px; padding-right:0px; background:#fff url(http://shanti.virginia.edu/images/searchfield.png) no-repeat right bottom}
+#search{width:135px; height:21px; float:right; font-size:.8em; margin-top:-2px; border:none; border-bottom-width:0px; border-bottom-width:none; padding-top:1px; padding-right:0px; background:#fff url(../images/searchfield.png) no-repeat right bottom}
 /*#ie-root #search{line-height:0.5em; font-size:9px; margin-top:-17px}*/
 #search #submit{width:10px; height:10px; margin-top:0px; /*background-color:#fff;*/ position:relative; top:-22px; left:115px; }
 #login input, #login label{ width:100px; margin-bottom:4px}
