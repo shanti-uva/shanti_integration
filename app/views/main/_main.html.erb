@@ -104,23 +104,7 @@
 	<div id="masthead">
   <% end -%>
 	
-		<div id="masthead-utility">
-		<% if defined?(FATHOM_AUTHENTICATION) %>
-		<%# not using   if @login_enabled   since that is used only sin simpler_main for relationbrowser , sessions & users %>
-		<% if logged_in? -%> 
-			<a href="#login" id="login-toggle" class="logged-in">Log in</a>
-		<% else -%>   
-            <% if defined?(SSL_ENABLED) %>
-				<%=   render :partial => 'layouts/ssl_login' %>
-			<% end %>
-			<%= link_to 'Log in', login_page_path, :id => 'login-toggle', :class => 'log-in', :title => 'login link for non-uva people'%>
-		<% end -%>
-		<% end -%> <!-- if defined?(FATHOM_AUTHENTICATION)-->
-		<% if defined?(SOLR_URL) %>
-		<%=  render :partial => 'layouts/search' %>
-			<p><%= link_to 'Advanced Search', search_path, :id => 'advanced-search', :title => 'Advanced Search'%></p>
-		<% end -%>
-		</div>
+		
 		<h1 id="logo"><a href="/"><%= banner_title %></a></h1>
 		<div id="firstTimeTab"><a href="/signup_openid">first time visitor information</a></div>
 	</div><!--END MASTHEAD-->
@@ -131,6 +115,25 @@
 	  <div id="nav">
 		<%= render :partial => 'layouts/main_nav' %>
 	  </div><!--END NAV-->
+	  <% if APPLICATION_DOMAIN == 'shanti.virginia.edu' and @current_nav_item != :home -%>
+		<div id="masthead-utility">
+		<% if defined?(FATHOM_AUTHENTICATION) %>
+		<%# not using   if @login_enabled   since that is used only sin simpler_main for relationbrowser , sessions & users %>
+		<% if logged_in? -%> 
+			<a href="#login" id="login-toggle" class="logged-in">Log in</a>
+		<% else -%>   
+          <% if defined?(SSL_ENABLED) %>
+				<%=   render :partial => 'layouts/ssl_login' %>
+			<% end %>
+			<%= link_to 'Log in', login_page_path, :id => 'login-toggle', :class => 'log-in', :title => 'login link for non-uva people'%>
+		<% end -%>
+		<% end -%> <!-- if defined?(FATHOM_AUTHENTICATION)-->
+		<% if defined?(SOLR_URL) %>
+		<%=  render :partial => 'layouts/search' %>
+			<p><%= link_to 'Advanced Search', search_path, :id => 'advanced-search', :title => 'Advanced Search'%></p>
+		<% end -%>
+		</div> <!-- END MASTHEAD-UTILITY -->
+	  <% end -%>	
     </div><!--END NAV-WRAPPER-->
 
   <% if APPLICATION_DOMAIN == 'shanti.virginia.edu' and @current_nav_item != :home -%>
