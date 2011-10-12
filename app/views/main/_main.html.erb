@@ -113,9 +113,11 @@
 				<!--<a href="#login" id="login-toggle" class="logged-in">Log in</a>-->
 			<% else -%>   
 	          <% if defined?(SSL_ENABLED) %>
-					<%=   render :partial => 'layouts/ssl_login' %>
-				<% end %>
+				<%=   render :partial => 'layouts/ssl_login' %>
+			  <% end %>
+			  <p id="uvaprofiles-login">
 				<%= link_to 'Log in', login_page_path, :id => 'login-toggle', :class => 'log-in', :title => 'login link for non-uva people'%>
+			  </p>	
 			<% end -%>
 			<% end -%> <!-- if defined?(FATHOM_AUTHENTICATION)-->
 			<% if defined?(SOLR_URL) %>
@@ -126,7 +128,9 @@
 		  <% end -%>
 		
 		<h1 id="logo"><a href="/"><%= banner_title %></a></h1>
-		<div id="firstTimeTab"><a href="/signup_openid">first time visitor information</a></div>
+		<% if APPLICATION_DOMAIN == 'shanti.virginia.edu' and @current_nav_item != :home -%>
+			<div id="firstTimeTab"><a href="/signup_openid">first time visitor information</a></div>
+		<% end -%>
 	</div><!--END MASTHEAD-->
   </div><!--END MASTHEAD-WRAPPER-->
 
