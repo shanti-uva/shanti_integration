@@ -352,6 +352,9 @@ body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-b
 #home #sidebar div.wp-btn p a { font:0.88em arial,verdana,sans-serif;}
 
 #home #sidebar #intro:first-child p{ padding:10px 4px 0px;}
+#home #sidebar #intro:first-child p a,
+#home #sidebar #intro:first-child p a:visited{ font-size:12px;}
+
 #home #sidebar #intro div.wp-btn p{ border-top:none;padding-top:0px;}
 #home #sidebar #intro.module{ padding-bottom:5px;}
 
