@@ -341,7 +341,7 @@ body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-b
 /* --- SHANTI Home Page ----------------
 ----------------------------------------- */
 
-#home #sidebar{ padding: 12px 20px 25px !important;}
+#home #sidebar{ padding: 12px 15px 25px !important;}
 #home #sidebar p{ padding-left: 1px !important;}
 
 #home #sidebar h2 { font-size:1.75em; }
