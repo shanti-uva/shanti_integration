@@ -338,3 +338,23 @@ body #ie-root #secondary-nav ul li.current_page_ancestor a:visited,
 body #ie-root #secondary-nav ul li.selected a, 
 body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-bottom:4px; padding-top:2px;}
 
+/* --- SHANTI Home Page ----------------
+----------------------------------------- */
+
+#home #sidebar{ padding: 12px 20px 25px !important;}
+#home #sidebar p{ padding-left: 1px !important;}
+
+#home #sidebar h2 { font-size:1.75em; }
+#home #sidebar h3 { font-size:1.12em; }
+
+/* sidebar blue buttons */
+#home #sidebar div.wp-btn {margin-top:15px; margin-left:15px;}
+#home #sidebar div.wp-btn p a { font:0.88em arial,verdana,sans-serif;}
+
+#home #sidebar #intro:first-child p{ padding:10px 4px 0px;}
+#home #sidebar #intro div.wp-btn p{ border-top:none;padding-top:0px;}
+#home #sidebar #intro.module{ padding-bottom:5px;}
+
+#home #sidebar #intro div.wp-btn{ margin-top:15px; margin-left:15px;}
+#home #sidebar #intro div.wp-btn p a,
+#home #sidebar #intro div.wp-btn p a:visited{ font: 0.88em arial,verdana,sans-serif; }
