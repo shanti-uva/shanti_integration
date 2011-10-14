@@ -171,6 +171,7 @@ div.wp-btn p a { background:url(../images/btnBR.gif) right top no-repeat; font: 
 div.wp-btn p a span { height:30px; line-height:30px; background:url(../images/btnBL.gif) left top no-repeat;color:#fff; position:relative; display:block; white-space:nowrap; padding:0 0 0 20px;}
 div.wp-btn p a:hover {background:url(../images/btnBR.gif) right bottom no-repeat; text-decoration:none;}
 div.wp-btn p a:hover span {background:url(../images/btnBL.gif) left bottom no-repeat; }
+#main-content div.wp-btn{ position:relative; left:-60px; top:15px;}
 
 /* style exceptions for all IE browsers */
 #ie-root div.wp-btn { width:auto; overflow:visible; }
