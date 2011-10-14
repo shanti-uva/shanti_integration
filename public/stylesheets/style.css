@@ -363,3 +363,82 @@ body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-b
 #home #sidebar #intro div.wp-btn p a,
 #home #sidebar #intro div.wp-btn p a:visited{ font: 0.88em arial,verdana,sans-serif; }
 #home #homepage_carousel p{ line-height:1.32em;}
+
+/******** UVa Profiles logging ********/
+
+
+.log-in {
+background-color: transparent;
+background-image: none;
+}
+
+#sub-nav #profiles-logging-wrap{ display:inline; float:right; width:280px;}
+
+
+#sub-nav #profiles-logging-wrap ul li a,
+#sub-nav #profiles-logging-wrap ul li a:visited {
+float: right;
+font-size: 12px;
+color: #645c4c;
+display: inline;
+padding: 1px 0px 1px 9px;
+margin: 0;
+border: none;
+line-height: 18px;
+height:14px;
+}
+
+#sub-nav #profiles-logging-wrap ul li a:hover{ text-decoration:underline;}
+
+#sub-nav #profiles-logging-wrap ul li:first-child a{ padding: 1px 9px; border-right:1px solid #666;}
+
+
+
+
+
+
+/******** SEARCH on navbar ********/
+
+#uvaprofiles-search-wrap { display:inline; width:200px; float:right;}
+#uvaprofiles-search-wrap p { font-size:0px; display:inline; position:absolute; }
+
+#uvaprofiles-search-wrap{ }
+
+#uvaprofiles-search-wrap form { float:right; width:150px; background-image:none; background-color:transparent;}
+
+#uvaprofiles-search-wrap form input#s{
+cursor: pointer;
+line-height: 1em;
+height: 16px;
+padding: 1px 18px 1px 6px;
+color: #aaa;
+width: 120px;
+font-size: 13px;
+position: relative; left:-24px; 
+background-color:#fff;
+margin-top:4px;
+float:right;
+}
+
+#uvaprofiles-search-wrap form input#s [type="text"] {
+height: ;
+}
+ 
+#uvaprofiles-search-wrap form #submit {
+position: relative;
+top: -18px;
+left:130px;
+border: none;
+text-indent: -9999px;
+overflow: hidden;
+background: transparent url("https://shanti.virginia.edu/wordpress/wp-content/themes/cat4/images/confluence/btn-searcharrow.gif") no-repeat 0px 0px;
+width: 18px;
+height: 18px;
+cursor: pointer;
+padding:0 5px 0 0;
+}
+
+
+#uvaprofiles-search-wrap  form #submit:hover {
+background: transparent url("https://shanti.virginia.edu/wordpress/wp-content/themes/cat4/images/confluence/btn-searcharrow.gif") no-repeat 0px -19px;
+}

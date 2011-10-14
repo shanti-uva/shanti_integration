@@ -136,9 +136,7 @@
 		
 		<div id="profiles-logging-wrap">
 		  <ul id="profiles-logging-nav">
-			<li><a id="uvaprofiles-register" href="/signup_openid">Non-UVa Registration</a></li>
-		
-		
+			
 		<% if defined?(FATHOM_AUTHENTICATION) %>
 			<% if logged_in? -%>
 				<%= render :partial => '/common/login' %> 
@@ -152,6 +150,7 @@
 			<% end -%>
 		<% end -%> <!-- if defined?(FATHOM_AUTHENTICATION)-->
 		
+			<li><a id="uvaprofiles-register" href="/signup_openid">Non-UVa Registration</a></li>
 			</ul><!-- profiles-logging-nav -->
 		</div> <!-- profiles-logging-wrap -->
 		
