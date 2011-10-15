@@ -33,35 +33,57 @@
 
 <%  if @login_enabled -%>
 <%    unless flash[:notice] and logged_in? -%>
-      <script type="text/javascript">
-      	// hide login and extra content
-    	document.writeln('<style type="text/css"><!-- #login-wrapper, #overflow {display: none;} --></style>');	
-  	  </script>
+     
 <%    end -%>
 <% 	end -%>
 <script type="text/javascript">
 jQuery(document).ready(function() {
-	$(function(){
+	jQuery(function($) {
 
-	   var config = {
-	        sensitivity: 3,
-	        interval: 200,
-	        over: doOpen,
-	        timeout: 200,
-	        out: doClose
-	   };
+	          $("ul.login-menu li").hover(function(){
 
-	   function doOpen() {
-	       $(this).addClass("hover");
-	       $('ul:first',this).css('visibility', 'visible');
-	   }
 
-	   function doClose() {
-	       $(this).removeClass("hover");
-	       $('ul:first',this).css('visibility', 'hidden');
-	   }
+	              $(this).addClass("hover");
+	              $('ul:first',this).css('visibility', 'visible');
 
-	   $("ul.login-menu li").hoverIntent(config);
+	          }, function(){
+
+
+	              $(this).removeClass("hover");
+	              $('ul:first',this).css('visibility', 'hidden');
+
+	          });
+
+	       });
+	});
+	
+	jQuery(function($) {
+		$("#uvaprofiles-search-wrap input#s").attr("value", "Search UVa Profiles");
+
+		var searchBoxes = $(".text");
+		var searchBox = $("input#s");
+	        var searchButton = $("input#submit");
+		var searchBoxDefault = "Search Knowledge Base";
+
+	        searchButton.hover(function () {
+	              $(this).addClass("hover-on");},
+	         function () {
+	              $(this).removeClass("hover-on");
+	        });
+
+		searchBoxes.focus(function(e){
+			$(this).addClass("active");
+		});
+		searchBoxes.blur(function(e){
+			$(this).removeClass("active");
+		});
+
+		searchBox.focus(function(){
+			if($(this).attr("value") == searchBoxDefault) $(this).attr("value", "");
+		});
+		searchBox.blur(function(){
+			if($(this).attr("value") == "") $(this).attr("value", searchBoxDefault);
+		});
 
 	});
 });

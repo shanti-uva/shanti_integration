@@ -365,48 +365,80 @@ body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-b
 #home #homepage_carousel p{ line-height:1.32em;}
 
 /******** UVa Profiles logging ********/
-.log-in{ background-color: transparent; background-image: none;}
-
-#sub-nav #profiles-login-wrap{ display:inline; float:right; width:280px;}
-#sub-nav #profiles-login-wrap ul.login-menu li a,
-#sub-nav #profiles-login-wrap ul.login-menu li a:visited{ float:right;font-size:12px; color:#645c4c; display:inline; padding:1px 0px 1px 9px; margin:0; border:none; line-height:18px; height:14px;}
-#sub-nav #profiles-login-wrap ul.login-menu li a:hover{ text-decoration:underline;}
-#sub-nav #profiles-login-wrap ul.login-menu li#login-first a,
-#sub-nav #profiles-login-wrap ul.login-menu li#login-first a:visited{ padding: 1px 9px; border-right:1px solid #666;}
-
-/*---------- login dropdown ------------------*/
-#sub-nav #profiles-login-wrap ul.login-menu{ position:relative; list-style:none;}
-#sub-nav #profiles-login-wrap ul.login-menu li{ font-weight:bold; zoom: 1; background-color: transparent; }
-
-#sub-nav #profiles-login-wrap ul.login-menu a:hover{ color: #333; }
-#sub-nav #profiles-login-wrap ul.login-menu a:active{ color: #645c4c; }
-#sub-nav #profiles-login-wrap ul.login-menu li a,
-#sub-nav #profiles-login-wrap ul.login-menu li a:visited{ text-decoration:none;}
-
-/*#sub-nav #profiles-login-wrap ul.login-menu li#login-first a{ border-right:1px solid #333; } */
-
-#sub-nav #profiles-login-wrap ul.login-menu li:hover{ background-color:#F3D673; color:#645c4c; position:relative; }
-#sub-nav #profiles-login-wrap ul.login-menu li.hover a{ color:#645c4c; }
-
-#sub-nav #profiles-login-wrap ul.login-menu ul{ width: 100px; visibility:hidden; position:absolute; top:100%; left:0; }
-#sub-nav #profiles-login-wrap ul.login-menu ul li{ font-weight:normal; background-color:#f6f6f6; color:#645c4c; border-bottom:1px solid #ccc; float:none; }
 
 
-#ie-root #sub-nav #profiles-login-wrap ul.login-menu ul li{ display:inline; width:100%; }
-								  
-/* IE 6 & 7 Needs Inline Block */
-#ie-root-lte7 #sub-nav #profiles-login-wrap ul.login-menu ul li a{ border-right:none; width:100%; display:inline-block; } 
+.log-in {
+background-color: transparent;
+background-image: none;
+}
 
- 
+#sub-nav #profiles-logging-wrap{ display:inline; float:right; width:280px;}
+
+
+#sub-nav #profiles-logging-wrap ul li a,
+#sub-nav #profiles-logging-wrap ul li a:visited {
+float: right;
+font-size: 12px;
+color: #645c4c;
+display: inline;
+padding: 1px 0px 1px 9px;
+margin: 0;
+border: none;
+line-height: 18px;
+height:14px;
+}
+
+#sub-nav #profiles-logging-wrap ul li a:hover{ text-decoration:underline;}
+
+#sub-nav #profiles-logging-wrap ul li:first-child a{ padding: 1px 9px; border-right:1px solid #666;}
+
+
+
+
 
 
 /******** SEARCH on navbar ********/
+
 #uvaprofiles-search-wrap { display:inline; width:200px; float:right;}
 #uvaprofiles-search-wrap p { font-size:0px; display:inline; position:absolute; }
 
-#uvaprofiles-search-wrap form{ float:right; width:150px; background-image:none; background-color:transparent;}
-#uvaprofiles-search-wrap form input#s{ cursor:pointer; line-height:1em; height:16px; padding:1px 18px 1px 6px; color:#aaa; width:120px; font-size:13px; position:relative; left:-24px; background-color:#fff; margin-top:4px; float:right;}
-#uvaprofiles-search-wrap form input#s [type="text"] { }
+#uvaprofiles-search-wrap{ }
+
+#uvaprofiles-search-wrap form { float:right; width:150px; background-image:none; background-color:transparent;}
+
+#uvaprofiles-search-wrap form input#s{
+cursor: pointer;
+line-height: 1em;
+height: 16px;
+padding: 1px 18px 1px 6px;
+color: #aaa;
+width: 120px;
+font-size: 13px;
+position: relative; left:-24px; 
+background-color:#fff;
+margin-top:4px;
+float:right;
+}
+
+#uvaprofiles-search-wrap form input#s [type="text"] {
+height: ;
+}
  
-#uvaprofiles-search-wrap form #submit{ position:relative; top:-18px; left:130px; border:none; text-indent:-9999px; overflow:hidden; background: transparent url("https://shanti.virginia.edu/wordpress/wp-content/themes/cat4/images/confluence/btn-searcharrow.gif") no-repeat 0px 0px; width:18px; height:18px; cursor:pointer; padding:0 5px 0 0;}
-#uvaprofiles-search-wrap form #submit:hover{ background: transparent url("https://shanti.virginia.edu/wordpress/wp-content/themes/cat4/images/confluence/btn-searcharrow.gif") no-repeat 0px -19px; }
+#uvaprofiles-search-wrap form #submit {
+position: relative;
+top: -18px;
+left:130px;
+border: none;
+text-indent: -9999px;
+overflow: hidden;
+background: transparent url("https://shanti.virginia.edu/wordpress/wp-content/themes/cat4/images/confluence/btn-searcharrow.gif") no-repeat 0px 0px;
+width: 18px;
+height: 18px;
+cursor: pointer;
+padding:0 5px 0 0;
+}
+
+
+#uvaprofiles-search-wrap  form #submit:hover {
+background: transparent url("https://shanti.virginia.edu/wordpress/wp-content/themes/cat4/images/confluence/btn-searcharrow.gif") no-repeat 0px -19px;
+}
