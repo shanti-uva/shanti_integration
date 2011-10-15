@@ -36,58 +36,7 @@
      
 <%    end -%>
 <% 	end -%>
-<script type="text/javascript">
-jQuery(document).ready(function() {
-	jQuery(function($) {
 
-	          $("ul.login-menu li").hover(function(){
-
-
-	              $(this).addClass("hover");
-	              $('ul:first',this).css('visibility', 'visible');
-
-	          }, function(){
-
-
-	              $(this).removeClass("hover");
-	              $('ul:first',this).css('visibility', 'hidden');
-
-	          });
-
-	       });
-	});
-	
-	jQuery(function($) {
-		$("#uvaprofiles-search-wrap input#s").attr("value", "Search UVa Profiles");
-
-		var searchBoxes = $(".text");
-		var searchBox = $("input#s");
-	        var searchButton = $("input#submit");
-		var searchBoxDefault = "Search Knowledge Base";
-
-	        searchButton.hover(function () {
-	              $(this).addClass("hover-on");},
-	         function () {
-	              $(this).removeClass("hover-on");
-	        });
-
-		searchBoxes.focus(function(e){
-			$(this).addClass("active");
-		});
-		searchBoxes.blur(function(e){
-			$(this).removeClass("active");
-		});
-
-		searchBox.focus(function(){
-			if($(this).attr("value") == searchBoxDefault) $(this).attr("value", "");
-		});
-		searchBox.blur(function(){
-			if($(this).attr("value") == "") $(this).attr("value", searchBoxDefault);
-		});
-
-	});
-});
-</script>
 
 <%  if @current_style == :home -%>
     <script type="text/javascript">
@@ -187,28 +136,24 @@ jQuery(document).ready(function() {
 		<%= render :partial => 'layouts/secondary_nav' %>
 		
 		<div id="profiles-logging-wrap">
-		  <ul class="login-menu">
-			
-		<% if defined?(FATHOM_AUTHENTICATION) %>
-			<% if logged_in? -%>
-				<%= render :partial => '/common/login' %> 
-				<!--<a href="#login" id="login-toggle" class="logged-in">Log in</a>-->
-			<% else -%>
-			  <li id="login-first"><a href="#">LOGIN: UVa Profiles</a>  
-				<ul class="login-submenu">
-          		<%# if defined?(SSL_ENABLED) %>
-					<%=   render :partial => 'layouts/ssl_login' %>
-		  		<%# end %>
-				<li><%= link_to 'Non-UVa Login', login_page_path, :id => 'uvaprofiles-login', :class => 'log-in', :title => 'login link for non-uva people'%>
-		    	</li>
-				</ul>
-			  </li>
-			<% end -%>
-		<% end -%> <!-- if defined?(FATHOM_AUTHENTICATION)-->
-		
-			<li><a id="uvaprofiles-register" href="/signup_openid">Non-UVa Registration</a></li>
-			</ul><!-- profiles-logging-nav -->
-		</div> <!-- profiles-logging-wrap -->
+				  <ul id="profiles-logging-nav">
+
+				<% if defined?(FATHOM_AUTHENTICATION) %>
+					<% if logged_in? -%>
+						<%= render :partial => '/common/login' %> 
+						<!--<a href="#login" id="login-toggle" class="logged-in">Log in</a>-->
+					<% else -%>   
+		          		<% if defined?(SSL_ENABLED) %>
+							<%=   render :partial => 'layouts/ssl_login' %>
+				  		<% end %>
+						<li><%= link_to 'LOGIN: UVa Profiles', login_page_path, :id => 'uvaprofiles-login', :class => 'log-in', :title => 'login link for non-uva people'%>
+				    	</li>	
+					<% end -%>
+				<% end -%> <!-- if defined?(FATHOM_AUTHENTICATION)-->
+
+					<li><a id="uvaprofiles-register" href="/signup_openid">Non-UVa Registration</a></li>
+					</ul><!-- profiles-logging-nav -->
+				</div> <!-- profiles-logging-wrap -->
 		
 	  </div><!--END SECONDARY-NAV-->
     </div><!--END SECONDARY-NAV-WRAPPER-->
