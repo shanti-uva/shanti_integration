@@ -28,7 +28,7 @@
 
 <%= render :partial => 'common/admin_grid_includes' if @uses_admin_grid %>
 <%  if defined?(SOLR_URL) %>
-<%=   render :partial => 'layouts/search_script' %>
+<%#=   render :partial => 'layouts/search_script' %>
 <%  end -%>
 
 <%  if @login_enabled -%>
@@ -39,6 +39,25 @@
   	  </script>
 <%    end -%>
 <% 	end -%>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	$(function(){
+
+	   $("ul.login-menu li").hover(function(){
+
+	       $(this).addClass("hover");
+	       $('ul:first',this).css('visibility', 'visible');
+
+	   }, function(){
+
+	       $(this).removeClass("hover");
+	       $('ul:first',this).css('visibility', 'hidden');
+
+	   });
+
+	});
+});
+</script>
 
 <%  if @current_style == :home -%>
     <script type="text/javascript">
@@ -50,6 +69,7 @@
 	});
     </script>
 <%  end -%>
+
 
 <%  if @current_style == :details -%>
       <script type="text/javascript" src="/javascripts/profile-detail-view.js"></script>
@@ -82,6 +102,8 @@
 
   <!--[if ie]><div id="ie-root"><![endif]--><!--[if ie 8]><div id="ie-root-8"><![endif]--><!--[if ie 7]><div id="ie-root-7"><![endif]--><!--[if gte ie 7]><div id="ie-root-gte7"><![endif]--><!--[if lte ie 7]><div id="ie-root-lte7"><![endif]--><!--[if lte ie 6]><div id="ie-root-lte6"><![endif]--> 
 
+
+	
 <% unless params[:inline] %> <!-- when it's a normal window and will not display for floating window -->
 
 <!--<%# if @login_enabled -%>  <%# unless params[:inline] %>
@@ -135,18 +157,22 @@
 		<%= render :partial => 'layouts/secondary_nav' %>
 		
 		<div id="profiles-logging-wrap">
-		  <ul id="profiles-logging-nav">
+		  <ul class="login-menu">
 			
 		<% if defined?(FATHOM_AUTHENTICATION) %>
 			<% if logged_in? -%>
 				<%= render :partial => '/common/login' %> 
 				<!--<a href="#login" id="login-toggle" class="logged-in">Log in</a>-->
-			<% else -%>   
-          		<% if defined?(SSL_ENABLED) %>
+			<% else -%>
+			  <li id="login-first"><a href="#">LOGIN: UVa Profiles</a>  
+				<ul class="login-submenu">
+          		<%# if defined?(SSL_ENABLED) %>
 					<%=   render :partial => 'layouts/ssl_login' %>
-		  		<% end %>
-				<li><%= link_to 'LOGIN: UVa Profiles', login_page_path, :id => 'uvaprofiles-login', :class => 'log-in', :title => 'login link for non-uva people'%>
-		    	</li>	
+		  		<%# end %>
+				<li><%= link_to 'Non-UVa Login', login_page_path, :id => 'uvaprofiles-login', :class => 'log-in', :title => 'login link for non-uva people'%>
+		    	</li>
+				</ul>
+			  </li>
 			<% end -%>
 		<% end -%> <!-- if defined?(FATHOM_AUTHENTICATION)-->
 		
