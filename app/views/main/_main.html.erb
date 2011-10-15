@@ -62,6 +62,23 @@
 <%  if @relation_browser_enabled -%>  <%# if @current_style == :home -%>
 <%=   render :partial => '/layouts/rb_header' %>
 <% 	end -%>
+<script type="text/javascript">
+$(function(){
+
+    $("ul.login-menu li").hover(function(){
+    
+        $(this).addClass("hover");
+        $('ul:first',this).css('visibility', 'visible');
+    
+    }, function(){
+    
+        $(this).removeClass("hover");
+        $('ul:first',this).css('visibility', 'hidden');
+    
+    });
+});	
+</script>
+
 
     <link href="/images/favicon.ico" rel="icon" />
     <link href="/images/favicon.ico" rel="shortcut icon" />
