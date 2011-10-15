@@ -43,17 +43,25 @@
 jQuery(document).ready(function() {
 	$(function(){
 
-	   $("ul.login-menu li").hover(function(){
+	   var config = {
+	        sensitivity: 3,
+	        interval: 200,
+	        over: doOpen,
+	        timeout: 200,
+	        out: doClose
+	   };
 
+	   function doOpen() {
 	       $(this).addClass("hover");
 	       $('ul:first',this).css('visibility', 'visible');
+	   }
 
-	   }, function(){
-
+	   function doClose() {
 	       $(this).removeClass("hover");
 	       $('ul:first',this).css('visibility', 'hidden');
+	   }
 
-	   });
+	   $("ul.login-menu li").hoverIntent(config);
 
 	});
 });
