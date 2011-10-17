@@ -183,9 +183,13 @@ $(function(){
 		<div id="profiles-login-wrap">
 		  <ul class="login-menu">
 		    <li class="login-last"><a id="uvaprofiles-register" href="/signup_openid">Non-UVa Registration</a></li>
-			<li class="submenu"><a href="#">LOGIN: UVa Profiles</a>
-			  <ul>	
-				<% if defined?(FATHOM_AUTHENTICATION) %>
+			<% if logged_in? -%>
+			  <li><%= link_to 'Logout', logout_path %></li>
+			<% else %>
+			  <li class="submenu"><a href="#">LOGIN: UVa Profiles</a>
+			    <ul>	
+				  <% if defined?(FATHOM_AUTHENTICATION) %>
+				  <li class="login-submenu-last"><%= link_to 'Non-UVa Login', login_page_path, :id => 'uvaprofiles-login', :class => 'log-in', :title => 'login link for non-uva people'%>
 					<%# if logged_in? -%>
 						<%#= render :partial => '/common/login' %> 
 						<!--<a href="#login" id="login-toggle" class="logged-in">Log in</a>-->
@@ -196,9 +200,10 @@ $(function(){
 						<li class="login-submenu-last"><%= link_to 'Non-UVa Login', login_page_path, :id => 'uvaprofiles-login', :class => 'log-in', :title => 'login link for non-uva people'%>
 				    	</li>	
 					<%# end -%>
-				<% end -%> <!-- if defined?(FATHOM_AUTHENTICATION)-->
-			  </ul>	
-			</li>
+				  <% end -%> <!-- if defined?(FATHOM_AUTHENTICATION)-->
+			    </ul>	
+			  </li>
+			<% end -%>
 			<% if logged_in? -%>
 				<%= render :partial => '/common/login' %>
 			<% end -%>
