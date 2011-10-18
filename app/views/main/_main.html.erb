@@ -184,7 +184,7 @@ $(function(){
 		  <ul class="login-menu">
 		    <li class="login-last"><a id="uvaprofiles-register" href="/signup_openid">Non-UVa Registration</a></li>
 			<% if logged_in? -%>
-			  <li><%= link_to 'Logout', logout_path %></li>
+			  <li class="submenu-logout"><%= link_to 'Logout', logout_path %></li>
 			<% else %>
 			  <li class="submenu"><a href="#">LOGIN: UVa Profiles</a>
 			    <ul>	
@@ -194,9 +194,9 @@ $(function(){
 						<%#= render :partial => '/common/login' %> 
 						
 					<%# else -%>   
-		          		<%# if defined?(SSL_ENABLED) %>
+		          		<% if defined?(SSL_ENABLED) %>
 							<%=   render :partial => 'layouts/ssl_login' %>
-				  		<%# end %>
+				  		<% end %>
 						<li class="login-submenu-last"><%= link_to 'Non-UVa Login', login_page_path, :id => 'uvaprofiles-login', :class => 'log-in', :title => 'login link for non-uva people'%>
 				    	</li>	
 					<%# end -%>
