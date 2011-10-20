@@ -352,7 +352,6 @@ body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-b
 #home #sidebar h3 { font-size:1.12em; }
 
 /* sidebar blue buttons */
-#home #sidebar div.wp-btn {margin-top:15px; margin-left:15px;}
 #home #sidebar div.wp-btn p a { font:0.88em arial,verdana,sans-serif;}
 
 #home #sidebar #intro:first-child p{ padding:10px 4px 0px;}
@@ -360,14 +359,13 @@ body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-b
 #home #sidebar #intro:first-child p a:visited{ font-size:12px;}
 
 #home #sidebar #intro div.wp-btn p{ border-top:none;padding-top:0px;}
-#home #sidebar #intro.module{ padding-bottom:5px;}
+#home #sidebar #intro.module{ padding-bottom:0px;}
 
-#home #sidebar #intro div.wp-btn{ margin-top:15px; margin-left:15px;}
+#home #sidebar #intro div.wp-btn{ margin-top:10px; margin-left:15px;}
 #home #sidebar #intro div.wp-btn p a,
 #home #sidebar #intro div.wp-btn p a:visited{ font: 0.88em arial,verdana,sans-serif; }
 #home #homepage_carousel p{ line-height:1.32em;}
-#home #ie-root-7 #sidebar div.wp-btn { width:auto; overflow:visible; margin-top:15px; }
-
+#home #ie-root-7 #sidebar div.wp-btn { width:auto; overflow:visible; margin-bottom:10px;}
 
 
 
@@ -397,8 +395,8 @@ body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-b
 
 
 /*---------- login dropdown ------------------*/
-#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul{ width:80px; visibility:hidden; position:absolute; top:100%; left:3px; z-index:999; list-style:none;}
-#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li{ background-image:none; float:left; margin:0px; line-height:16px; height:18px; padding:0px; font-weight:bold; background-color: #828378; color:#fff !important; border:1px solid #f7f7f7; border-top:none;}
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul{ width:105px; visibility:hidden; position:absolute; top:100%; left:3px; z-index:999; list-style:none;}
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li{ width:105px; background-image:none; float:left; margin:0px; line-height:16px; height:18px; padding:0px; font-weight:bold; background-color: #828378; color:#fff !important; border:1px solid #f7f7f7; border-top:none;}
 
 #sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li:hover{ border:1px solid #aaa; border-top:none; background-color: #fff; background-image:none;}
 #sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li.hover a{ color:#415c7e; background-image:none; }
@@ -408,13 +406,13 @@ body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-b
 }
 
 #sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li a,
-#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li a:visited{ color:#fff; background-image:none; width:80px; display:inline-block; float:none; height:16px; line-height:18px; padding:0px 12px 3px; margin:0; text-decoration:none; border-right:none; }
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li a:visited{ color:#fff; background-image:none; display:inline-block; float:none; height:16px; line-height:18px; padding:0px 12px 3px; margin:0; text-decoration:none; border-right:none; }
 #sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li a:hover{ color:#415c7e; background-image:none; text-decoration:none; padding:0px 12px 3px;}
 
 /*---- IE fixes ----*/
-#ie-root #sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li{ display:inline; width:80px; }							  
+#ie-root #sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li{ display:inline; width:100%; }							  
 /* IE 6 & 7 Needs Inline Block */
-#ie-root-lte7 #sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li a{ border:none; width:80px; display:inline-block; }
+#ie-root-lte7 #sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li a{ border:none; width:100%; display:inline-block; }
 
 
 
@@ -431,7 +429,7 @@ body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-b
 #nav{ display:inline-block; overflow:visible;}
 
 #uvaprofiles-search-wrap { display:inline; width:200px; float:right; position:relative; overflow:visible;}
-#uvaprofiles-search-wrap p { font-size:10px; display:inline; position:absolute; top:-20px; right:50px; z-index:9999;}
+#uvaprofiles-search-wrap p { font-size:10px; display:inline; position:absolute; top:-19px; right:50px; z-index:9999;}
 
 #uvaprofiles-search-wrap p a,
 #uvaprofiles-search-wrap p a:visited{ color:#aaa; }
@@ -443,7 +441,7 @@ body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-b
 cursor: pointer;
 line-height: 16px;
 height: 16px;
-padding: 1px 18px 1px 6px;
+padding: 2px 18px 1px 6px;
 color: #aaa;
 width: 120px;
 font-size: 13px;
@@ -482,7 +480,7 @@ background: transparent url("https://shanti.virginia.edu/wordpress/wp-content/th
 
 #ie-root #uvaprofiles-search-wrap p { 
 position:absolute; 
-top:-21px;
+top:-20px;
 }
 
 
