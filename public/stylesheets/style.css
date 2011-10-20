@@ -1,7 +1,7 @@
 /* --- SHANTI at the University of Virginia --- style-css */
 /* --- Page Structure -------------------*/
-/*#main{padding-bottom:50px}*/ /* moved to fathom.css */
-#login, #masthead, #main, #nav, #main-content, #footer{ width:918px; margin:0 auto; overflow:hidden} /* masthead, main moved to fathom.css */
+#main{padding-top:10px}
+#login, #masthead, #main, #nav, #main-content, #footer{ width:918px; margin:0 auto; } /* masthead, main moved to fathom.css */
 #featured{ width:678px; margin:0 auto; overflow:hidden}
 #login-wrapper{ overflow:hidden; position:relative; z-index:3; display:none; border-bottom:6px solid #568ea7; background:#0e212b !important; }
 #login{ color:#bfe5f8; padding:10px 0; font-size:.7em}
@@ -11,12 +11,13 @@
 #forgot-password #login-error{ color:red}
 #login-toggle{ float:left; text-indent:-9999px; height:17px; width:100px; margin:0px; display:block; }
 #login-toggle.logged-in{ float:left; text-indent:-9999px; height:17px; width:160px; margin:0 0 0 5px; display:block; }
-#uva-login-toggle{ float:left; text-indent:-9999px; height:17px; width:84px; margin:0 5px 0 0; display:block;  }
+
 .log-in{ background:url(../images/other_login.gif) no-repeat right top}
 .uva-log-in{ background:url(../images/uva_login.gif) no-repeat right top}
 .logged-in{ background:url(../images/logged_in.png) no-repeat right top}
 
-/*#main-content-wrapper #main{ border-top:3px double #aaa; padding-top:3px;}*/
+#main-content-wrapper{ margin:0 auto;}
+#main{ margin:0 auto; width:920px;}
 
 /* Login */
 #login-wrapper .entry{ width:450px;  float:left}
@@ -39,7 +40,7 @@
 /*#ie-root #firstTimeTab{position:relative; left:760px; top:40px}*/
 #firstTimeTab a{ margin:39px 0 0 0;  padding:0; height:21px; width:160px; display:block; font-size:0.1em; border-width:0pt; text-indent:-9000px; background:url(../images/tab-first-time.png) no-repeat 0px -22px}
 #firstTimeTab a:hover{background:url(../images/tab-first-time.png) no-repeat left top}
-#main-content-wrapper{ padding:20px 0 190px;  border-bottom:3px solid #332b1b; background:#f7f6f0 url(../images/bg_main_wrapper_tile.png) repeat-x left top;  color:#332b1b;  font-size:.75em;  min-height:100%; height:auto !important; height:100%; /* this forces the footer down on pages without much content */}
+#main-content-wrapper{ padding:20px 0 190px;  border-bottom:3px solid #332b1b; background:#f7f6f0 url(../images/bg_main_wrapper_tile.png) repeat-x left top;  color:#332b1b;  font-size:13px;  min-height:100%; height:auto !important; height:100%; /* this forces the footer down on pages without much content */}
 #interior #main-content-wrapper, .news-blog #main-content-wrapper{ padding:7px 0 160px 0} /* moved to fathom.css, meved back here*/
 
 
@@ -184,11 +185,7 @@ div.wp-btn p a:hover span {background:url(../images/btnBL.gif) left bottom no-re
 #sidebar p#mc-sidebar-reg{font-style:italic; padding-left:5px; padding-bottom:0px; margin-top:15px; margin-bottom:-12px; font-size:1.32em; color:#707070}
 #sidebar #mc_signup_container form input.button{width:90px}
 #comment, #author, #email, #url{ background:#f2f2f2; border:none; padding:3px}
-#search #s{color:#645c4c; width:105px; height:23px; padding:2px 0px 0px 10px; border:none; border-bottom-width:0px; /*margin-right:-10px;*/ margin-top:0px; margin-bottom:0px; color:#505050; background-color:transparent; }
-/*#ie-root #search #s{padding-top:0px; margin:0}*/
-#search{width:135px; height:21px; float:right; font-size:.8em; margin-top:-2px; border:none; border-bottom-width:0px; border-bottom-width:none; padding-top:1px; padding-right:0px; background:#fff url(../images/searchfield.png) no-repeat right bottom}
-/*#ie-root #search{line-height:0.5em; font-size:9px; margin-top:-17px}*/
-#search #submit{width:10px; height:10px; margin-top:0px; /*background-color:#fff;*/ position:relative; top:-22px; left:115px; }
+
 #login input, #login label{ width:100px; margin-bottom:4px}
 #login input{ color:#bfe5f8; padding:0px 12px 2px 8px; border:none; background:#265b7a; font-size:1.12em}
 #login-page table input, #login-page table label{ width:150px; margin-bottom:4px}
@@ -260,7 +257,8 @@ a#cat4{ display:block; width:30px; height:24px; float:right; background-image:ur
 
 /* --- Global Navigation ----------------
 ----------------------------------------- */
-#nav-wrapper{ background:url(../images/bg_nav_wrapper.png) repeat-x left bottom;  border-top:2px solid #ccc;  border-bottom:none}
+#nav-wrapper{ text-align:center; background:url(../images/bg_nav_wrapper.png) repeat-x left bottom; margin: 0 auto; border-top:2px solid #ccc;  border-bottom:none; }
+#nav{ width:920px; margin:0 auto;}
 #nav ul, #sub-nav ul{ list-style:none;  margin-top:3px;  margin-left:12px; font-family:"Trebuchet MS","Lucida Grande",Helvetica,Arial,sans-serif}
 #nav ul li, #sub-nav ul li{ float:left; font-size:.75em; font-weight:bold}
 #nav ul li a, #nav ul li a:visited, #sub-nav ul li a, #sub-nav ul li a:visited{ float:left; color:#645c4c; display:block;  text-decoration:none;  padding:4px 9px 12px;  margin:1px 4px 0 1px;  border-bottom:none;  height:20px}
@@ -272,9 +270,9 @@ a#cat4{ display:block; width:30px; height:24px; float:right; background-image:ur
 #nav ul li a:active{color:#efefef; background:url(../images/bg_nav_wrapper_tabs.png) no-repeat center top}
 #nav ul li.current_page_item a:hover, #nav ul li.current_page_ancestor a:hover{ font-size:12px; margin:0 3px 0 0;  padding:5px 9px 11px;}
 
-#sub-nav-wrapper{ background:#f7f6f0 url(../images/bg_main_wrapper_tile.png) repeat-x left top; border-bottom:none}
+#sub-nav-wrapper{ background:#f7f6f0 url(../images/bg_main_wrapper_tile.png) repeat-x left top; border-bottom:none; }
 #sub-nav ul li.current_page_item a{ color:#efefef; font-size:1em; margin:0 3px 0 0; border:1px solid #e4dcce; border-bottom:none; }
-#sub-nav ul li a:hover{ margin:0 3px 0 0; border:1px solid #e7e1d7; border-bottom:none; color:#3e392f; font-size:1em}
+#sub-nav ul li a:hover{ border-color: #e7e1d7; border-bottom:none; color:#3e392f;}
 #sub-nav ul li a:active{color:#efefef;}
 
 #sidebar ul{margin:0px}
@@ -289,7 +287,7 @@ a#cat4{ display:block; width:30px; height:24px; float:right; background-image:ur
 #sidebar ul li.page-item-872 {padding-bottom:7px; background:url(../images/hr-divider-sidebar.gif) no-repeat 0px 7px}
 
 
-#sub-nav-wrapper #sub-nav{ height:27px; margin:0px; margin-top:4px; text-align:center;  margin-right:auto; margin-left:auto; border-bottom:none; padding-bottom:1px; list-style:none;  font-family:"Trebuchet MS","Lucida Grande",Helvetica,Arial,sans-serif}
+#sub-nav-wrapper #sub-nav{ overflow:visible; width:920px; position:relative; margin:0 auto; text-align:center; border-bottom:none; list-style:none; font-family:"Trebuchet MS","Lucida Grande",Helvetica,Arial,sans-serif}
 #sub-nav-wrapper #sub-nav li{ float:left; font-size:12px; font-weight:normal; display:inline; }
 #sub-nav-wrapper #sub-nav li a, 
 #sub-nav-wrapper #sub-nav li a:visited{ float:left; font-size:12px; color:#645c4c; display:block;  text-decoration:none;  padding:4px 9px 3px;  margin:4px 2px 0 0px;  border-bottom:none; line-height:18px}
@@ -303,8 +301,8 @@ a#cat4{ display:block; width:30px; height:24px; float:right; background-image:ur
 #sub-nav-wrapper #sub-nav li.page_item a:hover{ font-weight:normal; margin:8px 2px 0 0; padding:2px 10px 1px; color:#fff; border:1px solid #c0c0c0; background-color:#64655d;}
 #sub-nav-wrapper #sub-nav li.page_item a:active{ color:#404040;background-color:#dbdcca; }
 
-#sub-nav-wrapper{ background-color:transparent; margin-right:auto; margin-bottom:0pt; margin-left:auto; overflow-x:hidden; overflow-y:hidden;}
-#sub-nav-wrapper #sub-nav ul{ margin-left:24px; margin-top:-5px;}
+#sub-nav-wrapper{ height:30px; background-color:transparent; margin:0 auto; }
+#sub-nav-wrapper #sub-nav ul{ margin:0 0 0 15px; }
 
 
 
@@ -339,6 +337,11 @@ body #ie-root #secondary-nav ul li.current_page_ancestor a:visited,
 body #ie-root #secondary-nav ul li.selected a, 
 body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-bottom:4px; padding-top:2px;}
 
+
+
+
+
+
 /* --- SHANTI Home Page ----------------
 ----------------------------------------- */
 
@@ -363,34 +366,60 @@ body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-b
 #home #sidebar #intro div.wp-btn p a,
 #home #sidebar #intro div.wp-btn p a:visited{ font: 0.88em arial,verdana,sans-serif; }
 #home #homepage_carousel p{ line-height:1.32em;}
+#home #ie-root-7 #sidebar div.wp-btn { width:auto; overflow:visible; margin-top:15px; }
+
+
+
 
 /******** UVa Profiles logging ********/
 
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul li.log-in{ background-color:transparent; background-image:none;}
 
-.log-in {
-background-color: transparent;
-background-image: none;
+#sub-nav-wrapper #sub-nav #profiles-login-wrap{ position:absolute; top:-5px; right:10px; z-index:9999; width:400px;}
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu{ padding:0px; margin:0px; float:right; position:relative; list-style:none;}
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li{ float:right; font-weight:bold; zoom:1; background-color:transparent; line-height:14px; height:14px; padding:3px 0px;}
+
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li a,
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li a:visited{ float:none; font-size:11px; color:#483d25; display:block; padding:3px 9px; border-right:1px solid #666; margin:0; line-height:10px; height:10px; text-decoration:none;}
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li a:hover{ text-decoration:underline; color:#483d25;}
+
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.login-last a,
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.login-last a:visited{ border-right:none; padding:3px 9px; padding-right:0px;}
+
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li:hover{ background-color:transparent; background-image:none; color:#645c4c; position:relative; }
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.hover a{ color:#645c4c; }
+
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu a{background: transparent url(../images/login.png) no-repeat 0 0px; padding:3px 9px; padding-left:20px; }
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu a:hover{ text-decoration:none; background: transparent url(../images/login.png) no-repeat 0 0px; padding:3px 9px; padding-left:20px;}
+
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu-logout a{background: transparent url(../images/logout.png) no-repeat 0 0px; padding:3px 9px; padding-left:20px; }
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu-logout a:hover{ text-decoration:none; background: transparent url(../images/logout.png) no-repeat 0 0px; padding:3px 9px; padding-left:20px;}
+
+
+/*---------- login dropdown ------------------*/
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul{ width:80px; visibility:hidden; position:absolute; top:100%; left:3px; z-index:999; list-style:none;}
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li{ background-image:none; float:left; margin:0px; line-height:16px; height:18px; padding:0px; font-weight:bold; background-color: #828378; color:#fff !important; border:1px solid #f7f7f7; border-top:none;}
+
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li:hover{ border:1px solid #aaa; border-top:none; background-color: #fff; background-image:none;}
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li.hover a{ color:#415c7e; background-image:none; }
+
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li.login-submenu-last{ border-top:none;
+-moz-border-radius: 0px 0px 5px 5px; -webkit-border-radius:5px; -webkit-border-bottom-left-radius:5px;  -webkit-border-bottom-right-radius:5px;  border-radius:0px 0px 5px 5px;
 }
 
-#sub-nav #profiles-logging-wrap{ display:inline; float:right; width:280px;}
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li a,
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li a:visited{ color:#fff; background-image:none; width:80px; display:inline-block; float:none; height:16px; line-height:18px; padding:0px 12px 3px; margin:0; text-decoration:none; border-right:none; }
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li a:hover{ color:#415c7e; background-image:none; text-decoration:none; padding:0px 12px 3px;}
+
+/*---- IE fixes ----*/
+#ie-root #sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li{ display:inline; width:80px; }							  
+/* IE 6 & 7 Needs Inline Block */
+#ie-root-lte7 #sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu ul li a{ border:none; width:80px; display:inline-block; }
 
 
-#sub-nav #profiles-logging-wrap ul li a,
-#sub-nav #profiles-logging-wrap ul li a:visited {
-float: right;
-font-size: 12px;
-color: #645c4c;
-display: inline;
-padding: 1px 0px 1px 9px;
-margin: 0;
-border: none;
-line-height: 18px;
-height:14px;
-}
 
-#sub-nav #profiles-logging-wrap ul li a:hover{ text-decoration:underline;}
 
-#sub-nav #profiles-logging-wrap ul li:first-child a{ padding: 1px 9px; border-right:1px solid #666;}
+
 
 
 
@@ -399,35 +428,42 @@ height:14px;
 
 /******** SEARCH on navbar ********/
 
-#uvaprofiles-search-wrap { display:inline; width:200px; float:right;}
-#uvaprofiles-search-wrap p { font-size:0px; display:inline; position:absolute; }
+#nav{ display:inline-block; overflow:visible;}
 
-#uvaprofiles-search-wrap{ }
+#uvaprofiles-search-wrap { display:inline; width:200px; float:right; position:relative; overflow:visible;}
+#uvaprofiles-search-wrap p { font-size:10px; display:inline; position:absolute; top:-20px; right:50px; z-index:9999;}
 
-#uvaprofiles-search-wrap form { float:right; width:150px; background-image:none; background-color:transparent;}
+#uvaprofiles-search-wrap p a,
+#uvaprofiles-search-wrap p a:visited{ color:#aaa; }
+#uvaprofiles-search-wrap p a:hover{ color:#ccc; text-decoration:none;}
+
+#uvaprofiles-search-wrap form { margin-right:10px; float:right; height:18px; width:150px; background-image:none; background-color:transparent;}
 
 #uvaprofiles-search-wrap form input#s{
 cursor: pointer;
-line-height: 1em;
+line-height: 16px;
 height: 16px;
 padding: 1px 18px 1px 6px;
 color: #aaa;
 width: 120px;
 font-size: 13px;
-position: relative; left:-24px; 
+position: relative; 
+left:-24px; 
+top:0px;
 background-color:#fff;
-margin-top:4px;
-float:right;
+margin:1px 0 0 0px;
+border-width:1px;
 }
 
-#uvaprofiles-search-wrap form input#s [type="text"] {
-height: ;
+/*----- safari fix -----*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+#uvaprofiles-search-wrap form input#s{ padding: 2px 18px 0px 6px;}
 }
  
 #uvaprofiles-search-wrap form #submit {
 position: relative;
-top: -18px;
-left:130px;
+top: -19px;
+left:67px;
 border: none;
 text-indent: -9999px;
 overflow: hidden;
@@ -442,3 +478,13 @@ padding:0 5px 0 0;
 #uvaprofiles-search-wrap  form #submit:hover {
 background: transparent url("https://shanti.virginia.edu/wordpress/wp-content/themes/cat4/images/confluence/btn-searcharrow.gif") no-repeat 0px -19px;
 }
+
+
+#ie-root #uvaprofiles-search-wrap p { 
+position:absolute; 
+top:-21px;
+}
+
+
+
+
