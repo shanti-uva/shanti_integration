@@ -164,7 +164,7 @@ $(function(){
 	    <% if APPLICATION_DOMAIN == 'shanti.virginia.edu' and @current_nav_item != :home -%>
 		  <div id="uvaprofiles-search-wrap">
 			<% if defined?(SOLR_URL) %>
-				<p><%= link_to 'Advanced Search', search_path, :id => 'advanced-search', :title => 'Advanced Search'%></p>
+				<p><%#= link_to 'Advanced Search', search_path, :id => 'advanced-search', :title => 'Advanced Search'%></p>
 				<%=  render :partial => 'layouts/search' %>
 		  	<% end -%>
 		  </div>
