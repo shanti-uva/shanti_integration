@@ -29,7 +29,10 @@ module ShantiIntegrationHelper
     #    ['jquery','jquery-ui','jrails','category_selector','application','thickbox-compressed','jquery-plugins','encodemailto']
     #  end
     #end
-    [:defaults] #since using jrails will load (jquery, jquery-ui, jrails)
+    
+    #rails3 change
+    #[:defaults] #since using jrails will load (jquery, jquery-ui, jrails)
+      ['jquery','jquery-ui', 'rails']  
   end  
    
   def stylesheets
@@ -37,7 +40,7 @@ module ShantiIntegrationHelper
   end
   
   def javascripts
-    return javascript_include_tag(*javascript_files)
+    return javascript_include_tag(*javascript_files) + csrf_meta_tag
   end 
   
 end

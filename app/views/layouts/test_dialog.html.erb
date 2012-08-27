@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="description" content="SHANTI at the University of Virginia - Sciences, Humanities and Arts Network of Technological Initiatives: SHANTI promotes innovation in the humanities, social sciences and arts at the University of Virginia through supporting the application of advanced technologies in research, teaching, publication and engagement across the entire community." />
+
+	<meta name="keywords" content="SHANTI at the University of Virginia - Sciences, Humanities and Arts Network of Technological Initiatives" />
+<%= javascripts %>
+<%= stylesheets %>
+	<script type="text/javascript" src="/javascripts/jquery.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery-ui.js"></script>
+
+  <link href="/stylesheets/jquery-ui.css?1342105517" media="screen" rel="stylesheet" type="text/css">
+
+	
+  </head>
+
+	<% if @current_style == :gallery -%>
+	  <body id="interior" class="gallery" >
+	<% elsif @current_style == :details -%>
+	  <body id="interior" class="details" >
+	<% elsif @current_style == :showview -%>
+	  <body id="interior" class="details" >	
+	<% else -%>
+	  <body id="home">
+	<% end -%>
+	
+	
+	<!-- MAIN-WRAPPER -->
+	<% if @relation_browser_enabled -%>
+		<div id="flash-wrapper">	
+			<%= yield %>
+		</div><!--END FLASH-WRAPPER-->
+	<% else -%>
+		<div id="main-content-wrapper">
+		  <% if !defined?(FATHOM_AUTHENTICATION) %>
+			<div id="main">
+			 <%= login_status_links -%>
+			  <div id="div_flash-notice"><p style="color: green"><%= flash[:notice] %></p></div>
+		  <% end -%>
+		  <%= yield %>
+		  <% if !defined?(FATHOM_AUTHENTICATION) %>  
+		    </div> <!-- end main -->
+		  <% end -%>
+		</div><!--END MAIN-WRAPPER-->
+	<% end -%>	
+	
+	
+  </body>
+</html>
