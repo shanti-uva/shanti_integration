@@ -64,7 +64,7 @@
 		<% if logged_in? -%>
 			<a href="#login" id="login-toggle" class="logged-in">Log in</a>
 		<% else -%>   
-            <% if SSL_ENABLED %><%= link_to 'Log in', shibboleth_url, :id => 'uva-login-toggle', :class => 'uva-log-in', :title =>'login link for uva people' %><% end %>
+            <% if SSL_ENABLED %><%= link_to 'Log in', shibboleth2_url, :id => 'uva-login-toggle', :class => 'uva-log-in', :title =>'login link for uva people' %><% end %>
 			<%= link_to 'Log in', login_page_path, :id => 'login-toggle', :class => 'log-in', :title => 'login link for non-uva people'%>
 		<% end -%>
 		<%= render :partial => 'layouts/search' %>
