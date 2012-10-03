@@ -1,8 +1,20 @@
 ShantiIntegration
 =================
 
-Introduction goes here.
+Provides the look and feel for a shanti application.
 
+Installation
+============
+
+Please include the following lines in your application.css file:
+*= require global
+*= require style
+*= require thickbox
+
+Please include the following lines in your application.js file:
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui
 
 Example
 =======

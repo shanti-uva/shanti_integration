@@ -2,18 +2,10 @@
 module ShantiIntegrationHelper
   
   def stylesheet_files
-    ['global', 'style', 'thickbox']
+    ['application']
   end
 
   def javascript_files
-    [:defaults, 'jquery-ui']
-  end  
-   
-  def stylesheets
-    return stylesheet_link_tag(*stylesheet_files)
-  end
-  
-  def javascripts
-    return javascript_include_tag(*javascript_files)
-  end
+    ['application']
+  end   
 end

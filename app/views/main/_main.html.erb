@@ -16,15 +16,10 @@
 <%  end -%>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-<%= stylesheets %>
-<%= javascripts %>
+<%= stylesheet_link_tag(*stylesheet_files) %>
+<%= javascript_include_tag(*javascript_files) %>
+<%= csrf_meta_tags %>
 <% @nav_enabled = true %>
-
-<link rel="stylesheet" href="/stylesheets/print.css" type="text/css" media="print" />
-<link rel="stylesheet" href="/stylesheets/category_selector.css" type="text/css" media="print" />
-
-<%#= include_tiny_mce_if_needed %>
 
 <%= render :partial => 'common/admin_grid_includes' if @uses_admin_grid %>
 <%  if defined?(SOLR_URL) %>
