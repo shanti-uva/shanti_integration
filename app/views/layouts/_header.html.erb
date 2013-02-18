@@ -37,11 +37,10 @@
 	</script>
 
 <%= render :partial => '/layouts/rb_header' %>
-
-    <link href="/images/favicon.ico" rel="icon" />
-    <link href="/images/favicon.ico" rel="shortcut icon" />
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-
+<%  favicon_path = image_path('shanti_integration/favicon.ico') %>
+    <link href="<%= favicon_path %>" rel="icon" />
+    <link href="<%= favicon_path %>" rel="shortcut icon" />
+    <link rel="shortcut icon" href="<%= favicon_path %>" type="image/x-icon" />
 </head>
 
 <body id="home">

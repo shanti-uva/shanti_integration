@@ -6,14 +6,9 @@
 	<meta name="keywords" content="SHANTI at the University of Virginia - Sciences, Humanities and Arts Network of Technological Initiatives" />
 <%= javascripts %>
 <%= stylesheets %>
-	<script type="text/javascript" src="/javascripts/jquery.js"></script>
-	<script type="text/javascript" src="/javascripts/jquery-ui.js"></script>
-
-  <link href="/stylesheets/jquery-ui.css?1342105517" media="screen" rel="stylesheet" type="text/css">
-
-	
+<%= javascript_include_tag 'jquery', 'interface_utils/jquery-ui-1.8.24.custom.min' %>
+<%= stylesheet_link_tag 'interface_utils/jquery-ui-1.8.24.custom' %>
   </head>
-
 	<% if @current_style == :gallery -%>
 	  <body id="interior" class="gallery" >
 	<% elsif @current_style == :details -%>

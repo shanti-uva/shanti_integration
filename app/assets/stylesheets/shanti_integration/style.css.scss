@@ -12,9 +12,9 @@
 #login-toggle{ float:left; text-indent:-9999px; height:17px; width:100px; margin:0px; display:block; }
 #login-toggle.logged-in{ float:left; text-indent:-9999px; height:17px; width:160px; margin:0 0 0 5px; display:block; }
 
-.log-in{ background: image-url('other_login.gif') no-repeat right top}
-.uva-log-in{ background: image-url('uva_login.gif') no-repeat right top}
-.logged-in{ background: image-url('logged_in.png') no-repeat right top}
+.log-in{ background: image-url('shanti_integration/other_login.gif') no-repeat right top}
+.uva-log-in{ background: image-url('shanti_integration/uva_login.gif') no-repeat right top}
+.logged-in{ background: image-url('shanti_integration/logged_in.png') no-repeat right top}
 
 #main-content-wrapper{ margin:0 auto;}
 #main{ margin:0 auto; width:920px;}
@@ -28,10 +28,10 @@
 /* the hidden login */
 #login-wrapper .entry{ padding-bottom:8px;  margin-left:5px}
 
-#masthead-wrapper{ background: image-url('bg_masthead_tile.png') repeat-x left top;}
+#masthead-wrapper{ background: image-url('shanti_integration/bg_masthead_tile.png') repeat-x left top;}
 #masthead-utility {float:right; display:inline; width:331px; min-height:21px; height:21px;} /* contains the search and login tabs */
-#masthead{ clear:both; min-height:79px; height:79px; width:920px; background: image-url('banner-shanti.png') no-repeat 10px top; }
-.kmaps-app{ background: image-url('banner-shanti-kmaps.png') no-repeat 10px top !important}
+#masthead{ clear:both; min-height:79px; height:79px; width:920px; background: image-url('shanti_integration/banner-shanti.png') no-repeat 10px top; }
+.kmaps-app{ background: image-url('shanti_integration/banner-shanti-kmaps.png') no-repeat 10px top !important}
 #banner-subtext a{width: 170px; height: 20px; display: block; text-indent: -9999px; font-size: 0.01em; position: relative; float: right; top: 60px; }
 #masthead-utility p{ font-size:.58em; margin:0; padding:0;} /* advanced search text link */
 #masthead-utility p a, #masthead-utility p a:visited{ color:#c0c0c0; margin:0; padding:0; position:relative;left:225px;top:2px; height:12px;}
@@ -39,9 +39,9 @@
 
 #firstTimeTab{ float:right; margin:0;  padding:0;  height:21px; width:160px}
 /*#ie-root #firstTimeTab{position:relative; left:760px; top:40px}*/
-#firstTimeTab a{ margin:39px 0 0 0;  padding:0; height:21px; width:160px; display:block; font-size:0.1em; border-width:0pt; text-indent:-9000px; background: image-url('tab-first-time.png') no-repeat 0px -22px}
-#firstTimeTab a:hover{background: image-url('tab-first-time.png') no-repeat left top}
-#main-content-wrapper{ padding:20px 0 190px;  border-bottom:3px solid #332b1b; background:#f7f6f0 image-url('bg_main_wrapper_tile.png') repeat-x left top;  color:#332b1b;  font-size:13px;  min-height:100%; height:auto !important; height:100%; /* this forces the footer down on pages without much content */}
+#firstTimeTab a{ margin:39px 0 0 0;  padding:0; height:21px; width:160px; display:block; font-size:0.1em; border-width:0pt; text-indent:-9000px; background: image-url('shanti_integration/tab-first-time.png') no-repeat 0px -22px}
+#firstTimeTab a:hover{background: image-url('shanti_integration/tab-first-time.png') no-repeat left top}
+#main-content-wrapper{ padding:20px 0 190px;  border-bottom:3px solid #332b1b; background:#f7f6f0 image-url('shanti_integration/bg_main_wrapper_tile.png') repeat-x left top;  color:#332b1b;  font-size:13px;  min-height:100%; height:auto !important; height:100%; /* this forces the footer down on pages without much content */}
 #interior #main-content-wrapper, .news-blog #main-content-wrapper{ padding:7px 0 160px 0} /* moved to fathom.css, meved back here*/
 
 
@@ -65,7 +65,7 @@ body.details #main-content.narrow div.yui-content p em{ font-size:11px; line-hei
 
 /*#sidebar{ border:3px double #e4dcce; float:left; width:200px; margin-top:5px; margin-left:10px; padding:0 10px 40px 10px;  background:#fff;}*/ /*moved to fathom.css and integrated with #home*/
 
-.news-blog #sidebar div.module, .page-news #sidebar div.module{padding-bottom:6px; margin-bottom:15px; background: image-url('dots.gif') repeat-x left bottom}
+.news-blog #sidebar div.module, .page-news #sidebar div.module{padding-bottom:6px; margin-bottom:15px; background: image-url('shanti_integration/dots.gif') repeat-x left bottom}
 .news-blog #sidebar .module.last, .page-news #sidebar .module.last{background:none}
 
 
@@ -83,7 +83,7 @@ h5 {font-size:.9em; font-weight:normal;}
 h6 {}
 
 h1{ font-size:1.75em;font-family:"Lucida Grande","Trebuchet MS",arial,verdana,sans-serif;}
-h1#logo{height:60px;  width:540px; float:left; display:inline; font-size:0.1em; border-width:0pt; text-indent:-9999px;  margin-top:0;  /* background: image-url('logo.gif') no-repeat right top; margin:11px 20px 0; */}
+h1#logo{height:60px;  width:540px; float:left; display:inline; font-size:0.1em; border-width:0pt; text-indent:-9999px;  margin-top:0;  /* background: image-url('shanti_integration/logo.gif') no-repeat right top; margin:11px 20px 0; */}
 h1#logo a{ display:block;  height:60px;  width:540px; margin-top:10px; font-size:0.1em; border-width:0pt; text-indent:-9999px}
 
 .entry h2 { font-size:1.32em; margin-bottom:4px}
@@ -109,8 +109,8 @@ h3#uri{ font-size:1.06em; font-weight:normal; margin:2px 0 4px 0;}
 /*General*/
 .hidden{ position:absolute; left:-5000px}
 .bullets, .bullets-small{ padding:15px 15px 15px 2px; margin:15px}
-.bullets li{    background: image-url('bullet.gif') left 3px no-repeat; list-style:none; padding-left:14px; margin-bottom:5px; margin-left:35px; line-height:1.88em; font-size:1.12em}
-.bullets-small li{ background: image-url('bullet_small.gif') left 5px no-repeat; list-style:none;  padding-left:11px; margin-bottom:5px}
+.bullets li{    background: image-url('shanti_integration/bullet.gif') left 3px no-repeat; list-style:none; padding-left:14px; margin-bottom:5px; margin-left:35px; line-height:1.88em; font-size:1.12em}
+.bullets-small li{ background: image-url('shanti_integration/bullet_small.gif') left 5px no-repeat; list-style:none;  padding-left:11px; margin-bottom:5px}
 .bullets ul, 
 .bullets-small ul{ padding:5px 2px}
 
@@ -125,7 +125,7 @@ h3#uri{ font-size:1.06em; font-weight:normal; margin:2px 0 4px 0;}
 #main-content .yui-content .professional-profile-list li{ list-style-type:none}
 .message{ background:#efece5; padding:1px 5px; margin:10px 0}
 .message p{ margin:5px 0}
-a.vcard{ background: image-url('icon_vcard.gif') left 3px no-repeat; display:block; margin:10px 0; padding-left:23px}
+a.vcard{ background: image-url('shanti_integration/icon_vcard.gif') left 3px no-repeat; display:block; margin:10px 0; padding-left:23px}
 #overflow p{ margin:0;  padding-bottom:15px}
 #sidebar #main-img{ border:3px solid #d1c9b8}
 #secondary-nav #interests ul li{ float:none}
@@ -169,10 +169,10 @@ p.nocomments {font-size:0.1em; text-indent:-9999px;}
 
 /*blue buttons*/
 div.wp-btn { margin-bottom:10px; margin-top:0px; margin-left:50%; position:relative; left:-60px;}
-div.wp-btn p a { background: image-url('btnBR.gif') right top no-repeat; font: 1.06em arial,verdana,sans-serif; text-decoration:none; border:0; cursor:pointer; padding:0 20px 0 0; text-align:center; float:left;  display:block; width: auto;}
-div.wp-btn p a span { height:30px; line-height:30px; background: image-url('btnBL.gif') left top no-repeat;color:#fff; position:relative; display:block; white-space:nowrap; padding:0 0 0 20px;}
-div.wp-btn p a:hover {background: image-url('btnBR.gif') right bottom no-repeat; text-decoration:none;}
-div.wp-btn p a:hover span {background: image-url('btnBL.gif') left bottom no-repeat; }
+div.wp-btn p a { background: image-url('shanti_integration/btnBR.gif') right top no-repeat; font: 1.06em arial,verdana,sans-serif; text-decoration:none; border:0; cursor:pointer; padding:0 20px 0 0; text-align:center; float:left;  display:block; width: auto;}
+div.wp-btn p a span { height:30px; line-height:30px; background: image-url('shanti_integration/btnBL.gif') left top no-repeat;color:#fff; position:relative; display:block; white-space:nowrap; padding:0 0 0 20px;}
+div.wp-btn p a:hover {background: image-url('shanti_integration/btnBR.gif') right bottom no-repeat; text-decoration:none;}
+div.wp-btn p a:hover span {background: image-url('shanti_integration/btnBL.gif') left bottom no-repeat; }
 #main-content div.wp-btn{ position:relative; left:-60px; top:15px;}
 
 /* style exceptions for all IE browsers */
@@ -194,7 +194,7 @@ div.wp-btn p a:hover span {background: image-url('btnBL.gif') left bottom no-rep
 #login-page input#remember_me{ margin-bottom:0px; width:20px}
 
 #user_submit, #project_submit, #tool_submit, #person_profile_submit, #project_profile_submit, #tool_profile_submit, #post_submit, input.cancel, .button-to input, 
-#background.item input.add-button, #person_submit{ color:#C0E6F8; padding:5px 7px; border-width:3px; border-style:double; border-bottom-color:#A0C6D8; border-right-color:#A0C6D8; border-top-color:#C0E6F8; border-left-color:#C0E6F8; background-color:#6D93A0; background-image: image-url('button-surface.gif');  font-size:0.95em;  cursor:pointer;  font-weight:bold;  margin-left:6px;  margin-right:6px;  min-height:32px}
+#background.item input.add-button, #person_submit{ color:#C0E6F8; padding:5px 7px; border-width:3px; border-style:double; border-bottom-color:#A0C6D8; border-right-color:#A0C6D8; border-top-color:#C0E6F8; border-left-color:#C0E6F8; background-color:#6D93A0; background-image: image-url('shanti_integration/button-surface.gif');  font-size:0.95em;  cursor:pointer;  font-weight:bold;  margin-left:6px;  margin-right:6px;  min-height:32px}
 #user_submit:hover, #project_submit:hover, #tool_submit:hover, #person_profile_submit:hover, #project_profile_submit:hover, #tool_profile_submit:hover, #post_submit:hover, input.cancel:hover, .button-to input:hover, #background.item input.add-button:hover, #person_submit:hover{ background:#265b79}
 
 /* For buttons that cause irreversible, negative effects if unintentionally clicked. */
@@ -235,11 +235,11 @@ div.wp-btn p a:hover span {background: image-url('btnBL.gif') left bottom no-rep
 #footer{ color:#999; padding:20px 0px 30px}
 #footer p{ font-size:.7em; margin:0; color:#999}
 #footer a{ color:#ccc}
-a#performant{ display:block; width:89px; height:24px; float:right; background-image: image-url('performant.png'); text-indent:-9000px; margin-top:4px; margin-right:10px}
-a#cat4{ display:block; width:30px; height:24px; float:right; background-image: image-url('cat4.gif'); text-indent:-9000px; margin-top:4px}
+a#performant{ display:block; width:89px; height:24px; float:right; background-image: image-url('shanti_integration/performant.png'); text-indent:-9000px; margin-top:4px; margin-right:10px}
+a#cat4{ display:block; width:30px; height:24px; float:right; background-image: image-url('shanti_integration/cat4.gif'); text-indent:-9000px; margin-top:4px}
 
 .is_neg#charcount{ color:red; padding-left:110px; font-size:10pt}
-.textarea_wrapper{ background: image-url('richtext.gif'); width:300px; height:160px; padding:8px; margin-left:-3px; margin-bottom:-18px}
+.textarea_wrapper{ background: image-url('shanti_integration/richtext.gif'); width:300px; height:160px; padding:8px; margin-left:-3px; margin-bottom:-18px}
 .textinterests_wrapper{ width:350px}
 .text_help_icon{ font-size:14px;  color:#568EA7; font-size:18px; font-family:'arial black',arial,verdana,sans-serif; position:relative;  left:145px;  text-decoration:underline;  cursor:pointer}
 .text_help_icon:hover{ text-decoration:none}
@@ -258,34 +258,34 @@ a#cat4{ display:block; width:30px; height:24px; float:right; background-image: i
 
 /* --- Global Navigation ----------------
 ----------------------------------------- */
-#nav-wrapper{ text-align:center; background: image-url('bg_nav_wrapper.png') repeat-x left bottom; margin: 0 auto; border-top:2px solid #ccc;  border-bottom:none; }
+#nav-wrapper{ text-align:center; background: image-url('shanti_integration/bg_nav_wrapper.png') repeat-x left bottom; margin: 0 auto; border-top:2px solid #ccc;  border-bottom:none; }
 #nav{ width:920px; margin:0 auto;}
 #nav ul, #sub-nav ul{ list-style:none;  margin-top:3px;  margin-left:12px; font-family:"Trebuchet MS","Lucida Grande",Helvetica,Arial,sans-serif}
 #nav ul li, #sub-nav ul li{ float:left; font-size:.75em; font-weight:bold}
 #nav ul li a, #nav ul li a:visited, #sub-nav ul li a, #sub-nav ul li a:visited{ float:left; color:#645c4c; display:block;  text-decoration:none;  padding:4px 9px 12px;  margin:1px 4px 0 1px;  border-bottom:none;  height:20px}
 #nav ul li.first a, #sub-nav ul li.first a{ color:#333}
-.news-blog #nav ul li.page-item-400 a, #nav ul li.current_page_item a, #nav ul li.current_page_ancestor a{ color:#efefef; font-size:12px; margin:0 3px 0 0;  padding:5px 9px 11px; border:1px solid #e4dcce; border-bottom:none; background: image-url('bg_nav_wrapper_tabs.png') no-repeat center top; }
+.news-blog #nav ul li.page-item-400 a, #nav ul li.current_page_item a, #nav ul li.current_page_ancestor a{ color:#efefef; font-size:12px; margin:0 3px 0 0;  padding:5px 9px 11px; border:1px solid #e4dcce; border-bottom:none; background: image-url('shanti_integration/bg_nav_wrapper_tabs.png') no-repeat center top; }
 
 /*#ie-root #nav ul li.current_page_item a, #ie-root #nav ul li.current_page_ancestor a{ font-size:.92em; }*/
-#nav ul li a:hover{ background: image-url('bg_nav_wrapper_tabs.png') no-repeat center bottom; margin:0 3px 0 0; border:1px solid #e7e1d7; border-bottom:none; color:#3e392f; font-size:1em}
-#nav ul li a:active{color:#efefef; background: image-url('bg_nav_wrapper_tabs.png') no-repeat center top}
+#nav ul li a:hover{ background: image-url('shanti_integration/bg_nav_wrapper_tabs.png') no-repeat center bottom; margin:0 3px 0 0; border:1px solid #e7e1d7; border-bottom:none; color:#3e392f; font-size:1em}
+#nav ul li a:active{color:#efefef; background: image-url('shanti_integration/bg_nav_wrapper_tabs.png') no-repeat center top}
 #nav ul li.current_page_item a:hover, #nav ul li.current_page_ancestor a:hover{ font-size:12px; margin:0 3px 0 0;  padding:5px 9px 11px;}
 
-#sub-nav-wrapper{ background:#f7f6f0 image-url('bg_main_wrapper_tile.png') repeat-x left top; border-bottom:none; }
+#sub-nav-wrapper{ background:#f7f6f0 image-url('shanti_integration/bg_main_wrapper_tile.png') repeat-x left top; border-bottom:none; }
 #sub-nav ul li.current_page_item a{ color:#efefef; font-size:1em; margin:0 3px 0 0; border:1px solid #e4dcce; border-bottom:none; }
 #sub-nav ul li a:hover{ border-color: #e7e1d7; border-bottom:none; color:#3e392f;}
 #sub-nav ul li a:active{color:#efefef;}
 
 #sidebar ul{margin:0px}
-#sidebar ul.bullets li{background: image-url('list-round-o.gif') no-repeat left 6px; font-size:1em; margin-left:0px; padding-left:15px}
+#sidebar ul.bullets li{background: image-url('shanti_integration/list-round-o.gif') no-repeat left 6px; font-size:1em; margin-left:0px; padding-left:15px}
 #sidebar ul.bullets li ul{margin-left:-7px;}
-#sidebar ul.bullets li ul li{background: image-url('list-blue4sq.gif') no-repeat left 8px; padding-left:11px}
+#sidebar ul.bullets li ul li{background: image-url('shanti_integration/list-blue4sq.gif') no-repeat left 8px; padding-left:11px}
 #sidebar ul li a, #sidebar ul li a:visited{color:#094b7a; padding-bottom:0px; padding-left:0px;  padding-right:3px; margin-left:1px; text-decoration:none; font-size:1.06em; line-height:160%; font-family:Arial,Helvetica,sans-serif}
 #sidebar ul li a:hover, #sidebar ul li ul li a:hover{text-decoration:none; border-bottom:1px solid #094b7a}
 #sidebar ul li.current_page_item a, #sidebar ul li.current-cat a{border-bottom:1px solid #094b7a}
 #sidebar ul li.current_page_item ul li a{border-bottom-width:0px}
 
-#sidebar ul li.page-item-872 {padding-bottom:7px; background: image-url('hr-divider-sidebar.gif') no-repeat 0px 7px}
+#sidebar ul li.page-item-872 {padding-bottom:7px; background: image-url('shanti_integration/hr-divider-sidebar.gif') no-repeat 0px 7px}
 
 
 #sub-nav-wrapper #sub-nav{ overflow:visible; width:920px; position:relative; margin:0 auto; text-align:center; border-bottom:none; list-style:none; font-family:"Trebuchet MS","Lucida Grande",Helvetica,Arial,sans-serif}
@@ -309,7 +309,7 @@ a#cat4{ display:block; width:30px; height:24px; float:right; background-image: i
 
 body #secondary-nav span.nav-sort-by{ font-weight:bold; font-size:12px; color:#707070; float:left; position:relative; top:5px; left:5px;}
 /* secondary nav(tab buttons) */
-body #secondary-nav{ padding-left:10px; background: image-url('bg_secondary_nav_tile.gif') repeat-x left bottom; margin:0px 0 15px; }
+body #secondary-nav{ padding-left:10px; background: image-url('shanti_integration/bg_secondary_nav_tile.gif') repeat-x left bottom; margin:0px 0 15px; }
 /* breaks TinyMCE#secondary-nav span{padding:6px 18px 0px 0px}*/
 body #secondary-nav ul{ overflow:hidden; list-style:none; padding-top:0px;margin-top:4px;margin-left:60px;}
 body #secondary-nav ul li{ float:left; font-weight:bold; margin-bottom:1px;}
@@ -324,7 +324,7 @@ body #secondary-nav ul li.current_page_item a:visited,
 body #secondary-nav ul li.current_page_ancestor a,
 body #secondary-nav ul li.current_page_ancestor a:visited,
 body #secondary-nav ul li.selected a, 
-body #secondary-nav ul li.selected a:visited{ font-size:12px; font-weight:bold; border:1px solid #aaa; border-bottom-color:#fff; background-image:none; background-color:#fff;background:#fff image-url('bg-secondary-tabs.gif') repeat-x 0px -66px; padding-bottom:3px; padding-top:3px; margin-top:0;color:#415c7e;letter-spacing:0.06em;
+body #secondary-nav ul li.selected a:visited{ font-size:12px; font-weight:bold; border:1px solid #aaa; border-bottom-color:#fff; background-image:none; background-color:#fff;background:#fff image-url('shanti_integration/bg-secondary-tabs.gif') repeat-x 0px -66px; padding-bottom:3px; padding-top:3px; margin-top:0;color:#415c7e;letter-spacing:0.06em;
 -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -moz-border-radius-topright: 5px; /* Firefox */ -webkit-border-top-right-radius: 5px; /* Safari */ border-top-right-radius: 5px; /* CSS3 (Opera?) */}
 
 
@@ -388,11 +388,11 @@ body #ie-root #secondary-nav ul li.selected a:visited{ font-size:13px; padding-b
 #sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li:hover{ background-color:transparent; background-image:none; color:#645c4c; position:relative; }
 #sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.hover a{ color:#645c4c; }
 
-#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu a{background: transparent image-url('login.png') no-repeat 0 0px; padding:3px 9px; padding-left:20px; }
-#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu a:hover{ text-decoration:none; background: transparent image-url('login.png') no-repeat 0 0px; padding:3px 9px; padding-left:20px;}
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu a{background: transparent image-url('shanti_integration/login.png') no-repeat 0 0px; padding:3px 9px; padding-left:20px; }
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu a:hover{ text-decoration:none; background: transparent image-url('shanti_integration/login.png') no-repeat 0 0px; padding:3px 9px; padding-left:20px;}
 
-#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu-logout a{background: transparent image-url('logout.png') no-repeat 0 0px; padding:3px 9px; padding-left:20px; }
-#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu-logout a:hover{ text-decoration:none; background: transparent image-url('logout.png') no-repeat 0 0px; padding:3px 9px; padding-left:20px;}
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu-logout a{background: transparent image-url('shanti_integration/logout.png') no-repeat 0 0px; padding:3px 9px; padding-left:20px; }
+#sub-nav-wrapper #sub-nav #profiles-login-wrap ul.login-menu li.submenu-logout a:hover{ text-decoration:none; background: transparent image-url('shanti_integration/logout.png') no-repeat 0 0px; padding:3px 9px; padding-left:20px;}
 
 
 /*---------- login dropdown ------------------*/
