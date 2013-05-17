@@ -1,7 +1,7 @@
 /* --- SHANTI at the University of Virginia --- style-css */
 /* --- Page Structure -------------------*/
 #main{padding-top:10px}
-#login, #masthead, #main, #nav, #main-content, #footer{ width:918px; margin:0 auto; } /* masthead, main moved to fathom.css */
+#masthead, #main, #nav, #main-content, #footer{ width:918px; margin:0 auto; } /* masthead, main moved to fathom.css */
 #featured{ width:678px; margin:0 auto; overflow:hidden}
 #login-wrapper{ overflow:hidden; position:relative; z-index:3; display:none; border-bottom:6px solid #568ea7; background:#0e212b !important; }
 #login{ color:#bfe5f8; padding:10px 0; font-size:.7em}

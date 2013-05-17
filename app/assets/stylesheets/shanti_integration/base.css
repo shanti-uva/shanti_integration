@@ -1,3 +1,13 @@
+#login-status {
+font-size:0.7em;
+right:60px;
+top:110px;
+}
+
+#universal_navigation > .ui-tabs-nav {
+  font-size:0.8em;
+}
+
 .normal {
   line-height:1.5em;
 }
@@ -43,23 +53,6 @@ a.collapsable { text-decoration: none }
 
 .selected_branch {
   background-color: #FFDDB5;
-}
-
-#primary{
-	float: right;
-	width: 45%;
-}
-
-#secondary{
-	width: 55%;
-}
-
-#navigation{
-}
-
-#content-main{
-    width: 60%;
-    float: right;
 }
 
 .clear{ clear:both }
