@@ -3,9 +3,9 @@ module InterfaceUtils
     def self.get_url
       Rails.cache.fetch('server/domain') do
         case environment
-        when DEVELOPMENT then 'http://dev.kmaps.virginia.edu'
-        when STAGING     then 'http://staging.kmaps.virginia.edu'
-        when PRODUCTION, LOCAL, OTHER then 'http://kmaps.virginia.edu'
+        when DEVELOPMENT then 'http://dev.thlib.org'
+        when STAGING     then 'http://staging.thlib.org'
+        else                  'http://www.thlib.org'
         end
       end
     end
