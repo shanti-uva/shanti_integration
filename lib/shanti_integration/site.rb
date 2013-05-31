@@ -9,5 +9,9 @@ module InterfaceUtils
         end
       end
     end
+    
+    def self.get_domain
+      'kmaps.virginia.edu'
+    end
   end
 end

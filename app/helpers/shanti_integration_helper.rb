@@ -25,4 +25,21 @@ module ShantiIntegrationHelper
   
   def footer
   end
+  
+  def primary_tabs_list
+    [
+      {
+        :id => :places,
+        :title => "Places",
+        :app => :places,
+        :url => defined?(PlacesIntegration::PlacesResource.get_url) ? PlacesIntegration::PlacesResource.get_url : false
+      },
+      {
+        :id => :topics,
+        :title => Category.human_name(:count => :many).titleize.s,
+        :app => :topics,
+        :url => defined?(SubjectsIntegration::SubjectsResource.get_url) ? SubjectsIntegration::SubjectsResource.get_url : false
+      },
+    ]
+  end
 end
