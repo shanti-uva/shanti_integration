@@ -36,7 +36,7 @@ module ShantiIntegrationHelper
       },
       {
         :id => :topics,
-        :title => Category.human_name(:count => :many).titleize.s,
+        :title => SubjectsIntegration::Feature.human_name(:count => :many).titleize.s,
         :app => :topics,
         :url => defined?(SubjectsIntegration::SubjectsResource.get_url) ? SubjectsIntegration::SubjectsResource.get_url : false
       },
