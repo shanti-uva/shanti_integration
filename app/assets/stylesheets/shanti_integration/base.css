@@ -34,27 +34,6 @@ a.collapsable { text-decoration: none }
   overflow: auto;
 }
 
-.footer {
-  width: 90%;
-  margin: 0 auto;
-  background-color: #717D7D;
-  border: solid 1px black;
-  padding: 5px 40px;
-}
-
-.footer td {
-  color: #000;
-  font-size: 10px;
-}
-
-.footer a { color : white; }
-.footer a:visited { color: #D8BBAE; }
-.footer a:hover { color: #C8BBBE; }
-
-.selected_branch {
-  background-color: #FFDDB5;
-}
-
 .clear{ clear:both }
 
 .fieldWithErrors {
