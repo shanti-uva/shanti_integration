@@ -75,9 +75,7 @@ $(function(){
 	</script>
 <% unless params[:inline] %> <!-- when it's a normal window and will not display for floating window -->
 <div id="login-status">
-<%= login_status %>&nbsp;&nbsp;&nbsp;
-<% # language_option_links
-%>
+<%= login_status %>&nbsp;&nbsp;&nbsp;<%= language_option_links %>
 </div>
   <div id="masthead-wrapper">
   <% if defined?(SHANTI_KMAPS_APP) %>
