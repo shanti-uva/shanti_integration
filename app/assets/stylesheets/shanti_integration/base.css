@@ -1,7 +1,9 @@
 #login-status {
-font-size:0.7em;
-right:60px;
-top:82px;
+  font-size:0.8em;
+  position: relative;
+  float: right;
+  padding: 0 0 0 0;
+  top: 0;
 }
 
 #universal_navigation > .ui-tabs-nav {

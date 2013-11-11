@@ -74,9 +74,6 @@ $(function(){
 		});
 	</script>
 <% unless params[:inline] %> <!-- when it's a normal window and will not display for floating window -->
-<div id="login-status">
-<%= login_status %>&nbsp;&nbsp;&nbsp;<%= language_option_links %>
-</div>
   <div id="masthead-wrapper">
   <% if defined?(SHANTI_KMAPS_APP) %>
 	<div id="masthead" class="kmaps-app">
@@ -86,10 +83,13 @@ $(function(){
   <% else %>
 	<div id="masthead">
   <% end -%>
-		<h1 id="logo"><a href="/"><%= banner_title %></a></h1>
+	  <h1 id="logo"><a href="/"><%= banner_title %></a></h1>
 	</div><!--END MASTHEAD-->
   </div><!--END MASTHEAD-WRAPPER-->
 <% end -%><!--END UNLESS params[:inline]  So the rest of the header and navigation will not show for floating window -->
 <!-- MAIN-WRAPPER -->
 <div id="main-content-wrapper">
   <div id="main">
+    <div id="login-status">
+<%=   language_option_links %>&nbsp;&nbsp;|&nbsp;<%= login_status %>
+    </div>
