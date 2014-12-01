@@ -1,92 +1,77 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="SHANTI at the University of Virginia - Sciences, Humanities and Arts Network of Technological Initiatives: SHANTI promotes innovation in the humanities, social sciences and arts at the University of Virginia through supporting the application of advanced technologies in research, teaching, publication and engagement across the entire community." />
 	<meta name="keywords" content="SHANTI at the University of Virginia - Sciences, Humanities and Arts Network of Technological Initiatives" />
 	<title><%= head_title %></title>
-<%= favicon_link_tag 'shanti_integration/favicon.ico' %>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<%= stylesheet_link_tag(*(stylesheet_files + [:media => 'all'])) %>
-<%= javascript_include_tag(*javascript_files) %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon.ico' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon.ico', rel: 'icon', sizes: '16x16 32x32 64x64' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon-196.png', rel: 'icon', sizes: '196x196', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon-160.png', rel: 'icon', sizes: '160x160', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon-96.png', rel: 'icon', sizes: '96x96', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon-64.png', rel: 'icon', sizes: '64x64', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon-32.png', rel: 'icon', sizes: '32x32', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon-16.png', rel: 'icon', sizes: '16x16', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon-152.png', rel: 'apple-touch-icon', sizes: '152x152', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon-144.png', rel: 'apple-touch-icon', sizes: '144x144', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon-120.png', rel: 'apple-touch-icon', sizes: '120x120', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon-76.png', rel: 'apple-touch-icon', sizes: '76x76', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon-72.png', rel: 'apple-touch-icon', sizes: '72x72', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_integration/favicons/favicon-57.png', rel: 'apple-touch-icon', type: 'image/png' %>
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="<%= image_path 'shanti_integration/favicons/favicon-144.png' %>">
+<meta name="msapplication-config" content="<%= image_path 'shanti_integration/favicons/browserconfig.xml' %>">
+
+<%= stylesheet_link_tag(*(stylesheet_files + [media: 'all', 'data-turbolinks-track' => true])) %>
+<%= javascript_include_tag(*(javascript_files + ['data-turbolinks-track' => true])) %>
 <%= csrf_meta_tags %>
-<%= render :partial => 'common/admin_grid_includes' if @uses_admin_grid %>
-<%  if @current_style == :home -%>
-    <script type="text/javascript">
-	jQuery(document).ready(function() {
-		// initialize carousel
-        jQuery('#homepage_carousel').jcarousel({ scroll: 1, auto: 25 });
-		// load news items
-		loadLatestNews('#news-list','/wordpress/?feed=rss2',5);
-	});
-    </script>
-<%  end -%>
-<%  if @current_style == :details -%>
-      <script type="text/javascript" src="/javascripts/profile-detail-view.js"></script>
-<%=   render :partial => 'common/profile_includes' %>
-<% 	  unless @tiny_mce_editor_disable or !@tiny_mce_editor_disable.nil? -%>
-<%=     render :partial => 'common/editor_includes' %>
-<%    end -%>
-<%  end -%>
-<%  if @relation_browser_enabled -%>  <%# if @current_style == :home -%>
-<%=   render :partial => '/layouts/rb_header' %>
-<% 	end -%>
-<script type="text/javascript">
-$(function(){
-    $("ul.login-menu li").hover(function(){
-        $(this).addClass("hover");
-        $('ul:first',this).css('visibility', 'visible');
-    }, function(){
-        $(this).removeClass("hover");
-        $('ul:first',this).css('visibility', 'hidden');
-    });
-});	
-</script>
 </head>
 <body<%= " class=\"#{body_class}\"" if !body_class.nil? %><%= " id=\"#{body_id}\"" if !body_id.nil? %>>
-  <!--[if ie]><div id="ie-root"><![endif]--><!--[if ie 8]><div id="ie-root-8"><![endif]--><!--[if ie 7]><div id="ie-root-7"><![endif]--><!--[if gte ie 7]><div id="ie-root-gte7"><![endif]--><!--[if lte ie 7]><div id="ie-root-lte7"><![endif]--><!--[if lte ie 6]><div id="ie-root-lte6"><![endif]--> 
-	<script type="text/javascript">
-		jQuery(function($) {
-			$("#uvaprofiles-search-wrap input#s").attr("value", "Search UVa Profiles");
-			var searchBoxes = $(".text");
-			var searchBox = $("input#s");
-		    var searchButton = $("input#submit");
-			var searchBoxDefault = "Search UVa Profiles";
-		    searchButton.hover(function () {
-		      $(this).addClass("hover-on");},
-		      function () {
-		        $(this).removeClass("hover-on");
-		      });
-			searchBoxes.focus(function(e){
-				$(this).addClass("active");
-			});
-			searchBoxes.blur(function(e){
-				$(this).removeClass("active");
-			});
-			searchBox.focus(function(){
-				if($(this).attr("value") == searchBoxDefault) $(this).attr("value", "");
-			});
-			searchBox.blur(function(){
-				if($(this).attr("value") == "") $(this).attr("value", searchBoxDefault);
-			});
-		});
-	</script>
-<% unless params[:inline] %> <!-- when it's a normal window and will not display for floating window -->
-  <div id="masthead-wrapper">
-  <% if defined?(SHANTI_KMAPS_APP) %>
-	<div id="masthead" class="kmaps-app">
-		<div id="banner-subtext">
-		<a href="http://shanti.virginia.edu" title="link to SHANTI">Hosted by SHANTI at UVa</a>
-		</div>
-  <% else %>
-	<div id="masthead">
-  <% end -%>
-	  <h1 id="logo"><a href="/"><%= banner_title %></a></h1>
-	</div><!--END MASTHEAD-->
-  </div><!--END MASTHEAD-WRAPPER-->
-<% end -%><!--END UNLESS params[:inline]  So the rest of the header and navigation will not show for floating window -->
-<!-- MAIN-WRAPPER -->
-<div id="main-content-wrapper">
-  <div id="main">
-    <div id="login-status">
-<%=   language_option_links %>&nbsp;&nbsp;|&nbsp;<%= login_status %>
-    </div>
+  <!--[if lte IE 8]><p class="progressive">It appears you are using an older browser. Please consider a upgrading to a modern version of your browser to best appreciate this website. Thank you -</p><![endif]-->
+  <div class="wrap-all">
+    <span class="sr-only"><a href=".main-content">Skip to main content</a> <a href="#kmaps-search">Skip to search</a></span>
+    <!-- Header Region -->
+    <header class="header-banner">
+      <div class="navbar navbar-default" role="navigation"> 
+	    <nav class="navbar-buttons">
+	      <span class="menu-icon shanti-searchtoggle"><a href="#"><i class='icon shanticon-search'></i></a></span><!-- mobile < 400 : search -->
+	      <span class="menu-icon menu-toggle"><a href="#"><i class="icon shanticon-menu"></i></a></span><!-- desktop > 768 drilldown menu : main-menu -->
+	      <span class="menu-icon menu-maintoggle"><a href="#"><i class="icon shanticon-menu"></i></a></span><!-- mobile < 768 : main-menu -->
+	      <span class="menu-explore menu-exploretoggle"><a href="#"><span>Explore </span>Collections<i class="icon shanticon-directions"></i></a></span><!-- mobile < 768 : collections -->
+	    </nav>
+	    <h1 class="navbar-header">
+	      <a href="/home" class="navbar-brand" title="<%= 'SHANTI - Sciences, Humanities, and Arts Network of Technological Initiatives' %>">
+	      <i class="icon shanticon-logo"></i><em>SHANTI</em>	          	          <span class="site-slogan">Scholarly Collections at the University of Virginia</span>	        </a>
+	    </h1>
+	    <!-- HEADER REGION -->
+	    <nav id="sarvaka-header" class="region navbar-collapse collapse navtop"> <!-- desktop display > 768 -->
+	      <form class="form">
+	        <fieldset>         
+	          <ul class="nav navbar-nav navbar-right">
+                <li id="collexplink" class="explore closed"><a href="#">EXPLORE <i class="icon shanticon-directions"></i></a></li>
+                <li class="dropdown lang highlight" id="block-locale-language">
+<%                current_language = I18n.locale
+                  language_metadata = LANGUAGES[current_language]
+                  current_lang_title = language_metadata.nil? ? current_language.to_s : ts(language_metadata[:title], :locale => current_language) %>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><%= current_lang_title %></span><i class="icon shanticon-arrowselect"></i></a>
+                  <ul class="dropdown-menu">
+<%=                 render 'main/language_list' %>
+                  </ul>
+                </li>
+	          </ul>
+	        </fieldset>  
+	      </form>           
+	    </nav>
+	    <!-- End of HEADER region -->
+      </div>
+      <!-- include shanti-explore-menu if it exists -->
+      <section class="container opencollect collections"><nav class="row" role="navigation"> <div class="col-sm-12 col-md-10 col-md-offset-1"> <h4>EXPLORE COLLECTIONS</h4><div class="shanti-collections">
+<%=     render 'main/collections_list' %>        
+	  </div></div><button class="close"> <i class="icon shanticon-cancel"></i> </button></nav>
+	  </section>
+    </header>

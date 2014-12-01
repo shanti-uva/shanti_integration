@@ -19,13 +19,59 @@ module ShantiIntegrationHelper
     css_files = css_files.nil? ? stylesheet_files : css_files + stylesheet_files
     render :partial => 'main/header', :locals => { :javascript_files => js_files, :stylesheet_files => css_files,
       :body_class => options[:class], :body_id => options[:id],
-      :head_title => options[:title] || "#{controller.controller_name.humanize}: #{controller.action_name.humanize}",
-      :banner_title => options[:banner_title] || 'SHANTI - Sciences, Humanities, and Arts Network of Technological Initiatives' }
+      :head_title => options[:title] || "#{controller.controller_name.humanize}: #{controller.action_name.humanize}" }
   end
   
   def footer
+    render :partial => 'main/footer'
   end
   
+  def collections
+    [
+      {
+        shanticon: 'overview',
+        title: 'Overview',
+        url: InterfaceUtils::Server.get_url
+      },
+      {
+        shanticon: 'subjects',
+        title: defined?(SubjectsIntegration) ? SubjectsIntegration::Feature.human_name(:count => :many).titleize.s : Feature.model_name.human(:count => :many).titleize.s,
+        url: defined?(SubjectsIntegration) ? SubjectsIntegration::SubjectsResource.get_url : root_path
+      },
+      {
+        shanticon: 'places',
+        title: 'Places',
+        url: defined?(PlacesIntegration) ? PlacesIntegration::PlacesResource.get_url : root_path
+      },
+      {
+        shanticon: 'texts',
+        title: 'Texts',
+        url: 'http://essays.drupal-dev.shanti.virginia.edu/'
+      },
+      {
+        shanticon: 'sources',
+        title: 'Sources',
+        url: 'http://csc.opentactics.com/csc-search?field_zotero_collections=All'
+      },
+      {
+        shanticon: 'audio-video',
+        title: 'Audio-Video',
+        url: 'http://mediabase.drupal-dev.shanti.virginia.edu/'
+      },
+      {
+        shanticon: 'photos',
+        title: defined?(MmsIntegration) ? MmsIntegration::Medium.human_name(:count => :many).titleize.s : Medium.model_name.human(:count => :many).titleize.s,
+        url: defined?(MmsIntegration) ? MmsIntegration::MediaManagementResource.get_url : root_path
+      },
+      {
+        shanticon: 'visuals',
+        title: 'Visuals',
+        url: 'http://shiva.drupal-dev.shanti.virginia.edu/'
+      }
+    ]
+  end
+  
+  #TODO: SHOULDN'T BE USED ANYMORE!!!
   def primary_tabs_list
     [
       {

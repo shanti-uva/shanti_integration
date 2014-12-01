@@ -1,0 +1,8 @@
+<% current_language = I18n.locale
+   language_metadata = LANGUAGES[current_language]
+   languages = I18n.available_locales
+   for language in languages
+     language_metadata = LANGUAGES[language]
+     lang_title = language_metadata.nil? ? language.to_s : ts(language_metadata[:title], :locale => language) %>
+     <li class="form-group"><%= label_tag("optionlang_#{language}", radio_button_tag('radios', language, language==current_language, class: 'optionlang') + lang_title, class: 'radio-inline') %></li>
+<% end %>

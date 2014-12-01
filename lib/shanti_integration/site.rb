@@ -3,9 +3,9 @@ module InterfaceUtils
     def self.get_url
       Rails.cache.fetch('server/domain', :expires_in => 1.day) do
         case environment
-        when DEVELOPMENT then 'http://dev.thlib.org'
-        when STAGING     then 'http://staging.thlib.org'
-        else                  'http://www.thlib.org'
+        when DEVELOPMENT then 'http://dev.shanti.virginia.edu'
+        when STAGING     then 'http://staging.shanti.virginia.edu'
+        else                  'http://shanti.virginia.edu'
         end
       end
     end

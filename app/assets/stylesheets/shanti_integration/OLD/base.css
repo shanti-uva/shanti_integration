@@ -38,12 +38,6 @@ a.collapsable { text-decoration: none }
 
 .clear{ clear:both }
 
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
-
 #notice {
   color: green;
 }
@@ -61,20 +55,6 @@ div {
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff;
-  }
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
 }
 
 /* For older rails code: */
@@ -94,7 +74,7 @@ div {
   background-color: #f0f0f0;
 }
 
-#errorExplanation h2 {
+#errorExplanation h2, #error_explanation h2 {
   text-align: left;
   font-weight: bold;
   padding: 5px 5px 5px 15px;
@@ -110,7 +90,7 @@ div {
   padding: 5px;
 }
 
-#errorExplanation ul li {
+#errorExplanation ul li, #error_explanation ul li {
   font-size: 12px;
   list-style: square;
 }
