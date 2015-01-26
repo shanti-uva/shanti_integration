@@ -302,7 +302,6 @@ select:focus option:checked:hover { background: #008a96;color: #fff;}
 
 .breadwrap ol li .icon{
 	color:#eee;
-	background:#dc3c47;
 	position: absolute;
 	right: 5px;
 	top: -3px;
@@ -372,9 +371,6 @@ select:focus option:checked:hover { background: #008a96;color: #fff;}
   height:2.75em;
   white-space:nowrap;
   border-left: 10px solid transparent;
-}
-.content-resources ul.nav-pills li.active {
-	border-left: 10px solid #cb3a46;
 }
 .content-resources ul.nav-pills li a{ 
 	display:block;
@@ -459,9 +455,8 @@ select:focus option:checked:hover { background: #008a96;color: #fff;}
 #menu .multilevelpushmenu_wrapper li.drop-hdr:hover{ background:#fff; color:#555;}
 #menu .multilevelpushmenu_wrapper li.drop-hdr:first-child{ -webkit-box-shadow:none;box-shadow:none; border-top:none;}
 #menu .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass{ position:absolute; top:0; right:-10px; z-index:202;}
-#menu .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass a{ color:#dc3c47; font-size:.83em; line-height:2.5em; height:4em; background:none;padding-right:15px; border:none; font-weight:bold; text-transform:uppercase;}
+#menu .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass a{ font-size:.83em; line-height:2.5em; height:4em; background:none;padding-right:15px; border:none; font-weight:bold; text-transform:uppercase;}
 #menu .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass a:hover{ color:#555;}
-#menu .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass a:active{ color:#dc3c47;}
 #menu .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass .icon{ font-size:1.38em; line-height:1.75em; height:3em; font-weight:bold;  margin-right:5px;}
 #menu .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass .icon:before{}
 #menu .multilevelpushmenu_wrapper .backItemClass, 
@@ -860,7 +855,7 @@ input.form-control{
 .main-content .selectpicker li a:hover{ border:none !important;}
 .main-content .selectpicker li.selected a,
 .main-content .selectpicker li.selected a span.text{ font-weight:bold;}
-.main-content .selectpicker li.selected a .icon{ font-weight:bold;  color:#dc3c47;}
+.main-content .selectpicker li.selected a .icon{ font-weight:bold; }
 .main-content .selectpicker li:hover,
 .main-content .selectpicker li:active,
 .main-content .selectpicker li:hover span.text,
@@ -877,12 +872,11 @@ input.form-control{
 .main-content .selectpicker>li>a:focus .check-mark { color:#ccc;}
 .main-content .selectpicker>li.selected>a .check-mark,
 .main-content .selectpicker>li.selected>a:hover .check-mark,
-.main-content .selectpicker>li.selected>a:focus .check-mark{ color:#dc3c47;}
 .bootstrap-select.btn-group.show-tick .dropdown-menu li a .check-mark{ position:absolute; right:15px; margin-top:2px;}
 .bootstrap-select.btn-group .btn .filter-option{ font-size:.68em;}
 .bootstrap-select.btn-group .btn .filter-option .icon,
-.bootstrap-select.btn-group .btn .filter-option span{ font-weight:normal; font-size:1.18em; margin-right:0; color:#dc3c47; position:relative; top:2px;}
-.bootstrap-select.btn-group .btn .filter-option em{color:#dc3c47; font-weight:normal; font-style:normal; font-size:1.06em; display:inline-block;}
+.bootstrap-select.btn-group .btn .filter-option span{ font-weight:normal; font-size:1.18em; margin-right:0; position:relative; top:2px;}
+.bootstrap-select.btn-group .btn .filter-option em{ font-weight:normal; font-style:normal; font-size:1.06em; display:inline-block;}
 .bootstrap-select.btn-group.show-tick .icon:first-child{ position:relative; top:2px;}
 .bootstrap-select.form-control:not([class*='span']){ max-width:25em;}
 
@@ -1571,7 +1565,7 @@ a.btn:hover{ border:none !important;}
 .btn-group-lg .btn-primary.btn-icon:active span,
 .btn-group-lg .btn-primary.btn-icon.active span{ background: rgba(255, 255, 255, .07);}
 
-.btn.btn-default.btn-red{ filter:alpha(opacity=80);opacity:0.8; background:#dc3c47 !important; color:#fff; -webkit-box-shadow:none;box-shadow:none;}
+.btn.btn-default.btn-red{ filter:alpha(opacity=80);opacity:0.8; color:#fff; -webkit-box-shadow:none;box-shadow:none;}
 .btn.btn-default.btn-red:hover{ filter:alpha(opacity=90);opacity:0.9;}
 .btn.btn-default.btn-red:active{ filter:alpha(opacity=100);opacity:1.0;}
 
