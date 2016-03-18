@@ -11,6 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require shanti_integration/jquery.multilevelpushmenu.min
+//= require shanti_integration/jquery.imagesloaded
+//= require shanti_integration/jquery.bxslider-rahisified
+//= require shanti_integration/jquery.wookmark.min
 //= require shanti_integration/explore_menu
 //= require shanti_integration/check/icheck.min
 //= require shanti_integration/bootstrap-select.min

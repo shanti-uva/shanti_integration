@@ -1,5 +1,5 @@
 <ul>
 <%= collections.collect do |c|
-      link_to "<i class=\"icon shanticon-#{c[:shanticon]}\"></i>#{c[:title]}".html_safe, c[:url]
+      link_to "<span class=\"icon shanticon-#{c[:shanticon]}\"></span>#{c[:title]}".html_safe, c[:url]
     end.collect{ |links| "<li>#{links}</li>".html_safe }.join.html_safe %>
 </ul>
