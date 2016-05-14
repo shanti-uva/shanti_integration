@@ -1,0 +1,3 @@
+=ShantiIntegration
+
+Provides the look and feel for a shanti application.

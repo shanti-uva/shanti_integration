@@ -71,26 +71,6 @@
 	   *  Settings for the theme
 	   */
       // Initialize settings.
-      ShantiSarvaka.settings = {
-        kmapsUrl: "http://subjects.kmaps.virginia.edu",
-        mmsUrl: "http://mms.thlib.org",
-        placesUrl: "http://places.kmaps.virginia.edu",
-        ftListSelector: "ul.facetapi-mb-solr-facet-tree, ul.fancy-tree", // should change "mb-solr" to "fancy" for universality
-        fancytrees: [],
-        flyoutWidth: 310,
-        topLinkOffset: 1500,
-        topLinkDuration: 500
-      };
-
-      $.fn.popover.Constructor.DEFAULTS.trigger = 'hover';
-      $.fn.popover.Constructor.DEFAULTS.placement = 'auto';
-      $.fn.popover.Constructor.DEFAULTS.html = true;
-      $.fn.popover.Constructor.DEFAULTS.delay = { "show": 100, "hide": 60000 };
-      $.fn.popover.Constructor.DEFAULTS.template = '<div class="popover related-resources-popover" role="tooltip"><div class="arrow"></div><h5 class="popover-title"></h5><div class="popover-content"></div></div>';
-	  
-	  /**
-	   *  Settings for the theme
-	   */
       ShantiSarvaka.settings = $.extend({
         kmapsUrl: "http://subjects.kmaps.virginia.edu",
         mmsUrl: "http://mms.thlib.org",
@@ -355,12 +335,12 @@
         // Prepare layout options.
         var options = {
         	align: 'left',
-          itemWidth: 190, // Optional min width of a grid item
+          itemWidth: 185, // Optional min width of a grid item
           autoResize: true, // This will auto-update the layout when the browser window is resized.
           container: $('.shanti-gallery'), // Optional, used for some extra CSS styling
-          offset: 15, // Optional, the distance between grid items
+          offset: 12, // Optional, the distance between grid items
           outerOffset: 0, // Optional the distance from grid to parent
-          flexibleWidth: '30%', // Optional, the maximum width of a grid item
+          flexibleWidth: '35%', // Optional, the maximum width of a grid item
           ignoreInactiveItems: false,
         };
         // Get a reference to your grid items.
@@ -413,12 +393,6 @@
        );
 
       // $('table.sticky-header').css('width','100%');
-
-
-      // hide responsive column for resources
-      $('[data-toggle=offcanvas]').click(function () {
-        $('.row-offcanvas').toggleClass('active');
-      });
 
       // IE10 viewport hack for Surface/desktop Windows 8 bug http://getbootstrap.com/getting-started/#support-ie10-width
       (function () {
@@ -530,14 +504,21 @@
 	$('a#related-tab').on('shown.bs.tab', function(e) {
 		Drupal.attachBehaviors('#related');
 	});
+	
+    // Initiate & hide sidebar when active/visible
+    $('[data-toggle=offcanvas]').click(function () {
+      $('.row-offcanvas').toggleClass('active');
+    });
 	  
-	$(".view-resources.btn-default").click( function() { 		// show-hide resource side-column
+    // Toggle sidebar
+	$("button.view-offcanvas-sidebar").click( function() { 		// show-hide resource side-column
 	  $(this).toggleClass( "show",'fast' );
 	});
 	
-	if($(".feature-carousel-tabpanel").length ) {
-		$("button.view-resources").remove();
-	}
+    // Hide sidebar button for Kmaps homepage
+	// if($("body.front.kmaps").length ) {
+	// 	$("button.view-offcanvas-sidebar").remove();
+	// }
 	
 	// --- unhiding breadcrumbs: inline styles keeps the breadcrumbs markup from flash on load when at homepages where we do not want them
 	$('.breadwrap:not(".front.page-subjects .breadwrap")').show( "fast" );
