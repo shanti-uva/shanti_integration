@@ -1,24 +1,24 @@
-.kmaps-hidden {
-  visibility: hidden;
-  display: none;
-}
-
+/**
+* Mandala KMAPS-Explorer Module (Places-Subjects) - Development
+* 
+* version 1.x - kmaps-explorer.css
+* -------------------------------------------------
+* University of Virginia / SHANTI MANDALA / KMAPS
+* -------------------------------------------------
+* 
+*/
+/* This is messing up Rails so hiding for now May 16 2016
 body {
   font-size: inherit;
 }
-
-article > h6.custom-inline:nth-of-type(1) {
-  margin-right: 0.5rem;
-}
-
-/* Subject Overview image subsection */
-
+*/
+/* Kmaps - Subject Overview image subsection */
 figcaption .center-caption {
   text-align: center;
   margin-bottom: 0.50em;
 }
 
-.subjects-overview-image figure {
+.resource-overview-image figure {
   display: block;
   position: relative;
   float: left;
@@ -26,22 +26,7 @@ figcaption .center-caption {
   margin: 0 20px 20px 0;
 }
 
-.subjects-overview-image figcaption {
-  position: absolute;
-  background: black;
-  background: rgba(0,0,0,0.75);
-  color: white;
-  padding: 10px 20px;
-  opacity: 0;
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
-}
-
-.subjects-overview-image figure:hover figcaption {
-  opacity: 1;
-}
-
-.subjects-overview-image figure::before {
+.resource-overview-image figure::before {
   content: '?';
   position: absolute;
   font-weight: 800;
@@ -61,25 +46,190 @@ figcaption .center-caption {
   opacity: 0.75;
 }
 
-.subjects-overview-image figure:hover::before {
+.resource-overview-image figure:hover::before {
   opacity: 0;
 }
 
-.subjects-overview-image .cap-bot::before {
+.resource-overview-image .cap-bot::before {
   bottom: 10px;
   left: 10px;
 }
 
-.subjects-overview-image .cap-bot figcaption {
-  left: 0;
-  bottom: -30%;
+.resource-overview-image figcaption {
+  position: absolute;
+  background: black;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  padding: 10px 20px;
+  opacity: 0;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 
-.subjects-overview-image .cap-bot:hover figcaption {
+.resource-overview-image figure:hover figcaption {
+  opacity: 1;
+}
+
+.resource-overview-image .cap-bot figcaption {
+  left: 0;
+  bottom: -30%;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.resource-overview-image .cap-bot:hover figcaption {
   bottom: 0;
 }
 
-/* Popovers for subjects and places */
+
+
+/* Kmaps - Google maps */
+#map-canvas {
+  height: 600px;
+  margin: 0px;
+  padding: 0px;
+}
+
+/**
+* Edit Button for Kmaps Nodes 
+*/
+.fixed-action-button {
+  display: inline-block;
+  bottom: .5rem;
+  right: 1rem;
+  position: fixed;
+  z-index: 200;
+  width: 4rem;
+  height: 4rem;
+}
+
+.round-btn-fixed {
+  display: inline-block;
+  color: #fff;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-clip: padding-box;
+  text-align: center;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-collapse: separate;
+  filter: alpha(opacity:85);
+  opacity:0.85;
+}
+
+.content-section .round-btn-fixed:hover,
+.content-section .round-btn-fixed:active {
+  filter: alpha(opacity=100);
+  opacity:1;
+  color:white;
+}
+
+.glyphicon.glyphicon-pencil {
+  font-size: 1.9rem;
+}
+
+.glyphicon.glyphicon-pencil::before {
+  position: relative;
+  top: 0.9rem;
+}
+
+
+/* custom image gallery for kmaps display */
+.og-expander{
+  margin-left:1.3rem; 
+  width: 99%;
+}
+
+
+
+
+
+
+/**
+* Columnizer Lists
+*/
+.texts-list li,
+.kmaps-list-columns ul li{
+  font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+}
+
+.texts-list li{
+  letter-spacing: 0.015em;
+  line-height: 1.75em;
+}
+
+.kmaps-list-columns h6{
+  text-transform: capitalize;
+}
+
+.texts-list .column:not(.first),
+.kmaps-list-columns .column:not(.first){
+  padding-left: 2rem;
+}
+
+.places-in-places.kmaps-list-columns .column > ul > li {
+  list-style-type: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 0.88em;
+  letter-spacing: 0.035em;
+  text-transform: capitalize;
+}
+
+.places-in-places.kmaps-list-columns .column > ul > li ul li {
+  font-weight:normal;
+  font-size: 1.06em;
+}
+
+.places-in-places.kmaps-list-columns h6{
+  font-size: 0.82em;
+  border: 2px solid #ddd;
+  background: #fff;
+  padding: 7px 12px 5px;
+}
+
+.kmaps-list-columns .popover-kmaps-tip{
+  font-size: 0.1rem;
+}
+
+
+/** 
+* ------------------------------------------------------------------------
+* Page Layouts - the width of content-resource column influences these
+* ------------------------------------------------------------------------
+*/
+body:not(.front) .content-section.equal-height.col-md-9 { width: 100%; padding-right:15px; padding-top:0.5rem; /* padding:0.5rem 2.75rem 0; */ }
+
+@media screen and (min-width: 992px) {
+
+  body:not(.front) .content-section.equal-height.col-md-9 { width: 81%; padding-right:0; }
+}
+
+@media screen and (min-width: 1100px) {
+
+  body:not(.front) .content-section.equal-height.col-md-9 { width: 83%; }
+}
+
+@media screen and (min-width: 1300px) {
+
+  body:not(.front) .content-section.equal-height.col-md-9 { width: 85.5%; }
+}
+/**
+*** END Layouts */
+
+
+
+
+
+
+
+/**
+* Temporary hacks below this line
+*/
+
+/* Popovers for subjects and places  */
 .popover-kmaps {
   background: #5a65d1;
   border: none;
@@ -116,7 +266,6 @@ figcaption .center-caption {
 
 .popover-kmaps .icon {
   color: white;
- /*font-size:.7rem*/
   position: absolute;
   bottom: 0.2rem;
   right: 0.25rem;
@@ -140,60 +289,9 @@ figcaption .center-caption {
   font-family: 'museo-sans-500',helvetica,arial,sans-serif;
 }
 
-/* Google maps */
-#map-canvas {
-  height: 600px;
-  margin: 0px;
-  padding: 0px;
-}
 
-/* Edit Button for Kmaps Nodes */
-.fixed-action-button {
-  display: inline-block;
-  bottom: .5rem;
-  right: 1rem;
-  position: fixed;
-  z-index: 200;
-  width: 4rem;
-  height: 4rem;
-}
-
-.round-btn-fixed {
-  display: inline-block;
-  color: #fff;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  background-clip: padding-box;
-  text-align: center;
-  border: none;
-  -webkit-tap-highlight-color: transparent;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  border-collapse: separate;
-  filter: alpha(opacity=85);
-  opacity:0.85;
-}
-
-.content-section .round-btn-fixed:hover,
-.content-section .round-btn-fixed:active {
-  filter: alpha(opacity=100);
-  opacity:1;
-  color:white;
-}
-
-.glyphicon.glyphicon-pencil {
-  font-size: 1.9rem;
-}
-
-.glyphicon.glyphicon-pencil::before {
-  position: relative;
-  top: 0.9rem;
-}
-
-.subjects-bg {
-  background-color: #dc3c47;
-}
-
-.places-bg {
-  background-color: #4ca6fb;
-}
+/**
+* 
+* END - KMAPS/css/kmaps-explorer.css
+*
+*/
