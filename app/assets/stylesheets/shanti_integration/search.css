@@ -1,30 +1,37 @@
-/*----------------------------------------------*/
-/*--- START / Sliding Panel ---*/
-/*----------------------------------------------*/
+/**
+* Mandala Sarvaka - Development
+* 
+* version 1.x - shanti-search.css
+* ------------------------------------------
+* University of Virginia / SHANTI MANDALA
+* ------------------------------------------
+* 
+*/
 
-/*--- clear default extruder styles -----*/
-.extruder, .extruder.right,.extruder .extruder-content, .extruder.right .flap .flapLabel, .extruder .text, .extruder .voice.hover, .extruder .voice.sel, .extruder .settingsBtn, .extruder .optionsPanel,.optionsPanel .panelVoice a:hover {
+/* clearing default styles (extruder default in utils.css) */
+.extruder, .extruder,.extruder .extruder-content, .extruder .flap .flapLabel, .extruder .text, .extruder .voice.hover, .extruder .voice.sel, .extruder .settingsBtn, .extruder .optionsPanel,.optionsPanel .panelVoice a:hover {
   overflow: visible;
   background-image: none;
   background: transparent;
 }
 
-.extruder.open .extruder-content, .extruder.right.open .extruder-content,.extruder.right .flap,.extruder .voice,.extruder.right .text,.optionsPanel .panelVoice a {
+.extruder.open .extruder-content, .extruder.open .extruder-content,.extruder .flap,.extruder .voice,.extruder .text,.optionsPanel .panelVoice a {
   box-shadow: none;
   text-transform: none;
 }
 
-.extruder.right .extruder-content,.panel-default .panel-heading,.extruder.right .panel-heading,.extruder.right .panel-group,.extruder.right .panel-group .panel,.extruder.right .panel-default>.panel-heading {
+.extruder .extruder-content,.extruder .panel-default .panel-heading,.extruder .panel-heading,.extruder .panel-group,.extruder .panel-group .panel,.extruder .panel-default>.panel-heading {
   border: none;
 }
 
-/*--------------------------*/
-/*--- panel ---*/
-.extruder.right {
+/**
+* ---------------
+* Search Panel
+* ---------------
+*/
+.extruder {
   padding: 0;
-  border: none;
   background: transparent !important;
-  box-shadow: none;
 }
 
 .ext_wrapper {
@@ -32,83 +39,29 @@
   padding: 0;
 }
 
-.extruder.right .extruder-content {
- /*overflow:visible !important;*/
+.extruder .extruder-content {
   background: transparent !important;
   border: none;
   padding: 0;
   width: 100%;
   box-shadow: 0 0 5px hsla(0, 0.0000%, 60.0000%, 0.7500);
   border-collapse: separate;
- /* fix for ie9 shadow */
 }
 
-.extruder.right.isOpened .extruder-content {
+.extruder.isOpened .extruder-content {
   border-right-width: 12px;
   background: transparent !important;
 }
 
-.extruder .text {
-  border: none;
-  padding: 0;
-  text-shadow: none;
-  width: 277px;
-  min-width: 277px !important;
- /*---- default panel container width is set ----*/
-}
 
-.extruder.right .flap,
-.extruder.right.isOpened .flap,
-.extruder.right .flap .flapLabel,
-.extruder.right .flap.on-flap .flapLabel,
-.extruder.right.isOpened .flap.on-flap .flapLabel,
-.extruder.right .flap>span,
-.extruder.right .flap.on-flap>span,
-.extruder.right .flap.on-hover>span,
-.extruder.right .flap.on-hover.on-flap>span {
-  width: 0;
-  padding: 0;
-  border: none;
-  background: transparent;
-}
-
-object.flip_label {
-  display: none;
-}
-
-.extruder.right.open-collections {
-  margin-top: 280px;
-}
-
-/*--- handle ---*/
-.text.ui-resizable,
-.isOpened .text.ui-resizable {
-  position: static;
-} /*--- NOTE this is super important to keep the right edge pinned while expanding width */
-.ui-resizable-handle.ui-resizable-w {
-  cursor: col-resize;
-  position: absolute;
-  left: 1px;
-  top: 10px;
- /* top:85%; */
-  z-index: 900;
-  width: 6px;
-  height: 97%;
-}
-
-.ui-resizable-handle.ui-resizable-w:active {
-  background: #fafafa;
-}
-
-/*--- panel ---*/
-#search-flyout {
+#search-flyout.extruder {
   top: 0;
 }
 
-#search-flyout.extruder.right {
+#search-flyout.extruder {
   margin-top: 7px;
   position: absolute;
-  z-index: 10100;
+  z-index: 300;
 }
 
 #search-flyout .ext_wrapper {
@@ -116,7 +69,7 @@ object.flip_label {
   padding: 0;
 }
 
-#search-flyout.extruder.right .extruder-content {
+#search-flyout.extruder .extruder-content {
   background: transparent !important;
  /*overflow:visible !important;*/
   border: 7px solid #fff;
@@ -127,7 +80,7 @@ object.flip_label {
   border-collapse: separate;
 }
 
-#search-flyout.extruder.right.isOpened .extruder-content {
+#search-flyout.extruder.isOpened .extruder-content {
   border-right-width: 12px;
 }
 
@@ -137,15 +90,70 @@ object.flip_label {
   text-shadow: none;
   background: #f8f8f8;
   color: #333;
+  /* default panel container width is set */
+  width: 277px;
+  min-width: 277px !important;
 }
 
-/*--- big search button inline styles are loaded via main.js with icon markup  */
-#search-flyout.extruder.right .flap {
+/**
+* BEGIN extruder button for opening-closing
+*/
+.extruder .flap,
+.extruder.isOpened .flap,
+.extruder .flap .flapLabel,
+.extruder .flap.on-flap .flapLabel,
+.extruder.isOpened .flap.on-flap .flapLabel,
+.extruder .flap>span,
+.extruder .flap.on-flap>span,
+.extruder .flap.on-hover>span,
+.extruder .flap.on-hover.on-flap>span {
+  width: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+/**
+* Note: object.flip_label has to do with a built-in extruder
+* tab label feature of extruder library we are not using 
+*/
+object.flip_label {
+  display: none;
+}
+
+.extruder.open-collections {
+  margin-top: 280px;
+}
+
+/* drag-width handle for extruder */
+.text.ui-resizable,
+.isOpened .text.ui-resizable {
+  /* Important to keep the right edge pinned while expanding width */
+  position: static;
+}
+
+.ui-resizable-handle.ui-resizable-w {
+  cursor: col-resize;
+  position: absolute;
+  left: 1px;
+  top: 10px;
+  z-index: 290;
+  width: 6px;
+  height: 97%;
+}
+
+.ui-resizable-handle.ui-resizable-w:active {
+  background: #fafafa;
+}
+
+/**
+* top banner search button inline styles are loaded via main.js with icon markup  
+*/
+#search-flyout.extruder .flap {
   background: #fff;
   height: 53px;
-  width: 45px;
+  width: 50px;
   padding: 7px 0 7px 7px;
-  margin: 0 0 0 -7px;
+  margin: 0 0 0 -12px;
   cursor: pointer;
   display: block;
   border-top-left-radius: 44px;
@@ -154,15 +162,15 @@ object.flip_label {
   border-collapse: separate;
 }
 
-#search-flyout.extruder.right .flap.on-flap {
+#search-flyout.extruder .flap.on-flap {
   border-collapse: separate;
 }
 
-#search-flyout.extruder.right .flap .flapLabel,
-#search-flyout.extruder.right .flap.on-flap .flapLabel {
-  background: #505050;
+#search-flyout.extruder .flap .flapLabel,
+#search-flyout.extruder .flap.on-flap .flapLabel {
+  background: #444;
   height: 39px;
-  width: 37px !important;
+  width: 43px !important;
   padding: 17px 38px 17px 0;
   margin: 0;
   display: block;
@@ -171,78 +179,71 @@ object.flip_label {
   border-collapse: separate;
 }
 
-#search-flyout.extruder.right.isOpened .flap {
+#search-flyout.extruder.isOpened .flap {
   width: 48px;
   margin: 0 0 0 -8px;
 }
 
-#search-flyout.extruder.right.isOpened .flap.on-flap .flapLabel {
+#search-flyout.extruder.isOpened .flap.on-flap .flapLabel {
   width: 30px !important;
 }/* on-flap is opened state */
+
 /*----- css for the flap is inserted inline, see js/main ---*/
-#search-flyout.extruder.right .flap>span,
-#search-flyout.extruder.right .flap.on-flap>span {
+#search-flyout.extruder .flap>span,
+#search-flyout.extruder .flap.on-flap>span {
   color: #ccc;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
 
-#search-flyout.extruder.right .flap.on-hover>span,
-#search-flyout.extruder.right .flap.on-hover.on-flap>span {
+#search-flyout.extruder .flap.on-hover>span,
+#search-flyout.extruder .flap.on-hover.on-flap>span {
   color: #fff;
-  background: #444;
+  background: #333;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
 
-#search-flyout.extruder.right .flap>span .icon {
+#search-flyout.extruder .flap>span .icon {
   font-size: 2.38rem;
   position: absolute;
-  left: 16px;
+  left: 17px;
   top: 16px;
   z-index: 10;
 }
 
-#search-flyout.extruder.right.isOpened .flap.on-flap>span .icon {
+#search-flyout.extruder.isOpened .flap.on-flap>span .icon {
   color: #888;
   font-size: 3.12rem;
   left: 13px;
   top: 11px;
 }
 
-#search-flyout.extruder.right.isOpened .flap.on-hover>span .icon,
-#search-flyout.extruder.right.isOpened .flap.on-hover.on-flap>span .icon {
+#search-flyout.extruder.isOpened .flap.on-hover>span .icon,
+#search-flyout.extruder.isOpened .flap.on-hover.on-flap>span .icon {
   color: #fff;
-  background: #444;
+  background: transparent;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
 
-#search-flyout.extruder.right.isOpened .flap.on-flap>span .icon.shanticon-search::before {
+#search-flyout.extruder.isOpened .flap.on-flap>span .icon.shanticon-search::before {
   content: '\e610';
 }
 
-/* -- main menu no longer used 
-#menu-main.extruder.right{ margin-top:39px; color:#888 !important;}
-#menu-main.extruder.right .extruder-content{ background:transparent !important; color:#888 !important; overflow:visible !important; box-shadow:none !important; }
-#menu-main.extruder.right.isOpened .extruder-content{ color:#888 !important;}
-#menu-main.extruder .text{ color:#888 !important;}
+/**
+*** END - Sliding Panel */
 
-#menu-collections.extruder.right{ margin-top:39px; color:#888 !important;}
-#menu-collections.extruder.right .extruder-content{ color:#888 !important; background:transparent !important; overflow:visible !important; box-shadow:none !important; }
-#menu-collections.extruder.right.isOpened .extruder-content{ color:#fff !important;}
-#menu-collections.extruder .text{ color:#888 !important;}
+
+
+
+
+
+/**
+* --------------------------------------
+* BEGIN  Search / Input & View 
+* --------------------------------------
 */
-/*----------------------------------------------*/
-/*--- END / Sliding Panel ---------------------*/
-
-
-
-
-
-
-/*--- START / Search Panel / Input & View ----*/
-/*----------------------------------------------*/
 .input-section {
   padding: 0;
   border: 1px solid #e0e0e0;
@@ -261,6 +262,7 @@ object.flip_label {
   display: block;
   width: 100%;
   background: #f8f8f8;
+  float:left;
 }
 
 .input-section .input-group input.form-control {
@@ -269,18 +271,16 @@ object.flip_label {
   border-radius: 25px;
   background-clip: padding-box;
   font-size: 1.06em;
-  height: 35px;
- /* coordinate with button height below */
+  height: 35px; /* coordinate with button height below */
   line-height: 1.44em;
   margin: 14px 0 0;
-  padding: 2px 60px 0 15px;
+  padding: 2px 75px 0 15px;
   width: 100%;
   max-width: 100%;
   overflow: auto;
   vertical-align: middle;
   box-shadow: 0 2px 5px #eee inset;
-  border-collapse: separate;
- /* fix for ie9 shadow */
+  border-collapse: separate; /* fix for ie9 box-shadow */
   background: #fff;
   -webkit-transition-property: all;
   transition-property: all;
@@ -297,10 +297,8 @@ object.flip_label {
   border: 1px solid #9097d3;
   box-shadow: 0 0 4px #949bd8;
   border-collapse: separate;
- /* fix for ie9 shadow */
 }
 
-/*--- button group ---*/
 .input-section .input-group .input-group-btn {
   width: 45px !important;
   height: 35px;
@@ -316,8 +314,8 @@ object.flip_label {
 /*--- button ---*/
 .input-section .input-group .btn.btn-default {
   display: block;
+   /* 2px less input-group-btn above */
   height: 33px;
- /* 2px less than search input height above */
   color: #aaa;
   width: 100%;
   border: 1px solid #e5e5e5;
@@ -362,7 +360,7 @@ object.flip_label {
   color: #777;
 }
 
-/*--- reset search button ---*/
+/* reset search button */
 .input-section .input-group-btn .searchreset {
   border: none;
   background: transparent;
@@ -453,10 +451,31 @@ object.flip_label {
   content: '\e610';
 }
 
+/* search errors */
+.input-section .notification-wrapper {
+  padding: 0 15px;
+}
 
+.input-section .alert {
+  margin: 0 10px 10px;
+  padding: 10px 15px;
+  text-shadow: 0 1px 0 rgba(255,255,255,.4);
+}
 
+.input-section .alert-danger {
+  color: #dc3c47;
+  background-image: none;
+  border-radius: 0 9px;
+  background-clip: padding-box;
+  border: 1px solid #ddd;
+  background-color: rgba(255,255,252, 1.0);
+}
 
-/*-----------------------------------------------*/
+.input-section .alert-danger .close {
+  position: relative;
+  top: -0.5rem;
+  right: -0.5rem;
+}
 
 .input-section .form-group {
   margin-bottom: 7px;
@@ -487,23 +506,6 @@ object.flip_label {
 .input-section .search-group .radio-inline>div {
   margin-right: 4px;
 }
-/*----- Advanced Options -----*/
-.advanced-view {
- /*** height:275px;  height can help control cross-browser issues ***/
-  padding: 0;
-  background: #f8f8f8;
-  width: 100%;
-  margin-right: 0.25em;
-}
-
-.advanced-view .form-group {
-  border-top: 1px solid #e0e0e0;
-  margin: 0 8px;
-}
-
-.advanced-view .form-group.last {
-  padding-bottom: 0;
-}
 
 .input-section label {
   color: #444;
@@ -516,7 +518,28 @@ object.flip_label {
   text-transform: capitalize;
 }
 
-/*--- toggle links for search panel ---*/
+/** 
+* Advanced Options
+*/
+.input-section .advanced-view {
+ /*** height:275px;  height can help control cross-browser issues ***/
+  padding: 0 .9rem;
+  background: #f8f8f8;
+  width: 100%;
+  margin-right: 0.3rem;
+}
+
+.input-section .advanced-view .form-group {
+  border-top: 1px solid #e0e0e0;
+  margin: 0;
+}
+
+.input-section .advanced-view .form-group.last {
+  padding-bottom: 0;
+}
+
+/**
+* advanced toggle for search panel */
 .input-section .toggle-link {
   background: #f8f8f8;
   color: #555 !important;
@@ -550,13 +573,11 @@ object.flip_label {
 .input-section .toggle-link:hover .icon::before {
   color: #555 !important;
 }
-/*---------------------------*/
-/*--- custom sizes & position ---*/
+
 .input-section .feature-group .toggle-link.feature-toggle {
   float: right;
   padding: 0 10px 0 0;
   margin: 0;
-/*display:inline;*/
   position: relative;
   top: -1px;
 }
@@ -566,14 +587,14 @@ object.flip_label {
   padding: 0;
   position: relative;
   top: 23px;
-  left: -8px;
+  left: -12px;
   float: right;
 }
 
 .input-section .feature-group .toggle-link.show-features .icon::before, /*--- for feature types ---*/
 .input-section .toggle-link.show-advanced .icon::before {
   content: '\f068';
-} /*--- for advanced ---*/
+}
 
 /***
 .input-section .feature-group .toggle-link.feature-toggle{ float:right;padding:0 10px 0 0;margin:0;display:inline;position:relative;top:-1px;}
@@ -627,192 +648,48 @@ object.flip_label {
   max-width: 15em;
   padding-left: 3px;
 }
-
-/*-----------------------------------------------*/
-/*---- select dropdown -----*/
-.input-section .bootstrap-select {
-  width: 100%;
-  padding: 0 5px 0 5px;
-  margin-top: 4px;
-  margin-bottom: 0;
+/**
+* BEGIN select dropdown
+*/
+.input-section .bootstrap-select.btn-group:not(.input-group-btn), 
+.input-section .bootstrap-select.btn-group[class*="span"]{
+  margin-top: 1rem;
 }
 
-.input-section .bootstrap-select .selectpicker {
-  line-height: 27px;
-  height: 27px;
-  padding: 0;
-  border: 1px solid #ddd;
-  width: 100% !important;
-}
-
-.input-section .bootstrap-select .btn {
-  padding-left: 15px;
-  color: #666;
-  background: transparent;
-  background-image: none;
-  background-image: -webkit-linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);
-  background-image: -webkit-linear-gradient(top, #fff 0%, #f7f7f7 45%, #f0f0f0 55%, #e0e0e0 100%);
-  background-image: linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);
-	/*
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-	*/
-  background-repeat: repeat-x;
-  border: 1px solid #ddd;
-  border-radius: 25px;
-  background-clip: padding-box;
-	 /* fix for radius-corner color bleedthrough */
-  border-color: #eee #eee #ddd;
-  overflow: hidden;
-  box-shadow: none;
-}
-
-.input-section .bootstrap-select .btn:hover {
-  border: 1px solid #ccc;
-  background: #eee;
-}
-
-.input-section .bootstrap-select .btn:focus,
-.input-section .bootstrap-select .btn.active {
-  outline: none !important;
-  border: 1px solid #9097d3 !important;
-  box-shadow: 0 0 4px 0 #5764de;
-  border-collapse: separate;
- /* fix for ie9 shadow */
-  background: #f5f5f5;
-  background-image: none;
-}
-
-.input-section .bootstrap-select.btn-group:not(.input-group-btn) {
-  margin-top: 0.82rem;
-}
-
-/*--- dropdown ---*/
-.input-section .dropdown-menu.open {
-  border-radius: 10px;
-  background-clip: padding-box;
-  overflow: auto;
-}
-
-.input-section .selectpicker .dropdown-menu>li>a span.text {
-  margin-right: 0;
-  padding-left: 18px;
-  overflow: hidden;
-}
-
-.input-section .bootstrap-select.btn-group .dropdown-menu {
-  height: 265px;
-}
-
-.input-section .bootstrap-select.btn-group .dropdown-menu.open {
-  overflow: auto !important;
-}
-
-.input-section .selectpicker .caret {
-  border: none;
-}
-
-.input-section .selectpicker .caret::before {
-  color: #777;
-  font-size: 17px;
-  font-family: 'shanticon';
-  content: '\e609';
- /* icon sorting arrows */
-  position: absolute;
-  top: -11px;
-  right: 0px;
-}
-
-.input-section .selectpicker li {
-  padding: 0;
-  overflow: hidden;
-}
-
-.input-section .selectpicker li a {
+.input-section .bootstrap-select.btn-group li a span {
+  background: transparent !important;
   color: #444;
-  padding: 0 15px;
-  overflow: hidden;
-  display: block;
-  line-height: 25px;
-  height: 25px;
 }
 
-.input-section .selectpicker li a,
-.input-section .selectpicker li a span,
-.input-section .selectpicker li.selected a {
+.input-section .bootstrap-select.btn-group li a span:hover {
+  color: #fff;
+}
+
+.input-section .bootstrap-select.btn-group .popover-title .close{
+  line-height: .75;
+  font-weight:normal;
+}
+
+.input-section .bootstrap-select.btn-group .dropdown-menu>li>a .glyphicon:not(.glyphicon-ok){
+  font-size: 1.18em;
+  position: absolute;
+  left: 0.8em;
+  top: 0.6rem;
   color: #555;
 }
 
-.input-section .selectpicker li.selected a span.text {
-  color: #000;
+.input-section .bootstrap-select.btn-group .dropdown-menu>li>a .glyphicon:not(.glyphicon-ok) ~ span.text {
+  padding-left: 2.8rem;
 }
 
-.input-section .selectpicker li,
-.input-section .selectpicker li a:active,
-.input-section .selectpicker li.selected a:hover,
-.input-section .selectpicker li.selected a:active {
-  color: #444;
-}
+.advanced-view .form-group.advanced-input.select-type {
+  padding: 2px 1.2rem 2px;
+} 
 
-.input-section .selectpicker li a span.text:hover,
-.input-section .selectpicker li.selected a span.text:hover {
-  color: #fff;
-}
-
-.input-section .selectpicker li:hover span.text,
-.input-section .selectpicker li:active span.text {
-  background: transparent !important;
-}
-
-.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a .check-mark {
-  color: #444;
-}
-
-.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a:hover .check-mark,
-.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a:active .check-mark {
-  color: #444;
-}
- /* search errors */
-.input-section .notification-wrapper {
-  padding: 0 15px;
-}
-
-.input-section .alert {
-  margin: 0 10px 10px;
-  padding: 10px 15px;
-  text-shadow: 0 1px 0 rgba(255,255,255,.4);
-}
-
-.input-section .alert-danger {
-  color: #dc3c47;
-  background-image: none;
-  border-radius: 0 9px;
-  background-clip: padding-box;
-  border: 1px solid #ddd;
-  background-color: rgba(255,255,252, 1.0);
-}
-
-.input-section .alert-danger .close {
-  position: relative;
-  top: -0.5rem;
-  right: -.5rem;
-}
-
-.input-section .selectpicker li a span {
-  background: transparent !important;
-  color: #444;
-}
-
-.input-section .selectpicker li a span:hover {
-  color: #fff;
-}
-
-.advanced-view .form-group.advanced-input {
-  padding: 2px 5px 2px;
-} /*--- common input ---*/
 .advanced-view .form-group.advanced-input .form-control {
   line-height: 27px;
   height: 27px;
-  padding: 0 15px;
+  padding: 0 1.5rem;
   margin: 2px 0;
   width: 100% !important;
   color: #666;
@@ -823,9 +700,13 @@ object.flip_label {
   background-clip: padding-box;
   overflow: hidden;
   vertical-align: middle;
-  box-shadow: 0px 2px 5px #eee inset;
+  box-shadow: 0 2px 5px #eee inset;
   border-collapse: separate;
- /* fix for ie9 shadow */
+}
+
+.advanced-view > .form-group:last-of-type .form-group{
+  border-top:none;
+  padding: 0 !important;
 }
 
 .advanced-view .form-group.advanced-input .form-control:hover {
@@ -842,18 +723,20 @@ object.flip_label {
   font-size: 0.93em;
   position: relative;
   top: 6px;
-  left: 4px;
+  left: 12px;
 }
-/*--- END advanced ---*/
 
-/*----------------------------------------------------*/
-/*--- END / Input & View ----------------------------*/
-
+/**
+*** END / Input & Advanced */
 
 
 
-/*---- START View Section / Tabs - Table - Tree -----*/
-/*----------------------------------------------------*/
+
+/**
+* --------------------------------------------
+*  START View Section / Tabs - Table - Tree 
+* --------------------------------------------
+*/
 .view-section {
   display: none;
   background: #fff;
@@ -863,7 +746,6 @@ object.flip_label {
 .view-section .tab-content {
   background: #f8f8f8;
   padding: 1rem 0 0;
- /*border: 1px solid #ddd; border-width:0 1px 1px;*/
 }
 
 .view-section .tab-content .tab-pane {
@@ -889,8 +771,8 @@ object.flip_label {
   margin-right: 2px;
   font-weight: bold;
   padding: 10px 0 5px 0;
+  /* display:none prevents flash on load */
   display: none;
- /*--- prevent flash on load */
   text-align: center;
   background: #fcfcfc;
   border: 1px solid #eee;
@@ -1021,21 +903,21 @@ object.flip_label {
 }
 */
 .view-section .table-results .progress-disabled ~ .ajax-progress:nth-of-type(1){
-	height: 20px;
-	width: 20px;
-	/*background:transparent url('../images/ajax-loader.gif') no-repeat center center;*/
-	position:absolute;
-	display:inline-block;
-	background:transparent;
-	margin-top:-2.5rem;
-	margin-left:-6rem;
+  height: 20px;
+  width: 20px;
+  /*background:transparent url('../images/ajax-loader.gif') no-repeat center center;*/
+  position:absolute;
+  display:inline-block;
+  background:transparent;
+  margin-top:-2.5rem;
+  margin-left:-6rem;
 }
 /*
 .view-section table.table-results tbody>tr.progress-disabled.row_selected {
-	height: 20px;
-	width: 20px;
-	background:transparent url('../images/ajax-loader.gif') no-repeat center center;
-	z-index: 501;
+  height: 20px;
+  width: 20px;
+  background:transparent url('../images/ajax-loader.gif') no-repeat center center;
+  z-index: 501;
 }
 */
 
@@ -1082,9 +964,74 @@ object.flip_label {
   color: #555;
 }
 
+/**
+* search scrollbars full-length
+*/
+.text.ui-resizable::-webkit-scrollbar{
+  width: 0;
+}
+ 
+.text.ui-resizable::-webkit-scrollbar-track{
+  /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.15);*/
+}
+ 
+.text.ui-resizable::-webkit-scrollbar-thumb{
+  background-color: #aaa;
+  cursor: pointer;
+  width: 0.5rem;
+}
+
+.text.ui-resizable::-webkit-scrollbar-thumb:hover{
+  background-color: #888;
+}
+/**
+* search view-section scrollbars 
+*/
+.view-section .view-wrap::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 1rem;
+}
+ 
+.view-section .view-wrap::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+}
+ 
+.view-section .view-wrap::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 1rem;
+  width: 0.6rem;
+}
+
+.view-section .view-wrap::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+/**
+* bootstrap-select scrollbars 
+*/
+.bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar{
+  width: 0.5rem;
+  border-radius: 0.8rem;
+}
+ 
+.bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar-track{
+  /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.15);*/
+}
+ 
+.bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar-thumb{
+  background-color: #aaa;
+  cursor: pointer;
+  width: 0.5rem;
+  border-radius: 0.8rem;
+}
+
+.bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar-thumb:hover{
+  background-color: #888;
+}
 
 
-/* popovers */
+/**
+* Tooltip popovers 
+*/
 .view-section .title-field {
   position: static;
   float: none;
@@ -1146,7 +1093,6 @@ object.flip_label {
 
 .view-section .popover-title .kmapid-display::before {
   color: #888;
-/*content: 'kmapid: '*/
 }
 
 .view-section .popover-content .badge {
@@ -1189,96 +1135,111 @@ object.flip_label {
   color: #777;
   margin: 0 6px;
 }
-/*--- END trunk8 */
-/*-----------------*/
-/*--- END Table ---*/
+/**
+* END View Table */
 
 
 
-
-
-
-
-/*------------------------------*/
-/*---- START / Search Tree ----*/
-/*------------------------------*/
-.view-section .fancytree-container {
+/**
+* --------------------------
+* START / Search Tree-Nav 
+* --------------------------
+*/
+.fancytree-container {
   margin: 0;
   background: transparent;
   border: none;
-  font-family: 'droidserif',palatino,'Palatino Linotype',georgia,serif;
+  background-color: transparent !important;
+  border: none !important;
+  font-family: 'droidserif',palatino,'Palatino Linotype',georgia,serif !important;
 }
 
-.view-section .fancytree-container ul {
+.fancytree-container ul {
   padding-top: 0;
   margin-top: 0;
 }
 
-.view-section .fancytree-container li {
+.fancytree-container li {
   padding: 0;
   line-height: 1.68em;
   overflow: hidden;
   position: relative;
 }
 
-.view-section .fancytree-icon {
+.fancytree-icon {
   margin: 0;
   padding: 0;
   width: 0;
   height: 0;
   line-height: 0;
+  /* remove checkbox */
   display: none;
-} /*--- remove checkbox ---*/
-.view-section .fancytree-node {
+} 
+
+.fancytree-node {
   border: 1px solid transparent !important;
   display: block;
 }
 
-.view-section .fancytree-node:hover,
-.view-section .fancytree-node:active,
-.view-section .fancytree-node.fancytree-active,
-.view-section .fancytree-node.fancytree-selected,
-.view-section .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active {
+.fancytree-node:hover,
+.fancytree-node:active,
+.fancytree-node.fancytree-active,
+.fancytree-node.fancytree-selected,
+.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active {
   background: white !important;
   border-color: #eee !important;
 }
+
+.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active,
+.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active{
+  border-color: #ccc !important;
+}
+
+.fancytree-node .ajax-progress{ position:absolute; right:0.6rem; background:transparent; /*padding-right:1rem;*/}
+.fancytree-node.fancytree-has-children .ajax-progress{ right:0.1rem;}
 /*
-.view-section .fancytree-node .ajax-progress{ position:absolute; right:0.1rem; background:transparent;padding-right:1rem;}
-.view-section .fancytree-node.fancytree-has-children .ajax-progress{ position:absolute; right:0.1rem;}
-*/
-.view-section .fancytree-container li > .ajax-progress {
+.fancytree-container li > .ajax-progress {
   position: absolute;
-  top: 0.15rem;
-  right: 0.1rem;
-  background: #fff;
+  left: 0;
+  /----- top: 0.15rem;
+  right: 0.1rem; ---------/
+  background: transparent;
   padding: 0.1rem 0.5rem;
 }
-
-.view-section .fancytree-title a {
+*/
+.fancytree-title a {
   color: #444;
 }
 
-.view-section .fancytree-title a:hover,
-.view-section .fancytree-title a:active {
+.fancytree-title a:hover,
+.fancytree-title a:active {
   color: #111;
 }
 
-.view-section .fancytree-title {
-  color: #444;
-  margin: 0 0 0 -24px;
-  padding-left: 15px;
+.fancytree-title {
   line-height: 1.68em;
+  margin-left: 3px;
   height: 1.62em;
-  box-sizing: content-box;
+  /*box-sizing: content-box;*/
 }
 
-.view-section .fancytree-title:hover,
-.view-section .fancytree-title:active {
+.fancytree-node .fancytree-expander{
+  background-image: none !important;
+}
+
+.fancytree-exp-nl .fancytree-icon,
+.fancytree-exp-nl .fancytree-expander,
+.fancytree-exp-n .fancytree-icon,
+.fancytree-exp-n .fancytree-expander{
+  display:none;
+}
+/*
+.fancytree-title:hover,
+.fancytree-title:active {
   color: #111;
-/*background:#fff;*/
 }
-
-.view-section .fancytree-title::before {
+*/
+.fancytree-title::before {
   background: #fff;
   color: transparent;
   font-family: 'shanticon';
@@ -1287,7 +1248,7 @@ object.flip_label {
   float: left;
   position: relative;
   top: 0.6rem;
-  right: 0.2rem;
+  right: 0.25rem;
   border-radius: 50%;
   background-clip: padding-box;
   width: 9px;
@@ -1298,13 +1259,13 @@ object.flip_label {
   border-collapse: separate;
 }
 
-.view-section .fancytree-title:hover::before {
+.fancytree-title:hover::before {
   background: #777;
   box-shadow: none;
 }
 
-.view-section .fancytree-statusnode-wait .fancytree-title::before,
-.view-section .fancytree-statusnode-error .fancytree-title::before {
+.fancytree-statusnode-wait .fancytree-title::before,
+.fancytree-statusnode-error .fancytree-title::before {
   width: 0;
   height: 0;
   display: none;
@@ -1313,36 +1274,36 @@ object.flip_label {
   background: transparent;
 }
 
-.view-section .fancytree-has-children>span.fancytree-title {
-  padding-left: 10px;
-  margin-left: -15px;
+.fancytree-has-children>span.fancytree-title {
+  padding-left: 0px;
+  margin-left: -25px;
 }
 
-.view-section .fancytree-has-children span.fancytree-title::before {
+.fancytree-has-children span.fancytree-title::before {
   content: none;
   position: relative;
   top: 0;
 }
 
-.view-section .fancytree-container .fancytree-active .fancytree-title,
-.view-section .fancytree-container .fancytree-selected .fancytree-title {
+.fancytree-active .fancytree-title,
+.fancytree-selected .fancytree-title {
   color: #000;
 }
 
-.view-section .fancytree-container .fancytree-active.fancytree-has-children .fancytree-title::before,
-.view-section .fancytree-container .fancytree-selected.fancytree-has-children .fancytree-title::before {
+.fancytree-active.fancytree-has-children .fancytree-title::before,
+.fancytree-selected.fancytree-has-children .fancytree-title::before {
   content: none;
   text-shadow: none;
   display: none;
 }
 
-.view-section .fancytree-container .fancytree-active .fancytree-title::before,
-.view-section .fancytree-container .fancytree-selected .fancytree-title::before {
+.fancytree-active .fancytree-title::before,
+.fancytree-selected .fancytree-title::before {
   background: #888;
   box-shadow: none;
 }
 
-.view-section .fancytree-container .glyphicon {
+.fancytree-container .glyphicon {
   color: #666;
   font-family: 'Glyphicons Halflings';
   font-size: 15px;
@@ -1351,14 +1312,14 @@ object.flip_label {
   top: 4px;
 }
 
-.view-section .fancytree-container .fancytree-node:hover > .glyphicon {
+.fancytree-node:hover > .glyphicon {
   color: #888;
 }
 
-.view-section .fancytree-container .fancytree-node.fancytree-active:active > .glyphicon,
-.view-section .fancytree-container .fancytree-node.fancytree-active .glyphicon,
-.view-section .fancytree-container .fancytree-node.fancytree-selected:active > .glyphicon,
-.view-section .fancytree-container .fancytree-node.fancytree-selected .glyphicon {
+.fancytree-node.fancytree-active:active > .glyphicon,
+.fancytree-node.fancytree-active .glyphicon,
+.fancytree-node.fancytree-selected:active > .glyphicon,
+.fancytree-node.fancytree-selected .glyphicon {
   color: #666;
   background: transparent;
 }
@@ -1371,15 +1332,17 @@ object.flip_label {
     background: transparent;
 }
 */
-/*---- END treeview -----*/
+/**
+*** END treeview */
 
 
 
-/* ----- overlay timer ------ */
-/* ----- search loading ----- */
+/**
+* Search Loading 
+*/
 #search-flyout .overlay-mask {
   position: absolute;
-  z-index: 15000;
+  z-index: 310;
   background: #fff;
   filter: alpha(opacity=30);
   opacity: 0.3;
@@ -1469,16 +1432,16 @@ object.flip_label {
 .loading {
   height: 150px;
   position: relative;
-  left: 27px;
-  width: 150px;
+  left: 2.7rem;
+  width: 15rem;
   border-radius: 100%;
   background-clip: padding-box;
-  z-index: 16000;
+  z-index: 320;
 }
 
 .loading-container {
   position: relative;
-  top: 220px;
+  top: 22rem;
   margin: 0 auto;
 }
 
@@ -1520,14 +1483,16 @@ object.flip_label {
   opacity: 0;
   position: absolute;
   top: -10px;
-  left: 42px;
+  left: 40px;
   width: 120px;
-}/* ----- END search loading ----- */
+}
+/**
+*** END search loading */
 
 
-
-
-/* ----- BEGIN tooltip popover on search view-section ----- */
+/**
+* BEGIN tooltip popover on search view-section 
+*/
 .search-popover {
   display: none;
   border: 1px solid #ddd;
@@ -1637,9 +1602,21 @@ object.flip_label {
   color: #808080;
   margin: 0 0 0 7px;
 }
-/*--- END trunk8 */
-/*-----------------*/
-/*--- END Table ---*/
+
+.popover.left{
+  margin-left: -1.5rem;
+}
+
+/**
+*** END View Section */
+
+/* ---------------- */
+/* END SEARCH PANEL */
+/* ---------------- */
+
+
+
+
 
 
 
@@ -1661,35 +1638,25 @@ object.flip_label {
 }
  */
 
-/*--------------------------------*/
-/*--- END SEARCH PANEL -----------*/
-/*--------------------------------*/
-
-
-
-
-
-
-
 
 
 /*
 .ajax-progress, .ajax-progress *, .ajax-progress-throbber, .ajax-progress-throbber * {
-	display: inline-block;
-	white-space: nowrap;
-	margin: 0;
-	padding: 0;
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
 }
 
 .ajax-progress {
-	margin: 4px 0 0 -10px;
+  margin: 4px 0 0 -10px;
 }
 
 .ajax-progress .throbber {
-	height: 20px;
-	width: 20px;
-	background:transparent url('../images/ajax-loader.gif') no-repeat center center;
-	color: #000;
-	z-index: 501;
+  height: 20px;
+  width: 20px;
+  background:transparent url('../images/ajax-loader.gif') no-repeat center center;
+  color: #000;
+  z-index: 501;
 }
 **/

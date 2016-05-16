@@ -1,3 +1,16 @@
+.kmaps-hidden {
+  visibility: hidden;
+  display: none;
+}
+
+body {
+  font-size: inherit;
+}
+
+article > h6.custom-inline:nth-of-type(1) {
+  margin-right: 0.5rem;
+}
+
 /* Subject Overview image subsection */
 
 figcaption .center-caption {
@@ -5,7 +18,7 @@ figcaption .center-caption {
   margin-bottom: 0.50em;
 }
 
-.main-overview-image figure {
+.subjects-overview-image figure {
   display: block;
   position: relative;
   float: left;
@@ -13,7 +26,7 @@ figcaption .center-caption {
   margin: 0 20px 20px 0;
 }
 
-.main-overview-image figcaption {
+.subjects-overview-image figcaption {
   position: absolute;
   background: black;
   background: rgba(0,0,0,0.75);
@@ -24,11 +37,11 @@ figcaption .center-caption {
   transition: all 0.6s ease;
 }
 
-.main-overview-image figure:hover figcaption {
+.subjects-overview-image figure:hover figcaption {
   opacity: 1;
 }
 
-.main-overview-image figure::before {
+.subjects-overview-image figure::before {
   content: '?';
   position: absolute;
   font-weight: 800;
@@ -48,20 +61,139 @@ figcaption .center-caption {
   opacity: 0.75;
 }
 
-.main-overview-image figure:hover::before {
+.subjects-overview-image figure:hover::before {
   opacity: 0;
 }
 
-.main-overview-image .cap-bot::before {
+.subjects-overview-image .cap-bot::before {
   bottom: 10px;
   left: 10px;
 }
 
-.main-overview-image .cap-bot figcaption {
+.subjects-overview-image .cap-bot figcaption {
   left: 0;
   bottom: -30%;
 }
 
-.main-overview-image .cap-bot:hover figcaption {
+.subjects-overview-image .cap-bot:hover figcaption {
   bottom: 0;
+}
+
+/* Popovers for subjects and places */
+.popover-kmaps {
+  background: #5a65d1;
+  border: none;
+  height: 1rem;
+  width: 1.2rem;
+  color: white;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  left: 0;
+  top: .1rem;
+  margin-left: .6rem;
+  margin-right: .4rem;
+  font-size: 1rem;
+  cursor:pointer;
+  opacity: 0.95;
+}
+
+.popover-kmaps:hover{
+  opacity: 1.0;
+}
+
+.popover-kmaps-tip {
+  border-bottom: .5rem solid transparent;
+  border-top: 0 solid transparent;
+  border-right: .5rem solid #5a65d1;
+  font-size: 0;
+  position: relative;
+  bottom: 1rem;
+  right: .5rem;
+  height: 0;
+  width: 0;
+}
+
+.popover-kmaps .icon {
+  color: white;
+ /*font-size:.7rem*/
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0.25rem;
+  font-size: 0.7em;
+}
+
+.popover-kmaps .popover-footer-button a {
+  color: #ddd;
+  font-weight: normal;
+  font-family: 'museo-sans-500',helvetica,arial,sans-serif !important;
+  border-bottom: none;
+  display: block;
+  width: 100%;
+  font-size: 1.06em;
+  line-height: 2.25em;
+  height: 2.75em;
+}
+
+.popover-kmaps .parents strong {
+  color: #555;
+  font-family: 'museo-sans-500',helvetica,arial,sans-serif;
+}
+
+/* Google maps */
+#map-canvas {
+  height: 600px;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Edit Button for Kmaps Nodes */
+.fixed-action-button {
+  display: inline-block;
+  bottom: .5rem;
+  right: 1rem;
+  position: fixed;
+  z-index: 200;
+  width: 4rem;
+  height: 4rem;
+}
+
+.round-btn-fixed {
+  display: inline-block;
+  color: #fff;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-clip: padding-box;
+  text-align: center;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-collapse: separate;
+  filter: alpha(opacity:85);
+  opacity:0.85;
+}
+
+.content-section .round-btn-fixed:hover,
+.content-section .round-btn-fixed:active {
+  filter: alpha(opacity=100);
+  opacity:1;
+  color:white;
+}
+
+.glyphicon.glyphicon-pencil {
+  font-size: 1.9rem;
+}
+
+.glyphicon.glyphicon-pencil::before {
+  position: relative;
+  top: 0.9rem;
+}
+
+.subjects-bg {
+  background-color: #dc3c47;
+}
+
+.places-bg {
+  background-color: #4ca6fb;
 }
