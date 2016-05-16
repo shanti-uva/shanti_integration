@@ -1,3 +1,31 @@
 =ShantiIntegration
 
 Provides the look and feel for a shanti application.
+
+==CSS
+
+For the order of how the CSS files get loaded see app/assets/stylesheets/shanti_integration/application.css.scss
+
+1. shanti_integration/utils
+
+   Based on css/utisl.css on drupal_shanti_sarvaka_theme[http://github.com/shanti-uva/drupal_shanti_sarvaka_theme].
+
+2. shanti_integration/font-awesome
+
+   Based on fonts/font-awesome-4.0.3/css/font-awesome.css on drupal_shanti_sarvaka_theme[http://github.com/shanti-uva/drupal_shanti_sarvaka_theme].
+
+3. shanti_integration/shanticon
+
+   Based on fonts/shanticon/css/style.css on drupal_shanti_sarvaka_theme[http://github.com/shanti-uva/drupal_shanti_sarvaka_theme].
+
+4. shanti_integration/search
+
+   Based on css/shanti-search.css on drupal_shanti_sarvaka_theme[http://github.com/shanti-uva/drupal_shanti_sarvaka_theme].
+
+5. shanti_integration/main
+
+   Based on css/shanti-main.css on drupal_shanti_sarvaka_theme[http://github.com/shanti-uva/drupal_shanti_sarvaka_theme].
+
+6. shanti_integration/explorer
+
+   Based on css/kmaps-explorer.css on drupal_kmaps_explorer[http://github.com/shanti-uva/drupal_kmaps_explorer].
