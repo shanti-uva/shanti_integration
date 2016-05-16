@@ -115,7 +115,7 @@ figcaption .center-caption {
   -webkit-tap-highlight-color: transparent;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   border-collapse: separate;
-  filter: alpha(opacity:85);
+  filter: alpha(opacity=85);
   opacity:0.85;
 }
 
