@@ -605,14 +605,6 @@ object.flip_label {
 ***/
 
 /*--- iCheck / radio and checkbox style overrides ---*/
-/*--- reset default size ---*/
-.icheckbox_minimal-red,
-.iradio_minimal-red {
-  height: 20px;
-  width: 20px;
-  margin-right: 4px;
-}
-
 .input-section .icheckbox_minimal-red,
 .input-section .iradio_minimal-red {
   height: 1.5em;
@@ -1617,9 +1609,6 @@ object.flip_label {
 
 
 
-
-
-
 /*--- Temporary styles to hide advance search options 
 .input-section .search-group{ height:44px;}
 .input-section .input-group input.form-control{ margin-top:7px;}
@@ -1660,3 +1649,11 @@ object.flip_label {
   z-index: 501;
 }
 **/
+
+
+
+/**
+* 
+* END - Sarvaka/css/shanti-main.css
+*
+*/

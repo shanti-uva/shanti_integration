@@ -7,12 +7,13 @@
 * ------------------------------------------
 * 
 */
+/* This font is not currently in use mf8yk may/2016
 @font-face {
   font-family: 'museo-sans-300';
   src: font-url('Museosans/museosans-300-webfont.eot');
   src: font-url('Museosans/museosans-300-webfont.eot?#iefix') format('embedded-opentype'), font-url('Museosans/museosans-300-webfont.woff2') format('woff2'), font-url('Museosans/museosans-300-webfont.woff') format('woff'), font-url('Museosans/museosans-300-webfont.ttf') format('truetype'), font-url('Museosans/museosans-300-webfont.svg#svgFontName') format('svg');
 }
-
+*/
 @font-face {
   font-family:'museo-sans-500';
   src: font-url('Museosans/museosans-500-webfont.eot'); 
@@ -45,7 +46,7 @@ body {
   font-weight: normal;
   overflow: hidden;
 }
-
+/* Note: header classes & elements */
 .h1, .h2, .h3, h1, h2, h3 {
   color: #606060;
   margin-top: 20px;
@@ -234,11 +235,12 @@ a:hover,a:active {
   height:auto;
 }
 
+.content-section .pull-left > img,
 .content-section img.pull-left{
-  margin: 0.2rem 1.5rem 0.5rem 0.2rem !important;
-  padding: 0.1rem !important;
+  margin: 0 1.5rem 0.5rem 0.2rem !important;
 }
 
+.content-section .pull-right > img, 
 .content-section img.pull-right {
   margin: 0.2rem 0.2rem 0.5rem 1.5rem !important;
   padding: 0.1rem !important;
@@ -293,7 +295,7 @@ a:hover,a:active {
   text-decoration: none !important;
 }
 
-/* ---- deprecated styles ----
+/* ---- deprecated styles - see bootstrap default styles for replacements ----
 .italic {
   font-style: italic !important;
 }
@@ -332,6 +334,19 @@ a:hover,a:active {
   display: inline-block;
   margin: 0;
   padding: 0;
+}
+
+/*--- reset default size ---*/
+.iradio_minimal-red,
+.icheckbox_minimal-red {
+  height: 20px;
+  width: 20px;
+  margin-right: 4px;
+}
+
+.form-type-radio label,
+.form-type-checkbox label {
+  text-transform: capitalize;
 }
 
 .custom-inline {
@@ -385,7 +400,9 @@ a:hover,a:active {
   width: auto;
 } /* matching container-fluid for now, correct for changes in BStrap */
 
-
+.has-tabs-secondary .row-offcanvas > section.content-section .tab-content:nth-of-type(1) {
+  margin-top: 2rem;
+} /* see breakpoints - this allows for two rows of tabs on tablets. */
 
 
 /*----------------------------------*/
@@ -1076,7 +1093,7 @@ a:hover,a:active {
   font-size: 0.93em;
   line-height: 1em;
   color: #f5f5f5;
-  font-family: arial,tahoma,helvetica,sans-serif;
+  font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
   font-weight: bold;
 }
 
@@ -1109,10 +1126,10 @@ a:hover,a:active {
 .breadcrumb li:last-child {
   color: #fff;
   position:relative;
-  top: 0.035rem;
-  font-size: 1.18em;
+  top: 0.15rem;
+  font-size: 1.06em;
   cursor: default;
-  font-family: arial,tahoma,helvetica,sans-serif;
+  font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
 }
 
 .breadcrumb li:last-child .icon {
@@ -1155,11 +1172,11 @@ body.front ol.breadcrumb {
 /*----------------------------*/
 
 /**** Titlebar Tabs ****/
-.has-tabs {
+.titlearea.has-tabs {
   margin-bottom: 2.5rem;
 }
 
-.has-tabs .banner-tabs {
+.titlearea.has-tabs > div > .banner-tabs {
   border-bottom: 1px solid #ccc;
   width: 100%;
   background: #ddd !important;
@@ -1168,10 +1185,6 @@ body.front ol.breadcrumb {
   filter: alpha(opacity=60);
   opacity: 0.6;
 }
-
-.has-tabs-secondary .row-offcanvas > section.content-section .tab-content:nth-of-type(1) {
-  margin-top: 2rem;
-} /* see breakpoints - this allows for two rows of tabs on tablets. */
 
 .tabs.primary,
 .tabs.secondary {
@@ -1211,6 +1224,8 @@ body.front ol.breadcrumb {
   height: 2.2rem;
   padding: 0.55rem 1.5rem 0;
   border: none;
+  border-width:0;
+  border-radius:0;
   margin-right: 0;
   display: inline-block;
   box-shadow: none;
@@ -1223,7 +1238,7 @@ body.front ol.breadcrumb {
 .tabs.primary li a {
   font-size: 0.68em;
   font-family: 'museo-sans-500',helvetica,arial,sans-serif;
-  font-wight: bold;
+  font-weight: bold;
 }
 
 .tabs.secondary li a {
@@ -1254,7 +1269,7 @@ body.front ol.breadcrumb {
   color: #111;
   cursor: pointer;
 }
-
+/*
 .tabs.primary li a:active,
 .tabs.secondary li a:active,
 .tabs.primary li a.active:active,
@@ -1262,7 +1277,7 @@ body.front ol.breadcrumb {
   background: #222;
   color: #fff;
 }
-
+*/
 .has-tabs-secondary .tabs.secondary {
   margin-top: 0.2rem;
 }
@@ -1952,7 +1967,7 @@ body.front ol.breadcrumb {
   color: #222;
   border: none!important;
   display: block;
-  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
 }
 
 .shanti-thumbnail {
@@ -2127,11 +2142,6 @@ body.front ol.breadcrumb {
 .shanti-thumbnail .body-wrap::-webkit-scrollbar-thumb:hover {
   background-color: #888;
   cursor: pointer;
-}
-
-
-.node-type-collection.logged-in.sidebar-second .tab-pane.main-col > div{
-  padding-top:0;
 }
 
 .shanti-thumbnail .body-wrap .shanti-field-creator a::before{
@@ -2534,7 +2544,7 @@ html input[type=file].form-file {
   line-height: 2em;
   font-size: .83em;
   letter-spacing: .05em;
-  font-family: 'museo-sans-500',helvetica,arial,sans-serif;
+  font-family: 'museo-sans-700',helvetica,arial,sans-serif;
 }
 
 a.btn,a.btn:hover,a.btn:active {
@@ -3617,15 +3627,14 @@ a.btn,a.btn:hover,a.btn:active {
   height: 2.12em;
   font-size: 1em;
   font-weight: normal;
-  font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+  font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
 }
 
 .bootstrap-select.btn-group .dropdown-menu li>a,
 .bootstrap-select.btn-group .dropdown-menu li>a:hover,
 .bootstrap-select.btn-group .dropdown-menu li>a:active {
-  /*border: 1px solid transparent !important;
-  border-width: 1px 0 !important;*/
   border:none !important;
+  text-transform: capitalize;
 }
 
 .bootstrap-select.btn-group .dropdown-menu li>a:focus {
@@ -4200,10 +4209,6 @@ body.page-admin-modules #block-system-main.block.block-system {
   height: 2.2em;
 }
 
-.page-search .form-item.form-type-checkbox label {
-  text-transform: capitalize;
-}
-
 .page-search .form-item.form-type-textfield.form-item-keys {
   margin-top: -0.5rem;
 }
@@ -4273,16 +4278,6 @@ body.page-admin-modules #block-system-main.block.block-system {
 
 
 
-/* My Stuff Account Collections page - 50% columns for drop-select */
-.view-my-workflow .field-accordion .form-item {
- /*display:inline;*/
-  width: 50%;
-  float: left;
-}
-
-.view-my-workflow .field-accordion .form-item label {
-  display: block;
-}
 
 
 /*---- footer ----*/
@@ -4654,35 +4649,36 @@ p.modal-title {
 /********************************/
 /*----- BEGIN Layout Corrections -----*/
 /********************************/
-.tab-pane.main-col > div, /* broad range need to watch */
-.page-node-devel .tab-pane.main-col > div {
+
+.tab-pane.main-col > div.region-content, /* broad range need to watch */
+.page-node-devel .tab-pane.main-col > div.region-content {
   max-width: 1050px !important;
   padding: 1.7rem 0 0;
   margin: 0 auto !important;
 }
 
 /* Fix for kmaps side-col */
-.no-sidebars.page-places .tab-pane.main-col > div,
-.no-sidebars.page-subjects .tab-pane.main-col > div,
-.page-node-devel.page-places .tab-pane.main-col > div,
-.page-node-devel.page-subjects .tab-pane.main-col > div {
+.no-sidebars.page-places .tab-pane.main-col > div.region-content,
+.no-sidebars.page-subjects .tab-pane.main-col > div.region-content,
+.page-node-devel.page-places .tab-pane.main-col > div.region-content,
+.page-node-devel.page-subjects .tab-pane.main-col > div.region-content {
   padding-top: 0;
 }
 
-.page-mydata .tab-pane.main-col > div,
-.page-mygallery .tab-pane.main-col > div,
-.page-user-contact .tab-pane.main-col > div {
+.page-mydata .tab-pane.main-col > div.region-content,
+.page-mygallery .tab-pane.main-col > div.region-content,
+.page-user-contact .tab-pane.main-col > div.region-content {
   max-width: 940px !important;
 }
 
-.page-user-contact .tab-pane.main-col > div {
+.page-user-contact .tab-pane.main-col > div.region-content {
   max-width: 850px !important;
 }
 
-.no-sidebars.page-places .tab-pane.main-col > div,
-.no-sidebars.page-subjects .tab-pane.main-col > div,
-.no-sidebars.page-places- .tab-pane.main-col > div,
-.no-sidebars.page-subjects .tab-pane.main-col > div {
+.no-sidebars.page-places .tab-pane.main-col > div.region-content,
+.no-sidebars.page-subjects .tab-pane.main-col > div.region-content,
+.no-sidebars.page-places- .tab-pane.main-col > div.region-content,
+.no-sidebars.page-subjects .tab-pane.main-col > div.region-content {
   max-width: 100% !important;
 }
 
@@ -4788,6 +4784,122 @@ html body.admin-menu {
   top: 0.2rem;
   left: -0.6rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+* 
+* BEGIN Migrating & Testing styles from Mediabase Edit Form CSS
+* 
+*/
+.page-node-edit .content-section a {
+  font-weight: bold;
+  font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+}
+
+.page-node-edit .form-type-checkbox { padding: 1rem 0;}
+.page-node-edit .form-type-checkbox .description { margin-top: 0; margin-left: 0; }
+.page-node-edit .icheckbox_minimal-red,
+.page-node-edit .iradio_minimal-red {
+  margin-right: 0.5rem !important;
+  position: relative;
+  top: -1px;
+  left: 0;
+}
+.page-node-edit .icheckbox_minimal-red { box-shadow: 0 0 2px #999; margin-right: 0.75rem !important; }
+
+
+/** 
+* Final Edit form buttons at very bottom
+*/
+
+/* Delete button gets red */
+.page-node-edit button#edit-delete{
+  float: right;
+  padding: .38em 1.5em .25em;
+  font-size: 0.68em;
+  background: #fff;
+  color: #606060;
+  font-weight:bold;
+  border:1px solid #ddd;
+}
+
+.page-node-edit button#edit-delete:hover{
+  background: red;
+  color:#fff;
+}
+/* other than Save button gets grey */
+.page-node-edit button#edit-preview-changes,
+.page-node-edit button#edit-preview,
+.page-node-edit button#edit-draft,
+.page-node-edit button#edit-cancel{
+  box-shadow: none;
+  color: #606060;
+  letter-spacing: .02em;
+  background:#fff;
+  border:1px solid #ddd;
+}
+
+.page-node-edit button#edit-preview-changes:hover,
+.page-node-edit button#edit-preview:hover,
+.page-node-edit button#edit-draft:hover,
+.page-node-edit button#edit-cancel:hover{
+  background: #888;
+  box-shadow: none;
+  border-color: #888;
+  color: #fff;
+  text-shadow: 0 0 1px #444;
+}
+
+/**
+* END Mediabase Edit Form migration
+*/
+
+
+
+
+
+/* My Stuff Account Collections page - 50% columns for drop-select */
+.view-my-workflow .field-accordion .form-item {
+ /*display:inline;*/
+  width: 50%;
+  float: left;
+}
+
+.view-my-workflow .field-accordion .form-item label {
+  display: block;
+}
+
+
+
+
+/**
+* New Collections work for end of May-2016 
+*/
+.node-type-collection .pane-node-body h2{
+  margin: 1rem 0 0.7rem;
+}
+
+.node-type-collection .pane-node-body p{
+  line-height: 1.68em;
+}
+
+
+
+
+
+
+
 
 
 /**
@@ -5134,3 +5246,8 @@ html body.admin-menu {
 
 
 
+/**
+* 
+* END - Sarvaka/css/shanti-main.css
+*
+*/
