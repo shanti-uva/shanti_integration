@@ -220,20 +220,6 @@ a:hover,a:active {
 .content-section a:active {
   border-bottom-color: transparent !important;
 }
-/**
-* Image display - Set exceptions here - Current rule excludes: (1)Images-Gallery, (2)Shanti-Media Gallery, (3) Images-Lightbox
-*/
-.content-section img:not(.og-grid img):not(.shanti-thumbnail-image img):not(.pswp__container img){
-  border-radius: 0;
-  border: 1px solid #ccc;
-  /*box-shadow: 0 0 2px 1px #ccc;  */
-  margin: 0;
-  padding: 0.1rem;
-  background: #fff;
-  display: block;
-  max-width:100%;
-  height:auto;
-}
 
 .content-section .pull-left > img,
 .content-section img.pull-left{
