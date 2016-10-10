@@ -1,11 +1,11 @@
 /**
 * Mandala KMAPS-Explorer Module (Places-Subjects) - Development
-* 
+*
 * version 1.x - kmaps-explorer.css
 * -------------------------------------------------
 * University of Virginia / SHANTI MANDALA / KMAPS
 * -------------------------------------------------
-* 
+*
 */
 /* This is messing up Rails so hiding for now May 16 2016
 body {
@@ -43,10 +43,12 @@ figcaption .center-caption {
   line-height: 24px;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
+  filter: alpha(opacity=75);
   opacity: 0.75;
 }
 
 .resource-overview-image figure:hover::before {
+  filter: alpha(opacity=0);
   opacity: 0;
 }
 
@@ -61,12 +63,14 @@ figcaption .center-caption {
   background: rgba(0,0,0,0.75);
   color: white;
   padding: 10px 20px;
+  filter: alpha(opacity=0);
   opacity: 0;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
 
 .resource-overview-image figure:hover figcaption {
+  filter: alpha(opacity=100);
   opacity: 1;
 }
 
@@ -91,7 +95,7 @@ figcaption .center-caption {
 }
 
 /**
-* Edit Button for Kmaps Nodes 
+* Edit Button for Kmaps Nodes
 */
 .fixed-action-button {
   display: inline-block;
@@ -138,7 +142,7 @@ figcaption .center-caption {
 
 /* custom image gallery for kmaps display */
 .og-expander{
-  margin-left:1.3rem; 
+  margin-left:1.3rem;
   width: 99%;
 }
 
@@ -148,28 +152,142 @@ figcaption .center-caption {
 
 
 /**
+* -------------------
 * Columnizer Lists
+* -------------------
 */
-.texts-list li,
-.kmaps-list-columns ul li{
-  font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+
+.kmaps-list-columns{
+  margin-bottom:7rem;
 }
 
-.texts-list li{
-  letter-spacing: 0.015em;
-  line-height: 1.75em;
+.kmaps-list-columns .texts-list li{
+  /* letter-spacing: 0.015em; */
+  margin-left: 1rem;
 }
 
-.kmaps-list-columns h6{
+/*--- headers ---*/
+/*.kmaps-list-columns h6{
+  text-transform: capitalize;
+}*/
+
+.places-in-places.kmaps-list-columns h6,
+.subjects-in-places.kmaps-list-columns h6{
+  font-size: 0.88em;
+  border: 2px solid #ddd;
+  background: #fff;
+  padding: 7px 12px 5px;
+  margin-right:1.5rem;
+
   text-transform: capitalize;
 }
 
-.texts-list .column:not(.first),
-.kmaps-list-columns .column:not(.first){
-  padding-left: 2rem;
+/*--- anchors ---*/
+.content-section .texts-list li a,
+.content-section .kmaps-list-columns ul li a{
+  border-bottom: none;
 }
 
-.places-in-places.kmaps-list-columns .column > ul > li {
+/*--- bullets ---*/
+/*.texts-list li::before,*/
+.kmaps-list-columns ul li::before,
+.places-in-subjects.kmaps-list-columns li::before{
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 2px #555;
+  display: inline-block;
+  margin-right: .4rem;
+  margin-left: -2rem;
+}
+/* list bullet hover remove shadow */
+.kmaps-list-columns ul.texts-list li:hover::before{
+  background: #555; /* default grey hover - see subtheme for custom color */
+  box-shadow:none;
+}
+
+.places-in-places.kmaps-list-columns li::before{
+  margin-left: -1.3rem;
+}
+
+.places-in-subjects.kmaps-list-columns li::before,
+.subjects-in-places.kmaps-list-columns ul li::before{
+  margin-left: -0.5rem;
+}
+
+.subjects-in-subjects.kmaps-list-columns ul li::before{
+  margin-left: -2.5rem;
+}
+
+/*.texts-list li.dontend::before,*/
+/*.places-in-places.kmaps-list-columns ul > li::before,*/
+.places-in-places.kmaps-list-columns ul li.dontend::before,
+/*.subjects-in-places.kmaps-list-columns > ul > li::before,*/
+.subjects-in-places.kmaps-list-columns ul li.dontend::before{
+  display:none;
+  width:0;
+  height:0;
+}
+
+/*--- column dividers ---*/
+/*.texts-list .column:not(.first),*/
+.kmaps-list-columns .column:not(.first){
+  padding-left: 1rem;
+  border-left: 1px solid #ddd;
+}
+
+.places-in-subjects.kmaps-list-columns .column:not(.first){
+  padding-left:2.5rem;
+}
+
+/*--- list wrappers ---*/
+.subjects-in-places.kmaps-list-columns .column > ul > li.split.dontsplit.dontend > ul{
+  -webkit-padding-start: 10px;
+  padding-left: 10px;
+}
+
+.subjects-in-subjects.kmaps-list-columns ul{
+  margin-bottom: 0;
+}
+
+.places-in-subjects.kmaps-list-columns ul,
+.subjects-in-subjects.kmaps-list-columns ul{
+  margin-left:1.5rem;
+}
+
+.places-in-places.kmaps-list-columns .column > ul > li > ul{
+  margin-top: 0.3rem;
+}
+
+/*--- list items ---*/
+/*.texts-list li,*/
+.kmaps-list-columns ul li{
+  list-style-type: none;
+  margin-bottom: 0.5em;
+  margin-right:1rem;
+  font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+
+  /*line-height: 1.32em;*/
+}
+
+.kmaps-list-columns ul li{
+  line-height: 1.32em;
+}
+
+.subjects-in-places.kmaps-list-columns .column > ul > li,
+.subjects-in-subjects.kmaps-list-columns .column > ul > li{
+  margin-bottom:0.5rem;
+}
+
+.places-in-subjects.kmaps-list-columns .column > li{
+  list-style-type: none;
+  margin-bottom: 0.5rem;
+}
+
+.places-in-places.kmaps-list-columns .column > ul > li,
+.subjects-in-places.kmaps-list-columns .column > ul > li {
   list-style-type: none;
   font-weight: bold;
   margin-top: 1rem;
@@ -178,29 +296,58 @@ figcaption .center-caption {
   text-transform: capitalize;
 }
 
-.places-in-places.kmaps-list-columns .column > ul > li ul li {
+.places-in-places.kmaps-list-columns .column > ul > li ul li,
+.subjects-in-places.kmaps-list-columns .column > ul > li ul li {
   font-weight:normal;
   font-size: 1.06em;
 }
 
-.places-in-places.kmaps-list-columns h6{
-  font-size: 0.82em;
-  border: 2px solid #ddd;
-  background: #fff;
-  padding: 7px 12px 5px;
+.subjects-in-subjects.kmaps-list-columns ul:nth-child(1) > li{
+  margin-left:0;
 }
 
-.kmaps-list-columns .popover-kmaps-tip{
+/*--- list popovers ---*/
+.places-in-places.kmaps-list-columns .popover-kmaps,
+.subjects-in-places.kmaps-list-columns .popover-kmaps,
+.subjects-in-subjects.kmaps-list-columns .popover-kmaps{
+  position: relative;
+  top: .35rem;
+}
+
+.places-in-places.kmaps-list-columns .popover-kmaps-tip,
+.subjects-in-places.kmaps-list-columns .popover-kmaps-tip{
+  position: relative;
+  bottom: 1.3rem;
   font-size: 0.1rem;
 }
 
+.places-in-places.kmaps-list-columns .popover-kmaps-tip{
+  position: relative;
+  bottom: 1.1rem;
+}
 
-/** 
-* ------------------------------------------------------------------------
-* Page Layouts - the width of content-resource column influences these
-* ------------------------------------------------------------------------
+.subjects-in-places.kmaps-list-columns .popover-kmaps-tip{
+  position: relative;
+  bottom: 1.2rem;
+}
+
+.subjects-in-subjects.kmaps-list-columns .popover-kmaps-tip{
+  position: relative;
+  bottom: 1.3rem;
+}
+
+
+
+
+
+
+/**
+* -------------------------------------------------------------------------------
+* Page Layouts - the width of content-resource column - maximizes map viewing
+* -------------------------------------------------------------------------------
 */
-body:not(.front) .content-section.equal-height.col-md-9 { width: 100%; padding-right:15px; padding-top:0.5rem; /* padding:0.5rem 2.75rem 0; */ }
+body:not(.front) .content-section.equal-height.col-md-9 { width: 100%; padding-right:15px; padding-top:0.5rem; }
+
 
 @media screen and (min-width: 992px) {
 
@@ -209,13 +356,29 @@ body:not(.front) .content-section.equal-height.col-md-9 { width: 100%; padding-r
 
 @media screen and (min-width: 1100px) {
 
-  body:not(.front) .content-section.equal-height.col-md-9 { width: 83%; }
+  body:not(.front) .content-section.equal-height.col-md-9 { width: 82.5%; }
 }
 
 @media screen and (min-width: 1300px) {
 
-  body:not(.front) .content-section.equal-height.col-md-9 { width: 85.5%; }
+  body:not(.front) .content-section.equal-height.col-md-9 { width: 85.25%; }
 }
+
+@media screen and (min-width: 1600px) {
+
+  body:not(.front) .content-section.equal-height.col-md-9 { width: 88%; }
+}
+
+@media screen and (min-width: 1900px) {
+
+  body:not(.front) .content-section.equal-height.col-md-9 { width: 90%; }
+}
+
+@media screen and (min-width: 2250px) {
+
+  body:not(.front) .content-section.equal-height.col-md-9 { width: 91.5%; }
+}
+
 /**
 *** END Layouts */
 
@@ -226,11 +389,11 @@ body:not(.front) .content-section.equal-height.col-md-9 { width: 100%; padding-r
 
 
 /**
-* Temporary hacks below this line
+* Temporary: popover class name inconsistent with Sarvaka
 */
 
 /* Popovers for subjects and places  */
-.popover-kmaps {
+.popover-kmaps, .kmaps-images-popover {
   background: #5a65d1;
   border: none;
   height: 1rem;
@@ -245,10 +408,12 @@ body:not(.front) .content-section.equal-height.col-md-9 { width: 100%; padding-r
   margin-right: .4rem;
   font-size: 1rem;
   cursor:pointer;
+  filter: alpha(opacity=895);
   opacity: 0.95;
 }
 
-.popover-kmaps:hover{
+.popover-kmaps:hover, .kmaps-images-popover:hover {
+  filter: alpha(opacity=100);
   opacity: 1.0;
 }
 
@@ -264,15 +429,16 @@ body:not(.front) .content-section.equal-height.col-md-9 { width: 100%; padding-r
   width: 0;
 }
 
-.popover-kmaps .icon {
+.popover-kmaps .icon, .kmaps-images-popover .icon {
   color: white;
   position: absolute;
-  bottom: 0.2rem;
+  bottom: 0.03rem;
   right: 0.25rem;
-  font-size: 0.7em;
+  font-size: 0.75em;
 }
 
-.popover-kmaps .popover-footer-button a {
+.popover-kmaps .popover-footer-button a,
+.kmaps-images-popover .popover-footer-button a {
   color: #ddd;
   font-weight: normal;
   font-family: 'museo-sans-500',helvetica,arial,sans-serif !important;
@@ -284,14 +450,499 @@ body:not(.front) .content-section.equal-height.col-md-9 { width: 100%; padding-r
   height: 2.75em;
 }
 
-.popover-kmaps .parents strong {
+.popover-kmaps .parents strong,
+.kmaps-images-popover .parents strong {
   color: #555;
   font-family: 'museo-sans-500',helvetica,arial,sans-serif;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* Fix for kmaps side-col
+.no-sidebars.page-places .tab-pane.main-col > div.region-content,
+.no-sidebars.page-subjects .tab-pane.main-col > div.region-content,
+.page-node-devel.page-places .tab-pane.main-col > div.region-content,
+.page-node-devel.page-subjects .tab-pane.main-col > div.region-content {
+  padding-top: 0;
+}
+*/
+.page-places .tab-pane.main-col,
+.page-subjects .tab-pane.main-col,
+.page-places- .tab-pane.main-col,
+.page-subjects .tab-pane.main-col {
+  max-width: 100% !important;
+  padding-top:0;
+}
+
+
+
+
+
+
 /**
-* 
+* BEGIN Overview Page
+*/
+
+.openlayermap {
+  margin-bottom: 1rem;
+}
+
+.openlayermap #sidebar_wrapper {
+  position: absolute;
+  z-index: 100;
+  display: none;
+}
+
+#controlPanelWrapper {
+  float: left;
+  width: 100%;
+  left: 0;
+}
+
+
+.feature-type-wrapper{
+  padding: 1rem 0 0;
+}
+
+.feature-type-wrapper h6{
+  text-transform:uppercase;
+  font-size:90%;
+}
+
+.feature-type-wrapper h6 ~ span{
+  font-style:italic;
+}
+
+.resource-overview-image {
+  margin: 0 0 1rem;
+  /*-webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;*/
+}
+
+
+
+.olControlCustomToggle.olControlNoSelect {
+  width: 160px !important;
+} /* openLayerMap text */
+
+.olControlCustomToggle.olControlNoSelect .custom_toggle_text {
+  width: 160px !important;
+  font-size: 0.75em;
+  white-space: nowrap;
+}
+
+/* --- gmaps-buttons is example of class set on div wrapper ---*/
+.map-renditions {
+  position: relative;
+  height: 600px;
+}
+
+.map-renditions > div:nth-of-type(1) {
+  box-shadow: 0 0 5px rgba(0,0,0, 0.125);
+  border-collapse: separate;
+}
+
+.btn-group-gmaps {
+  display: inline-block;
+  position: absolute;
+  bottom: 65px;
+  left: 30px;
+  box-shadow: 0 0 12px 0 rgba(50, 50, 50, 0.4);
+  border-collapse: separate;
+}
+
+.btn-group-gmaps.btn-group > .btn.btn-default {
+  color: #000;
+  background: #eee;
+  border: none;
+  font-size: 0.68em;
+  font-family: 'droidserif',palatino,'Palatino Linotype',georgia,serif;
+  font-weight: bold;
+}
+
+.btn-group-gmaps.btn-group > .btn.btn-default span {
+  background:transparent;
+}
+
+.btn-group-gmaps.btn-group > .btn.btn-default:not(.active):hover{
+  background: #fff;
+}
+
+.btn-group-gmaps.btn-group > .btn.btn-default.active {
+  color: #fff;
+  background: #333;
+  padding-left: 2.5rem;
+  cursor:default;
+}
+
+.btn-group-gmaps.btn-group > .btn.btn-default.active span {
+  border-radius: 0;
+  width: 0;
+  height: 0;
+  line-height: 1;
+  padding: 0;
+}
+
+.btn-group-gmaps.btn-group > .btn.btn-default.active span::before {
+  content: '\e642';
+  position: relative;
+  top: 0.7rem;
+  left: -0.1rem;
+  font-size: 1.32em;
+}
+
+.btn-group-gmaps.btn-group .btn+.btn {
+  margin-left: 0;
+}
+
+.google-maps {
+  position: relative;
+  padding-bottom: 75%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+ /* aspect ratio fix - temp */
+  height: 0;
+  overflow: hidden;
+}
+
+.google-maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+/*------ END from kmaps */
+/*----------------------*/
+
+
+
+
+
+
+
+/* temp fix for icon change on banner */
+.page-places .page-title .shanticon-subjects::before {
+  content: '\e62c';
+  font-size: 95%;
+}
+
+
+
+
+
+
+.modal img {
+  margin-bottom: 1rem;
+  max-width:100%;
+  height:auto;
+}
+
+.modal-header {
+  min-height: 5.5rem;
+}
+
+.modal-header button.close {
+  color: #777;
+  font-size: 4em !important;
+  position: relative;
+  top: -1rem;
+}
+
+p.modal-title {
+  font-size: 110%;
+}
+
+
+
+
+/**
+* BEGIN Kmaps Sidebar
+*/
+
+.sidebar-first .nav-pills {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.sidebar-first .nav-pills > li {
+  border-left: 10px solid transparent;
+  margin: 0;
+  padding: 0;
+  font-size: 1.12em;
+  line-height: 3em;
+  height: 3em;
+  position: relative;
+  white-space: nowrap;
+}
+
+.sidebar-first .nav-pills > li.active { /* see custom theme colors */ }
+
+.sidebar-first .nav-pills > li > a {
+  display: block;
+  padding: 0 0 0 1.2rem;
+  /*background: #fff;*/
+  font-size: .75em;
+  color: #707070;
+  line-height: 4.4em;
+  height: 4em;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #e0e0e0;
+  -webkit-transition: background 300ms ease-out;
+  transition: background 300ms ease-out;
+  font-family: 'museo-sans-700',helvetica,arial,sans-serif;
+  font-weight: bold;
+}
+
+.sidebar-first .nav-pills > li:first-child > a { /*border-top:1px solid #e0e0e0;*/ }
+
+/*.sidebar-first .nav-pills > li > a,*/
+.sidebar-first .nav-pills > li > a:hover,
+.sidebar-first .nav-pills > li > a:active {
+  color: #777;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar-first .nav-pills > li.active > a {
+  color: #333;
+  background: #eee;
+}
+
+.sidebar-first .nav-pills > li > a:hover,
+.sidebar-first .nav-pills > li.active > a:hover,
+.sidebar-first .nav-pills > li > a:active,
+.sidebar-first .nav-pills > li.active > a:focus {
+  color: #333;
+  background: #eee;
+}
+
+.sidebar-first .nav-pills > li > a .icon {
+  margin-right: 0.2em;
+  font-size: 1.68em;
+  position: relative;
+  top: 4px;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sidebar-first .nav-pills > li > a .icon:before {
+  position: relative;
+  top: 0;
+  font-size: 1.75rem;
+}
+
+.sidebar-first .nav-pills > li > a > .badge {
+  margin-left: 4px;
+  position: relative;
+  top: -1px;
+  font-size: .82em;
+  font-family: sans-serif;
+  line-height: 1.12em;
+  height: 1.68em;
+  text-shadow: 0 1px 1px #444;
+  display: inline-block;
+  color: #fff;
+  background: #777;
+}
+
+.sidebar-first .nav-pills > li > a:hover > .badge,
+.sidebar-first .nav-pills > li.active > a > .badge {
+  background: #505050;
+}
+
+.sidebar-first .nav-pills > li > a > .badge:empty {
+  display: none;
+}
+
+.sidebar-first .nav-pills > li .ajax-progress {
+  position: absolute;
+  right: 0.2rem;
+  top: 1.5rem;
+}
+
+.sidebar-first .nav-pills > li > a .icon.shanticon-overview{
+  margin-right: .5em;
+}
+
+
+
+/**
+* BEGIN Mobile Sidebar
+*/
+.sidebar-first {
+  max-width: 200px; /* 10px wider than for mobile */
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0;
+  margin-left: -1.5rem;
+  background-image: -webkit-linear-gradient(left, #ccc 0, #ccc 9px, #fff 10px);
+  background-image: -moz-linear-gradient(left, #ccc 0, #ccc 9px, #fff 10px);
+  background-image: -o-linear-gradient(left, #ccc 0, #ccc 9px, #fff 10px);
+  background-image: linear-gradient(left,#ccc 0,#ccc 9px,#fff 10px);
+}
+
+.sidebar-first.sidebar-offcanvas{
+  /*min-height:600px;*/
+  background-color: #fff;
+}
+
+.sidebar, .main-wrapper{
+  min-height:auto;
+}
+
+/**
+* LEFT BUTTON - Note: simplified class selector to just 'row-offcanvas' for Kmaps template
+*/
+.row-offcanvas .btn.btn-default.view-offcanvas-sidebar { left: -8px; }
+
+.row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar {
+  position: absolute;
+  left: -3.6rem;
+  top: -0.7rem;
+  color: #000;
+  filter: alpha(opacity=100);
+  opacity: 1;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar .icon {
+  color: #777;
+  font-size: 1.5rem;
+  position: relative;
+  top: 0.4rem;
+  left: -1.3rem;
+}
+
+.row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar .icon::before,
+.row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar .icon::after {
+  background: #aaa;
+  position: absolute;
+  top: 0rem;
+  left: .2rem;
+  width: 1.5rem;
+  height: 0.2rem;
+  content: '';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar .icon::after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar:hover .icon::before,
+.row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar:hover .icon::after {
+  background: #444;
+}
+
+
+@media screen and (max-width: 991px) {
+
+  .sidebar-first { margin-left:0; }
+  .row-offcanvas { position:relative; right:0; /*-webkit-transition: all .25s ease-out; -o-transition: all .25s ease-out; transition: all .25s ease-out;*/ }
+  .row-offcanvas.active { position:relative; left:190px; }
+  .row-offcanvas .sidebar-first.sidebar-offcanvas { position:absolute; left:-190px; min-width:190px; max-width:190px; width:25%; }
+  .row-offcanvas .btn.btn-default.view-offcanvas-sidebar { display: inline-block !important; position:absolute; left:-8px; top:-0.5rem; border-radius: 0 0.4rem 0.4rem 0; }
+  .row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar { position:absolute; top:-0.5rem; left:-2.6rem; }
+  .row-offcanvas .btn.btn-default.view-offcanvas-sidebar .icon{ position:relative; top:0; left:-0.3rem; float:right; }
+  .row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar .icon{ position:relative; top:0; }
+  /* END mobile sidebar */
+
+  .sidebar-first ul.nav-pills > li {
+    font-size: 1em;
+    line-height: 1em;
+    height: 2.75em;
+  }
+  .sidebar-first ul.nav-pills > li > a {
+    font-size: 0.75em;
+    line-height: 4.5em;
+    height: 4em;
+    padding: 0 0 0 10px;
+  }
+  .sidebar-first ul.nav-pills > li.active:first-child > a {
+    margin-top: 0;
+  }
+  .sidebar-first ul.nav-pills > li > a .icon {
+    position: relative;
+    top: 4px;
+  }
+  .sidebar-first .nav-pills > li .ajax-progress {
+    position: absolute;
+    top: 0.8rem;
+  }
+
+}
+/**
+* END Kmaps Sidebar */
+
+/**
+ * Quick fixes for the images implementation in kmaps
+ */
+.og-details .nav-tabs > li:first-of-type {
+  margin-left: inherit;
+}
+.og-details .nav-tabs > li {
+  margin-right: inherit;
+}
+.og-details button.copyurl {
+  color: #999;
+  background: transparent;
+  position: absolute;
+  bottom: 1.2rem;
+  margin-right: 0.5rem;
+  right: 0.2em;
+  border: 1px solid;
+  border-radius: 10px;
+  font-size: 1.44rem;
+  letter-spacing: 0.05rem;
+}
+.og-details button.copyurl:hover {
+  color: #ddd;
+}
+
+/** Fix for accordion in images modal **/
+.images-info-tabs .panel-group .panel {
+  margin: inherit;
+  padding: inherit;
+}
+.images-info-tabs .panel-default .panel-heading {
+  padding: 10px 15px;
+}
+
+.images-info-tabs .panel-body {
+  padding: 15px;
+}
+
+.images-info-tabs .panel-heading .accordion-toggle::after,
+.images-info-tabs .panel-heading .accordion-toggle.collapsed::after {
+  left: -1.15rem;
+}
+
+/**
+*
 * END - KMAPS/css/kmaps-explorer.css
 *
 */

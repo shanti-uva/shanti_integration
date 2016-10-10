@@ -30,3 +30,6 @@ All SCSS files were converted to this format to handle relative URLS using funct
 6. shanti_integration/explorer.css
 
    Based on css/kmaps-explorer.css on drupal_kmaps_explorer[http://github.com/shanti-uva/drupal_kmaps_explorer].
+   
+==JS
+

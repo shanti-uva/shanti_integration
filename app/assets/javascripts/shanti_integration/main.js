@@ -54,15 +54,26 @@
     var viewheight = (height) - 235;
     // var advHeight = $(".advanced-view").show().height();
     // var comboHeight = (viewheight) - 370;
-
+    var viewheightSources = (height) - 230;
+    var viewheightPlaces = (height) - 402;
 
     srchtab = parseInt(srchtab) + 'px';
     $("#search-flyout").find(".text").css('height',srchtab);
+
+    srchtabAdmin = parseInt(srchtabAdmin) + 'px';
+    $(".admin-menu #search-flyout").find(".text").css('height',srchtabAdmin);
 
     viewheight = parseInt(viewheight) + 'px';
     // comboHeight = parseInt(comboHeight) + 'px';
     $(".view-wrap").css('height', viewheight);
     // $(".view-wrap.short-wrap").css('height', comboHeight);
+
+    viewheightSources = parseInt(viewheightSources) + 'px';
+    $(".sources .view-wrap").css('height', viewheightSources);
+
+    viewheightPlaces = parseInt(viewheightPlaces) + 'px';
+    $(".page-places .view-wrap").css('height', viewheightPlaces);
+	
   };
 
   $(document).ready(function() {
@@ -511,9 +522,9 @@
     });
 	  
     // Toggle sidebar
-	$("button.view-offcanvas-sidebar").click( function() { 		// show-hide resource side-column
-	  $(this).toggleClass( "show",'fast' );
-	});
+	//$("button.view-offcanvas-sidebar").click( function() { 		// show-hide resource side-column
+	//  $(this).toggleClass( "show",'fast' );
+	//});
 	
     // Hide sidebar button for Kmaps homepage
 	// if($("body.front.kmaps").length ) {
@@ -545,30 +556,33 @@
     if($(".tabs.secondary").length ) { 
       $(".titlearea").addClass('has-tabs-secondary');
     }
-	
-    var mbsrch = $(".search-group .form-control");  // the main search input
-    $(mbsrch).data("holder", $(mbsrch).attr("placeholder"));
 
-    // --- focusin - focusout
-    $(mbsrch).focusin(function () {
-        $(mbsrch).attr("placeholder", "");
-        $("button.searchreset").show("fast");
-    });
-    $(mbsrch).focusout(function () {
-        $(mbsrch).attr("placeholder", $(mbsrch).data("holder"));
-        $("button.searchreset").hide();
+	$('.search-group .input-group').each(function() {	
+		var $xbtn = $("button.searchreset", this);
+		var $srch = $(".form-control", this);  // the main search input
+		$srch.data("holder", $srch.attr("placeholder"));
 
-        var str = "Enter Search...";
-        var txt = $(mbsrch).val();
+		// --- focusin - focusout
+		$srch.focusin(function () {
+			$srch.attr("placeholder", "");
+			$xbtn.show("fast");
+		});
+		$srch.focusout(function () {
+			$srch.attr("placeholder", $srch.data("holder"));
+			$xbtn.hide();
 
-        if (str.indexOf(txt) > -1) {
-            $("button.searchreset").hide();
-            return true;
-        } else {
-            $("button.searchreset").show(100);
-            return false;
-        }
-    });
+			var str = $srch.data("holder"); //"Enter Search...";
+			var txt = $srch.val();
+
+			if (str.indexOf(txt) > -1) {
+				$xbtn.hide();
+				return true;
+			} else {
+				$xbtn.show(100);
+				return false;
+			}
+		});
+	});
 	
     $('.carousel-description p').each(function() { 
       var txt = $(this).text();
@@ -629,6 +643,75 @@
 	//			}
 	//	  }
 	//	};
+	
+	// Sidebar and footer coordinate heights
+	ShantiSarvaka.sidebarFooterGravity = function() {   
+
+            
+              // top-banner-white = 50
+              // top-banner-colored = 70
+              // admin-tabs = 25
+              // main-wrapper = includes top-banner-colored and admin tabs extends to top of default-footer
+              // default-footer = 110
+              // admin-footer = 140
+
+              var height = $(window).height();
+              var mainwrapper_minimum = (height) - 227;
+              var mainwrapper_minimum_hastabs = (height) - 260;
+              var mainwrapper_minimum_adminfooter = (height) - 282;
+              // var mainwrapper_minimum_adminfooter_hastabs = (height) - 430;
+
+              mainwrapper_minimum = parseInt(mainwrapper_minimum) + 'px'; 
+              mainwrapper_minimum_hastabs = parseInt(mainwrapper_minimum_hastabs) + 'px';
+              mainwrapper_minimum_adminfooter = parseInt(mainwrapper_minimum_adminfooter) + 'px';
+              // mainwrapper_minimum_adminfooter_hastabs = parseInt(mainwrapper_minimum_adminfooter_hastabs) + 'px';
+              $(".main-col").css('min-height',mainwrapper_minimum);
+              $(".has-tabs .main-col").css('min-height',mainwrapper_minimum_hastabs);
+              $(".admin-menu.has-tabs .main-col").css('min-height',mainwrapper_minimum_adminfooter);
+              // $(".admin-menu .main-col").css('min-height',mainwrapper_minimum_adminfooter_hastabs);
+
+              // var mainwrapper = $(".main-wrapper").height(); 
+              var sidebar = $(".main-col").height();  // for sidebar height
+              var sidebarsecond = $(".main-col").height() + 50;  // for sidebar height - adds 20px to sidebar-second in AV height for top-margin/padding
+              // var sidebarsecond_hastabs = (mainwrapper) - 115;
+
+              sidebar = parseInt(sidebar) + 'px';
+              sidebarsecond = parseInt(sidebarsecond) + 'px';
+              // sidebarsecond_hastabs = parseInt(sidebarsecond_hastabs) + 'px';
+              $(".sidebar-first").one().css('height',sidebar);
+              $(".region-sidebar-second").css('height',sidebarsecond);
+
+
+              // temp fix
+              var sidebarsecondeditcollection = $(".page-node-edit.node-type-collection .main-col").height() + 550;
+              sidebarsecondeditcollection = parseInt(sidebarsecondeditcollection) + 'px';
+              $(".page-node-edit.node-type-collection  .region-sidebar-second").css('height',sidebarsecondeditcollection);
+              // $(".has-tabs .region-sidebar-second").css('height',sidebarsecond_hastabs) 
+
+          };
+		  
+          $(window).on('load', function() {
+              clearTimeout(this.id);
+              this.id = setTimeout( ShantiSarvaka.sidebarFooterGravity, 200);
+          });
+
+          $(window).bind('resize orientationchange', function() {
+              clearTimeout(this.id);
+              this.id = setTimeout( ShantiSarvaka.sidebarFooterGravity, 200);
+          });
+		  
+          ShantiSarvaka.set_equal_heights = function() {
+              clearTimeout(this.id);
+              this.id = setTimeout( ShantiSarvaka.sidebarFooterGravity, 200);
+          }
+
+          $("#sidebar-first a.use-ajax").click( function() {
+              $(document).ready( function() {
+                  $(".content-section.equal-height").bind('ajaxComplete', function(e){
+                         setTimeout( ShantiSarvaka.set_equal_heights, 200);
+                  });
+              });
+          });
   });
 
 }(jQuery));

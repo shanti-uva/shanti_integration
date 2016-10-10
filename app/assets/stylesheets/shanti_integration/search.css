@@ -1,11 +1,11 @@
 /**
 * Mandala Sarvaka - Development
-* 
+*
 * version 1.x - shanti-search.css
 * ------------------------------------------
 * University of Virginia / SHANTI MANDALA
 * ------------------------------------------
-* 
+*
 */
 
 /* clearing default styles (extruder default in utils.css) */
@@ -59,7 +59,7 @@
 }
 
 #search-flyout.extruder {
-  margin-top: 7px;
+  margin-top: 8px;
   position: absolute;
   z-index: 300;
 }
@@ -93,6 +93,7 @@
   /* default panel container width is set */
   width: 277px;
   min-width: 277px !important;
+  font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
 }
 
 /**
@@ -114,7 +115,7 @@
 }
 /**
 * Note: object.flip_label has to do with a built-in extruder
-* tab label feature of extruder library we are not using 
+* tab label feature of extruder library we are not using
 */
 object.flip_label {
   display: none;
@@ -146,7 +147,7 @@ object.flip_label {
 }
 
 /**
-* top banner search button inline styles are loaded via main.js with icon markup  
+* top banner search button inline styles are loaded via main.js with icon markup
 */
 #search-flyout.extruder .flap {
   background: #fff;
@@ -241,14 +242,18 @@ object.flip_label {
 
 /**
 * --------------------------------------
-* BEGIN  Search / Input & View 
+* BEGIN  Search / Input & View
 * --------------------------------------
 */
 .input-section {
-  padding: 0;
+  /* padding-top:1rem;  coordinate with contextual-links-region below */
   border: 1px solid #e0e0e0;
   display: block;
   width: 100%;
+}
+
+.input-section .contextual-links-region{
+  /*margin-top:-1rem;*/
 }
 
 .input-section .input-group input.form-control:first-child {
@@ -258,7 +263,7 @@ object.flip_label {
 }
 
 .input-section .input-group {
-  padding: 0 12px 0 10px;
+  padding: 0 12px;
   display: block;
   width: 100%;
   background: #f8f8f8;
@@ -274,7 +279,7 @@ object.flip_label {
   height: 35px; /* coordinate with button height below */
   line-height: 1.44em;
   margin: 14px 0 0;
-  padding: 2px 75px 0 15px;
+  padding: 2px 75px 0 32px;
   width: 100%;
   max-width: 100%;
   overflow: auto;
@@ -329,6 +334,8 @@ object.flip_label {
   margin: 0;
   font-size: 1.2rem;
   background-image: -webkit-linear-gradient(top, #fff 0, #e0e0e0 100%);
+  background-image: -moz-linear-gradient(top, #fff 0, #e0e0e0 100%);
+  background-image: -o-linear-gradient(top, #fff 0, #e0e0e0 100%);
   background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
 }
 
@@ -337,7 +344,7 @@ object.flip_label {
   color: #777;
 }
 
-.input-section .input-group .btn.btn-default:active, 
+.input-section .input-group .btn.btn-default:active,
 .input-section .input-group .btn-default.active {
   background: transparent;
   border-color: #fff;
@@ -360,74 +367,125 @@ object.flip_label {
   color: #777;
 }
 
-/* reset search button */
-.input-section .input-group-btn .searchreset {
-  border: none;
+
+
+
+/**
+* BEGIN Search Reset
+*/
+.input-section .searchreset,
+.kmap-typeahead-picker .searchreset,
+.kmap-tree-picker .searchreset {
   background: transparent;
   background-image: none;
+  background-clip: padding-box;
+  box-shadow: none;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.input-section .searchreset,
+.kmap-tree-picker .searchreset {
   position: absolute;
   right: 5rem;
   top: 0.9rem;
   z-index: 10;
-  padding: 0;
-  margin: 0;
-  display: none;
-  border-radius: 50%;
-  background-clip: padding-box;
 }
 
-.input-section .input-group-btn .searchreset:hover,
-.input-section .input-group-btn .searchreset:active {
-  color: #777;
+.input-section .kmap-typeahead-picker .searchreset {
+  position: absolute;
+  right: 2.4rem;
+  top: 2.75rem;
+  z-index: 10;
 }
 
-.input-section .input-group-btn .searchreset:active,
-.input-section .input-group-btn .searchreset.active {
+.input-section .searchreset:hover,.input-section .searchreset:active,
+.kmap-typeahead-picker .searchreset:hover,.kmap-typeahead-picker .searchreset:active,
+.kmap-tree-picker .searchreset:hover,.kmap-tree-picker .searchreset:active {
+  color: transparent;
+  background-image: none;
   background: transparent;
   border: none;
+}
+
+.input-section .searchreset:active, .input-section .searchreset.active,
+.kmap-typeahead-picker .searchreset:active,.kmap-typeahead-picker .searchreset.active,
+.kmap-tree-picker .searchreset:active,.kmap-tree-picker .searchreset.active {
+  background: transparent;
   background-image: none;
   box-shadow: none;
+  border: none;
 }
 
-.input-section .input-group-btn .searchreset .icon {
-  cursor: pointer;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 50%;
+.input-section .searchreset .icon,
+.kmap-typeahead-picker .searchreset .icon,
+.kmap-tree-picker .searchreset .icon {
+  background: transparent;
   background-clip: padding-box;
   border: none;
+  border-radius: 50%;
+  cursor: pointer;
   position: relative;
-  top: -0.55rem;
-  left: 0;
-  background: transparent;
+  top: -0.3rem;
+  left: 0.1rem;
+  width: 2.25rem;
+  height: 2.25rem;
 }
 
-.input-section .input-group-btn .searchreset .icon::before,
-.input-section .input-group-btn .searchreset .icon::after {
+.input-section .searchreset .icon::before,.input-section .searchreset .icon::after,
+.kmap-typeahead-picker .searchreset .icon::before,.kmap-typeahead-picker .searchreset .icon::after,
+.kmap-tree-picker .searchreset .icon::before,.kmap-tree-picker .searchreset .icon::after {
   background: #aaa;
+  content: '';
   position: absolute;
-  top: 1.3rem;
-  left: 0.5rem;
+  top: 1.1rem;
+  left: 0.3rem;
   width: 1.7rem;
   height: 1px;
-  content: '';
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-.input-section .input-group-btn .searchreset .icon::after {
+.input-section .searchreset .icon::after,
+.kmap-typeahead-picker .searchreset .icon::after,
+.kmap-tree-picker .searchreset .icon::after{
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
-.input-section .input-group-btn .searchreset:hover .icon,
-.input-section .input-group-btn .searchreset:active .icon {
+.input-section .searchreset:hover .icon, .input-section .searchreset:active .icon,
+.kmap-typeahead-picker .searchreset:hover .icon,.kmap-typeahead-picker .searchreset:active .icon,
+.kmap-tree-picker .searchreset:hover .icon,.kmap-tree-picker .searchreset:active .icon {
   background: #f5f5f5;
 }
 
-.input-section .feature-group .feature-reset {
+.extruder .shanticon-magnify {
+    position: absolute;
+    left: 2rem;
+    top: 1.45rem;
+    z-index: 10;
+    font-size: 1.18em;
+    color: #999;
+}
+
+.extruder .kmap-typeahead-picker .shanticon-magnify {
+    position: absolute;
+    left: 2.5rem;
+    top: 2.8rem;
+    font-size: 1.12em;
+}
+
+
+
+
+/**
+* BEGIN Feature Reset
+*/
+.input-section .feature-group .feature-reset{
   border: none;
   background: transparent;
   background-image: none;
@@ -478,16 +536,17 @@ object.flip_label {
 }
 
 .input-section .form-group {
-  margin-bottom: 7px;
-  padding-left: 0;
+  margin-bottom: 2px;
+  /*padding-left: 0;*/
 }
 
 .input-section .search-group {
   height: 86px;
+  position:relative;
 }
 
 .input-section .search-group .form-group {
-  padding-left: 1.5em;
+  padding-left: 1em;
 }
 
 .input-section .search-group .checkbox-inline:first-child {
@@ -508,25 +567,23 @@ object.flip_label {
 }
 
 .input-section label {
-  color: #444;
-  font-size: 12px;
-  line-height: 30px;
-  height: 28px;
-  padding-right: 0;
-  margin-left: 0px;
-  margin-right: 0;
+  font-size: 0.88em;
   text-transform: capitalize;
 }
 
-/** 
+.kmaps .input-section .kmap-typeahead-picker > label{
+  margin-left:3rem;
+}
+
+/**
 * Advanced Options
 */
 .input-section .advanced-view {
  /*** height:275px;  height can help control cross-browser issues ***/
-  padding: 0 .9rem;
-  background: #f8f8f8;
+  /*padding: 0 .9rem;
+  background: #f8f8f8;*/
   width: 100%;
-  margin-right: 0.3rem;
+  /*margin-right: 0.3rem;*/
 }
 
 .input-section .advanced-view .form-group {
@@ -541,17 +598,17 @@ object.flip_label {
 /**
 * advanced toggle for search panel */
 .input-section .toggle-link {
-  background: #f8f8f8;
-  color: #555 !important;
+  /*background: #f8f8f8;
+  color: #555 !important;*/
   font-size: 0.88em;
   display: block;
   text-align: right;
   font-weight: bold;
-  line-height: 0.93em;
-  margin: 0;
-  padding: 0 25px 0 0;
+  /*line-height: 0.93em;*/
+  margin: 0.5rem 2.5rem 0 0;
+  /*padding: 0;
   text-decoration: none;
-  font-family: 'droidserif',palatino,'Palatino Linotype',georgia,serif;
+  font-family: 'droidserif',georgia,palatino,'Palatino Linotype',serif;*/
 }
 
 .input-section .toggle-link:hover {
@@ -583,12 +640,20 @@ object.flip_label {
 }
 
 .input-section .toggle-link.advanced-link {
-  margin: 0;
+  /*margin: 0;
   padding: 0;
   position: relative;
   top: 23px;
   left: -12px;
-  float: right;
+  float: right;*/
+  display:none;
+}
+
+.page-places .input-section .toggle-link.advanced-link {
+  display:block;
+  /*top: 2px;
+  left: -18px;
+  margin-bottom: 8px;*/
 }
 
 .input-section .feature-group .toggle-link.show-features .icon::before, /*--- for feature types ---*/
@@ -640,10 +705,12 @@ object.flip_label {
   max-width: 15em;
   padding-left: 3px;
 }
+
+
 /**
 * BEGIN select dropdown
 */
-.input-section .bootstrap-select.btn-group:not(.input-group-btn), 
+.input-section .bootstrap-select.btn-group:not(.input-group-btn),
 .input-section .bootstrap-select.btn-group[class*="span"]{
   margin-top: 1rem;
 }
@@ -676,7 +743,7 @@ object.flip_label {
 
 .advanced-view .form-group.advanced-input.select-type {
   padding: 2px 1.2rem 2px;
-} 
+}
 
 .advanced-view .form-group.advanced-input .form-control {
   line-height: 27px;
@@ -718,6 +785,10 @@ object.flip_label {
   left: 12px;
 }
 
+.input-section .kmaps-tt-header .close{
+  position: relative;
+  top: -1rem;
+}
 /**
 *** END / Input & Advanced */
 
@@ -726,7 +797,7 @@ object.flip_label {
 
 /**
 * --------------------------------------------
-*  START View Section / Tabs - Table - Tree 
+*  START View Section / Tabs - Table - Tree
 * --------------------------------------------
 */
 .view-section {
@@ -738,6 +809,26 @@ object.flip_label {
 .view-section .tab-content {
   background: #f8f8f8;
   padding: 1rem 0 0;
+  border:1px solid #ddd;
+  border-width:0 1px;
+}
+
+.kmaps .view-section .tab-content{
+  padding-top:0;
+}
+
+.kmaps .view-wrap .kmaps-tt-header:first-of-type{
+  height: 35px !important;
+  color:transparent;
+  /* padding-top: 1rem; */
+}
+
+.kmaps .view-section .tab-content .tab-pane.listview{
+  border-top: 10px solid #eee;
+}
+
+.kmaps .view-section .tab-content .tab-pane.treeview{
+  padding-top:1rem;
 }
 
 .view-section .tab-content .tab-pane {
@@ -754,6 +845,15 @@ object.flip_label {
   font-size: 1.06em;
   line-height: 1.5em;
   letter-spacing: 0.01rem;
+}
+
+.kmaps .view-section .nav-tabs>li.listview{
+  width: 38%;
+}
+
+.kmaps .view-section .nav-tabs>li.treeview{
+  width: 75%;
+  max-width: 160px;
 }
 
 .view-section .nav-tabs>li>a {
@@ -794,6 +894,10 @@ object.flip_label {
   border-bottom-color: transparent;
 }
 
+.kmaps .view-section .nav-tabs>li.listview.active>a{
+  background-color: #eee;
+}
+
 .view-section .nav-tabs>li> .icon {
   width: 16px;
   height: 16px;
@@ -813,6 +917,14 @@ object.flip_label {
   right: 5px;
 }
 
+.view-section .nav-tabs>li.listview> a .icon::before{
+  content: '\e624';
+}
+
+.view-section .nav-tabs>li.treeview> a .icon::before{
+
+}
+
 .view-section .listview>div,
 .view-section .treeview>div {
   padding: 0;
@@ -820,7 +932,7 @@ object.flip_label {
 }
 
 .view-section .listview>div {
-  padding-top: 7px;
+  /*padding-top: 7px;*/
 }
 
 .view-section .treeview .tab-content {
@@ -944,7 +1056,7 @@ object.flip_label {
   margin-right: -0.5em;
 }
 
-.view-section .pagination>li>a, 
+.view-section .pagination>li>a,
 .view-section .pagination>li>span {
   padding: 0.5em 0.8em;
 }
@@ -962,11 +1074,11 @@ object.flip_label {
 .text.ui-resizable::-webkit-scrollbar{
   width: 0;
 }
- 
+
 .text.ui-resizable::-webkit-scrollbar-track{
   /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.15);*/
 }
- 
+
 .text.ui-resizable::-webkit-scrollbar-thumb{
   background-color: #aaa;
   cursor: pointer;
@@ -977,17 +1089,17 @@ object.flip_label {
   background-color: #888;
 }
 /**
-* search view-section scrollbars 
+* search view-section scrollbars
 */
 .view-section .view-wrap::-webkit-scrollbar {
   width: 0.6rem;
   border-radius: 1rem;
 }
- 
+
 .view-section .view-wrap::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
 }
- 
+
 .view-section .view-wrap::-webkit-scrollbar-thumb {
   background-color: #aaa;
   border-radius: 1rem;
@@ -998,17 +1110,17 @@ object.flip_label {
   background-color: #888;
 }
 /**
-* bootstrap-select scrollbars 
+* bootstrap-select scrollbars
 */
 .bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar{
   width: 0.5rem;
   border-radius: 0.8rem;
 }
- 
+
 .bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar-track{
   /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.15);*/
 }
- 
+
 .bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar-thumb{
   background-color: #aaa;
   cursor: pointer;
@@ -1022,7 +1134,7 @@ object.flip_label {
 
 
 /**
-* Tooltip popovers 
+* Tooltip popovers
 */
 .view-section .title-field {
   position: static;
@@ -1134,7 +1246,7 @@ object.flip_label {
 
 /**
 * --------------------------
-* START / Search Tree-Nav 
+* START / Search Tree-Nav
 * --------------------------
 */
 .fancytree-container {
@@ -1143,12 +1255,12 @@ object.flip_label {
   border: none;
   background-color: transparent !important;
   border: none !important;
-  font-family: 'droidserif',palatino,'Palatino Linotype',georgia,serif !important;
+  font-family: 'droidserif',georgia,palatino,'Palatino Linotype',serif !important;
 }
 
 .fancytree-container ul {
-  padding-top: 0;
-  margin-top: 0;
+  padding: 0 0 0 1rem !important;
+  margin: 0;
 }
 
 .fancytree-container li {
@@ -1166,7 +1278,7 @@ object.flip_label {
   line-height: 0;
   /* remove checkbox */
   display: none;
-} 
+}
 
 .fancytree-node {
   border: 1px solid transparent !important;
@@ -1330,7 +1442,7 @@ object.flip_label {
 
 
 /**
-* Search Loading 
+* Search Loading
 */
 #search-flyout .overlay-mask {
   position: absolute;
@@ -1467,7 +1579,7 @@ object.flip_label {
   -webkit-animation: loading-text-opacity 1s linear 0s infinite normal;
   animation: loading-text-opacity 1s linear 0s infinite normal;
   color: #333;
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
   font-size: 1.18em;
   text-transform: capitalize;
   font-weight: normal;
@@ -1483,7 +1595,7 @@ object.flip_label {
 
 
 /**
-* BEGIN tooltip popover on search view-section 
+* BEGIN tooltip popover on search view-section
 */
 .search-popover {
   display: none;
@@ -1598,7 +1710,6 @@ object.flip_label {
 .popover.left{
   margin-left: -1.5rem;
 }
-
 /**
 *** END View Section */
 
@@ -1609,51 +1720,104 @@ object.flip_label {
 
 
 
-/*--- Temporary styles to hide advance search options 
-.input-section .search-group{ height:44px;}
-.input-section .input-group input.form-control{ margin-top:7px;}
-.input-section .toggle-link.advanced-link{ display:none !important;}
-.advanced-view .form-group:first-child{ border-top:none;}
-.input-section .input-group .input-group-btn{ top:8px !important;}
-.advanced-view{ display:block !important;}
-.input-section .alert{ position:relative; top:7px;}
----*/
-/* hiding inner workings here Yuji
-.search-group > .form-group label:nth-of-type(-n+2),
-.form-group.advanced-input.feature-group.dropdown,
-.form-group.advanced-input.select-type{ 
-  display: none !important;
-  border-top: none !important;
-}
- */
 
 
 
-/*
-.ajax-progress, .ajax-progress *, .ajax-progress-throbber, .ajax-progress-throbber * {
-  display: inline-block;
-  white-space: nowrap;
-  margin: 0;
-  padding: 0;
+/* target kmaps-typeahead-picker = kmap-search-term input */
+.input-section .kmap-typeahead-picker .twitter-typeahead{
+  display: block;
+  width: 100%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
 }
 
-.ajax-progress {
-  margin: 4px 0 0 -10px;
+.input-section .kmap-search-term{
+  background-color: #fff !important;
+  border-radius: 2em;
+  font-size: 1.06em;
+  height: 35px;
+  max-width:100%;
+  padding-left: 3rem;
 }
 
-.ajax-progress .throbber {
-  height: 20px;
-  width: 20px;
-  background:transparent url('../images/ajax-loader.gif') no-repeat center center;
-  color: #000;
-  z-index: 501;
+.input-section .kmap-search-filter{
+  max-width: 30rem;
 }
-**/
+
+.input-section .kmap-filter:first-of-type{
+  /* margin-top: 1.5rem;
+  padding-top: .1rem;*/
+  border-top: 1px solid #ddd;
+}
+
+.input-section .kmap-filter:last-of-type .kmap-filter-box{
+  padding-bottom: 2rem
+}
+
+.input-section .search-filters{
+  padding: 0 1.5rem;
+}
+
+.view-wrap .kmaps-tt-suggestion:hover:not(.kmaps-tt-selected):not(.kmaps-tt-zero-facet){
+    background-color: #4aa1f3 !important;
+}
+
+.view-wrap .kmaps-tt-suggestion:hover .kmaps-count,
+.view-wrap .kmaps-tt-suggestion:hover .kmaps-term,
+.view-wrap .kmaps-tt-suggestion:hover .kmaps-ancestors{
+    color:#fff !important;
+}
+
+.view-wrap .kmaps-tt-header:first-of-type,
+.view-wrap .kmaps-tt-footer.kmaps-tt-results{
+  border-radius:0;
+}
+
+.view-wrap .kmaps-tt-suggestion{
+  margin-left:0;
+  padding: 3px 12px;
+  font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+}
+
+.view-wrap .kmaps-tt-dataset .kmaps-tt-suggestion:nth-chld(1){
+  padding-top:1rem;
+}
+
+.view-wrap .kmaps-tt-suggestion .kmaps-term{
+  color: #505050 !important;
+  font-weight: bold;
+}
+
+.view-wrap .kmaps-tt-suggestion .kmaps-ancestors{
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.32rem;
+  font-weight: normal !important;
+  color: #333 !important;
+}
+
+
+/**
+* -----------------------------------------------
+* KMaps target - temp
+* -----------------------------------------------
+*/
+
+.kmaps .input-section .search-group {
+  height:auto;
+  padding-bottom: 1rem;
+}
+
+.kmaps.page-places .input-section .search-group {
+  padding-bottom: 0;
+} 
+
+
 
 
 
 /**
-* 
+*
 * END - Sarvaka/css/shanti-main.css
 *
 */

@@ -1,28 +1,36 @@
 function checkWidth() {
-  var panelWidth = $(".text").width();
-    if( panelWidth > 275 ) {
-        $(".extruder-content").css("width","100%");
-      } else
-    if( panelWidth <= 275 ) {
-        $(".extruder-content").css("width","100% !important");
-      }
+    var panelWidth = $(".text").width();
+      if( panelWidth > 275 ) {
+          $(".extruder-content").css("width","100%");
+        } else
+      if( panelWidth <= 275 ) {
+          $(".extruder-content").css("width","100% !important");
+        }
 }
 
 // *** SEARCH *** adapt search panel height to viewport
 function searchTabHeight() {
-  var height = $(window).height();
-  var srchtab = (height) - 80;
-  var viewheight = (height) -  211;
-  // var advHeight = $(".advanced-view").show().height();
-  var comboHeight = (viewheight) - 126;
+    var height = $(window).height();
+    var srchtab = (height) - 88;
+    var viewheight = (height) - 235;
+    // var advHeight = $(".advanced-view").show().height();
+    // var comboHeight = (viewheight) - 370;
+    var viewheightSources = (height) - 230;
+    var viewheightPlaces = (height) - 402;
 
-  srchtab = parseInt(srchtab) + 'px';
-  $("#search-flyout").find(".text").css('height',srchtab);
+    srchtab = parseInt(srchtab) + 'px';
+    $("#search-flyout").find(".text").css('height',srchtab);
 
-  viewheight = parseInt(viewheight) + 'px';
-  comboHeight = parseInt(comboHeight) + 'px';
-  $(".view-wrap").css('height', viewheight);
-  $(".view-wrap.short-wrap").css('height', comboHeight);
+    viewheight = parseInt(viewheight) + 'px';
+    // comboHeight = parseInt(comboHeight) + 'px';
+    $(".view-wrap").css('height', viewheight);
+    // $(".view-wrap.short-wrap").css('height', comboHeight);
+
+    viewheightSources = parseInt(viewheightSources) + 'px';
+    $(".sources .view-wrap").css('height', viewheightSources);
+
+    viewheightPlaces = parseInt(viewheightPlaces) + 'px';
+    $(".page-places .view-wrap").css('height', viewheightPlaces);
 }
 
 $(document).ready(function(){
@@ -42,15 +50,24 @@ $(document).ready(function(){
     // Add back in extruder content
     $('#search-flyout .text').append(mbContent);
     // Make it resizeable
-    $("div.extruder-content > div.text").resizable({
-      handles: "w",
-      resize: function (event, ui) {
-        $('span.fancytree-title').trunk8({ tooltip:false });
-      }
-    });
-          
-    // Bind event listener
-    $(".extruder-content").resize(checkWidth());
+    try { 
+	    if($("div.extruder-content > div.text").length > 0) {
+		    $("div.extruder-content > div.text").resizable({
+		      handles: "w",
+		      resize: function (event, ui) {
+		      	$('#search-flyout .extruder-content').css('width','');
+		        //$('span.fancytree-title').trunk8({ tooltip:false });
+		      }
+		    });
+			}
+	    // Bind event listener
+	    $(".extruder-content").resize(checkWidth());
+	    // Add identifier
+	    // $(".extruder-content").attr("aria-label","Search Panel");
+	   } catch (e) { 
+	   	console.trace();
+	   	console.warn('Resizeable not a function error caught! search.js line 49');
+	   }
      
     if (!$(".extruder.right").hasClass("isOpened")) {
       $(".flap").click( function() {
@@ -59,6 +76,9 @@ $(document).ready(function(){
       // styles inline for now, forces
       $(".flap").prepend("<span><i class='icon shanticon-search'></i></span>");
       $(".flap").addClass("on-flap");
+      // Add identifiers
+      $(".flap").attr("role", "button");
+      $(".flap").attr("aria-label", "Open Search Panel");
     }
     
     // --- set class on dropdown menu for icon

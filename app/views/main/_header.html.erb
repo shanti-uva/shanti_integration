@@ -5,9 +5,9 @@
 <!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 
 <head>
-	<meta charset="UTF-8" >
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" >
-	<meta name="viewport" content="width=device-width, initial-scale=1" >
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="SHANTI at the University of Virginia - Sciences, Humanities and Arts Network of Technological Initiatives: SHANTI promotes innovation in the humanities, social sciences and arts at the University of Virginia through supporting the application of advanced technologies in research, teaching, publication and engagement across the entire community." />
 	<meta name="keywords" content="SHANTI at the University of Virginia - Sciences, Humanities and Arts Network of Technological Initiatives" />
 	<title><%= head_title %></title>
@@ -25,10 +25,10 @@
 <%= favicon_link_tag 'shanti_integration/favicons/favicon-76.png', rel: 'apple-touch-icon', sizes: '76x76', type: 'image/png' %>
 <%= favicon_link_tag 'shanti_integration/favicons/favicon-72.png', rel: 'apple-touch-icon', sizes: '72x72', type: 'image/png' %>
 <%= favicon_link_tag 'shanti_integration/favicons/favicon-57.png', rel: 'apple-touch-icon', type: 'image/png' %>
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-TileImage" content="<%= image_path 'shanti_integration/favicons/favicon-144.png' %>">
-<meta name="msapplication-config" content="<%= image_path 'shanti_integration/favicons/browserconfig.xml' %>">
-<meta name="theme-color" content="#ffffff" >
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="msapplication-TileImage" content="<%= image_path 'shanti_integration/favicons/favicon-144.png' %>" />
+<meta name="msapplication-config" content="<%= image_path 'shanti_integration/favicons/browserconfig.xml' %>" />
+<meta name="theme-color" content="#ffffff"  />
 <%= stylesheet_link_tag(*(stylesheet_files + [media: 'all', 'data-turbolinks-track' => true])) %>
 <%= javascript_include_tag(*(javascript_files + ['data-turbolinks-track' => true])) %>
 <%= csrf_meta_tags %>
@@ -38,7 +38,7 @@
   <div class="wrap-all">
     <span class="sr-only"><a href=".main-content">Skip to main content</a> <a href="#search-flyout">Skip to search</a></span>
     <!-- Header Region -->
-    <header class="header-banner">
+	<div class="site-banner">
       <div class="navbar navbar-default"> 
 	    <nav class="navbar-buttons">
 	      <span class="menu-icon menu-toggle"><a href="#"><span class="sr-only">Main Menu</span><span class="icon shanticon-menu"></span></a></span><!-- desktop > 768 drilldown menu : main-menu -->
@@ -75,4 +75,4 @@
 <%=     render 'main/collections_list' %>        
 	  </div></div><button class="close"> <span class="icon shanticon-cancel"></span> </button></nav>
 	  </section>
-    </header>
+    </div>
