@@ -46,27 +46,32 @@ module ShantiIntegrationHelper
       {
         shanticon: 'texts',
         title: 'Texts',
-        url: 'http://essays.drupal-dev.shanti.virginia.edu/'
+        url: 'https://texts.shanti.virginia.edu/'
       },
       {
         shanticon: 'sources',
         title: 'Sources',
-        url: 'http://csc.opentactics.com/csc-search?field_zotero_collections=All'
+        url: 'https://sources.shanti.virginia.edu/'
       },
       {
         shanticon: 'audio-video',
         title: 'Audio-Video',
-        url: 'http://mediabase.drupal-dev.shanti.virginia.edu/'
+        url: 'https://audio-video.shanti.virginia.edu/'
       },
       {
         shanticon: 'photos',
-        title: defined?(MmsIntegration) ? MmsIntegration::Medium.human_name(:count => :many).titleize.s : Medium.model_name.human(:count => :many).titleize.s,
+        title: defined?(MmsIntegration) ? MmsIntegration::Picture.human_name(:count => :many).titleize.s : Medium.model_name.human(:count => :many).titleize.s,
         url: defined?(MmsIntegration) ? MmsIntegration::MediaManagementResource.get_url : root_path
       },
       {
         shanticon: 'visuals',
         title: 'Visuals',
-        url: 'http://shiva.drupal-dev.shanti.virginia.edu/'
+        url: 'https://visuals.shanti.virginia.edu/'
+      },
+      {
+        shanticon: 'logo-shanti',
+        title: 'Knowledge Base',
+        url: 'https://wiki.shanti.virginia.edu/display/KB/Home'
       }
     ]
   end
