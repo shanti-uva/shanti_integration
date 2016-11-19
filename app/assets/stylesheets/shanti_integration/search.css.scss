@@ -1051,7 +1051,7 @@ border-width: 4px 0 0 0;*/
 .view-section .table-results .progress-disabled ~ .ajax-progress:nth-of-type(1){
   height: 20px;
   width: 20px;
-  /*background:transparent url('../images/ajax-loader.gif') no-repeat center center;*/
+  /*background:transparent image-url('/interface_utils/ajax-loader.gif') no-repeat center center;*/
   position:absolute;
   display:inline-block;
   background:transparent;
@@ -1062,7 +1062,7 @@ border-width: 4px 0 0 0;*/
 .view-section table.table-results tbody>tr.progress-disabled.row_selected {
   height: 20px;
   width: 20px;
-  background:transparent url('../images/ajax-loader.gif') no-repeat center center;
+  background:transparent image-url('/interface_utils/ajax-loader.gif') no-repeat center center;
   z-index: 501;
 }
 */
