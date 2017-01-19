@@ -24,3 +24,5 @@
 //= require shanti_integration/main
 //= require shanti_integration/search
 //= require shanti_integration/modernizr-2.6.2.min
+//= require shanti_integration/js.cookie
+//= require shanti_integration/preferences
