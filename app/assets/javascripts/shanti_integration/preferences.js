@@ -2,7 +2,7 @@ $(document).ready(function(){
 //Flyout settings
     var flyout_status = Cookies.get('flyout_status');
 
-    if (Cookies.get('flyout_status') && Cookies.get('flyout_status') == 'open') {
+    if (!Cookies.get('flyout_status') || Cookies.get('flyout_status') == 'open') {
       $('#search-flyout').openMbExtruder();
     }
 
