@@ -4523,3 +4523,52 @@ body.page-admin-modules #block-system-main.block.block-system {
 * END - Sarvaka/css/shanti-main.css
 *
 */
+
+/**
+*
+* Panel content
+*
+**/
+.panel-content{
+  overflow: visible;
+  background: transparent !important;
+  margin-bottom: 1rem;
+}
+.panel-content .panel-heading, .panel.panel-default .panel-heading h6 a.collapsed {
+  background: #e0e0e0;
+}
+.panel-content .panel-heading :not(.panel-content .panel-default .panel-heading){
+  margin: 0;
+  padding: 0;
+  color: #555;
+  border: none;
+  display: block;
+  padding-left: 2rem;
+  background: #e0e0e0;
+  text-transform: uppercase;
+  font-size: 1.06em;
+  line-height: 4.25em;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ccc;
+  height: 65px;
+}
+.panel.panel-content .panel-heading h6 {
+  text-transform: uppercase;
+  font-size: 1.06em;
+  line-height: 4.25em;
+  margin: 0;
+  min-height: 65px;
+}
+.panel-content .panel-heading h6>a {
+  color: #555;
+}
+.panel-content .panel-heading h6>a.item-icon-edit {
+  padding-left: 2rem;
+  margin-left: 1rem;
+}
+
+/**
+*
+* END - Panel content
+*
+**/
