@@ -2,6 +2,8 @@
 
 Provides the look and feel for a shanti application.
 
+Based on {Drupal Sarvaka Theme}[https://github.com/shanti-uva/drupal_shanti_sarvaka_theme]
+
 ==CSS
 
 For the order of how the CSS files get loaded see app/assets/stylesheets/shanti_integration/application.css.scss.

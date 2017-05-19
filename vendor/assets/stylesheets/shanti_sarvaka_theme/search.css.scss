@@ -53,15 +53,16 @@
   background: transparent !important;
 }
 
-
-#search-flyout.extruder {
-  top: 0;
-}
-
 #search-flyout.extruder {
   margin-top: 8px;
   position: absolute;
+  top:0;
   z-index: 300;
+}
+
+/* hide the search tab on the user profile page */
+.page-user #search-flyout.extruder{
+  display:none !important;
 }
 
 #search-flyout .ext_wrapper {
@@ -81,7 +82,7 @@
 }
 
 #search-flyout.extruder.isOpened .extruder-content {
-  border-right-width: 12px;
+  border-right-width: 13px;
 }
 
 #search-flyout.extruder .text {
@@ -94,6 +95,10 @@
   width: 277px;
   min-width: 277px !important;
   font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+}
+
+#search-flyout .text > .shanticon-close2{
+  display:none;
 }
 
 /**
@@ -125,68 +130,96 @@ object.flip_label {
   margin-top: 280px;
 }
 
-/* drag-width handle for extruder */
-.text.ui-resizable,
-.isOpened .text.ui-resizable {
-  /* Important to keep the right edge pinned while expanding width */
-  position: static;
+
+
+/** 
+* BEGIN UI-Resize Search Flyout
+* left edge handle 
+*/
+.extruder .text.ui-resizable,
+.extruder .isOpened .text.ui-resizable {
+  position: static; /* Important for keeping the right edge pinned while expanding flyout width */
+  overflow-y: visible;
 }
+
 
 .ui-resizable-handle.ui-resizable-w {
   cursor: col-resize;
   position: absolute;
-  left: 1px;
-  top: 10px;
-  z-index: 290;
-  width: 6px;
-  height: 97%;
+  z-index: 90;
+  top: .8rem;
+  left: .8rem;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 39px 39px 0 0;
+  border-color: #aaa transparent transparent transparent;
+  opacity: 0.8;
 }
-
+.ui-resizable-handle.ui-resizable-w:hover {
+  opacity: 1;
+}
+.ui-resizable-handle.ui-resizable-w.active,
 .ui-resizable-handle.ui-resizable-w:active {
-  background: #fafafa;
-}
-/* CSS To add the Dragable Handle in the search flyout*/
-.ui-resizable-handle.ui-resizable-w {
-  cursor: col-resize;
-  position: absolute;
-  left: 1px;
-  top: 10px;
-  z-index: 290;
-  width: 6px;
-  height: 97%;
-  left: -2.1rem;
-  top: 6.4rem;
-  width: 2.4rem;
-  height: 2.4rem;
-  background-color: #333;
-  /*border: 1px solid #fff;
-border-width: 4px 0 0 0;*/
-  border-radius: .6rem 0 0 .6rem;
-  border-radius: 50%;
-  background-color: #aaa;
-  left: 1rem;
-  top: 6.2rem;
-  border: 3px double #f0f0f0;
+  border-color: #aaa transparent transparent transparent;
 }
 
 .ui-resizable-handle.ui-resizable-w::before{
   content: '\f047';
   font-family: 'FontAwesome';
-  font-size:1.4rem;
+  font-size: 1.12em;
   display: inline-block;
   color: #fff;
   width: 1.6rem;
   height: 1.6rem;
-  /*margin-left:.3rem;*/
   position: relative;
-  top:0.1rem;
-  left:0.2rem;
+  bottom: 3.4rem;
+  left: .4rem;
+}
+.ui-resizable-handle.ui-resizable-w:hover::before,
+.ui-resizable-handle.ui-resizable-w.active::before,
+.ui-resizable-handle.ui-resizable-w:active::before {
+  color: #fff;
 }
 
-.ui-resizable-handle.ui-resizable-w:active {
-  background-color: #555;
+/* ----- left edge handle -nw */
+.ui-resizable-handle.ui-resizable-nw{
+  cursor: col-resize;
+  z-index: 99;
+  position: absolute;
+  top: .7rem;
+  left: .1rem;
+  height: 98.7%;
+  width: .5rem;
+  background-color: #fff;
+  border:none;
 }
-/* END CSS To add the Dragable Handle in the search flyout*/
+
+.ui-resizable-handle.ui-resizable-nw:hover {
+  background-color: #fff;
+}
+
+.ui-resizable-handle.ui-resizable-nw::before{
+  display:none;
+}
+
+.ui-resizable-handle.ui-resizable-nw:active {
+  background-color: #f5f5f5;
+}
+
+
+
+
+
+.extruder .edit-advanced-option label{
+  margin-left: 0;
+}
+
+.extruder #sources-views-advanced-search-form .radio-inline{
+  padding-left:0;
+  margin-left: 0;
+}
+
 
 /**
 * top banner search button inline styles are loaded via main.js with icon markup
@@ -211,7 +244,7 @@ border-width: 4px 0 0 0;*/
 
 #search-flyout.extruder .flap .flapLabel,
 #search-flyout.extruder .flap.on-flap .flapLabel {
-  background: #444;
+  background: #333;
   height: 39px;
   width: 43px !important;
   padding: 17px 38px 17px 0;
@@ -235,42 +268,55 @@ border-width: 4px 0 0 0;*/
 #search-flyout.extruder .flap>span,
 #search-flyout.extruder .flap.on-flap>span {
   color: #ccc;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
 }
 
 #search-flyout.extruder .flap.on-hover>span,
 #search-flyout.extruder .flap.on-hover.on-flap>span {
   color: #fff;
-  background: #333;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
+  background: #222;
 }
 
 #search-flyout.extruder .flap>span .icon {
-  font-size: 2.38rem;
   position: absolute;
-  left: 17px;
-  top: 16px;
+  font-size: 2.88rem;
+  left: 1.5rem;
+  top: 1.21rem;
   z-index: 10;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-#search-flyout.extruder.isOpened .flap.on-flap>span .icon {
-  color: #888;
-  font-size: 3.12rem;
-  left: 13px;
-  top: 11px;
+#search-flyout.extruder .flap.on-flap>span .icon {
+  font-size: 2.25rem;
+  position: absolute;
+  left: 1.85rem;
+  top: 1.6rem;
+}
+
+#search-flyout.extruder.isOpened .flap.on-flap>span .icon{
+  position: absolute;
+  font-size:2.75rem;
+  left: 1.5rem;
+  top: 1.3rem;
+}
+
+#search-flyout.extruder.isOpened .flap.on-flap>span .icon:hover {
+  color: #ddd;
 }
 
 #search-flyout.extruder.isOpened .flap.on-hover>span .icon,
 #search-flyout.extruder.isOpened .flap.on-hover.on-flap>span .icon {
   color: #fff;
   background: transparent;
+}
+
+#search-flyout.extruder.isOpened .flap.on-flap>span .icon.shanticon-search::before{
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
 
-#search-flyout.extruder.isOpened .flap.on-flap>span .icon.shanticon-search::before {
+#search-flyout.extruder.isOpened .flap.on-flap>span .icon.shanticon-search::before,
+#search-flyout.extruder.isOpened .flap.on-flap>span .icon.shanticon-search:hover::before {
   content: '\e610';
 }
 
@@ -298,21 +344,21 @@ border-width: 4px 0 0 0;*/
   /*margin-top:-1rem;*/
 }
 
-.input-section .input-group input.form-control:first-child {
+.input-section .input-group .form-control:first-child {
   border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
   background-clip: padding-box;
 }
 
 .input-section .input-group {
-  padding: 0 12px;
+  padding: 0 15px;
   display: block;
   width: 100%;
   background: #f8f8f8;
   float:left;
 }
 
-.input-section .input-group input.form-control {
+.input-section .input-group .form-control {
   color: #777;
   border: 1px solid #ccc;
   border-radius: 25px;
@@ -335,12 +381,12 @@ border-width: 4px 0 0 0;*/
   transition-duration: 400ms;
 }
 
-.input-section .input-group input.form-control:hover {
+.input-section .input-group .form-control:hover {
   border: 1px solid #ccc;
   color: #777;
 }
 
-.input-section .input-group input.form-control:focus {
+.input-section .input-group .form-control:focus {
   border: 1px solid #9097d3;
   box-shadow: 0 0 4px #949bd8;
   border-collapse: separate;
@@ -351,7 +397,7 @@ border-width: 4px 0 0 0;*/
   height: 35px;
   position: absolute;
   top: 15px;
-  right: 13px;
+  right: 16px;
   z-index: 10;
   background: transparent;
   padding: 0;
@@ -415,7 +461,7 @@ border-width: 4px 0 0 0;*/
 /**
 * BEGIN Search Reset
 */
-.input-section .searchreset,
+.extruder .searchreset,
 .kmap-typeahead-picker .searchreset,
 .kmap-tree-picker .searchreset {
   background: transparent;
@@ -428,22 +474,22 @@ border-width: 4px 0 0 0;*/
   margin: 0;
 }
 
-.input-section .searchreset,
+.extruder .searchreset,
 .kmap-tree-picker .searchreset {
   position: absolute;
-  right: 5rem;
+  right: 5.4rem;
   top: 0.9rem;
   z-index: 10;
 }
 
 .input-section .kmap-typeahead-picker .searchreset {
   position: absolute;
-  right: 2.4rem;
+  right: 2.7rem;
   top: 2.75rem;
   z-index: 10;
 }
 
-.input-section .searchreset:hover,.input-section .searchreset:active,
+.extruder .searchreset:hover,.extruder .searchreset:active,
 .kmap-typeahead-picker .searchreset:hover,.kmap-typeahead-picker .searchreset:active,
 .kmap-tree-picker .searchreset:hover,.kmap-tree-picker .searchreset:active {
   color: transparent;
@@ -452,7 +498,7 @@ border-width: 4px 0 0 0;*/
   border: none;
 }
 
-.input-section .searchreset:active, .input-section .searchreset.active,
+.extruder .searchreset:active, .extruder .searchreset.active,
 .kmap-typeahead-picker .searchreset:active,.kmap-typeahead-picker .searchreset.active,
 .kmap-tree-picker .searchreset:active,.kmap-tree-picker .searchreset.active {
   background: transparent;
@@ -461,7 +507,7 @@ border-width: 4px 0 0 0;*/
   border: none;
 }
 
-.input-section .searchreset .icon,
+.extruder .searchreset .icon,
 .kmap-typeahead-picker .searchreset .icon,
 .kmap-tree-picker .searchreset .icon {
   background: transparent;
@@ -469,29 +515,29 @@ border-width: 4px 0 0 0;*/
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  width: 2rem;
+  height: 2rem;
   position: relative;
-  top: -0.3rem;
-  left: 0.1rem;
-  width: 2.25rem;
-  height: 2.25rem;
+  left: 0.25rem;
+  top: -0.15rem;
 }
 
-.input-section .searchreset .icon::before,.input-section .searchreset .icon::after,
+.extruder .searchreset .icon::before,.extruder .searchreset .icon::after,
 .kmap-typeahead-picker .searchreset .icon::before,.kmap-typeahead-picker .searchreset .icon::after,
 .kmap-tree-picker .searchreset .icon::before,.kmap-tree-picker .searchreset .icon::after {
-  background: #aaa;
+  background: #ccc;
   content: '';
   position: absolute;
-  top: 1.1rem;
-  left: 0.3rem;
-  width: 1.7rem;
+  top: 0.95rem;
+  left: 0.35rem;
+  width: 1.3rem;
   height: 1px;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-.input-section .searchreset .icon::after,
+.extruder .searchreset .icon::after,
 .kmap-typeahead-picker .searchreset .icon::after,
 .kmap-tree-picker .searchreset .icon::after{
   -webkit-transform: rotate(-45deg);
@@ -499,10 +545,17 @@ border-width: 4px 0 0 0;*/
   transform: rotate(-45deg);
 }
 
-.input-section .searchreset:hover .icon, .input-section .searchreset:active .icon,
+.extruder .searchreset:hover .icon, .extruder .searchreset:active .icon,
 .kmap-typeahead-picker .searchreset:hover .icon,.kmap-typeahead-picker .searchreset:active .icon,
 .kmap-tree-picker .searchreset:hover .icon,.kmap-tree-picker .searchreset:active .icon {
-  background: #f5f5f5;
+  background-color: #ddd;
+}
+
+.extruder .searchreset:hover .icon::before,.extruder .searchreset:hover .icon::after,
+.kmap-typeahead-picker .searchreset:hover .icon::before,.kmap-typeahead-picker .searchreset:hover .icon::after,
+.kmap-tree-picker .searchreset:hover .icon::before,.kmap-tree-picker .searchreset:hover .icon::after {
+  background: #fff;
+
 }
 
 .extruder .shanticon-magnify {
@@ -510,15 +563,15 @@ border-width: 4px 0 0 0;*/
     left: 2rem;
     top: 1.45rem;
     z-index: 10;
-    font-size: 1.18em;
+    font-size: 1.12em;
     color: #999;
 }
 
 .extruder .kmap-typeahead-picker .shanticon-magnify {
-    position: absolute;
-    left: 2.5rem;
-    top: 2.8rem;
-    font-size: 1.12em;
+  position: absolute;
+  left: 2.45rem;
+  top: 2.8rem;
+  font-size: 1.12em;
 }
 
 
@@ -613,8 +666,15 @@ border-width: 4px 0 0 0;*/
   text-transform: capitalize;
 }
 
-.kmaps .input-section .kmap-typeahead-picker > label{
-  margin-left:3rem;
+.input-section .search-group .kmap-typeahead-picker label{
+  margin-left:3.9rem;
+  font-size:0.93em;
+  color:#444;
+  letter-spacing: 0.03rem;
+}
+
+.input-section .search-group .kmap-filter label{
+  margin-left: 2.3rem;
 }
 
 /**
@@ -689,13 +749,6 @@ border-width: 4px 0 0 0;*/
   left: -12px;
   float: right;*/
   display:none;
-}
-
-.page-places .input-section .toggle-link.advanced-link {
-  display:block;
-  /*top: 2px;
-  left: -18px;
-  margin-bottom: 8px;*/
 }
 
 .input-section .feature-group .toggle-link.show-features .icon::before, /*--- for feature types ---*/
@@ -831,6 +884,13 @@ border-width: 4px 0 0 0;*/
   position: relative;
   top: -1rem;
 }
+
+.extruder .bootstrap-select.btn-group .btn:focus,
+.extruedr .bootstrap-select.btn-group .btn.active{
+  border: 1px solid #ccc;
+  box-shadow: inset 0 0 4px 0 #eee;
+  background: #fdfdfd;
+}
 /**
 *** END / Input & Advanced */
 
@@ -855,24 +915,6 @@ border-width: 4px 0 0 0;*/
   border-width:0 1px;
 }
 
-.kmaps .view-section .tab-content{
-  padding-top:0;
-}
-
-.kmaps .view-wrap .kmaps-tt-header:first-of-type{
-  height: 35px !important;
-  color:transparent;
-  /* padding-top: 1rem; */
-}
-
-.kmaps .view-section .tab-content .tab-pane.listview{
-  border-top: 10px solid #eee;
-}
-
-.kmaps .view-section .tab-content .tab-pane.treeview{
-  padding-top:1rem;
-}
-
 .view-section .tab-content .tab-pane {
   padding: 0;
 }
@@ -889,20 +931,11 @@ border-width: 4px 0 0 0;*/
   letter-spacing: 0.01rem;
 }
 
-.kmaps .view-section .nav-tabs>li.listview{
-  width: 38%;
-}
-
-.kmaps .view-section .nav-tabs>li.treeview{
-  width: 75%;
-  max-width: 160px;
-}
-
 .view-section .nav-tabs>li>a {
   color: #777;
   font-size: 14px;
   line-height: 25px;
-  margin-right: 2px;
+  margin-right: 4px;
   font-weight: bold;
   padding: 10px 0 5px 0;
   /* display:none prevents flash on load */
@@ -928,16 +961,12 @@ border-width: 4px 0 0 0;*/
 .view-section .nav-tabs>li.active>a:hover,
 .view-section .nav-tabs>li.active>a:active {
   color: #444;
-  font-size: 15px;
+  font-size: 14px;
   background: #f8f8f8;
   text-decoration: none;
   border-color: #ddd;
   border-top: 2px solid #888;
   border-bottom-color: transparent;
-}
-
-.kmaps .view-section .nav-tabs>li.listview.active>a{
-  background-color: #eee;
 }
 
 .view-section .nav-tabs>li> .icon {
@@ -948,19 +977,14 @@ border-width: 4px 0 0 0;*/
 .view-section .nav-tabs>li> a .icon::before {
   font-size: 13px;
   position: relative;
-  top: 0;
-  right: 5px;
+  top: 1px;
+  right: 6px;
 }
 
 .view-section .nav-tabs>li.active> a .icon::before {
   font-size: 15px;
   position: relative;
-  top: 1px;
   right: 5px;
-}
-
-.view-section .nav-tabs>li.listview> a .icon::before{
-  content: '\e624';
 }
 
 .view-section .nav-tabs>li.treeview> a .icon::before{
@@ -970,11 +994,7 @@ border-width: 4px 0 0 0;*/
 .view-section .listview>div,
 .view-section .treeview>div {
   padding: 0;
-  overflow: auto;
-}
-
-.view-section .listview>div {
-  /*padding-top: 7px;*/
+  overflow-y: scroll;
 }
 
 .view-section .treeview .tab-content {
@@ -1110,32 +1130,13 @@ border-width: 4px 0 0 0;*/
   color: #555;
 }
 
-/**
-* search scrollbars full-length
-*/
-.text.ui-resizable::-webkit-scrollbar{
-  width: 0;
-}
 
-.text.ui-resizable::-webkit-scrollbar-track{
-  /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.15);*/
-}
-
-.text.ui-resizable::-webkit-scrollbar-thumb{
-  background-color: #aaa;
-  cursor: pointer;
-  width: 0.5rem;
-}
-
-.text.ui-resizable::-webkit-scrollbar-thumb:hover{
-  background-color: #888;
-}
 /**
 * search view-section scrollbars
 */
 .view-section .view-wrap::-webkit-scrollbar {
   width: 0.6rem;
-  border-radius: 1rem;
+  border-radius: 0.6rem;
 }
 
 .view-section .view-wrap::-webkit-scrollbar-track {
@@ -1143,35 +1144,54 @@ border-width: 4px 0 0 0;*/
 }
 
 .view-section .view-wrap::-webkit-scrollbar-thumb {
-  background-color: #aaa;
-  border-radius: 1rem;
-  width: 0.6rem;
+  background-color: #e5e5e5;
+  border-radius: 0.6rem;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
 }
 
-.view-section .view-wrap::-webkit-scrollbar-thumb:hover {
-  background-color: #888;
+.view-section .view-wrap:hover::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
+
+/*.view-section ul.fancytree-container::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.6rem;
+}
+
+.view-section ul.fancytree-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+}
+
+.view-section ul.fancytree-container::-webkit-scrollbar-thumb {
+  background-color: #e5e5e5;
+  border-radius: 0.6rem;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+}
+
+.view-section ul.fancytree-container:hover::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}*/
+
 /**
 * bootstrap-select scrollbars
 */
 .bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar{
-  width: 0.5rem;
-  border-radius: 0.8rem;
+  width: 0.6rem;
+  border-radius: 0.6rem;
 }
 
 .bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar-track{
-  /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.15);*/
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
 }
 
 .bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar-thumb{
-  background-color: #aaa;
-  cursor: pointer;
-  width: 0.5rem;
-  border-radius: 0.8rem;
+  background-color: #e5e5e5;
+  border-radius: 0.6rem;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
 }
 
-.bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar-thumb:hover{
-  background-color: #888;
+.bootstrap-select .dropdown-menu.selectpicker:hover::-webkit-scrollbar-thumb{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
 
@@ -1185,7 +1205,7 @@ border-width: 4px 0 0 0;*/
 
 .view-section .popover-content {
   font-family: sans-serif;
-  font-size: smaller;
+  font-size: 10px;
 }
 
 .view-section .popover-content > blockquote p {
@@ -1293,11 +1313,14 @@ border-width: 4px 0 0 0;*/
 */
 .fancytree-container {
   margin: 0;
-  background: transparent;
-  border: none;
   background-color: transparent !important;
   border: none !important;
   font-family: 'droidserif',georgia,palatino,'Palatino Linotype',serif !important;
+}
+
+.extruder .fancytree-container{
+  background-color: #f8f8f8 !important;
+  overflow: visible;
 }
 
 .fancytree-container ul {
@@ -1393,8 +1416,8 @@ border-width: 4px 0 0 0;*/
   font-size: 1em;
   float: left;
   position: relative;
-  top: 0.6rem;
-  right: 0.25rem;
+  top: 0.55rem;
+  right: 0.426rem;
   border-radius: 50%;
   background-clip: padding-box;
   width: 9px;
@@ -1469,6 +1492,8 @@ border-width: 4px 0 0 0;*/
   color: #666;
   background: transparent;
 }
+
+
 /*--- hihglight search text ---*/
 /*.view-section span.fancytree-title > em,
 .view-section mark {
@@ -1478,8 +1503,21 @@ border-width: 4px 0 0 0;*/
     background: transparent;
 }
 */
+
+.fancytree-plain .fancytree-active .fancytree-title,
+.fancytree-plain .fancytree-selected .fancytree-title,
+.fancytree-plain .fancytree-has-children > .fancytree-title,
+.fancytree-plain .fancytree-container.fancytree-treefocus .fancytree-focused .fancytree-title,
+.fancytree-plain .fancytree-node:hover .fancytree-title{
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
 /**
 *** END treeview */
+
+
+
 
 
 
@@ -1784,6 +1822,11 @@ border-width: 4px 0 0 0;*/
 
 .input-section .kmap-search-filter{
   max-width: 30rem;
+  margin-bottom:0.3rem;
+}
+
+.input-section .kmap-filter{
+  padding-top: .5rem;
 }
 
 .input-section .kmap-filter:first-of-type{
@@ -1797,11 +1840,11 @@ border-width: 4px 0 0 0;*/
 }
 
 .input-section .search-filters{
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 1rem;
 }
 
 .view-wrap .kmaps-tt-suggestion:hover:not(.kmaps-tt-selected):not(.kmaps-tt-zero-facet){
-    background-color: #4aa1f3 !important;
+    background-color: #d1e2f3 !important;
 }
 
 .view-wrap .kmaps-tt-suggestion:hover .kmaps-count,
@@ -1817,7 +1860,7 @@ border-width: 4px 0 0 0;*/
 
 .view-wrap .kmaps-tt-suggestion{
   margin-left:0;
-  padding: 3px 12px;
+  padding: 6px 12px;
   font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
 }
 
@@ -1841,21 +1884,146 @@ border-width: 4px 0 0 0;*/
 
 /**
 * -----------------------------------------------
-* KMaps target - temp
+* Typeahead Feature Types - Places
 * -----------------------------------------------
 */
-
-.kmaps .input-section .search-group {
-  padding-bottom: 1rem;
+.listview  .kmaps-tt-header .typeahead-pager{
+  position: absolute;
+  right: 0rem;
+}
+/* begin: column headers */
+.listview .kmaps-place-results-header{
+  border-bottom: 1px solid #ddd;
 }
 
-.kmaps.page-places .input-section .search-group {
-  padding-bottom: 0;
-} 
-
-#NodeTreeList{
-  overflow:auto;
+.listview  .kmaps-place-results-header .kmaps-place-name{
+  border-right: 1px solid #ddd;
+  display: inline-block;
+  padding: .5rem 1rem .3rem 1.5rem;
+  max-width: 20rem;
+  width: 45%;
 }
+
+.listview  .kmaps-place-results-header .kmaps-feature-type{
+  display: inline-block;
+  padding: .5rem 1rem .3rem 1rem;
+  max-width: 9rem;
+  width: 40%;
+  white-space: nowrap;
+}
+/* begin: search results rows */
+.listview  .kmaps-place-result{
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 0.45rem 0;
+  white-space: nowrap;
+  height:24px;
+}
+
+.listview  .kmaps-place-result .kmaps-place-name{
+  max-width: 20rem;
+  width: 45%;
+  display: inline-block;
+  padding-left: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  float:left;
+}
+
+.listview  .kmaps-place-result .kmaps-feature-type{
+  padding-left: 1rem;
+}
+
+.listview  .kmaps-tt-dataset-places{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.listview .kmaps-tt-dataset{
+  font-size:13px;
+}
+
+
+
+
+
+
+
+
+/**
+* KMaps Facet dark-theme UI for search flyout selection
+*/
+
+/* dark background for labels display in search flyout */
+.extruder .view-section .active-kmfacets-list{
+  border: 1px inset #ddd;
+  padding: 6px 4px 7px 12px;
+  background: #888;
+  color: #fff !important;
+    border-radius: 0px;
+    position: relative;
+    left: 0rem;
+}
+.extruder .view-section .active-kmfacets-list .facet-item{
+  margin: 1px 2px 3px 0px;
+}
+
+/* in active state remove default blue background and outline */
+.extruder .view-section .fancytree-active .fancytree-title{
+  outline: none;
+  background-color: transparent;
+}
+.extruder .view-section .active-kmfacets-list .selected-kmap{
+  font-family: 'museo-sans-700', helvetica, arial, sans-serif;
+}
+.extruder .view-section .active-kmfacets-list .selected-kmap,
+.extruder .view-section .selected-kmap .shanticon-close2::before{
+  color:#eee;
+}
+    .extruder .view-section .active-kmfacets-list .selected-kmap:hover,
+    .extruder .view-section .selected-kmap:hover .shanticon-close2::before{
+      color:#fff;
+    }
+
+/* filter by transcript language */
+ul.facetapi-facet-transcript-languages li {
+  padding: 0; /* otherwise hidden anchors are padded */
+}
+ul.facetapi-facet-transcript-languages li > a {
+  display: inline-block;
+  padding: 0.2em 0.5em 0 0; /* move <li> padding to anchors */
+}
+ul.facetapi-facet-transcript-languages li > a[href$="_wylie"],
+ul.facetapi-facet-transcript-languages li > a[href$="_empty_"] {
+  display: none; /* hide tiers we don't want to filter on */
+}
+
+
+
+
+@media (max-width:400px) {
+
+  #search-flyout .text > .shanticon-close2{  
+    position: absolute;
+    z-index: 90;
+    top: 1.1rem;
+    right: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.18em;
+    color: #888;
+    cursor: pointer;
+    opacity:.4;
+    display:inline-block;
+  }
+
+  #search-flyout .text > .shanticon-close2:hover{
+    opacity: 1;
+  }
+}
+
+
+
 /**
 *
 * END - Sarvaka/css/shanti-main.css

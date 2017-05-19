@@ -11,23 +11,23 @@
     <meta name="description" content="SHANTI at the University of Virginia - Sciences, Humanities and Arts Network of Technological Initiatives: SHANTI promotes innovation in the humanities, social sciences and arts at the University of Virginia through supporting the application of advanced technologies in research, teaching, publication and engagement across the entire community." />
 	<meta name="keywords" content="SHANTI at the University of Virginia - Sciences, Humanities and Arts Network of Technological Initiatives" />
 	<title><%= head_title %></title>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon.ico' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon.ico', rel: 'icon', sizes: '16x16 32x32 64x64' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon-196.png', rel: 'icon', sizes: '196x196', type: 'image/png' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon-160.png', rel: 'icon', sizes: '160x160', type: 'image/png' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon-96.png', rel: 'icon', sizes: '96x96', type: 'image/png' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon-64.png', rel: 'icon', sizes: '64x64', type: 'image/png' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon-32.png', rel: 'icon', sizes: '32x32', type: 'image/png' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon-16.png', rel: 'icon', sizes: '16x16', type: 'image/png' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon-152.png', rel: 'apple-touch-icon', sizes: '152x152', type: 'image/png' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon-144.png', rel: 'apple-touch-icon', sizes: '144x144', type: 'image/png' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon-120.png', rel: 'apple-touch-icon', sizes: '120x120', type: 'image/png' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon-76.png', rel: 'apple-touch-icon', sizes: '76x76', type: 'image/png' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon-72.png', rel: 'apple-touch-icon', sizes: '72x72', type: 'image/png' %>
-<%= favicon_link_tag 'shanti_integration/favicons/favicon-57.png', rel: 'apple-touch-icon', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon.ico' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon.ico', rel: 'icon', sizes: '16x16 32x32 64x64' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon-196.png', rel: 'icon', sizes: '196x196', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon-160.png', rel: 'icon', sizes: '160x160', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon-96.png', rel: 'icon', sizes: '96x96', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon-64.png', rel: 'icon', sizes: '64x64', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon-32.png', rel: 'icon', sizes: '32x32', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon-16.png', rel: 'icon', sizes: '16x16', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon-152.png', rel: 'apple-touch-icon', sizes: '152x152', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon-144.png', rel: 'apple-touch-icon', sizes: '144x144', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon-120.png', rel: 'apple-touch-icon', sizes: '120x120', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon-76.png', rel: 'apple-touch-icon', sizes: '76x76', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon-72.png', rel: 'apple-touch-icon', sizes: '72x72', type: 'image/png' %>
+<%= favicon_link_tag 'shanti_sarvaka_theme/favicons/favicon-57.png', rel: 'apple-touch-icon', type: 'image/png' %>
 <meta name="msapplication-TileColor" content="#da532c" />
-<meta name="msapplication-TileImage" content="<%= image_path 'shanti_integration/favicons/favicon-144.png' %>" />
-<meta name="msapplication-config" content="<%= image_path 'shanti_integration/favicons/browserconfig.xml' %>" />
+<meta name="msapplication-TileImage" content="<%= image_path 'shanti_sarvaka_theme/favicons/favicon-144.png' %>" />
+<meta name="msapplication-config" content="<%= image_path 'shanti_sarvaka_theme/favicons/browserconfig.xml' %>" />
 <meta name="theme-color" content="#ffffff"  />
 <%= stylesheet_link_tag(*(stylesheet_files + [media: 'all', 'data-turbolinks-track' => true])) %>
 <%= javascript_include_tag(*(javascript_files + ['data-turbolinks-track' => true])) %>
@@ -45,13 +45,18 @@
 	      <span class="menu-explore menu-exploretoggle"><a href="#"><span>Explore</span><span class="icon shanticon-directions"></span></a></span><!-- mobile < 768 : collections -->
 	    </nav>
 	    <h1 class="navbar-header">
+	      <a href="https://mandala.shanti.virginia.edu/" class="logo-brand navbar-brand" title="<%= 'SHANTI' %>">
+          <span class="icon shanticon-logo"></span><span class="mandala">
+            MANDALA 
+          </span></a>
 	      <a href="/" class="navbar-brand" title="<%= 'SHANTI' %>">
-	      <span class="icon shanticon-logo"></span><span class="shanti">SHANTI</span>	          	          <span class="site-slogan">Kmaps</span>	        </a>
+          <span class='site-slogan'>Kmaps</span>
+        </a>
 	    </h1>
 	    <!-- HEADER REGION -->
 	    <nav id="sarvaka-header" class="region navbar-collapse collapse navtop"> <!-- desktop display > 768 -->
 	      <form class="form">
-	        <fieldset>         
+	        <fieldset>
 	          <ul class="nav navbar-nav navbar-right">
 				<!-- If admin puts blocks in	header, render here -->
                 <li id="collexplink" class="explore"><a href="#">EXPLORE<i class="icon shanticon-directions"></i></a></li>

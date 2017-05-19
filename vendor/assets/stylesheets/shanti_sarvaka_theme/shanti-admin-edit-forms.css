@@ -1,0 +1,1580 @@
+/**
+* Admin Edit (taken from Sources BODY tag)
+* BODY Class Structure Guide for CSS Selectors
+* -----------------------------------------------------------------
+* Collections View Page - class= 'node-type-collection'
+* - Collections Edit Page - class= 'node-type-collection page-node-edit'
+* Collections Group View Page - class= 'page-node-group'
+* - Collections Group Edit Page (Add Group Members) - class= 'page-group page-group-node page-group-node-admin page-group-node-admin-people page-group-node-admin-people-add-user'
+* - Collections Group Edit Page (Manage Group Members) - class= 'page-group page-group-node page-group-node-admin page-group-node-admin page-group-node-admin-people'
+* Collections Group Edit Page - class= 'page-group-node page-group-node-admin'
+* Collections Log Page - class= 'page-node-log'
+* - Collections Log Edit Page - (there is no Log edit page)
+*/
+
+.media-wrapper.ui-dialog .ui-dialog-titlebar-close::before{
+  content:'X';
+  display:inline-block;
+  color:#555;
+  position:relative;
+}
+
+.page-node-add .content-section a,
+.page-node-edit .content-section a {
+  /*font-weight: bold;*/
+  font-family: 'museo-sans-700', helvetica, arial, sans-serif;
+}
+
+
+/**
+* Page layout
+*/
+.page-node-add .tab-pane.main-col,
+.page-node-group .tab-pane.main-col,
+.page-group-node-admin .tab-pane.main-col {
+  max-width: 920px !important;
+}
+
+.page-node-add.no-sidebars .tab-pane.main-col,
+.page-node-edit.no-sidebars .tab-pane.main-col,
+.page-node-group.no-sidebars .tab-panel.main-col{
+    max-width: 870px !important;
+}
+
+@media (min-width:1150px) {
+
+  .page-node-edit .tab-pane.main-col,
+  .visuals.page-node-edit .tab-pane.main-col {
+      max-width: 920px !important;
+  }
+}
+
+.page-mycontent-workflow .tab-pane.main-col {
+  max-width:1200px;
+}
+
+.page-group-node-admin .tab-pane.main-col{
+  padding-top:3rem;
+}
+
+.page-node-edit table.field-multiple-table tr,
+.page-node-edit table.field-multiple-table tbody {
+  /*border:none !important;*/
+}
+
+
+
+/* powerful, careful */
+.page-node-add .fieldset-wrapper .form-item,
+.page-node-edit .fieldset-wrapper .form-item{
+  /*margin:0;*/
+}
+
+/* My Stuff Account Collections page - 50% columns for drop-select */
+.view-my-workflow .field-accordion .form-item {
+ /*display:inline;*/
+  width: 50%;
+  float: left;
+}
+
+.view-my-workflow .field-accordion .form-item label {
+  display: block;
+}
+
+
+
+/* under input */
+.form-wrapper .description {
+  font-size: 0.93em;
+  margin-top: 0.25em;
+  margin-bottom: .75em;
+  padding-left: 1.75em;
+  max-width: 50em;
+  font-style: italic;
+  color: #222;
+}
+
+.form-wrapper .description p{
+  font-style: italic;
+  color: #222;
+}
+
+
+
+
+
+
+/* form table td.label styles address the 'Group Space' fields on ...node/add/collection*/
+form table td.label {
+ /* display:inline-block;font-size: 100%; */
+  padding: 1rem 0;
+}
+
+form table td.label strong::after {
+  content: ':';
+  padding-right: 0.5rem;
+}
+
+form table td.label .description {
+  display: inline;
+}
+
+.form-type-password-confirm {
+  position: relative;
+}
+
+.password-strength {
+  margin-top: 0;
+}
+
+.password-indicator {
+  margin-top: 1em;
+}
+
+.password-indicator div {
+  position: relative;
+  top: -0.68em;
+}
+
+.form-type-password .error {
+  color: #f00;
+}
+
+.form-type-password-confirm .password-strength-title {
+  position: relative;
+  top: 0.62em;
+}
+
+.form-type-password-confirm .password-strength-text {
+  position: relative;
+  top: 0.62em;
+}
+
+html.js .form-autocomplete {
+  background-position: 98% center !important;
+}
+
+.form-item .description .warning,
+.fieldset-description .error {
+  padding: 0.12em 0.38em;
+  margin-top: 0.25em;
+  float: left;
+  box-shadow: none;
+}
+
+tr.region-title td {
+  color: #555;
+  padding-top: 0.5em;
+  font-family: 'museo-sans-500',helvetica,arial,sans-serif;
+}
+
+#edit-filters-order {
+  padding-bottom: 15px;
+}
+
+table.tabledrag-processed {
+  /*width: 100%;
+  text-transform: capitalize;*/
+}
+
+table .draggable a.tabledrag-handle {
+  height: 1.5em;
+  margin-top: .25em;
+}
+
+table .draggable a.tabledrag-handle:hover,
+table .draggable a.tabledrag-handle:active {
+  border: none !important;
+}
+
+table .draggable a.tabledrag-handle .handle {
+  background: none;
+  height: 1em;
+  width: 1em;
+  font-family: 'Glyphicons Halflings';
+  color: #999;
+  font-size: 0.86em;
+  line-height: 1em;
+  padding: 0;
+  margin: 0 2em;
+  display: inline-block;
+  position: relative;
+  top: 0;
+}
+
+a.tabledrag-handle .handle::before {
+  content: '\e068';
+}
+
+a.tabledrag-handle,
+a.tabledrag-handle:hover,
+a.tabledrag-handle:active {
+  border: none !important;
+}
+
+a.admin-update,
+a.features-storage,
+.features-storage,
+.features-component-list span {
+  border-radius: 0;
+}
+
+.file-widget.form-managed-file {
+  /*padding-left: 1.25em;*/
+}
+
+.exposed-filters .form-item label {
+  float: none;
+}
+
+
+.page-group-node-admin fieldset.form-wrapper {
+  margin-left:0;
+  font-size: 1.06em;
+}
+
+.page-group-node-admin .placeholder{
+font-size: 1.12em;
+}
+
+
+
+/* shade interior nested accordions as in AV for contrast */
+.panel.panel-default .panel-collapse .panel-heading h6 a.collapsed{
+  background: #f0f0f0;
+}
+
+
+
+
+
+/**
+* --------------------------------------------------
+* KMAPS Type-Ahead - Search & Filter & Tree-Picker
+* --------------------------------------------------
+*/
+.kmap-filter-box,
+.kmap-result-box{
+  position: relative;
+  left: 0.7rem;
+  padding-top:0.2rem;
+}
+.kmap-filter-box{ 
+  position: relative; 
+  left: 0; 
+}
+.kmap-filter label{
+  font-size: .88em;
+}
+.kmap-tree-picker label,
+.kmap-typeahead-picker label{
+  margin-left: 1.5rem;
+  text-transform: capitalize;
+}
+.kmap-tree-picker label span,
+.kmap-typeahead-picker label span{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Keyword w/(x) cancel buttons */
+.selected-kmap{
+  color: #333;
+  font-size: 0.93em;
+  font-family: 'museo-sans-500', helvetica, arial, sans-serif;
+  border: none;
+  padding: 0 0 0 0.4rem;
+  background-color: transparent;
+  /*white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;*/
+}
+.selected-kmap:hover{
+  color: #555;
+  background-color: transparent;
+}
+.selected-kmap .shanticon-close2:before{
+  color: #888;
+  position: relative;
+  top: 0.15rem;
+  font-size: 1.12em;
+  cursor:pointer;
+  content: '\e60f';
+  font-family:'shanticon';
+}
+.selected-kmap:hover .shanticon-close2:before{
+  color: red;
+}
+/* END keyword labels */
+
+
+
+
+.kmap-tree-picker, /* --------- testing consolidation of above declarations */
+.kmap-typeahead-picker{
+  position:relative;
+}
+
+.field-name-field-subject .kmap-tree-picker,
+.field-name-field-subject .kmap-typeahead-picker,
+.field-name-field-subcollection-root .kmap-tree-picker,
+.field-name-field-recording-location-new .kmap-tree-picker{
+  width: 38rem;
+}
+
+.field-name-field-subject .kmap-tree-picker{
+  width: 42rem;
+}
+
+
+
+
+
+
+.kmap-tree-picker .shanticon-magnify,
+.kmap-typeahead-picker .shanticon-magnify{
+  position: absolute;
+  left: 1rem;
+  top:3rem;
+  color: #999;
+  font-size: 1em;
+}
+
+.kmap-typeahead-picker .shanticon-magnify{
+  position: absolute;
+  top: 2.95rem;
+}
+
+
+
+
+
+.kmap-search-button,
+.kmap_search_button{
+  background-color: #5b68ce;
+  color: #eee;
+  display: inline-block;
+  padding: 0.7rem 1.5rem 0.5rem;
+  border-radius: .3rem;
+  border: 1px solid #777;
+  font-family: 'museo-sans-500', helvetica, sans-serif;
+  font-size: 0.93em;
+  margin-left: 0.5rem;
+  position: relative;
+  top: -0.3rem;
+}
+
+.kmap-search-button:hover,
+.kmap_search_button:hover,
+.kmap_search_button:focus,
+.kmap-search-button:focus{
+  background: #4850bd;
+  border-color:#4850bd;
+  color:#fff;
+}
+
+/*
+.kmap-pick-tree::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+*/
+
+.kmap-lazy-tree,
+.kmap-pick-tree{
+  font-size: 0.93em;
+  font-weight: normal !important;
+  /*border-top: 2px solid #e0e0e0;
+  border-radius: 0.5rem 0.5rem 1rem 1rem;
+  box-shadow: inset 0 0 7px #ddd;*/
+  padding: 0;
+  background: #f5f5f5;
+  margin-top:1rem;
+
+  padding: 0 0 0 1rem;
+  background:#f7f7f7;
+  border:1px solid #ddd;
+  border-width: 3px 2px 2px;
+  border-top-color:#ccc;
+  max-height: 450px;
+  overflow: auto;
+}
+
+.page-node-edit .kmap-pick-tree{ margin-top:3rem; padding: 0 1rem;}
+
+
+.kmap-pick-tree p{
+  margin: 10px;
+  font-size: 1em;
+}
+.kmap-pick-tree ul{
+  list-style: circle inside none;
+}
+.kmap-pick-tree ul ul{
+  -webkit-padding-start: 9px;
+  padding-left: 9px;
+}
+/* tree results list items */
+.kmap-pick-tree .matching,
+/* tree results list items */
+.kmap-pick-tree .matching.terminal{
+  color:#333;
+  line-height: 1.75em;
+}
+
+
+/**
+* ----------------------
+* END: KMAPS Type-Ahead
+* ----------------------
+*/
+
+
+
+
+
+
+
+
+
+/**
+* add more row fields 
+*/
+.btn.field-add-more-submit {
+  font-size: 0.82em;
+  padding: .1em 1.5em .3em;
+
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1rem;
+}
+
+.btn.field-add-more-submit > span::before{
+  content: '+';
+  font-size: 2em;
+  position: relative;
+  top: 0.2rem;
+  left: -0.6rem;
+}
+
+
+
+.views-exposed-form label{
+  font-size:0.88em;
+}
+
+
+/* Selector target - body class=page-group-node-admin */
+.page-group-node-admin fieldset.form-wrapper legend{
+  font-size: 1em;
+}
+/* Selector target - TABLE class=views-table */
+table.views-table{
+  width:100%;
+}
+
+table.views-table a{
+  border-bottom: none;
+  /* font-weight: bold; */
+}
+/* removes transcript icon */
+table.views-table img.file-icon{
+  display:none !important;
+}
+
+table.views-table .views-field-edit-membership a{
+  padding-left: .75rem
+}
+
+table.views-table tr.odd{
+  background: #f5f5f5;
+}
+
+table.views-table tr.even{
+  background: #fff;
+}
+
+table.views-table tr.odd:hover,
+table.views-table tr.even:hover{
+  background: transparent;
+}
+
+table.views-table .form-type-checkbox{
+  padding: 0.5rem;
+}
+
+table.views-table thead .icheckbox_minimal-red{
+  margin-left: 0.55rem;
+}
+/* column sorting arrow img */
+table.views-table thead a > img{
+  display: inline-block !important;
+  margin-left: .5rem !important;
+}
+
+.view-og-members-admin .view-header{
+  padding-left: 1rem;
+}
+
+.view-og-members-admin .view-filters{
+  padding-left: 3rem;
+}
+
+.view-og-members-admin .form-item{
+  margin-top:0;
+}
+
+.view-og-members-admin .form-item.form-type-select{
+  padding-right:1rem;
+}
+
+
+
+
+
+/** 
+* My Content Pages - @new from mb-main @June 3, 2016 @question - vbo-views-form ?
+*/
+/* Selector target - fieldset #edit-select */
+.view-my-content .vbo-views-form fieldset#edit-select {
+  float: right;
+  width: 65%;
+}
+
+.view-my-content .vbo-views-form fieldset#edit-select legend {
+  color: #555;
+  font-size: 80%;
+  font-family: 'museo-sans-700',helvetica,arial,sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  border: none;
+  padding: 12px 0px 0px;
+}
+
+.view-my-content .vbo-views-form fieldset#edit-select .fieldset-wrapper > .form-item {
+  margin-top: -0.3em;
+}
+
+.view-my-content .vbo-views-form fieldset#edit-select .fieldset-wrapper > .form-item + button {
+  margin-top: -8px;
+}
+
+.view-my-content .vbo-views-form fieldset#edit-select .btn-group {
+  margin: 0px;
+}
+
+.view-collections .view-my-content .views-exposed-widgets {
+  float: left;
+  margin-bottom: 0;
+}
+
+.view-collections .views-exposed-form .views-exposed-widgets {
+  min-width: 24rem;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.view-collections .view-my-workflow .views-exposed-widget {
+  float: left;
+  padding: 0px 12px;
+}
+/* widget singular not plural */
+.view-collections .views-exposed-form .views-exposed-widget { 
+  height: 5.5rem;
+  margin: 0;
+  text-align: left;
+  padding: 0 0.5em 0 0;
+}
+
+.view .form-item-operation {
+  float: left;
+}
+
+.view .form-item-operation + button {
+  margin: 0 0 0 8px;
+  vertical-align: top;
+}
+
+
+.views-table th{
+  font-size: 0.88em;
+  padding: 0 0.3rem;
+  min-width: 75px;
+}
+
+.views-table tr td{
+  padding: 6px 12px 6px 3px;
+  min-width: 75px;
+  font-size: 0.88em;
+  text-transform: capitalize;
+  font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+}
+.views-table tr td.views-field-name,
+.views-table tr td.views-field-title {
+  font-size: 0.93em;
+  font-weight: bold;
+  padding-left: 0.5rem;
+  max-width: 30rem;
+}
+
+
+
+/* view My Content in My Workflow etc */
+.views-field {
+  padding: 0 0.5rem 0 0;
+  font-size: 0.93em;
+}
+
+.views-table td.active {
+  background: transparent;
+}
+
+.views-field td img {
+  margin: 0.2rem;
+}
+
+.views-field-realname,
+td.views-field-created,
+td.views-field-changed,
+td.views-field-type {
+  font-size: 0.82em;
+}
+
+.views-table.cols-8 .views-field.views-field-title {
+  width: 40%;
+}
+
+/* end new migration from mb-main */
+
+
+
+
+
+
+
+
+.page-node-add .form-type-checkbox,
+.page-node-edit .form-type-checkbox,
+.page-group-node-admin .form-type-checkbox { padding: 1rem 0;}
+
+.page-node-add .form-type-checkbox .description,
+.page-node-edit .form-type-checkbox .description,
+.page-group-node-admin .form-type-checkbox .description { margin-top: 0; margin-left: 0; }
+
+.page-node-add .icheckbox_minimal-red,
+.page-node-add .iradio_minimal-red,
+.page-node-edit .icheckbox_minimal-red,
+.page-node-edit .iradio_minimal-red,
+.page-group-node-admin .icheckbox_minimal-red,
+.page-group-node-admin .iradio_minimal-red {
+  margin-right: 0.75rem !important;
+    margin-left: 1.5rem;
+  margin-left: 0.5rem;
+  position: relative;
+  top: -1px;
+  left: 0;
+}
+
+.page-node-add .iradio_minimal-red,
+.page-node-edit .iradio_minimal-red,
+.page-group-node-admin .iradio_minimal-red{ 
+  border-radius: 50%;
+  background-clip: padding-box;
+  margin-top:0.5rem;
+  margin-bottom:0.5rem;
+  margin-right: 0.5rem !important;
+}
+/* adds a little contrast */
+.page-node-add .iradio_minimal-red,
+.page-node-add .icheckbox_minimal-red,
+.page-node-edit .iradio_minimal-red,
+.page-node-edit .icheckbox_minimal-red,
+.page-group-node-admin .iradio_minimal-red,
+.page-group-node-admin .icheckbox_minimal-red { 
+  box-shadow: 0 0 2px #999; 
+  border-collapse: separate; 
+  background-color: #f7f7f7;
+}
+
+
+
+
+
+
+
+/**  
+* Textarea Edit block (example Edit Summary, frontpage )
+*/
+.form-disabled input.form-autocomplete, 
+.form-disabled input.form-text, 
+.form-disabled input.form-file, 
+.form-disabled textarea.form-textarea, 
+.form-disabled select.form-select{ background-color: #fafafa; }
+
+a.link-edit-summary,
+a.link-edit-summary{
+  font-size: 90%;
+  text-transform: capitalize;
+  padding: 0 0.5rem;
+}
+
+table.field-multiple-table .field-widget-text-textarea{ padding-top:1rem; }
+/* toggle text editor link text under textarea */
+.ckeditor_links{ margin-left:2rem; }
+/* Help text and dropdown menu width for Editor - Full HTML, etc */
+.filter-wrapper .form-item-body-en-0-format{ width: 22rem; }
+/* Text Formats Label */
+.filter-wrapper .form-item label{ display: block; }
+/* format rich-text editor dropdown selector */
+.filter-wrapper .form-item{ margin-top: -1em; }
+
+.text-format-wrapper .description{ margin-left:1rem; }
+/**  
+*** END Textarea Edit block ***/
+
+
+
+
+
+
+/* Form Buttons w/ID selectors - at very bottom */
+
+/* other than Save & Delete button gets white/grey */
+button#edit-preview-changes,
+button#edit-preview,
+button#edit-draft,
+button#edit-cancel{
+  box-shadow: none;
+  color: #606060;
+  letter-spacing: .05em;
+  background:#fff;
+  border:1px solid #ddd;
+}
+
+button#edit-preview-changes:hover,
+button#edit-preview:hover,
+button#edit-draft:hover,
+button#edit-cancel:hover{
+  background: #888;
+  box-shadow: none;
+  border-color: #888;
+  color: #fff;
+  text-shadow: 0 0 1px #444;
+}
+
+/* Delete button gets white/red */
+button#edit-delete{
+  float: right;
+  padding: .38em 1.5em .25em;
+  font-size: 0.68em;
+  background: #fff;
+  color: #606060;
+  font-weight:bold;
+  border:1px solid #ddd;
+}
+
+button#edit-delete:hover{
+  background: red;
+  color:#fff;
+}
+
+/**
+*** END Textarea block ***/
+
+
+
+
+
+
+
+
+
+
+/**
+* Collections-Main Edit Form 
+*/
+
+/* featured image thumbnail buttons: Select, Edit, Remove */
+.icheck-label.option{ margin-left: 0; }
+.node-collection-form .radio-inline,
+.node-collection-form .checkbox-inline{ padding-left: 0; }
+.media-widget{ position: relative; }
+
+.media-widget a{ 
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  position: relative;
+  bottom: 40px;
+  background-color: #5b68ce;
+  color: #fff;
+  display: inline-block;
+  padding: 0.7rem 1.2rem 0.3rem;
+  border-radius: .3rem;
+  font-family: 'museo-sans-500', helvetica, sans-serif;
+  font-weight:normal;
+  font-size: 0.82em;
+}
+.node-type-collection .media-widget a:hover{
+  box-shadow: none;
+  color: #fff;
+  background-color: #4850bd;
+}
+.node-type-collection .media-widget a:active{
+  background-color: #5b68ce;
+}
+/* adjust position of featured image thumbnail to label text */
+.node-type-collection .media-widget .preview .media-item{
+  margin: 0 10px;
+}
+
+.node-type-collection .media-widget .form-item{
+  margin-bottom: 0;
+}
+
+
+.field-type-image.field-name-field-general-featured-image{
+  position: relative;
+  min-height: 6rem;
+}
+
+.form-type-media.form-item-field-general-featured-image-und-0 a.browse{
+  display: inline;
+  top: 0.5rem;
+  left: 1rem;
+  height: 2.75rem;
+}
+
+.form-type-media.form-item-field-general-featured-image-und-0 a.browse:hover{
+  color:#fff;
+}
+
+
+
+/**
+* Collection-Group Page (not Edit page - which has slightly different body class="page-group-node")
+*/
+.page-node-group .admin-list dt{ margin-top:1.5rem; }
+.page-node-group .admin-list dd{ margin-left: 1rem; font-style:italic; font-size: 90%; }
+.page-node-group .admin-list dd::before{ content:'-'; display:inline-block; position:relative; margin-right:0.4rem;}
+
+/**
+* Collection-Log Edit Form 
+*/
+.page-node-log .btn.btn-primary.form-submit { padding: .32em 1.5em .12em; }
+.page-node-log .views-exposed-form .views-exposed-widget .form-submit{ margin-top: 1.62em; }
+.page-node-log .bootstrap-select.btn-group .dropdown-menu.open{ min-width: 110px; }
+
+
+
+
+/***** BEGIN Vertical Tabs *****/
+.vertical-tabs {
+  margin-top: 0;
+  background: #fdfdfd;
+}
+
+.vertical-tabs-pane{
+  padding:1rem;
+}
+
+.vertical-tabs-panes {
+  margin-bottom: 2em;
+  font-size: 1em;
+}
+
+.vertical-tab-button a,
+.vertical-tab-button.selected a {
+  border-bottom: none;
+  outline: none !important;
+  font-family: 'museo-sans-700',helvetica,arial,sans-serif;
+  font-weight: bold;
+}
+
+.vertical-tab-button a:hover,
+.vertical-tab-button a:active,
+.vertical-tab-button.selected a:hover,
+.vertical-tab-button.selected a:active {
+  border-bottom: none;
+  text-decoration: none !important;
+}
+
+.vertical-tabs a {
+  border-bottom: none;
+}
+
+.vertical-tabs a:hover,
+.vertical-tabs a:active {
+  text-decoration: underline;
+  border-bottom: none;
+}
+
+.vertical-tabs .vertical-tab-button.selected a:hover,
+.vertical-tabs .vertical-tab-button.selected a:active,
+.vertical-tabs .vertical-tab-button.selected a:-webkit-any-link:hover,
+.vertical-tabs .vertical-tab-button.selected a:-webkit-any-link:active {
+  text-decoration: none;
+}
+
+.vertical-tabs-panes.vertical-tabs-processed {
+  padding:1rem 1.5rem;
+  /* border-top: 1px solid #ddd; */
+ /* border-bottom:1px solid #fff; */
+}
+
+
+/* Selector target UL.vertical-tabs-list */
+.vertical-tabs ul.vertical-tabs-list .selected strong {
+  color: inherit;
+}
+
+.vertical-tabs ul.vertical-tabs-list li a:hover strong {
+  text-decoration: none;
+}
+
+.vertical-tab-container .nav-tabs>li {
+  border-right: 1px solid  #ddd;
+}
+
+.vertical-tabs ul.vertical-tabs-list li.selected {
+  border-right: 1px solid  transparent;
+  background: #fdfdfd;
+}
+
+.vertical-tabs ul.vertical-tabs-list li.selected:hover{
+  background: #fff;
+}
+
+.vertical-tab-container .nav-tabs>li>a {
+  border: none !important;
+}
+
+.vertical-tab-container .nav-tabs>li>a:hover {
+  border: none !important;
+}
+
+.vertical-tabs ul.vertical-tabs-list .summary{
+  font-weight: normal;
+  font-size: 90%;
+  color: #707070;
+}
+
+.vertical-tabs .radio-inline{
+  padding-left:0;
+  margin-left:0;
+}
+
+.vertical-tabs .form-type-radio .description{
+  margin-left: 2.4em;
+  margin-top: -0.5rem;
+}
+
+.vertical-tabs .form-type-textfield{
+  padding-left: 1rem;
+}
+
+.vertical-tabs .form-item-date input{
+  max-width:18em;
+}
+
+.vertical-tabs .form-item-name input{
+  max-width:22em;
+}
+
+.vertical-tabs .form-wrapper label{
+  font-size:0.93em;
+}
+
+.vertical-tabs .form-wrapper .form-type-radio label,
+.vertical-tabs .form-wrapper .form-type-checkbox label{
+  font-size:1.06em;
+}
+
+.vertical-tabs .form-wrapper .form-item-date > div{
+  padding-left:0;
+}
+
+.vertical-tabs .form-wrapper .form-item-date > label{
+  /*margin-left: 2rem;*/
+  /*margin-top: 1rem;
+  margin-bottom: -0.5rem;*/
+}
+
+.vertical-tabs table.redirect-list{
+  margin-left:1rem
+}
+
+.vertical-tabs table.redirect-list tbody td{
+  padding-left: 1rem;
+}
+
+.vertical-tabs table.redirect-list thead th:first-of-type img{
+  display: inline-block !important;
+  margin-left: 0.5rem !important;
+  margin-bottom:0.2rem !important;
+}
+
+/**
+*** END vertical tabs ***/
+
+
+
+
+
+
+
+
+
+
+/**
+* --------------
+* Modal Popup
+* --------------
+*/
+#modalContent{
+  box-shadow: 0 0 10px #aaa;
+  border-radius: .2rem;
+  z-index: 1000 !important;
+  /*min-width: 550px;
+  max-height: 700px;*/
+  overflow:hidden;
+  /*margin-left:-200px;*/
+}
+/* target edit collection page only w/height for now to be safe */
+.node-type-collection #modalContent{
+  max-height: 700px;
+}
+
+@media (max-width: 600px) { 
+    
+    #modalContent {
+      position: fixed !important;
+      min-width: 320px;
+      top: 12% !important;
+      bottom: 12% !important;
+      right: 4% !important;
+      left: 4% !important;
+    }
+}
+
+/* kaltura upload video */
+div.ctools-modal-content {
+  margin: 0 auto;
+  width: 100% !important;
+  /*max-width: 550px !important;
+  max-height: 350px !important;*/
+  border: 1px solid #ccc;
+  border-radius: .2rem;
+  min-width: 40rem;
+}
+
+div.ctools-modal-content .modal-content {
+  width: 100% !important;
+  max-width: 450px !important;
+  padding: 2rem 7%;
+  box-shadow:none !important;
+  border:none !important;
+  background:transparent;
+}
+
+div.ctools-modal-content .btn.btn-delete.btn-primary{
+  /*margin-top:0 !important;*/
+}
+
+div.ctools-modal-content button#edit-submit--5.btn.btn-primary.form-submit{
+  padding: 0.4rem 1.8rem 0.2rem;
+  font-size: 0.75em;
+}
+
+div.ctools-modal-content button#edit-media-remove-button.btn.btn-primary{
+  /*padding: 0.7rem 0.5rem 0.7rem;
+  margin-top:-0.5rem !important;*/
+}
+
+div.ctools-modal-content #edit-actions--3.form-actions.form-wrapper{
+  margin-top:2rem;
+}
+/*
+.modal-header button.close{
+  position: relative;
+  top: -1.5rem;
+  left: 1rem;
+}
+
+.modal-content .messages.status{
+  display:none;
+}
+*/
+div.ctools-modal-content .modal-header{
+  padding: 1.5rem 2rem;
+  background-color: transparent !important;
+  background-color: #2fbebc !important; /* subtheme color setting */
+  border-radius: .2rem 0.2rem 0 0;
+}
+
+div.ctools-modal-content .modal-title{
+  font-size: 150%;
+  font-weight: normal;
+  font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+  text-shadow: 0 0 5px #888;
+}
+
+div.ctools-modal-content a.close{
+  position: relative;
+  right: 0;
+  top: -3rem;
+  font-size: 0.5em;
+  text-shadow: 0 0 3px #888;
+  font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+  filter: alpha(opacity=75);
+  opacity: 0.75;
+  margin:0;
+  width: 0;
+  height: 0;
+}
+
+div.ctools-modal-content a.close:hover{
+  filter: alpha(opacity=90);
+  opacity: 0.9;
+}
+
+div.ctools-modal-content a.close::after{
+  content: 'X';
+  position: relative;
+  font-size: 3em;
+  top: 2.3rem;
+  right:2rem;
+}
+
+div.ctools-modal-content a.close:hover::after{
+  border:1px solid #fff;
+  padding:.15rem .7rem;
+  border-radius:50%;
+  top: 2.3rem;
+  right: 2.8rem;
+}
+
+div.ctools-modal-content a.close img{
+  display:none;
+  position: absolute;
+  z-index: -10;
+  height: 0;
+  width: 0;
+}
+/* radio button labels input position */
+div.ctools-modal-content .vertical-tabs label.radio-inline{
+  width: auto !important;
+  padding-left: 0;
+}
+div.ctools-modal-content .form-item{
+  margin-top:0;
+  margin-bottom:0;
+}
+div.ctools-modal-content .form-item label{
+  float:none;
+  width:100%;
+}
+
+.modal-content .ctools-close-modal{
+  font-family: 'museo-sans-700', helvetica, sans-serif;
+  margin-left: 3rem;
+}
+
+.modal-content .ctools-close-modal::after{
+  content: 'X';
+  position:relative;
+  left: 0.5rem;
+  display: inline-block;
+}
+
+.modal-content .form-type-file .description{
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.modal-content .field-widget-text-textfield.form-wrapper input.form-text.form-control{
+  width:100% !important;
+}
+
+.modal-content input.form-control.required{
+  max-width:auto;
+}
+/**
+*** END modal ***/
+
+
+
+
+/* Edit Featured Image : From Create Collection modal popup */
+.media-wrapper.ui-dialog .ui-dialog-titlebar-close{
+position: relative;
+right: 0;
+top: 0;
+width: 28px;
+margin: 0;
+padding: 1px;
+height: 26px;
+float: right;
+}
+
+
+
+
+
+
+
+/*-------------------------------*/
+/*--- ADMIN topbar and footer ---*/
+/*-------------------------------*/
+/* accounts for height of black admin bar */
+#admin-menu input.admin-menu-search.form-text {
+  background: #eee;
+  font-size: 1em;
+  line-height: 1.56em;
+  height: 1.5em;
+  padding: 0.82em 1em 0.62em;
+}
+
+#admin-menu .admin-menu-search input {
+  width: 108px;
+  border-radius: 1em;
+  background-clip: padding-box;
+}
+
+#admin-menu .dropdown .admin-menu-toolbar-category > a {
+  text-shadow: none;
+  color: #ccc;
+}
+
+#admin-menu .dropdown .admin-menu-toolbar-category > a:hover {
+  color: #fff;
+}
+
+#admin-menu .dropdown .admin-menu-toolbar-category > a.active-trail {
+  background: #f5f5f5;
+  color: #000;
+  text-shadow: none;
+}
+
+#admin-menu .dropdown .admin-menu-toolbar-category.admin-menu-icon > a.active-trail {
+  background: #777;
+}
+
+#admin-menu #edit-filters--2.filters.form-wrapper {
+  float: none;
+} /*--- admin page viewing / adding users ---*/
+
+#admin-menu {
+  box-shadow: 0 1px 2px hsla(0, 0%, 0.0000%, 0.3250);
+  border-collapse: separate;
+  background: #222;
+  background-image: none;
+  z-index: 900;
+  /* Necessary because header-banner has z-index: 30000 */
+}
+
+#admin-menu > div > .dropdown > li > a {
+  padding: 2px 7px 3px;
+}
+
+body.page-admin-modules #block-system-main.block.block-system {
+  float: none;
+}
+
+/* Admin */
+@media screen and (max-width: 1040px) {
+  #admin-menu .dropdown .admin-menu-search {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #admin-menu .dropdown .admin-menu-account,
+  #admin-menu .dropdown .admin-menu-users,
+  #admin-menu .dropdown .admin-menu-search {
+    display: none;
+  }
+}
+/* adjust height of admin bar target body clas admin-menu */
+html body.admin-menu {
+  margin-top: 5.4rem !important;
+} 
+
+@media screen and (min-width: 660px) {
+  
+  html body.admin-menu {
+    margin-top: 3rem !important;
+  }
+}  
+
+.region-admin-footer h1,
+.region-admin-footer h2 {
+  color: #ddd;
+  font-size: 1em;
+}
+
+.region-admin-footer {
+  padding: 1rem 1rem 1rem 2.5rem;
+  background: #707070;
+  color: #eee;
+  border-top: 1px solid #aaa;
+  height:140px;
+}
+
+.region-admin-footer a,
+.region-admin-footer a.active{
+  color:#ddd;
+}
+
+.region-admin-footer a:hover,
+.region-admin-footer a:active{
+  color:#fff;
+  /*border-bottom:1px solid #eee;*/
+}
+
+.region-admin-footer a:hover{
+  text-decoration:underline;
+}
+
+.region-admin-footer > .block {
+  display: inline-block;
+  padding: 0 3rem 0 2rem;
+  border-right: 1px solid #808080;
+  vertical-align: top;
+  min-height: 118px;
+}
+
+.region-admin-footer .block.block-user {
+  padding-right: 3rem;
+}
+
+.region-admin-footer .form-control.form-text{
+  height: 1.75em;
+}
+
+.region-admin-footer .block p,
+.region-admin-footer .block li {
+  font-size: 0.88em;
+  color:#ddd;
+}
+
+.region-admin-footer .description{
+  margin:0 0 0 -1rem;
+  padding:0;
+  color: #eee;
+  font-size: 0.75em;
+}
+
+.region-admin-footer .form-control,
+.region-admin-footer .form-textarea {
+  max-width: 95%;
+  background-position: 97% 0.56em !important;
+}
+
+.region-admin-footer .block-masquerade h2{
+  margin-left:1.5rem;
+}
+
+.region-admin-footer .block-masquerade .form-control{
+  max-width: 14rem;
+}
+
+.region-admin-footer .block-masquerade .btn{
+  float:right;
+  padding: 0.3em 1.25em 0.2rem;
+  margin: -0.2rem 0 0.5rem 0.75rem;
+}
+
+/**
+*** END Admin topbar and footer ***/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+* -----------------------------------------------
+* Typeahead Feature Menu - Location/Places
+* -----------------------------------------------
+*/
+/*
+.field-name-field-places-kmap .kmaps-tt-header .typeahead-pager,
+.field-name-field-location .kmaps-tt-header .typeahead-pager{
+  position: absolute;
+  right: 0rem;
+}
+------  begin: column headers -----
+.field-name-field-places-kmap .kmaps-place-results-header,
+.field-name-field-location .kmaps-place-results-header{
+  border-bottom: 1px solid #ddd;
+  background-color: #f8f8f8;
+}
+.field-name-field-places-kmap .kmaps-place-results-header .kmaps-place-name,
+.field-name-field-location .kmaps-place-results-header .kmaps-place-name{
+  border-right: 1px solid #ddd;
+  display: inline-block;
+  padding: 0.2rem 1rem 0 1.5rem;
+  max-width: 20rem;
+  width: 45%;
+}
+.field-name-field-places-kmap .kmaps-place-results-header .kmaps-feature-type,
+.field-name-field-location .kmaps-place-results-header .kmaps-feature-type{
+  display: inline-block;
+  padding: 0 1rem;
+  max-width: 9rem;
+  width: 40%;
+  white-space: nowrap;
+}
+------ begin: search results rows ------
+.field-name-field-places-kmap .kmaps-place-result,
+.field-name-field-location .kmaps-place-result{
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+  white-space: nowrap;
+  height: 27px;
+}
+.field-name-field-places-kmap .kmaps-place-result .kmaps-place-name,
+.field-name-field-location .kmaps-place-result .kmaps-place-name{
+  max-width: 20rem;
+  width: 45%;
+  float: left;
+  padding-left: 2rem;
+  text-overflow: ellipsis;
+  overflow:hidden;
+}
+.field-name-field-places-kmap .kmaps-place-result.kmaps-tt-selected .kmaps-place-name,
+.field-name-field-places-kmap .kmaps-place-result.kmaps-tt-selected .kmaps-feature-type,
+.field-name-field-location .kmaps-place-result.kmaps-tt-selected .kmaps-place-name,
+.field-name-field-location .kmaps-place-result.kmaps-tt-selected .kmaps-feature-type{
+  text-decoration: line-through;
+  color:grey;
+}
+.field-name-field-places-kmap .kmaps-place-result .kmaps-feature-type,
+.field-name-field-location .kmaps-place-result .kmaps-feature-type{
+  padding-left: 1rem;
+}
+.field-name-field-places-kmap .kmaps-tt-dataset-places,
+.field-name-field-location .kmaps-tt-dataset-places{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.field-name-field-places-kmap .kmap-typeahead-picker .kmaps-tt-header:first-of-type,
+.field-name-field-location .kmap-typeahead-picker .kmaps-tt-header:first-of-type{
+  margin-bottom: 0;
+}
+.field-name-field-places-kmap .kmaps-tt-suggestion:hover:not(.kmaps-tt-selected):not(.kmaps-tt-zero-facet),
+.field-name-field-location .kmaps-tt-suggestion:hover:not(.kmaps-tt-selected):not(.kmaps-tt-zero-facet){
+  color: #000;
+  background-color: #eee !important;
+}
+.field-name-field-places-kmap .kmaps-tt-suggestion,
+.field-name-field-location .kmaps-tt-suggestion{
+  margin-left:0;
+}
+
+*/
+.field-name-field-places-kmap .kmaps-tt-menu .kmaps-tt-suggestion::before,
+.field-name-field-location .kmaps-tt-menu .kmaps-tt-suggestion::before{
+  /*display:none;*/
+}
+
+
+
+
+
+.kmaps-tt-header .typeahead-pager{
+  position: absolute;
+  right: 0rem;
+}
+/* begin: column headers */
+.kmaps-place-results-header{
+  border-bottom: 1px solid #ddd;
+  background-color: #f8f8f8;
+}
+.kmaps-place-results-header .kmaps-place-name{
+  border-right: 1px solid #ddd;
+  display: inline-block;
+  padding: 0.2rem 1rem 0 1.5rem;
+  max-width: 20rem;
+  width: 45%;
+}
+.kmaps-place-results-header .kmaps-feature-type{
+  display: inline-block;
+  padding: 0 1rem;
+  max-width: 9rem;
+  width: 40%;
+  white-space: nowrap;
+}
+/* begin: search results rows */
+.kmaps-place-result{
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+  white-space: nowrap;
+  height: 27px;
+}
+.kmaps-place-result .kmaps-place-name{
+  max-width: 20rem;
+  width: 45%;
+  float: left;
+  padding-left: 2rem;
+  text-overflow: ellipsis;
+  overflow:hidden;
+}
+.kmaps-place-result.kmaps-tt-selected .kmaps-place-name,
+.kmaps-place-result.kmaps-tt-selected .kmaps-feature-type{
+  text-decoration: line-through;
+  color:grey;
+}
+.kmaps-place-result .kmaps-feature-type{
+  padding-left: 1rem;
+}
+.kmaps-tt-dataset-places{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.kmap-typeahead-picker .kmaps-tt-header:first-of-type{
+  margin-bottom: 0;
+}
+.kmaps-tt-suggestion:hover:not(.kmaps-tt-selected):not(.kmaps-tt-zero-facet){
+  color: #000;
+  background-color: #eee !important;
+}
+.kmaps-tt-suggestion{
+  margin-left:0;
+}
+.kmaps-tt-menu .kmaps-tt-suggestion::before{
+  display: inline-block;
+  float: left;
+  position:relative;
+  right: 1rem;
+  bottom: -0.5rem;
+  margin-left: 0.5rem;
+}
+
+
+.field-name-field-location #field_location-typeahead-wrapper .kmaps-tt-menu .kmaps-tt-suggestion::before{
+  right: -1rem;
+}
+
+
+
+
+.field-name-field-recording-location-new .kmaps-tt-menu .kmaps-tt-suggestion::before{
+   right: -1rem;
+}
+
+
+/**
+* ----------------------
+* END - Edit Form CSS
+* ----------------------
+*/
+

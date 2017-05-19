@@ -26,3 +26,4 @@
 //= require shanti_integration/modernizr-2.6.2.min
 //= require shanti_integration/js.cookie
 //= require shanti_integration/preferences
+//= require jquery.columnizer.min

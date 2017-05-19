@@ -1,0 +1,140 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require shanti_sarvaka_theme/utils
+ *= require shanti_sarvaka_theme/font-awesome
+ *= require shanti_sarvaka_theme/shanticon
+ *= require shanti_sarvaka_theme/search
+ *= require shanti_sarvaka_theme/shanti-main
+ *= require shanti_sarvaka_theme/explorer
+ *= require shanti_sarvaka_theme/shanti-admin-edit-forms
+ *= require_self
+ */
+
+ /* shanti_sarvaka_theme/search */
+.ui-resizable-handle {
+  font-size: inherit;
+}
+.ui-resizable-handle.ui-resizable-w::before{
+  font-size:1.12em;
+}
+.input-section .advanced-view .form-group{
+  padding: 10px;
+}
+.advanced-view label span {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#searchScopeGroup hr{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+#searchScopeGroup label {
+  display: inline;
+}
+ /* END - shanti_sarvaka_theme/search */
+
+
+ /* shanti_sarvaka_theme/shanti-main */
+/* Gallery */
+.content-section img:not(.og-grid img):not(.shanti-thumbnail-image img):not(.pswp__container img):not(.map-renditions img):not(.view-on-map img){
+  /* box-shadow: 0 0 2px 1px #ccc; */
+
+  border-radius: 0;
+  border: 1px solid #ccc;
+  margin: 0;
+  padding: 0.1rem;
+  background: #fff;
+  display: block;
+  max-width:100%;
+  height:auto;
+}
+
+.no-sidebars article.main-col{
+  padding-bottom:inherit;
+}
+/* END - Gallery */
+
+.tab-content-loading {
+  width:20px;
+  height:20px;
+  background-image: image-url("shanti_integration/ajax-loader.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  position:absolute;
+  top:14px;
+  right: 12px;
+}
+
+.navbar-header .mandala{
+  margin-left: 8px;
+}
+/* Panels for admin section */
+.panel.panel-content {
+  overflow: visible;
+  background: transparent !important;
+  margin-bottom: 1rem;
+}
+.panel-content > .panel-heading {
+  background: transparent !important;
+  border-bottom: none;
+}
+
+.panel-content .panel-heading {
+  background-image: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+.panel.panel-content .panel-heading h6 {
+  text-transform: uppercase;
+  font-size: 1.06em;
+  line-height: 4.25em;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ccc;
+  margin: 0;
+  height: 65px;
+  letter-spacing: 0.075rem;
+}
+.panel.panel-content .panel-heading h6:not(.collapsed), .panel.panel-content .panel-heading h6:hover:not(.collapsed) {
+  background: #a0a0a0;
+  color: #fff;
+  letter-spacing: 0.075rem;
+  text-shadow: 0 0 2px #777;
+}
+.panel.panel-content .panel-heading h6 {
+  color: #555;
+  border: none;
+  display: block;
+  padding-left: 2rem;
+  background: #e0e0e0;
+}
+/* END - Panels for admin section */
+.btn .icon {
+  height: 100%;
+ /* END - shanti_sarvaka_theme/shanti-main */
+}
+
+/* shanti_integration/explorer */
+.page-places .input-section .toggle-link.advanced-link{
+  width: 100%;
+  float: none;
+  padding: 0px 10px 0px 0px;
+}
+
+/* custom image gallery for kmaps display */
+.og-expander{
+  margin-left:1.3rem;
+  width: 99%;
+}
+li.pagination::before {
+  display: none !important;
+}
+/* END - shanti_integration/explorer */

@@ -12,7 +12,7 @@ function checkWidth() {
 function searchTabHeight() {
     var height = $(window).height();
     var srchtab = (height) - 88;
-    var viewheight = (height) - 235;
+    var viewheight = (height) - 260;
     // var advHeight = $(".advanced-view").show().height();
     // var comboHeight = (viewheight) - 370;
     var viewheightSources = (height) - 230;
@@ -26,11 +26,13 @@ function searchTabHeight() {
     $(".view-wrap").css('height', viewheight);
     // $(".view-wrap.short-wrap").css('height', comboHeight);
 
+  /*
     viewheightSources = parseInt(viewheightSources) + 'px';
     $(".sources .view-wrap").css('height', viewheightSources);
 
     viewheightPlaces = parseInt(viewheightPlaces) + 'px';
     $(".page-places .view-wrap").css('height', viewheightPlaces);
+    */
 }
 
 $(document).ready(function(){
@@ -50,10 +52,10 @@ $(document).ready(function(){
     // Add back in extruder content
     $('#search-flyout .text').append(mbContent);
     // Make it resizeable
-    try { 
+    try {
 	    if($("div.extruder-content > div.text").length > 0) {
 		    $("div.extruder-content > div.text").resizable({
-		      handles: "w",
+		      handles: "w,nw",
 		      resize: function (event, ui) {
 		      	$('#search-flyout .extruder-content').css('width','');
 		        //$('span.fancytree-title').trunk8({ tooltip:false });
@@ -64,7 +66,7 @@ $(document).ready(function(){
 	    $(".extruder-content").resize(checkWidth());
 	    // Add identifier
 	    // $(".extruder-content").attr("aria-label","Search Panel");
-	   } catch (e) { 
+	   } catch (e) {
 	   	console.trace();
 	   	console.warn('Resizeable not a function error caught! search.js line 49');
 	   }
@@ -88,9 +90,9 @@ $(document).ready(function(){
     function () {
       $(this).removeClass('on-hover');
     });
-      
+    
     // --- set class on dropdown menu for icon
-    $(".extruder.right .flap").hover( 
+    $(".extruder.right .flap").hover(
       function () {
         $(this).addClass('on-hover');
       },

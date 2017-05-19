@@ -48,19 +48,25 @@
 
 
   // *** SEARCH *** adapt search panel height to viewport
-  ShantiSarvaka.searchTabHeight = function() {    
+  ShantiSarvaka.searchTabHeight = function(advVisible) {
     var height = $(window).height();
     var srchtab = (height) - 88;
-    var viewheight = (height) - 235;
-    // var advHeight = $(".advanced-view").show().height();
+    //var viewheight = (height) - 235;
+    var viewheight = (height) - 260;
+    var advHeight = $(".advanced-view").show().height();
+    //var advHeight = $(".advanced-view").height();
+    if((typeof advVisible !== undefined) && advVisible){
+      viewheight = viewheight - 256;
+    }
     // var comboHeight = (viewheight) - 370;
-    var viewheightSources = (height) - 230;
-    var viewheightPlaces = (height) - 402;
+    
+    /*var viewheightSources = (height) - 230;
+    var viewheightPlaces = (height) - 402;*/
 
     srchtab = parseInt(srchtab) + 'px';
     $("#search-flyout").find(".text").css('height',srchtab);
 
-    srchtabAdmin = parseInt(srchtabAdmin) + 'px';
+    var srchtabAdmin = parseInt(srchtabAdmin) + 'px';
     $(".admin-menu #search-flyout").find(".text").css('height',srchtabAdmin);
 
     viewheight = parseInt(viewheight) + 'px';
@@ -68,16 +74,41 @@
     $(".view-wrap").css('height', viewheight);
     // $(".view-wrap.short-wrap").css('height', comboHeight);
 
+    /*
     viewheightSources = parseInt(viewheightSources) + 'px';
     $(".sources .view-wrap").css('height', viewheightSources);
 
     viewheightPlaces = parseInt(viewheightPlaces) + 'px';
     $(".page-places .view-wrap").css('height', viewheightPlaces);
+    */
 	
   };
 
   $(document).ready(function() {
-	  
+// --- kms, KMAPS MAIN SEARCH INPUT ---
+    jQuery(function($) {
+      var kms = $("#search_filter"); // the main search input
+      $(kms).data("holder",$(kms).attr("placeholder"));
+
+      // --- features inputs - focusin / focusout
+      $(kms).focusin(function(){
+        $(kms).attr("placeholder","");
+        $("button.searchreset").show("fast");
+      });
+      // --- close and clear all
+      $("button.searchreset").click(function(){
+        $(kms).val('');
+        $(kms).attr("placeholder",$(kms).data("holder"));
+        $("button.searchreset").hide();
+      });
+      $(kms).keypress(function (e) {
+        if (e.which == 13) {
+          $('form#new_search').submit();
+          return false;
+        }
+      });
+    });
+
 	  /**
 	   *  Settings for the theme
 	   */
