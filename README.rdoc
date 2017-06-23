@@ -25,7 +25,7 @@ All SCSS files were converted to this format to handle relative URLS using funct
 
    Based on css/shanti-search.css on drupal_shanti_sarvaka_theme[http://github.com/shanti-uva/drupal_shanti_sarvaka_theme].
 
-5. shanti_integration/main.css.scss
+5. shanti_integration/shanti-main.css.scss
 
    Based on css/shanti-main.css on drupal_shanti_sarvaka_theme[http://github.com/shanti-uva/drupal_shanti_sarvaka_theme].
 
@@ -35,3 +35,6 @@ All SCSS files were converted to this format to handle relative URLS using funct
    
 ==JS
 
+External JavaScript is located inside the vendor directory(shanti_integration/vendor/assets/javascripts). The structure serves to have an easier time when upgrading independent libraries, if we need to extend or modify them we just add them to the project's asets JavaScript.
+
+1. Columnizer - jQuery Plugin.
