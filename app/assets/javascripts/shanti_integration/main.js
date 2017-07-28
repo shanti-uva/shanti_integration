@@ -195,7 +195,7 @@
       });
       // Initialize the multilevel main menu
       $( '#menu' ).multilevelpushmenu({
-        menuWidth: 250,
+        menuWidth: 275,
         menuHeight: '32em', // this height is determined by tallest menu, Preferences
         mode: 'cover',
         direction: 'rtl',

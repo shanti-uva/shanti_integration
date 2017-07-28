@@ -27,3 +27,4 @@
 //= require shanti_integration/js.cookie
 //= require shanti_integration/preferences
 //= require jquery.columnizer.min
+//= require jquery.draggable.popup
