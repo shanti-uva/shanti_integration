@@ -25,5 +25,18 @@ module ShantiIntegration
       KNOWN_ATTRS.each{ |key| attrs[key]=hash[key.to_s] }
       return self.new(attrs)
     end
+
+    def bibliographic_reference
+      uri = URI.parse("#{self.service}/sources-api/ajax/#{self.id}/cite/chicago")
+      conn = Net::HTTP.new(uri.host,uri.port)
+      conn.use_ssl = true
+      conn.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+      request = Net::HTTP::Get.new(uri.request_uri)
+      result = conn.request(request)
+      result_str = result.body
+      result_str.chop! if result_str.last == '.'
+      result_str
+    end
   end
 end
