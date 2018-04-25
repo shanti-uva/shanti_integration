@@ -86,9 +86,6 @@
   display:none !important;
 }
 
-/* this removes the 2nd breadcrumb  (ex., Places: Earth) */
-.kmaps.page-places .breadcrumb li:nth-of-type(2){ display:none !important; }
-
 /* space between Map and accordions on Overview section */
 .not-front .panel-group{ margin: 20px 0 50px !important; }
 
