@@ -25,6 +25,64 @@
   font-family: 'museo-sans-700', helvetica, arial, sans-serif;
 }
 
+.twitter-typeahead .kmaps-tt-input{
+  padding-left: 3rem;
+}
+
+.sticky-table.field-multiple-table{
+  margin-bottom: 1rem;
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.sticky-table tr{
+  border-bottom: 1px solid #ccc;
+}
+
+.sticky-table tr .form-item{
+  min-height: 3.5rem;
+}
+
+.sticky-table .form-autocomplete{
+  margin-top: .7rem;
+}
+
+
+/* AV - testing - removing required asterisk after first form field */
+.audio-video.page-node-edit .sticky-table.field-multiple-table tbody tr .form-required{
+  display:none;
+}
+.audio-video.page-node-edit .sticky-table.field-multiple-table thead .form-required,
+.audio-video.page-node-edit .sticky-table.field-multiple-table tbody tr:first-child .form-required{
+  display:inline-block;
+  font-size: 120%;
+}
+
+.field-multiple-table thead label{
+  font-size: 1.06em;
+  color: #666;
+}
+
+
+
+.kmap-search-term.form-control{
+  padding-left:3rem;
+}
+
+.node-collection-form .form-item-field-general-featured-image-und-0{
+  margin-bottom:0;
+}
+
+.kmap-search-button{
+  margin-top: 1rem;
+  position: relative;
+  top: 0;
+}
+
+.sidebar-second .block-shanti-collections .btn.btn-primary .icon{
+  line-height: 2.5em;
+}
+
 
 /**
 * Page layout
@@ -65,9 +123,9 @@
 
 
 /* powerful, careful */
-.page-node-add .fieldset-wrapper .form-item,
-.page-node-edit .fieldset-wrapper .form-item{
-  /*margin:0;*/
+.page-node-add .main-content .fieldset-wrapper .form-item,
+.page-node-edit .main-content .fieldset-wrapper .form-item{
+  margin:0;
 }
 
 /* My Stuff Account Collections page - 50% columns for drop-select */
@@ -86,12 +144,29 @@
 /* under input */
 .form-wrapper .description {
   font-size: 0.93em;
-  margin-top: 0.25em;
   margin-bottom: .75em;
   padding-left: 1.75em;
   max-width: 50em;
   font-style: italic;
   color: #222;
+  text-transform: none;
+}
+
+.form-wrapper .form-item > table.field-multiple-table ~ .description{
+  float:left;
+  max-width: 65%;
+}
+
+.form-wrapper .form-item.form-type-textfield .description {
+    margin-bottom: 0;
+    padding-left: 0.75em;
+    text-transform:lowercase;
+}
+
+.form-wrapper .form-item.form-type-select .description {
+    margin-top: -6px;
+    margin-bottom: 0;
+    padding-left: 0.75em;
 }
 
 .form-wrapper .description p{
@@ -173,8 +248,7 @@ tr.region-title td {
 }
 
 table.tabledrag-processed {
-  /*width: 100%;
-  text-transform: capitalize;*/
+  width: 100%;
 }
 
 table .draggable a.tabledrag-handle {
@@ -220,7 +294,8 @@ a.features-storage,
 }
 
 .file-widget.form-managed-file {
-  /*padding-left: 1.25em;*/
+  float: left;
+  padding-left:1.5rem;
 }
 
 .exposed-filters .form-item label {
@@ -499,7 +574,12 @@ table.views-table tr.even:hover{
 }
 
 table.views-table .form-type-checkbox{
-  padding: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+table.views-table .form-type-checkbox input.icheck-input{
+  position: absolute;
+  left:0;
 }
 
 table.views-table thead .icheckbox_minimal-red{
@@ -612,7 +692,6 @@ table.views-table thead a > img{
 .views-table tr td.views-field-title {
   font-size: 0.93em;
   font-weight: bold;
-  padding-left: 0.5rem;
   max-width: 30rem;
 }
 
@@ -728,6 +807,10 @@ table.field-multiple-table .field-widget-text-textarea{ padding-top:1rem; }
 .filter-wrapper .form-item{ margin-top: -1em; }
 
 .text-format-wrapper .description{ margin-left:1rem; }
+
+.text-format-wrapper .form-item{
+  margin-bottom: 0.5rem;
+}
 /**  
 *** END Textarea Edit block ***/
 
@@ -802,8 +885,8 @@ button#edit-delete:hover{
 .media-widget a{ 
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  position: relative;
-  bottom: 40px;
+  /*position: relative;
+  bottom: 40px;*/
   background-color: #5b68ce;
   color: #fff;
   display: inline-block;
@@ -813,13 +896,31 @@ button#edit-delete:hover{
   font-weight:normal;
   font-size: 0.82em;
 }
+.media-widget a.button:hover,
 .node-type-collection .media-widget a:hover{
   box-shadow: none;
   color: #fff;
   background-color: #4850bd;
 }
+.media-widget a.button:active,
 .node-type-collection .media-widget a:active{
   background-color: #5b68ce;
+  color: #fff;
+}
+.media-widget .media-item{
+  padding: 0 0 40px;
+}
+
+.media-widget .preview{
+  float:left;
+}
+
+.media-widget .media-item .media-thumbnail > a{
+  position:relative;
+  bottom: 0;
+  display: block;
+  padding: 1.5rem 1.5rem 2rem;
+  border-radius:0;
 }
 /* adjust position of featured image thumbnail to label text */
 .node-type-collection .media-widget .preview .media-item{
@@ -837,7 +938,7 @@ button#edit-delete:hover{
 }
 
 .form-type-media.form-item-field-general-featured-image-und-0 a.browse{
-  display: inline;
+  /*display: inline;*/
   top: 0.5rem;
   left: 1rem;
   height: 2.75rem;
@@ -1197,6 +1298,10 @@ div.ctools-modal-content .form-item label{
 .modal-content input.form-control.required{
   max-width:auto;
 }
+
+.modal-content .progress .message{
+  font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+}
 /**
 *** END modal ***/
 
@@ -1378,9 +1483,16 @@ html body.admin-menu {
 }
 
 .region-admin-footer .block-masquerade .btn{
-  float:right;
-  padding: 0.3em 1.25em 0.2rem;
-  margin: -0.2rem 0 0.5rem 0.75rem;
+  padding: 0.2em .8em 0.1rem;
+  margin: -0.4rem 0 0.5rem 0.75rem;
+  border: 1px solid #999;
+  position: absolute;
+  right: 0;
+  top: 0.2rem;
+}
+
+.region-admin-footer .block-masquerade form{
+  position:relative;
 }
 
 /**
@@ -1528,6 +1640,7 @@ html body.admin-menu {
   text-overflow: ellipsis;
   overflow:hidden;
 }
+
 .kmaps-place-result.kmaps-tt-selected .kmaps-place-name,
 .kmaps-place-result.kmaps-tt-selected .kmaps-feature-type{
   text-decoration: line-through;
@@ -1559,6 +1672,14 @@ html body.admin-menu {
   margin-left: 0.5rem;
 }
 
+.kmaps-tt-dataset-places .kmaps-tt-selectable .kmaps-place-name{
+  padding-left: -1rem;
+}
+
+.kmaps-tt-dataset-places .kmaps-tt-selectable.kmaps-tt-suggestion::before{
+  margin-left:1.5rem;
+}
+
 
 .field-name-field-location #field_location-typeahead-wrapper .kmaps-tt-menu .kmaps-tt-suggestion::before{
   right: -1rem;
@@ -1572,6 +1693,9 @@ html body.admin-menu {
 }
 
 
+.container-inline-date .form-item input{
+  max-width:23rem;
+}
 /**
 * ----------------------
 * END - Edit Form CSS
