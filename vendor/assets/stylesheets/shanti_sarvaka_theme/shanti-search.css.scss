@@ -45,7 +45,6 @@
   padding: 0;
   width: 100%;
   box-shadow: 0 0 5px hsla(0, 0.0000%, 60.0000%, 0.7500);
-  border-collapse: separate;
 }
 
 .extruder.isOpened .extruder-content {
@@ -56,18 +55,19 @@
 #search-flyout.extruder {
   margin-top: 8px;
   position: absolute;
-  top:0;
+  top: -0.25rem !important;
   z-index: 300;
 }
 
 /* hide the search tab on the user profile page */
 .page-user #search-flyout.extruder{
-  display:none !important;
+  /*display:none !important;*/
 }
 
 #search-flyout .ext_wrapper {
   height: auto;
   padding: 0;
+  background: #f8f8f8;
 }
 
 #search-flyout.extruder .extruder-content {
@@ -78,7 +78,6 @@
   padding: 0;
   width: 100%;
   box-shadow: -4px 4px 5px hsla(0, 0.0000%, 60.0000%, 0.2000);
-  border-collapse: separate;
 }
 
 #search-flyout.extruder.isOpened .extruder-content {
@@ -89,15 +88,41 @@
   border: none;
   padding: 0;
   text-shadow: none;
-  background: #f8f8f8;
-  color: #333;
   /* default panel container width is set */
   width: 277px;
   min-width: 277px !important;
   font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
 }
 
-#search-flyout .text > .shanticon-close2{
+#search-flyout.extruder .text,
+#search-flyout.extruder .text .region-search-flyout{
+  background: #f8f8f8;
+  color: #333;
+}
+
+
+.extruder .btn-collapse-flyout{
+  width: 2.8rem;
+  height: 2.8rem;
+  background: #555;
+  color: #ddd;
+  padding: .5rem .55rem;
+  border-radius: .3rem;
+  margin: .2rem .2rem 0 0;
+  text-align: center;
+  cursor: default;
+  background: #888;
+  font-size: 1.75rem;
+}
+.extruder .btn-collapse-flyout:hover{
+  color: #fff;
+  background: #555;
+}
+body:not(.kmaps) .extruder .btn-collapse-flyout{
+  position: absolute;
+  z-index: 90;
+  top: 0.6rem;
+  right: 1.2rem;
   display:none;
 }
 
@@ -132,9 +157,9 @@ object.flip_label {
 
 
 
-/** 
+/**
 * BEGIN UI-Resize Search Flyout
-* left edge handle 
+* left edge handle
 */
 .extruder .text.ui-resizable,
 .extruder .isOpened .text.ui-resizable {
@@ -142,6 +167,38 @@ object.flip_label {
   overflow-y: visible;
 }
 
+/*
+.ui-resizable-handle.ui-resizable-w {
+  cursor: col-resize;
+  position: absolute;
+  left: -1.2rem;
+  top: 6.2rem;
+  z-index: 290;
+  width: 1.2rem;
+  height: 5rem;
+  border-radius: .4rem 0 0 .4rem;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-width: 2px 1px 2px 2px;
+  top: 5.6rem;
+}
+
+.ui-resizable-handle.ui-resizable-w::before{
+  content: '';
+  width: 1rem;
+  height: 4rem;
+  display: inline-block;
+  position: relative;
+  top: .3rem;
+  left: .3rem;
+  border-left: 3px double #aaa;
+}
+
+.ui-resizable-handle.ui-resizable-w:active {
+  background-color: #777;
+  border-color:#eee;
+}
+*/
 
 .ui-resizable-handle.ui-resizable-w {
   cursor: col-resize;
@@ -157,10 +214,11 @@ object.flip_label {
   opacity: 0.8;
 }
 .ui-resizable-handle.ui-resizable-w:hover {
-  opacity: 1;
+  opacity: 1 !important;
 }
 .ui-resizable-handle.ui-resizable-w.active,
 .ui-resizable-handle.ui-resizable-w:active {
+  opacity: 0.8;
   border-color: #aaa transparent transparent transparent;
 }
 
@@ -193,6 +251,7 @@ object.flip_label {
   width: .5rem;
   background-color: #fff;
   border:none;
+  opacity:0.85;
 }
 
 .ui-resizable-handle.ui-resizable-nw:hover {
@@ -226,33 +285,29 @@ object.flip_label {
 */
 #search-flyout.extruder .flap {
   background: #fff;
-  height: 53px;
+  height: 49px;
   width: 50px;
-  padding: 7px 0 7px 7px;
-  margin: 0 0 0 -12px;
-  cursor: pointer;
+  padding: 0.62rem 0 0.62rem 0.62rem;
+  margin: 0 0 0 -1.2rem;
+  cursor: default;
   display: block;
   border-top-left-radius: 44px;
   border-bottom-left-radius: 44px;
-  box-shadow: -4px 0 4px rgba(0,0,0, 0.1250);
-  border-collapse: separate;
-}
-
-#search-flyout.extruder .flap.on-flap {
-  border-collapse: separate;
+  background-clip: padding-box;
+  box-shadow: -0.4rem 0 0.4rem rgba(0,0,0, 0.1250);
 }
 
 #search-flyout.extruder .flap .flapLabel,
 #search-flyout.extruder .flap.on-flap .flapLabel {
   background: #333;
-  height: 39px;
-  width: 43px !important;
-  padding: 17px 38px 17px 0;
+  height: 37px;
+  width: 44px !important;
+  padding: 15px 38px 15px 0;
   margin: 0;
   display: block;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  border-collapse: separate;
+  background-clip: padding-box;
 }
 
 #search-flyout.extruder.isOpened .flap {
@@ -261,13 +316,13 @@ object.flip_label {
 }
 
 #search-flyout.extruder.isOpened .flap.on-flap .flapLabel {
-  width: 30px !important;
-}/* on-flap is opened state */
+  width: 30px !important; /* on-flap is opened state */
+}
 
 /*----- css for the flap is inserted inline, see js/main ---*/
 #search-flyout.extruder .flap>span,
 #search-flyout.extruder .flap.on-flap>span {
-  color: #ccc;
+  color: #eee;
 }
 
 #search-flyout.extruder .flap.on-hover>span,
@@ -277,27 +332,29 @@ object.flip_label {
 }
 
 #search-flyout.extruder .flap>span .icon {
-  position: absolute;
+  /*position: absolute;
   font-size: 2.88rem;
   left: 1.5rem;
   top: 1.21rem;
   z-index: 10;
   -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;*/
 }
 
 #search-flyout.extruder .flap.on-flap>span .icon {
-  font-size: 2.25rem;
+  font-size: 1.18em;
   position: absolute;
-  left: 1.85rem;
-  top: 1.6rem;
+  left: 1.9rem;
+  top: 1.45rem;
+  z-index: 10;
 }
 
 #search-flyout.extruder.isOpened .flap.on-flap>span .icon{
   position: absolute;
-  font-size:2.75rem;
-  left: 1.5rem;
-  top: 1.3rem;
+  font-size: 2.75rem;
+  left: 1.3rem;
+  top: 1.1rem;
+  color: #c0c0c0;
 }
 
 #search-flyout.extruder.isOpened .flap.on-flap>span .icon:hover {
@@ -311,8 +368,8 @@ object.flip_label {
 }
 
 #search-flyout.extruder.isOpened .flap.on-flap>span .icon.shanticon-search::before{
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
+ /*-webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;*/
 }
 
 #search-flyout.extruder.isOpened .flap.on-flap>span .icon.shanticon-search::before,
@@ -373,7 +430,6 @@ object.flip_label {
   overflow: auto;
   vertical-align: middle;
   box-shadow: 0 2px 5px #eee inset;
-  border-collapse: separate; /* fix for ie9 box-shadow */
   background: #fff;
   -webkit-transition-property: all;
   transition-property: all;
@@ -389,7 +445,6 @@ object.flip_label {
 .input-section .input-group .form-control:focus {
   border: 1px solid #9097d3;
   box-shadow: 0 0 4px #949bd8;
-  border-collapse: separate;
 }
 
 .input-section .input-group .input-group-btn {
@@ -466,9 +521,9 @@ object.flip_label {
 .kmap-tree-picker .searchreset {
   background: transparent;
   background-image: none;
-  background-clip: padding-box;
   box-shadow: none;
   border-radius: 50%;
+  background-clip: padding-box;
   border: none;
   padding: 0;
   margin: 0;
@@ -514,6 +569,7 @@ object.flip_label {
   background-clip: padding-box;
   border: none;
   border-radius: 50%;
+  background-clip: padding-box;
   cursor: pointer;
   width: 2rem;
   height: 2rem;
@@ -525,7 +581,7 @@ object.flip_label {
 .extruder .searchreset .icon::before,.extruder .searchreset .icon::after,
 .kmap-typeahead-picker .searchreset .icon::before,.kmap-typeahead-picker .searchreset .icon::after,
 .kmap-tree-picker .searchreset .icon::before,.kmap-tree-picker .searchreset .icon::after {
-  background: #ccc;
+  background: #c0c0c0;
   content: '';
   position: absolute;
   top: 0.95rem;
@@ -657,7 +713,7 @@ object.flip_label {
   margin-right: 5px;
 }
 
-.input-section .search-group .radio-inline>div {
+.input-section .search-group .radio-inline >d iv {
   margin-right: 4px;
 }
 
@@ -707,7 +763,7 @@ object.flip_label {
   text-align: right;
   font-weight: bold;
   /*line-height: 0.93em;*/
-  margin: 0.5rem 2.5rem 0 0;
+  margin: .5rem 2.5rem 0 0;
   /*padding: 0;
   text-decoration: none;
   font-family: 'droidserif',georgia,palatino,'Palatino Linotype',serif;*/
@@ -855,7 +911,6 @@ object.flip_label {
   overflow: hidden;
   vertical-align: middle;
   box-shadow: 0 2px 5px #eee inset;
-  border-collapse: separate;
 }
 
 .advanced-view > .form-group:last-of-type .form-group{
@@ -934,10 +989,10 @@ object.flip_label {
 .view-section .nav-tabs>li>a {
   color: #777;
   font-size: 14px;
-  line-height: 25px;
+  line-height: 20px;
   margin-right: 4px;
   font-weight: bold;
-  padding: 10px 0 5px 0;
+  padding: 10px 0 7px 0;
   /* display:none prevents flash on load */
   display: none;
   text-align: center;
@@ -1030,7 +1085,6 @@ object.flip_label {
 .view-section table.table-results tr.row_selected {
   background: #fff;
   box-shadow: 0 0 3px 0 #aaa;
-  border-collapse: separate;
 }
 
 .view-section table.table-results>thead>tr>th {
@@ -1071,7 +1125,7 @@ object.flip_label {
 .view-section .table-results .progress-disabled ~ .ajax-progress:nth-of-type(1){
   height: 20px;
   width: 20px;
-  /*background:transparent image-url('/interface_utils/ajax-loader.gif') no-repeat center center;*/
+  /*background:transparent image-url('shanti_integration/ajax-loader.gif') no-repeat center center;*/
   position:absolute;
   display:inline-block;
   background:transparent;
@@ -1082,7 +1136,7 @@ object.flip_label {
 .view-section table.table-results tbody>tr.progress-disabled.row_selected {
   height: 20px;
   width: 20px;
-  background:transparent image-url('/interface_utils/ajax-loader.gif') no-repeat center center;
+  background:transparent image-url('shanti_integration/ajax-loader.gif') no-repeat center center;
   z-index: 501;
 }
 */
@@ -1137,6 +1191,7 @@ object.flip_label {
 .view-section .view-wrap::-webkit-scrollbar {
   width: 0.6rem;
   border-radius: 0.6rem;
+  background-clip: padding-box;
 }
 
 .view-section .view-wrap::-webkit-scrollbar-track {
@@ -1178,6 +1233,7 @@ object.flip_label {
 .bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar{
   width: 0.6rem;
   border-radius: 0.6rem;
+  background-clip: padding-box;
 }
 
 .bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar-track{
@@ -1187,6 +1243,7 @@ object.flip_label {
 .bootstrap-select .dropdown-menu.selectpicker::-webkit-scrollbar-thumb{
   background-color: #e5e5e5;
   border-radius: 0.6rem;
+  background-clip: padding-box;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
 }
 
@@ -1355,7 +1412,7 @@ object.flip_label {
 .fancytree-node.fancytree-active,
 .fancytree-node.fancytree-selected,
 .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active {
-  background: white !important;
+  background-color: #fff !important;
   border-color: #eee !important;
 }
 
@@ -1387,7 +1444,7 @@ object.flip_label {
 
 .fancytree-title {
   line-height: 1.68em;
-  margin-left: 3px;
+  margin-left: .3rem;
   height: 1.62em;
   /*box-sizing: content-box;*/
 }
@@ -1422,10 +1479,9 @@ object.flip_label {
   background-clip: padding-box;
   width: 9px;
   height: 9px;
-  display: block;
-  margin-right: 7px;
+  display: inline-block;
+  margin-right: .7rem;
   box-shadow: 0 0 2px 1px #aaa;
-  border-collapse: separate;
 }
 
 .fancytree-title:hover::before {
@@ -1444,8 +1500,8 @@ object.flip_label {
 }
 
 .fancytree-has-children>span.fancytree-title {
-  padding-left: 0px;
-  margin-left: -25px;
+  padding-left: 0;
+  margin-left: -2.5rem;
 }
 
 .fancytree-has-children span.fancytree-title::before {
@@ -1476,9 +1532,9 @@ object.flip_label {
   color: #666;
   font-family: 'Glyphicons Halflings';
   font-size: 15px;
-  margin-right: 12px;
+  margin-right: 1.2rem;
   position: relative;
-  top: 4px;
+  top: .4rem;
 }
 
 .fancytree-node:hover > .glyphicon {
@@ -1528,88 +1584,8 @@ object.flip_label {
   position: absolute;
   z-index: 310;
   background: #fff;
-  filter: alpha(opacity=30);
-  opacity: 0.3;
-}
-
-@-webkit-keyframes rotate-loading {
-  0% {
-    transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-loading {
-  0% {
-    transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes loading-text-opacity {
-  0% {
-    filter: alpha(opacity=0);
-    opacity: 0;
-  }
-
-  20% {
-    filter: alpha(opacity=0);
-    opacity: 0;
-  }
-
-  50% {
-    filter: alpha(opacity=100);
-    opacity: 1;
-  }
-
-  100% {
-    filter: alpha(opacity=0);
-    opacity: 0;
-  }
-}
-
-@keyframes loading-text-opacity {
-  0% {
-    filter: alpha(opacity=0);
-    opacity: 0;
-  }
-
-  20% {
-    filter: alpha(opacity=0);
-    opacity: 0;
-  }
-
-  50% {
-    filter: alpha(opacity=100);
-    opacity: 1;
-  }
-
-  100% {
-    filter: alpha(opacity=0);
-    opacity: 0;
-  }
+  filter: alpha(opacity=75);
+  opacity: 0.75;
 }
 
 .loading-container,
@@ -1658,7 +1634,7 @@ object.flip_label {
 #loading-text {
   -webkit-animation: loading-text-opacity 1s linear 0s infinite normal;
   animation: loading-text-opacity 1s linear 0s infinite normal;
-  color: #333;
+  color: #000;
   font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
   font-size: 1.18em;
   text-transform: capitalize;
@@ -1666,10 +1642,92 @@ object.flip_label {
   filter: alpha(opacity=0);
   opacity: 0;
   position: absolute;
-  top: -10px;
+  z-index: 330;
+  top: -15px;
   left: 40px;
   width: 120px;
 }
+
+@-webkit-keyframes rotate-loading {
+  0% {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-loading {
+  0% {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loading-text-opacity {
+  0% {
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+
+  20% {
+    filter: alpha(opacity=30);
+    opacity: .3;
+  }
+
+  50% {
+    filter: alpha(opacity=100);
+    opacity: 1;
+  }
+
+  100% {
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
+@keyframes loading-text-opacity {
+  0% {
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+
+  20% {
+    filter: alpha(opacity=30);
+    opacity: .3;
+  }
+
+  50% {
+    filter: alpha(opacity=100);
+    opacity: 1;
+  }
+
+  100% {
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
 /**
 *** END search loading */
 
@@ -1680,11 +1738,12 @@ object.flip_label {
 .search-popover {
   display: none;
   border: 1px solid #ddd;
+  padding-bottom:.5rem;
 }
 
 .search-popover > .popover-title {
   background: #f0f0f0;
-  font-size: 0.88em;
+  font-size: 1.06em;
   line-height: 1.12em;
   padding: 12px 12px 7px;
   position: relative;
@@ -1696,10 +1755,11 @@ object.flip_label {
   position: absolute;
   top: 2px;
   right: 10px;
-  font-size: 0.75em;
+  font-size: 0.68em;
   white-space: nowrap;
+  letter-spacing: .1rem;
   margin: 0;
-  color: #707070;
+  color: #555;
 }
 
 .search-popover > .popover-title .kmapid-display::before {
@@ -1709,22 +1769,26 @@ object.flip_label {
 .search-popover > .popover-content {
   font-family: 'museo-sans-500',helvetica,arial,sans-serif;
   font-size: 0.75em;
-  padding-top: 5px 12px;
+  padding: 0.5rem 0 0.5rem;
 }
 
 .search-popover > .popover-content .kmap-caption p {
-  padding: 0 8px;
-  margin: 5px 0 0;
-  font-size: 1.18em;
+  padding: 0 1rem;
+  margin: 2.3rem 0 0 1rem;
+  font-size: 1.25em;
   border-left: 4px solid #f0f0f0;
   font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 }
 
 .search-popover > .popover-content > .kmap-path {
-  display: inline;
-  font-size: 0.93em;
-  line-height: 1em;
+  display: block;
+  width:100%;
+  font-size: 1em;
+  line-height: 1.32em;
   word-break: break-all;
+  margin: 0.5rem 0 0.2rem 0;
+  padding-right:1.5rem;
+  float:left;
 }
 
 .search-popover > .counts-display {
@@ -1738,7 +1802,7 @@ object.flip_label {
 }
 
 .search-popover > .popover-content .info-wrap {
-  min-width: 18em;
+  min-width: 19em;
 }
 
 .search-popover > .popover-content .counts-display {
@@ -1814,6 +1878,7 @@ object.flip_label {
 .input-section .kmap-search-term{
   background-color: #fff !important;
   border-radius: 2em;
+  background-clip: padding-box;
   font-size: 1.06em;
   height: 35px;
   max-width:100%;
@@ -1918,6 +1983,7 @@ object.flip_label {
   padding: 0.45rem 0;
   white-space: nowrap;
   height:24px;
+  color: #000;
 }
 
 .listview  .kmaps-place-result .kmaps-place-name{
@@ -1956,16 +2022,15 @@ object.flip_label {
 
 /* dark background for labels display in search flyout */
 .extruder .view-section .active-kmfacets-list{
-  border: 1px inset #ddd;
-  padding: 6px 4px 7px 12px;
-  background: #888;
+  border: none;
+  border-radius: 0.2rem;
+  padding: .6rem .4rem .7rem 1.2rem;
+  background: #777;
   color: #fff !important;
-    border-radius: 0px;
-    position: relative;
-    left: 0rem;
 }
+
 .extruder .view-section .active-kmfacets-list .facet-item{
-  margin: 1px 2px 3px 0px;
+  margin: 1px 2px 3px 0;
 }
 
 /* in active state remove default blue background and outline */
@@ -1974,16 +2039,21 @@ object.flip_label {
   background-color: transparent;
 }
 .extruder .view-section .active-kmfacets-list .selected-kmap{
+  text-shadow: 0 1px 2px #555;
   font-family: 'museo-sans-700', helvetica, arial, sans-serif;
+  text-align:left;
+  max-width: 95%;
+  overflow:hidden;
+  text-overflow: ellipsis;
 }
 .extruder .view-section .active-kmfacets-list .selected-kmap,
 .extruder .view-section .selected-kmap .shanticon-close2::before{
   color:#eee;
 }
-    .extruder .view-section .active-kmfacets-list .selected-kmap:hover,
-    .extruder .view-section .selected-kmap:hover .shanticon-close2::before{
-      color:#fff;
-    }
+.extruder .view-section .active-kmfacets-list .selected-kmap:hover,
+.extruder .view-section .selected-kmap:hover .shanticon-close2::before{
+  color:#fff;
+}
 
 /* filter by transcript language */
 ul.facetapi-facet-transcript-languages li {
@@ -1991,37 +2061,65 @@ ul.facetapi-facet-transcript-languages li {
 }
 ul.facetapi-facet-transcript-languages li > a {
   display: inline-block;
-  padding: 0.2em 0.5em 0 0; /* move <li> padding to anchors */
+  padding: .2em .5em 0 0; /* move <li> padding to anchors */
 }
 ul.facetapi-facet-transcript-languages li > a[href$="_wylie"],
 ul.facetapi-facet-transcript-languages li > a[href$="_empty_"] {
   display: none; /* hide tiers we don't want to filter on */
 }
+.extruder .view-section .kmfacets-list-clear {
+  position: absolute;
+  right: 0.75rem;
+  top:0;
+  display:inline-block;
+  width:1.25rem;
+  height:1.25rem;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  border-radius: 0;
+  background-clip: padding-box;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
 
+.extruder .view-section .kmfacets-list-clear:hover,
+.extruder .view-section .kmfacets-list-clear:active{
+  /*background: transparent;
+  background-image: none;
+  box-shadow: none;
+  border: none;*/
+}
 
+.extruder .view-section .kmfacets-list-clear .icon{
+  font-size:1.75em;
+  border: 1px solid #aaa;
+  border-width:0 0 1px 1px;
+  box-shadow: -1px 1px 4px #666;
+  color: #ccc;
+  padding: 0;
+  background-color: #666;
+  line-height: 1em;
+  width: auto;
+  border-radius: 0;
+}
 
+.extruder .view-section .kmfacets-list-clear:hover .icon{
+  border-color:#ccc;
+  color: #eee;
+}
+
+.extruder .view-section .kmfacets-list-clear .icon::before{
+  content:'\e610';
+}
 
 @media (max-width:400px) {
 
-  #search-flyout .text > .shanticon-close2{  
-    position: absolute;
-    z-index: 90;
-    top: 1.1rem;
-    right: 1.5rem;
-    width: 2rem;
-    height: 2rem;
-    font-size: 1.18em;
-    color: #888;
-    cursor: pointer;
-    opacity:.4;
-    display:inline-block;
-  }
-
-  #search-flyout .text > .shanticon-close2:hover{
-    opacity: 1;
-  }
+  body:not(.kmaps) .extruder .btn-collapse-flyout{
+    display:block;
+  }  
 }
-
 
 
 /**
@@ -2029,3 +2127,4 @@ ul.facetapi-facet-transcript-languages li > a[href$="_empty_"] {
 * END - Sarvaka/css/shanti-main.css
 *
 */
+
