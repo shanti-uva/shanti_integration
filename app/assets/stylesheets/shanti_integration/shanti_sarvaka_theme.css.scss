@@ -11,14 +11,13 @@
  *= require shanti_sarvaka_theme/utils
  *= require shanti_sarvaka_theme/font-awesome
  *= require shanti_sarvaka_theme/shanticon
- *= require shanti_sarvaka_theme/search
+ *= require shanti_sarvaka_theme/shanti-search
  *= require shanti_sarvaka_theme/shanti-main
- *= require shanti_sarvaka_theme/explorer
  *= require shanti_sarvaka_theme/shanti-admin-edit-forms
  *= require_self
  */
 
- /* shanti_sarvaka_theme/search */
+ /* shanti_sarvaka_theme/search  adds fixes to advance search only on Rails*/
 .ui-resizable-handle {
   font-size: inherit;
 }
@@ -39,6 +38,7 @@
 #searchScopeGroup label {
   display: inline;
 }
+
  /* END - shanti_sarvaka_theme/search */
 
 
