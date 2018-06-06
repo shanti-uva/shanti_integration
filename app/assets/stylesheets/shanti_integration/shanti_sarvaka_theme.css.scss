@@ -130,11 +130,15 @@
 }
 
 @media screen and (max-width: 991px){
-.row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar{
-  top: 1.1rem;
+  .row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar{
+    top: 1.1rem;
+  }
 }
+@media screen and (min-width: 1440px){
+  .sidebar, .main-wrapper {
+    min-height: 687px;
+  }
 }
-
 /* custom image gallery for kmaps display */
 .og-expander{
   margin-left:1.3rem;
