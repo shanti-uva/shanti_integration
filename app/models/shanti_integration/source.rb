@@ -27,7 +27,7 @@ module ShantiIntegration
     end
 
     def bibliographic_reference
-      uri = URI.parse("#{self.service}/sources-api/ajax/#{self.id}/cite/chicago")
+      uri = URI.parse("https://#{self.service.gsub(/_/,".")}/sources-api/ajax/#{self.id}/cite/chicago")
       conn = Net::HTTP.new(uri.host,uri.port)
       conn.use_ssl = true
       conn.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -38,5 +38,10 @@ module ShantiIntegration
       result_str.chop! if result_str.last == '.'
       result_str
     end
+
+    def marked_for_destruction?
+      false
+    end
+
   end
 end
