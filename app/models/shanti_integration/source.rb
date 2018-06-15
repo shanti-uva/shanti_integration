@@ -17,7 +17,7 @@ module ShantiIntegration
       end
     end
   
-    acts_as_indexable path: 'asset_path', uid_prefix: self.service, scope: { asset_type: 'sources', service: self.service }
+    acts_as_indexable path: 'asset_path', uid_prefix: sources, scope: { asset_type: 'sources', service: self.service }
     
     def self.find(id)
       hash = self.flare_search(id)
