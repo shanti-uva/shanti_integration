@@ -2,6 +2,7 @@ module ShantiIntegration
   class Source
     include Flare::ActiveExtension
     include ActiveModel::Model
+    include ActiveRecordRelatable
     
     KNOWN_ATTRS = [:id, :uid, :node_lang, :node_created, :node_changed, :title, :service, :asset_type, :url_html, :url_ajax, :url_json, :url_thumb, :timestamp]
     attr_accessor *KNOWN_ATTRS
@@ -38,10 +39,5 @@ module ShantiIntegration
       result_str.chop! if result_str.last == '.'
       result_str
     end
-
-    def marked_for_destruction?
-      false
-    end
-
   end
 end
