@@ -13,29 +13,15 @@ function searchTabHeight() {
     var height = $(window).height();
     var srchtab = (height) - 88;
     var viewheight = (height) - 260;
-    // var advHeight = $(".advanced-view").show().height();
-    // var comboHeight = (viewheight) - 370;
-    var viewheightSources = (height) - 230;
-    var viewheightPlaces = (height) - 402;
 
     srchtab = parseInt(srchtab) + 'px';
-    $("#search-flyout").find(".text").css('height',srchtab);
 
     viewheight = parseInt(viewheight) + 'px';
-    // comboHeight = parseInt(comboHeight) + 'px';
     $(".view-wrap").css('height', viewheight);
-    // $(".view-wrap.short-wrap").css('height', comboHeight);
-
-  /*
-    viewheightSources = parseInt(viewheightSources) + 'px';
-    $(".sources .view-wrap").css('height', viewheightSources);
-
-    viewheightPlaces = parseInt(viewheightPlaces) + 'px';
-    $(".page-places .view-wrap").css('height', viewheightPlaces);
-    */
 }
 
 $(document).ready(function(){
+    $(window).bind('load orientationchange resize', searchTabHeight() );
     var mywidth = 310; // Drupal.settings.shanti_sarvaka.flyoutWidth;
     $(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block"); // show hidden containers after loading to prevent content flash
 		// Remove extruder div content so as to preserve AJAX events
@@ -54,18 +40,19 @@ $(document).ready(function(){
     // Make it resizeable
     try {
 	    if($("div.extruder-content > div.text").length > 0) {
+        var flyout_height = $(window).height() - 134;
+        if($('.page-places #kmaps-search .advanced-link')[0]) flyout_height += 24;
 		    $("div.extruder-content > div.text").resizable({
 		      handles: "w,nw",
 		      resize: function (event, ui) {
-		      	$('#search-flyout .extruder-content').css('width','');
-		        //$('span.fancytree-title').trunk8({ tooltip:false });
-		      }
+						$('#search-flyout .extruder-content').css('width','');
+          },
+          maxHeight: flyout_height,
+          minHeight: flyout_height
 		    });
 			}
 	    // Bind event listener
-	    $(".extruder-content").resize(checkWidth());
-	    // Add identifier
-	    // $(".extruder-content").attr("aria-label","Search Panel");
+      //$(".extruder-content").resize(checkWidth());
 	   } catch (e) {
 	   	console.trace();
 	   	console.warn('Resizeable not a function error caught! search.js line 49');
@@ -105,9 +92,4 @@ $(document).ready(function(){
     $('#search-flyout .selectpicker').selectpicker({
       dropupAuto: false,
     }); // initiates jq-bootstrap-select
-});
-
-$(document).ready(function(){
-    searchTabHeight();
-    $(window).bind('load orientationchange resize', searchTabHeight() );
 });
