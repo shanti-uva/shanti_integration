@@ -38,6 +38,22 @@
 #searchScopeGroup label {
   display: inline;
 }
+.view-section .tab-content .tab-pane {
+  overflow-y: scroll;
+  border-bottom: 1px solid #ddd;
+}
+
+.view-section .listview>div,
+.view-section .treeview>div {
+  padding: 0;
+  overflow-y: inherit;
+}
+
+.page-places .input-section a.toggle-link.advanced-link {
+  width: 90%;
+  padding: 0px 0px 0px 0px;
+}
+
 
  /* END - shanti_sarvaka_theme/search */
 
