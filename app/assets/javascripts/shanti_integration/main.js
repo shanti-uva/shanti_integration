@@ -51,37 +51,20 @@
   ShantiSarvaka.searchTabHeight = function(advVisible) {
     var height = $(window).height();
     var srchtab = (height) - 88;
-    //var viewheight = (height) - 235;
-    var viewheight = (height) - 260;
+    var viewheight = (height) - 261;
     var advHeight = $(".advanced-view").show().height();
-    //var advHeight = $(".advanced-view").height();
     if((typeof advVisible !== undefined) && advVisible){
-      viewheight = viewheight - 256;
+      viewheight = viewheight - 247;
     }
-    // var comboHeight = (viewheight) - 370;
-    
-    /*var viewheightSources = (height) - 230;
-    var viewheightPlaces = (height) - 402;*/
 
     srchtab = parseInt(srchtab) + 'px';
-    $("#search-flyout").find(".text").css('height',srchtab);
+    //$("#search-flyout").find(".text").css('height',srchtab);
 
     var srchtabAdmin = parseInt(srchtabAdmin) + 'px';
-    $(".admin-menu #search-flyout").find(".text").css('height',srchtabAdmin);
+    //$(".admin-menu #search-flyout").find(".text").css('height',srchtabAdmin);
 
     viewheight = parseInt(viewheight) + 'px';
-    // comboHeight = parseInt(comboHeight) + 'px';
     $(".view-wrap").css('height', viewheight);
-    // $(".view-wrap.short-wrap").css('height', comboHeight);
-
-    /*
-    viewheightSources = parseInt(viewheightSources) + 'px';
-    $(".sources .view-wrap").css('height', viewheightSources);
-
-    viewheightPlaces = parseInt(viewheightPlaces) + 'px';
-    $(".page-places .view-wrap").css('height', viewheightPlaces);
-    */
-	
   };
 
   $(document).ready(function() {
