@@ -21,8 +21,8 @@
 //= require shanti_integration/extruder/jquery.mb.flipText
 //= require shanti_integration/extruder/mbExtruder
 //= require shanti_integration/metisMenu
-//= require shanti_integration/main
-//= require shanti_integration/search
+//= require shanti_integration/shanti-main
+//= require shanti_integration/shanti-search
 //= require shanti_integration/modernizr-2.6.2.min
 //= require shanti_integration/js.cookie
 //= require shanti_integration/preferences
