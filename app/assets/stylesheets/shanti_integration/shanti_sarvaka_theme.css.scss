@@ -11,14 +11,13 @@
  *= require shanti_sarvaka_theme/utils
  *= require shanti_sarvaka_theme/font-awesome
  *= require shanti_sarvaka_theme/shanticon
- *= require shanti_sarvaka_theme/search
+ *= require shanti_sarvaka_theme/shanti-search
  *= require shanti_sarvaka_theme/shanti-main
- *= require shanti_sarvaka_theme/explorer
  *= require shanti_sarvaka_theme/shanti-admin-edit-forms
  *= require_self
  */
 
- /* shanti_sarvaka_theme/search */
+ /* shanti_sarvaka_theme/search  adds fixes to advance search only on Rails*/
 .ui-resizable-handle {
   font-size: inherit;
 }
@@ -39,6 +38,23 @@
 #searchScopeGroup label {
   display: inline;
 }
+.view-section .tab-content .tab-pane {
+  overflow-y: scroll;
+  border-bottom: 1px solid #ddd;
+}
+
+.view-section .listview>div,
+.view-section .treeview>div {
+  padding: 0;
+  overflow-y: inherit;
+}
+
+.page-places .input-section a.toggle-link.advanced-link {
+  width: 90%;
+  padding: 0px 0px 0px 0px;
+}
+
+
  /* END - shanti_sarvaka_theme/search */
 
 
@@ -130,11 +146,15 @@
 }
 
 @media screen and (max-width: 991px){
-.row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar{
-  top: 1.1rem;
+  .row-offcanvas.active .btn.btn-default.view-offcanvas-sidebar{
+    top: 1.1rem;
+  }
 }
+@media screen and (min-width: 1440px){
+  .sidebar, .main-wrapper {
+    min-height: 687px;
+  }
 }
-
 /* custom image gallery for kmaps display */
 .og-expander{
   margin-left:1.3rem;
