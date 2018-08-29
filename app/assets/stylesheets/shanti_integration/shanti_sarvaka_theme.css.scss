@@ -17,6 +17,11 @@
  *= require_self
  */
 
+/* fix for top menu to not propagete clicks to elements on the main wrapper */
+.disabled-by-top-menu-open {
+  pointer-events:none;
+}
+/* END - fix for top menu to not propagete clicks to elements on the main wrapper */
  /* shanti_sarvaka_theme/search  adds fixes to advance search only on Rails*/
 .ui-resizable-handle {
   font-size: inherit;

@@ -197,6 +197,8 @@
           event.stopPropagation();
           $('#menu').slideToggle(200);
           $('.menu-toggle').toggleClass('show-topmenu');
+          $('.main-wrapper').toggleClass('disabled-by-top-menu-open');
+          $('#tree').toggleClass('disabled-by-top-menu-open');
           $('.collections').slideUp(200);
           $('.menu-exploretoggle').removeClass('show-topmenu');
        });
@@ -209,6 +211,8 @@
 
       $(document).click( function(){
           $('.menu-toggle').removeClass('show-topmenu');
+          $('.main-wrapper').removeClass('disabled-by-top-menu-open');
+          $('#tree').removeClass('disabled-by-top-menu-open');
           $('#menu').hide(100);
       });
 
