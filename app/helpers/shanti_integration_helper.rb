@@ -44,31 +44,6 @@ module ShantiIntegrationHelper
         url: defined?(PlacesIntegration) ? PlacesIntegration::PlacesResource.get_url : root_path
       },
       {
-        shanticon: 'texts',
-        title: 'Texts',
-        url: 'https://texts.shanti.virginia.edu/'
-      },
-      {
-        shanticon: 'sources',
-        title: 'Sources',
-        url: 'https://sources.shanti.virginia.edu/'
-      },
-      {
-        shanticon: 'audio-video',
-        title: 'Audio-Video',
-        url: 'https://audio-video.shanti.virginia.edu/'
-      },
-      {
-        shanticon: 'photos',
-        title: defined?(MmsIntegration) ? MmsIntegration::Picture.human_name(:count => :many).titleize.s : Medium.model_name.human(:count => :many).titleize.s,
-        url: defined?(MmsIntegration) ? MmsIntegration::MediaManagementResource.get_url : root_path
-      },
-      {
-        shanticon: 'visuals',
-        title: 'Visuals',
-        url: 'https://visuals.shanti.virginia.edu/'
-      },
-      {
         shanticon: 'logo-shanti',
         title: 'Knowledge Base',
         url: 'https://wiki.shanti.virginia.edu/display/KB/Home'
