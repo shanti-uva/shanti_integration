@@ -45,13 +45,14 @@
 	      <span class="menu-explore menu-exploretoggle"><a href="#"><span>Explore</span><span class="icon shanticon-directions"></span></a></span><!-- mobile < 768 : collections -->
 	    </nav>
 	    <h1 class="navbar-header">
-	      <a href="https://mandala.shanti.virginia.edu/" class="logo-brand navbar-brand" title="<%= 'SHANTI' %>">
+          <%= link_to root_path, class: 'logo-brand navbar-brand', title: 'KMAPS' do %>
           <span class="icon shanticon-logo"></span><span class="mandala">
-            MANDALA 
-          </span></a>
-	      <a href="/" class="navbar-brand" title="<%= 'SHANTI' %>">
-          <span class='site-slogan'>Kmaps</span>
-        </a>
+            KMAPS
+          </span>
+        <% end %>
+        <%= link_to root_path, class: 'navbar-brand', title: 'KMAPS' do %>
+          <span class='site-slogan'><%= ts('app.short') %> Editing (<%= is_admin_area? ? "Edit" : "View" %> Mode)</span>
+        <% end %>
 	    </h1>
 	    <!-- HEADER REGION -->
 	    <nav id="sarvaka-header" class="region navbar-collapse collapse navtop"> <!-- desktop display > 768 -->
