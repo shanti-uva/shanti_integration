@@ -12,12 +12,12 @@ module ShantiIntegration
       when InterfaceUtils::Server::DEVELOPMENT then 'sources-dev_shanti_virginia_edu'
       when InterfaceUtils::Server::STAGING then 'sources-stage_shanti_virginia_edu'
       when InterfaceUtils::Server::PRODUCTION then 'sources_shanti_virginia_edu'
-      when InterfaceUtils::Server::LOCAL then 'sources-dev_shanti_virginia_edu'
+      when InterfaceUtils::Server::LOCAL then 'sources_shanti_virginia_edu'
       else 'sources-dev_shanti_virginia_edu'
       end
     end
   
-    acts_as_indexable path: 'asset_path', uid_prefix: self.service, scope: { asset_type: 'sources', service: self.service }
+    acts_as_indexable hostname: 'asset_hostname', path: 'asset_path', uid_prefix: self.service, scope: { asset_type: 'sources', service: self.service }
     
     def self.find(id)
       hash = self.flare_search(id)
