@@ -35,7 +35,7 @@ module ShantiIntegration
 
       request = Net::HTTP::Get.new(uri.request_uri)
       result = conn.request(request)
-      result_str = result.body
+      result_str = result.body.force_encoding('UTF-8')
       result_str.chop! if result_str.last == '.'
       result_str
     end
