@@ -1,0 +1,10 @@
+# Localization file for Tibetan of topical_map integration plugin.
+bo:
+    activeresource:
+        models:
+            shanti_integration/text:
+                one: 'text'
+                other: 'texts'
+        attributes:
+            shanti_integration/text:
+                title: 'Title'

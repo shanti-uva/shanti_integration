@@ -1,0 +1,10 @@
+# Localization file for English of topical_map integration plugin.
+en:
+    activeresource:
+        models:
+            shanti_integration/text:
+                one: 'text'
+                other: 'texts'
+        attributes:
+            shanti_integration/text:
+                title: 'Title'
