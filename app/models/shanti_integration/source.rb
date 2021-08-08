@@ -16,8 +16,9 @@ module ShantiIntegration
       else 'sources-dev_shanti_virginia_edu'
       end
     end
-  
-    acts_as_indexable hostname: 'asset_hostname', path: 'asset_path', uid_prefix: self.service, scope: { asset_type: 'sources', service: self.service }
+    
+    # acts_as_indexable hostname: 'asset_hostname', path: 'asset_path', uid_prefix: self.service, scope: { asset_type: 'sources', service: self.service }
+    acts_as_indexable hostname: 'asset_hostname', path: 'asset_path', uid_prefix: '*', scope: { asset_type: 'sources' }
     
     def self.find(id)
       hash = self.flare_search(id)
