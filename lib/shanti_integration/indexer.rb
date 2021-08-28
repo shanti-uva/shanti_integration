@@ -3,8 +3,11 @@ module ShantiIntegration
     def Indexer.trigger(query)
       uri = Indexer.uri
       return if uri.nil?
-      data = {'query' => query}.to_json
-      msg = Net::HTTP.post Indexer.uri, data, 'Content-Type' => 'application/json'
+      Spawnling.new do
+        sleep(160)
+        data = {'query' => query}.to_json
+        msg = Net::HTTP.post Indexer.uri, data, 'Content-Type' => 'application/json'
+      end
     end
     
     private
