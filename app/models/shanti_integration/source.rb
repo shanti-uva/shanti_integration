@@ -6,7 +6,8 @@ module ShantiIntegration
     
     KNOWN_ATTRS = [:id, :uid, :node_lang, :node_created, :node_changed, :title, :service, :asset_type, :url_html, :url_ajax, :url_json, :url_thumb, :timestamp]
     attr_accessor *KNOWN_ATTRS
-  
+    
+    # currently not used  
     def self.service
       @@service ||= case InterfaceUtils::Server.environment
       when InterfaceUtils::Server::DEVELOPMENT then 'sources-dev_shanti_virginia_edu'
@@ -29,7 +30,7 @@ module ShantiIntegration
     end
 
     def bibliographic_reference
-      uri = URI.parse("https://#{self.service.gsub(/_/,".")}/sources-api/ajax/#{self.id}/cite/chicago")
+      uri = URI.parse("https://sources.mandala.library.virginia.edu/sources-api/ajax/#{self.id}/cite/chicago")
       conn = Net::HTTP.new(uri.host,uri.port)
       conn.use_ssl = true
       conn.verify_mode = OpenSSL::SSL::VERIFY_NONE
