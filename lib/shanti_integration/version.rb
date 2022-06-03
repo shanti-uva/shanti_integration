@@ -1,3 +1,3 @@
 module ShantiIntegration
-  VERSION = '3.5.4'
+  VERSION = '3.5.5'
 end
