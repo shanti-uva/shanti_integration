@@ -1,10 +1,13 @@
 # Localization file for English of topical_map integration plugin.
 en:
-    activeresource:
+    activemodel:
         models:
             shanti_integration/text:
                 one: 'text'
                 other: 'texts'
+            shanti_integration/image:
+                one: 'mandala image'
+                other: 'mandala images'
         attributes:
             shanti_integration/text:
                 title: 'Title'

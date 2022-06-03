@@ -1,10 +1,13 @@
 # Localization file for Dzongkha of topical_map integration plugin.
 dz:
-    activeresource:
+    activemodel:
         models:
             shanti_integration/text:
                 one: 'text'
                 other: 'texts'
+            shanti_integration/image:
+                one: 'mandala image'
+                other: 'mandala images'
         attributes:
             shanti_integration/text:
                 title: 'Title'
