@@ -8,6 +8,9 @@ zh:
             shanti_integration/image:
                 one: 'mandala image'
                 other: 'mandala images'
+            shanti_integration/source:
+                one: 'Source ID from Mandala Sources'
+                other: 'Source IDs from Mandala Sources'
         attributes:
             shanti_integration/text:
                 title: 'Title'
