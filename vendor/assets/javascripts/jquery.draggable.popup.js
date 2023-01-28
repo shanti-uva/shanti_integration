@@ -170,6 +170,14 @@ function ActivateDraggablePopups(parent_selector){
 	jQuery(parent_selector).find('a.draggable-pop').each(function(){
 		var match, options = {};
 		options.url = jQuery(this).attr('href');
+		header = jQuery(this).attr('data-header')
+		if (header != undefined){
+			options.header = header;
+		}
+		content = jQuery(this).attr('data-content')
+		if (content != undefined){
+			options.content = content;
+		}
 		if(jQuery(this).hasClass('iframe')){
 			options.loadWith = 'iframe';
 		}
