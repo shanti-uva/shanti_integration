@@ -22,7 +22,9 @@ module ShantiIntegration
     acts_as_indexable hostname: 'asset_hostname', path: 'asset_path', uid_prefix: '*', scope: { asset_type: 'sources' }
     
     def self.find(id)
-      hash = self.flare_search(id)
+      hash = Rails.cache.fetch("shanti_integration/source/#{id}", :expires_in => 1.day) do
+        self.flare_search(id)
+      end
       return nil if hash.blank?
       attrs = {}
       KNOWN_ATTRS.each{ |key| attrs[key]=hash[key.to_s] }
