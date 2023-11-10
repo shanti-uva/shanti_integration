@@ -12,7 +12,7 @@ module ShantiIntegrationHelper
     ['application']
   end
   
-  def header(options = {})
+  def header(**options)
     js_files = options[:javascript_files]
     js_files = js_files.nil? ? javascript_files : javascript_files + js_files
     css_files = options[:stylesheet_files]
