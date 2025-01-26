@@ -1,9 +1,10 @@
 module ShantiIntegration
   module Indexer
+    # currently not called, but could be susceptible to creating zombie records given that there is no wait.
     def Indexer.trigger(query)
       uri = Indexer.uri
       return if uri.nil?
-      Spawnling.new do
+      Spawnling.new(kill: true) do
         sleep(160)
         data = {'query' => query}.to_json
         msg = Net::HTTP.post Indexer.uri, data, 'Content-Type' => 'application/json'

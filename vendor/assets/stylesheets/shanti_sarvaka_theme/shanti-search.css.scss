@@ -615,7 +615,7 @@ object.flip_label {
 }
 
 .extruder .shanticon-magnify {
-    position: absolute;
+    // position: absolute;
     left: 2rem;
     top: 1.45rem;
     z-index: 10;
@@ -625,7 +625,6 @@ object.flip_label {
 
 .extruder .kmap-typeahead-picker .shanticon-magnify {
   position: absolute;
-  left: 2.45rem;
   top: 2.8rem;
   font-size: 1.12em;
 }
@@ -957,6 +956,11 @@ object.flip_label {
 *  START View Section / Tabs - Table - Tree
 * --------------------------------------------
 */
+.search-section {
+  background: #fff;
+  border-top: 5px solid #fff;
+}
+
 .view-section {
   display: none;
   background: #fff;
@@ -970,14 +974,17 @@ object.flip_label {
   border-width:0 1px;
 }
 
+.search-section .tab-content .tab-pane,
 .view-section .tab-content .tab-pane {
   padding: 0;
 }
 
+.search-section .nav-tabs,
 .view-section .nav-tabs {
   margin-top: 0 !important;
 }
 
+.search-section .nav-tabs>li,
 .view-section .nav-tabs>li {
   width: 35%;
   max-width: 130px;
@@ -985,6 +992,23 @@ object.flip_label {
   line-height: 1.5em;
   letter-spacing: 0.01rem;
 }
+
+.search-section .nav-tabs>li>a {
+  color: #777;
+  font-size: 14px;
+  line-height: 20px;
+  margin-right: 4px;
+  font-weight: bold;
+  padding: 10px 0 7px 0;
+  text-align: center;
+  background: #fcfcfc;
+  border: 1px solid #eee;
+  border-bottom-color: #ddd;
+  border-top: 2px solid #ddd;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+}
+
 
 .view-section .nav-tabs>li>a {
   color: #777;
@@ -1004,6 +1028,8 @@ object.flip_label {
   transition: all 100ms;
 }
 
+.search-section .nav-tabs>li>a:hover,
+.search-section .nav-tabs>li>a:active,
 .view-section .nav-tabs>li>a:hover,
 .view-section .nav-tabs>li>a:active {
   border-color: #ddd;
@@ -1012,6 +1038,9 @@ object.flip_label {
   background: white;
 }
 
+.search-section .nav-tabs>li.active>a,
+.search-section .nav-tabs>li.active>a:hover,
+.search-section .nav-tabs>li.active>a:active,
 .view-section .nav-tabs>li.active>a,
 .view-section .nav-tabs>li.active>a:hover,
 .view-section .nav-tabs>li.active>a:active {
@@ -1024,11 +1053,13 @@ object.flip_label {
   border-bottom-color: transparent;
 }
 
+.search-section .nav-tabs>li> .icon,
 .view-section .nav-tabs>li> .icon {
   width: 16px;
   height: 16px;
 }
 
+.search-section .nav-tabs>li> a .icon::before,
 .view-section .nav-tabs>li> a .icon::before {
   font-size: 13px;
   position: relative;
@@ -1036,6 +1067,7 @@ object.flip_label {
   right: 6px;
 }
 
+.search-section .nav-tabs>li.active> a .icon::before,
 .view-section .nav-tabs>li.active> a .icon::before {
   font-size: 15px;
   position: relative;
