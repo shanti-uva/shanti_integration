@@ -29,6 +29,7 @@ module ShantiIntegration
     def self.service
       @@service ||= case InterfaceUtils::Server.environment
       when InterfaceUtils::Server::LOCAL then 'http://localhost/ttt/org.thdl.tib.scanner.RemoteScannerFilter'
+      when InterfaceUtils::Server::DEV then 'https://dev.ttt.thlib.org/org.thdl.tib.scanner.RemoteScannerFilter'
       else 'https://ttt.thlib.org/org.thdl.tib.scanner.RemoteScannerFilter'
       end
     end
