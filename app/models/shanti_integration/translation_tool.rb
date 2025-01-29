@@ -17,7 +17,7 @@ module ShantiIntegration
       uri = URI.parse(url)
       response = Net::HTTP.get_response(uri) # Perform GET request
       if response.is_a?(Net::HTTPSuccess)
-        json_text = response.body.gsub(/^\?\(|\);\s*$/, '')
+        json_text = response.body.gsub(/^\?\(|\);\s*$/, '').gsub(/[\r\v]/, " ")
         return JSON.parse(json_text)
       else
         return {}
