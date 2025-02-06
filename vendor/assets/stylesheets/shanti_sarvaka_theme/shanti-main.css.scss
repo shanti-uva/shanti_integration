@@ -46,7 +46,7 @@ body {
   font-family: 'droidserif',georgia,palatino,'Palatino Linotype',serif;
   letter-spacing: 0.01em;
   font-weight: normal;
-  overflow: hidden;
+  // overflow: hidden; Need to comment so I can use "sticky position" for dictionary assistant.
 }
 
 body.html{ background-color:#222; color:#ccc;}
