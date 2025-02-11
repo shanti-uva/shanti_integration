@@ -29,6 +29,14 @@
 <meta name="msapplication-TileImage" content="<%= image_path 'shanti_sarvaka_theme/favicons/favicon-144.png' %>" />
 <meta name="msapplication-config" content="<%= image_path 'shanti_sarvaka_theme/favicons/browserconfig.xml' %>" />
 <meta name="theme-color" content="#ffffff"  />
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GRMG80Z2F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5GRMG80Z2F');
+    </script>
 <%= stylesheet_link_tag(*(stylesheet_files + [media: 'all', 'data-turbolinks-track' => true])) %>
 <%= javascript_include_tag(*(javascript_files + ['data-turbolinks-track' => true])) %>
 <%= csrf_meta_tags %>
