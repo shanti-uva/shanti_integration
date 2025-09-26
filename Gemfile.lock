@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    shanti_integration (3.6.8)
+    shanti_integration (3.6.9)
       rails
 
 GEM
