@@ -29,9 +29,14 @@ module ShantiIntegrationHelper
   def collections
     [
       {
-        shanticon: 'overview',
-        title: 'Overview',
+        shanticon: 'logo-shanti',
+        title: 'Knowledge Base',
         url: InterfaceUtils::Server.get_url
+      },
+      {
+        shanticon: 'terms',
+        title: defined?(TermsIntegration) ? TermsIntegration::Feature.human_name(:count => :many).titleize.s : Feature.model_name.human(:count => :many).titleize.s,
+        url: defined?(TermsIntegration) ? TermsIntegration::TermsResource.get_url : root_path
       },
       {
         shanticon: 'subjects',
@@ -42,11 +47,6 @@ module ShantiIntegrationHelper
         shanticon: 'places',
         title: 'Places',
         url: defined?(PlacesIntegration) ? PlacesIntegration::PlacesResource.get_url : root_path
-      },
-      {
-        shanticon: 'logo-shanti',
-        title: 'Knowledge Base',
-        url: 'https://wiki.shanti.virginia.edu/display/KB/Home'
       }
     ]
   end
