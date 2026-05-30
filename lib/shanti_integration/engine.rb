@@ -10,5 +10,12 @@ module ShantiIntegration
       app.config.assets.precompile.concat(["*.svg", "*.eot", "*.woff", "*.ttf"])
       app.config.assets.precompile.concat(['shanti_sarvaka_theme/favicons/favicon.ico', 'shanti_sarvaka_theme/favicons/favicon-196.png', 'shanti_sarvaka_theme/favicons/favicon-160.png', 'shanti_sarvaka_theme/favicons/favicon-96.png', 'shanti_sarvaka_theme/favicons/favicon-64.png', 'shanti_sarvaka_theme/favicons/favicon-32.png', 'shanti_sarvaka_theme/favicons/favicon-16.png', 'shanti_sarvaka_theme/favicons/favicon-152.png', 'shanti_sarvaka_theme/favicons/favicon-144.png', 'shanti_sarvaka_theme/favicons/favicon-120.png', 'shanti_sarvaka_theme/favicons/favicon-76.png', 'shanti_sarvaka_theme/favicons/favicon-72.png', 'shanti_sarvaka_theme/favicons/favicon-57.png', 'shanti_sarvaka_theme/favicons/browserconfig.xml'])
     end
+    
+    config.to_prepare do
+      # extend authentication helpers (included in application_controller)
+      require_dependency 'application_controller'
+      require_dependency 'shanti_integration/authentication_extensions'
+      ApplicationController.include ShantiIntegration::AuthenticationExtensions
+    end
   end
 end
