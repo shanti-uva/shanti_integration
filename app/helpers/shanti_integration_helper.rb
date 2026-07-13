@@ -1,15 +1,20 @@
 # Methods added to this helper will be available to all templates in the application.
 module ShantiIntegrationHelper
-  def google_maps_key
-    'AIzaSyAXpnXkPS39-Bo5ovHQWvyIk6eMgcvc1q4'
-  end
-  
   def stylesheet_files
     ['application']
   end
 
   def javascript_files
     ['application']
+  end
+  
+  def header_iframe(body_attributes = {:class => 'full-width'})
+    frame_init()
+    return ("<title>#{controller.controller_name.humanize}: #{controller.action_name.humanize}</title>\n" +
+           "#{frame_css}\n" +
+           "#{csrf_meta_tags}\n" +
+           "</head>\n" +
+           "<body id=\"body\" #{body_attributes.collect{|at, value| "#{at.to_s}=\"#{value}\""}.join(' ')}>").html_safe
   end
   
   def header(**options)
